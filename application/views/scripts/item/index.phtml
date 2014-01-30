@@ -1,36 +1,89 @@
-<table border='1'>
-		<tr>
-			<th>Origen</th>
-			<th></th>
-		</tr>
+<h1>Lista items:</h1>
 
-	<?php 
-		foreach($this->dataList as $itemOrigin)
-		{
-	?>
+<table border='1' align="center">
+	<tr>
+		<td colspan="17" align="right"><a
+			href='<?php
+			
+echo $this->url ( array (
+					'controller' => 'item',
+					'action' => 'add' 
+			), 'default', true )?>'>Agregar item</a></td>
+	</tr>
+	<tr>
+		<th>C&oacute;digo</th>
+		<th>Nuevo c&oacute;digo</th>
+		<th>Tipo</th>
+		<th>Nombre</th>
+		<th>Marca</th>
+		<th>Material</th>
+		<th>Color</th>
+		<th>Procedencia</th>
+		<th>Ubicaci&oacute;n</th>
+		<th>Propietario</th>
+		<th>Cantidad</th>
+		<th>Costo unit.</th>
+		<th>Costo esperado</th>
+		<th>Costo de venta</th>
+		<th>Estado</th>
+		<th>Disponibilidad</th>
+		<th></th>
+	</tr>
+
+	<?php
+	foreach ( $this->dataList as $item ) {
+		?>
 		<tr>
-			<td><?php echo $itemOrigin->getName(); ?></td>
-			<td>
-				<a href='<?php echo $this->url(
-					array(
-						'controller' => 'itemOrigin',
-						'action'     => 'edit',
-						'id'     => $itemOrigin->getId(),
-					), 'default', true) ?>'>Modificar</a>
-				<a href='<?php echo $this->url(
-					array(
-						'controller' => 'itemOrigin',
-						'action'     => 'remove',
-						'id'     => $itemOrigin->getId(),
-					), 'default', true) ?>'>Eliminar</a>
-			</td>
-		</tr>
+		<td><?php echo $item->getCode(); ?></td>
+		<td><?php echo $item->getNewCode(); ?></td>
+		<td><?php echo $item->getType()->getName(); ?></td>
+		<td><?php echo $item->getName(); ?></td>
+		<td><?php echo $item->getBrand()->getName(); ?></td>
+		<td><?php echo $item->getMaterial()->getName(); ?></td>
+		<td><?php echo $item->getColor()->getName(); ?></td>
+		<td><?php echo $item->getOrigin()->getName(); ?></td>
+		<td><?php echo $item->getLocation()->getName(); ?></td>
+		<td><?php echo $item->getOwner()->getName(); ?></td>
+		<td align="right"><?php echo $item->getQuantity(); ?></td>
+		<td align="right"><?php echo $item->getUnitCost(); ?></td>
+		<td align="right"><?php echo $item->getExpectedCost(); ?></td>
+		<td align="right"><?php echo $item->getSalesCost(); ?></td>
+		<td><?php echo $item->getCondition()->getName(); ?></td>
+		<td><?php echo $item->getAvailability()->getName(); ?></td>
+		<td align="center">
+			<a
+				href='<?php		
+				echo $this->url ( array (
+								'controller' => 'item',
+								'action' => 'view',
+								'id' => $item->getId () 
+						), 'default', true )?>'>Ver
+			</a>
+			<a
+				href='<?php		
+				echo $this->url ( array (
+								'controller' => 'item',
+								'action' => 'edit',
+								'id' => $item->getId () 
+						), 'default', true )?>'>Modificar
+			</a>
+			<a
+				href='<?php				
+				echo $this->url ( array (
+								'controller' => 'item',
+								'action' => 'remove',
+								'id' => $item->getId () 
+						), 'default', true )?>'>Eliminar
+			</a>
+		</td>
+	</tr>
 	<?php
 	}
 	?>
-	
+	<tr>
+		<td colspan="17" align="center">
+			<?php echo $this->htmlPaginator; ?>
+		</td>
+	</tr>
 </table>
 
-<?php
-echo $this->htmlPaginator;
-?>

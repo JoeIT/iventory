@@ -1,0 +1,79 @@
+<h1>Item:</h1>
+
+<a href='<?php echo $this->url ( array (
+					'controller' => 'item',
+					'action' => 'index' 
+						), 'default', true )?>'>Volver al listado</a>
+
+<br/>
+
+<table border='1' align="center">
+<tr>
+	<th>C&oacute;digo:</th>		
+	<td><?php echo $this->item->getCode(); ?></td>
+</tr>
+<tr>
+	<th>Nuevo c&oacute;digo:</th>
+	<td><?php echo $this->item->getNewCode(); ?></td>
+</tr>
+<tr>
+	<th>Tipo:</th>
+	<td><?php echo $this->item->getType()->getName(); ?></td>
+</tr>
+<tr>
+	<th>Nombre:</th>
+	<td><?php echo $this->item->getName(); ?></td>
+</tr>
+<tr>
+	<th>Marca:</th>
+	<td><?php echo $this->item->getBrand()->getName(); ?></td>
+</tr>
+<tr>
+	<th>Material:</th>
+	<td><?php echo $this->item->getMaterial()->getName(); ?></td>
+</tr>
+<tr>
+	<th>Color:</th>
+	<td><?php echo $this->item->getColor()->getName(); ?></td>
+</tr>
+<tr>
+	<th>Procedencia:</th>
+	<td><?php echo $this->item->getOrigin()->getName(); ?></td>
+</tr>
+<tr>
+	<th>Ubicaci&oacute;n:</th>
+	<td><?php echo $this->item->getLocation()->getName(); ?></td>
+</tr>
+<tr>
+	<th>Propietario:</th>
+	<td><?php echo $this->item->getOwner()->getName(); ?></td>
+</tr>
+<tr>
+	<th>Cantidad:</th>
+	<td><?php echo $this->item->getQuantity(); ?></td>
+</tr>
+<tr>
+	<th>Costo unitario:</th>
+	<td><?php echo $this->item->getUnitCost(); ?></td>
+</tr>
+<tr>
+	<th>Costo esperado:</th>
+	<td><?php echo $this->item->getExpectedCost(); ?></td>
+</tr>
+<tr>
+	<th>Costo de venta:</th>
+	<td><?php echo $this->item->getSalesCost(); ?></td>
+</tr>
+<tr>
+	<th>Estado:</th>
+	<td><?php echo $this->item->getCondition()->getName(); ?></td>
+</tr>
+<tr>
+	<th>Disponibilidad:</th>
+	<td><?php echo $this->item->getAvailability()->getName(); ?></td>
+</tr>
+<tr>
+	<th>Observaciones:</th>
+	<td><?php echo $this->item->getComment(); ?></td>
+</tr>
+</table>

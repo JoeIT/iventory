@@ -1,0 +1,51 @@
+<h1>Lista de paises de procedencias:</h1>
+
+<table border='1' align="center">
+	<tr>
+		<td colspan="2" align="right"><a
+			href='<?php
+			
+echo $this->url ( array (
+					'controller' => 'itemorigin',
+					'action' => 'add' 
+			), 'default', true )?>'>Agregar</a></td>
+	</tr>
+	<tr>
+		<th>Pais de procedencia</th>
+		<th></th>
+	</tr>
+
+	<?php
+	foreach ( $this->dataList as $itemOrigin ) {
+		?>
+		<tr>
+		<td><?php echo $itemOrigin->getName(); ?></td>
+		<td align="center">
+			<a
+				href='<?php		
+				echo $this->url ( array (
+								'controller' => 'itemorigin',
+								'action' => 'edit',
+								'id' => $itemOrigin->getId () 
+						), 'default', true )?>'>Modificar
+			</a>
+			<a
+				href='<?php				
+				echo $this->url ( array (
+								'controller' => 'itemorigin',
+								'action' => 'remove',
+								'id' => $itemOrigin->getId () 
+						), 'default', true )?>'>Eliminar
+			</a>
+		</td>
+	</tr>
+	<?php
+	}
+	?>
+	<tr>
+		<td colspan="2" align="center">
+			<?php echo $this->htmlPaginator; ?>
+		</td>
+	</tr>
+</table>
+

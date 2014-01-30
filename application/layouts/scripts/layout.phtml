@@ -1,0 +1,71 @@
+<?php
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('Inventarios');
+
+echo $this->doctype();
+?>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    		<?php echo $this->headMeta(); ?>
+    		<?php echo $this->headTitle(); ?>
+    		<meta name="keywords" content="Libreria, biblioteca, libros, andinos, andina" />
+    		<meta name="description" content="Librería Biblioteca Libros Andinos" />
+    		
+    		<?php 
+    			echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/ui-lightness/jquery-ui-1.10.3.custom.min.css');
+    			echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/style.css');
+    			
+    	
+				echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-1.10.2.min.js','text/javascript');
+    			echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-ui-1.10.3.custom.min.js','text/javascript');
+    		?>
+			
+		<script language="JavaScript" type="text/javascript">
+			
+			$(document).ready(function()
+			{
+			});
+		
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="before-header">
+				<div id="menu">
+					<ul>
+						<li>
+							<a href="<?php echo $this->baseUrl() . "/index"; ?>" class="current">Inicio</a>
+						</li>
+						<li>
+							<a href="<?php echo $this->baseUrl(); ?>/item/index">Items</a>
+						</li>
+					</ul>
+					
+				</div>				
+			</div>
+			<div id="header">
+				<div id="main_logo">
+					INVENTARIO
+				</div>
+				
+				<div id="announcements_board" class="announcements">
+				</div>
+
+			</div>
+			<!-- end of header -->
+
+			<div id="content">
+					<?php echo $this->layout()->content; ?>
+			</div>
+			<!-- end of content -->
+
+			<div id="footer">
+				<strong>Copyright © <?php echo date('Y') ?></strong>
+			</div>
+			<!-- end of footer -->
+		</div>
+		<!-- end of container -->
+	</body>
+</html>

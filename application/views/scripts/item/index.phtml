@@ -1,0 +1,36 @@
+<table border='1'>
+		<tr>
+			<th>Origen</th>
+			<th></th>
+		</tr>
+
+	<?php 
+		foreach($this->dataList as $itemOrigin)
+		{
+	?>
+		<tr>
+			<td><?php echo $itemOrigin->getName(); ?></td>
+			<td>
+				<a href='<?php echo $this->url(
+					array(
+						'controller' => 'itemOrigin',
+						'action'     => 'edit',
+						'id'     => $itemOrigin->getId(),
+					), 'default', true) ?>'>Modificar</a>
+				<a href='<?php echo $this->url(
+					array(
+						'controller' => 'itemOrigin',
+						'action'     => 'remove',
+						'id'     => $itemOrigin->getId(),
+					), 'default', true) ?>'>Eliminar</a>
+			</td>
+		</tr>
+	<?php
+	}
+	?>
+	
+</table>
+
+<?php
+echo $this->htmlPaginator;
+?>

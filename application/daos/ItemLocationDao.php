@@ -19,4 +19,13 @@ class App_Dao_ItemLocationDao {
 
 		return $query->getResult ();
 	}
+	
+	public function getById($id) {
+		$query = $this->entityManager->createQuery( "SELECT ilocation FROM App_Model_ItemLocation ilocation WHERE ilocation.id = $id" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
 }

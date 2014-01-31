@@ -60,41 +60,32 @@ class ItemController extends Zend_Controller_Action {
 		
 			if ($form->isValid($formData)) {
 				
-				//echo "Everything is valid";
-				$itemTypeDao = new App_Dao_ItemTypeDao();
-				
+				echo "Everything is valid";
 				
 				$item = new App_Model_Item();
-				$item->setCode($formData['code']);
-				$item->setNewCode($formData['newCode']);
-				$item->setType( $itemTypeDao->getById($formData['type']) );
-				$item->setName($formData['name']);
-				$item->setBrand($formData['brand']);
-				$item->setMaterial($formData['material']);
-				$item->setColor($formData['color']);
-				$item->setOrigin($formData['origin']);
-				$item->setLocation($formData['location']);
-				$item->setOwner($formData['owner']);
-				$item->setQuantity($formData['quantity']);
-				$item->setUnitCost($formData['unitCost']);
-				$item->setExpectedCost($formData['expectedCost']);
-				$item->setSalesCost($formData['salesCost']);
-				$item->setCondition($formData['condition']);
-				$item->setAvailability($formData['availability']);
+				$item->setCode			( $formData['code'] );
+				$item->setNewCode		( $formData['newCode'] );
+				$item->setType			( $itemTypeDao->getById($formData['type']) );
+				$item->setName			( $formData['name'] );
+				$item->setBrand			( $itemBrandDao->getById($formData['brand']) );
+				$item->setMaterial		( $itemMaterialDao->getById($formData['material']) );
+				$item->setColor			( $itemColorDao->getById($formData['color']) );
+				$item->setOrigin		( $itemOriginDao->getById($formData['origin']) );
+				$item->setLocation		( $itemLocationDao->getById($formData['location']) );
+				$item->setOwner			( $itemOwnerDao->getById($formData['owner']) );
+				$item->setQuantity		( $formData['quantity'] );
+				$item->setUnitCost		( $formData['unitCost'] );
+				$item->setExpectedCost	( $formData['expectedCost'] );
+				$item->setSalesCost		( $formData['salesCost'] );
+				$item->setCondition		( $itemConditionDao->getById($formData['condition']) );
+				$item->setAvailability	( $itemAvailabilityDao->getById($formData['availability']) );
 				//$item->setComment($formData['comment']);
 				
 				$itemDao->save($item);
 				
-		
-				/*$registry = Zend_Registry::getInstance();
-				$entityManager = $registry->entityManager;
-				$entityManager->persist($book);
-				$entityManager->flush();
-				
-		
 				$this->_helper->redirector('index');
 		
-				return;*/
+				return;
 			}
 		}
 		$this->view->form = $form;

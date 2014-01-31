@@ -19,4 +19,13 @@ class App_Dao_ItemAvailabilityDao {
 
 		return $query->getResult ();
 	}
+	
+	public function getById($id) {
+		$query = $this->entityManager->createQuery( "SELECT iavailability FROM App_Model_ItemAvailability iavailability WHERE iavailability.id = $id" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
 }

@@ -19,4 +19,13 @@ class App_Dao_ItemColorDao {
 
 		return $query->getResult ();
 	}
+	
+	public function getById($id) {
+		$query = $this->entityManager->createQuery( "SELECT icolor FROM App_Model_ItemColor icolor WHERE icolor.id = $id" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
 }

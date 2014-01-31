@@ -19,4 +19,13 @@ class App_Dao_ItemBrandDao {
 
 		return $query->getResult ();
 	}
+	
+	public function getById($id) {
+		$query = $this->entityManager->createQuery( "SELECT ibrand FROM App_Model_ItemBrand ibrand WHERE ibrand.id = $id" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
 }

@@ -21,7 +21,7 @@ class App_Dao_ItemTypeDao {
 	}
 	
 	public function getById($id) {
-		$query = $this->entityManager->createQuery( "SELECT itype FROM App_Model_ItemType itype WHERE id = $id" );
+		$query = $this->entityManager->createQuery( "SELECT itype FROM App_Model_ItemType itype WHERE itype.id = $id" );
 		$arrayResult = $query->getResult();
 		if(count($arrayResult) > 0)
 			return $arrayResult[0];

@@ -19,4 +19,13 @@ class App_Dao_ItemMaterialDao {
 
 		return $query->getResult ();
 	}
+	
+	public function getById($id) {
+		$query = $this->entityManager->createQuery( "SELECT imaterial FROM App_Model_ItemMaterial imaterial WHERE imaterial.id = $id" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
 }

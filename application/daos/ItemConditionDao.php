@@ -19,4 +19,13 @@ class App_Dao_ItemConditionDao {
 
 		return $query->getResult ();
 	}
+	
+	public function getById($id) {
+		$query = $this->entityManager->createQuery( "SELECT icondition FROM App_Model_ItemCondition icondition WHERE icondition.id = $id" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
 }

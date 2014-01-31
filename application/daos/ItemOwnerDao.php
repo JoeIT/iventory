@@ -19,4 +19,13 @@ class App_Dao_ItemOwnerDao {
 
 		return $query->getResult ();
 	}
+	
+	public function getById($id) {
+		$query = $this->entityManager->createQuery( "SELECT iowner FROM App_Model_ItemOwner iowner WHERE iowner.id = $id" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
 }

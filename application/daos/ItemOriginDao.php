@@ -30,5 +30,14 @@ class App_Dao_ItemOriginDao {
 		
 		return $query->getResult ();
 	}
+	
+	public function getById($id) {
+		$query = $this->entityManager->createQuery( "SELECT iorigin FROM App_Model_ItemOrigin iorigin WHERE iorigin.id = $id" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
 }
 	

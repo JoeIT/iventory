@@ -37,7 +37,7 @@ class App_Dao_ItemDao {
 	
 	// ----------------------------------------------------------------
 	public function getById($id) {
-		$query = $this->entityManager->createQuery('SELECT i FROM App_Model_Item i WHERE i.id = ' . $id);
+		$query = $this->entityManager->createQuery( "SELECT i FROM App_Model_Item i WHERE i.id = $id" );
 		$arrayResult = $query->getResult();
 		if(count($arrayResult) > 0)
 			return $arrayResult[0];

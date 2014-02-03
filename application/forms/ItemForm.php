@@ -26,7 +26,7 @@ class App_Form_ItemForm extends Zend_Form
 		$name->setLabel("Nombre:");
 		$name->setRequired(false);
 		
-		$brand = new Zend_Form_Element_Select('brand');
+		/*$brand = new Zend_Form_Element_Select('brand');
 		$brand->setLabel("Marca:");
 		$brand->setRequired(false);
 		
@@ -48,7 +48,7 @@ class App_Form_ItemForm extends Zend_Form
 		
 		$owner = new Zend_Form_Element_Select('owner');
 		$owner->setLabel("Propiedad:");
-		$owner->setRequired(false);
+		$owner->setRequired(false);*/
 		
 		$quantity = new Zend_Form_Element_Text('quantity');
 		$quantity->setLabel("Cantidad:");
@@ -70,13 +70,13 @@ class App_Form_ItemForm extends Zend_Form
 		$salesCost->setLabel("Costo de venta:");
 		$salesCost->setRequired(false);
 		
-		$condition = new Zend_Form_Element_Select('condition');
+		/*$condition = new Zend_Form_Element_Select('condition');
 		$condition->setLabel("Estado:");
 		$condition->setRequired(false);
 		
 		$availability = new Zend_Form_Element_Select('availability');
 		$availability->setLabel("Disponibilidad:");
-		$availability->setRequired(false);
+		$availability->setRequired(false);*/
 		
 		$comment = new Zend_Form_Element_Textarea('comment');
 		$comment->setLabel("Comentario:");
@@ -94,19 +94,19 @@ class App_Form_ItemForm extends Zend_Form
 				$newCode, 
 				$type, 
 				$name, 
-				$brand, 
+				/*$brand, 
 				$material, 
 				$color, 
 				$origin, 
 				$location, 
-				$owner, 
+				$owner, */
 				$quantity, 
 				$unitCost, 
 				$minimumCost, 
 				$expectedCost, 
 				$salesCost, 
-				$condition, 
-				$availability, 
+				/*$condition, 
+				$availability, */
 				$comment, 
 				$submit));
 	}

@@ -30,7 +30,7 @@ class App_Model_Item {
 	protected $newCode;
 	
 	/**
-	 * @var string
+	 * @var App_Model_ItemType
 	 *
 	 * @ManyToOne(targetEntity="App_Model_ItemType")
 	 * @JoinColumn(name="type_id", referencedColumnName="id")
@@ -45,7 +45,7 @@ class App_Model_Item {
 	protected $name;
 	
 	/**
-	 * @var string
+	 * @var App_Model_ItemBrand
 	 *
 	 * @ManyToOne(targetEntity="App_Model_ItemBrand")
 	 * @JoinColumn(name="brand_id", referencedColumnName="id")
@@ -53,7 +53,7 @@ class App_Model_Item {
 	protected $brand;
 	
 	/**
-	 * @var string
+	 * @var App_Model_ItemMaterial
 	 *
 	 * @ManyToOne(targetEntity="App_Model_ItemMaterial")
 	 * @JoinColumn(name="material_id", referencedColumnName="id")
@@ -61,7 +61,7 @@ class App_Model_Item {
 	protected $material;
 	
 	/**
-	 * @var string
+	 * @var App_Model_ItemColor
 	 *
 	 * @ManyToOne(targetEntity="App_Model_ItemColor")
 	 * @JoinColumn(name="color_id", referencedColumnName="id")
@@ -69,7 +69,7 @@ class App_Model_Item {
 	protected $color;
 	
 	/**
-	 * @var string
+	 * @var App_Model_ItemOrigin
 	 *
 	 * @ManyToOne(targetEntity="App_Model_ItemOrigin")
 	 * @JoinColumn(name="origin_id", referencedColumnName="id")
@@ -77,7 +77,7 @@ class App_Model_Item {
 	protected $origin;
 	
 	/**
-	 * @var string
+	 * @var App_Model_ItemLocation
 	 *
 	 * @ManyToOne(targetEntity="App_Model_ItemLocation")
 	 * @JoinColumn(name="location_id", referencedColumnName="id")
@@ -85,7 +85,7 @@ class App_Model_Item {
 	protected $location;
 	
 	/**
-	 * @var string
+	 * @var App_Model_ItemOwner
 	 *
 	 * @ManyToOne(targetEntity="App_Model_ItemOwner")
 	 * @JoinColumn(name="owner_id", referencedColumnName="id")
@@ -121,7 +121,7 @@ class App_Model_Item {
 	protected $salesCost;
 	
 	/**
-	 * @var string
+	 * @var App_Model_ItemCondition
 	 *
 	 * @ManyToOne(targetEntity="App_Model_ItemCondition")
 	 * @JoinColumn(name="condition_id", referencedColumnName="id")
@@ -129,7 +129,7 @@ class App_Model_Item {
 	protected $condition;
 	
 	/**
-	 * @var string
+	 * @var App_Model_ItemAvailability
 	 *
 	 * @ManyToOne(targetEntity="App_Model_ItemAvailability")
 	 * @JoinColumn(name="availability_id", referencedColumnName="id")

@@ -67,4 +67,8 @@ class App_Model_ItemType {
 	public function setDescription($description) {
 		$this->description = $description;
 	}
+	
+	public function toArray() {
+		return get_object_vars($this);
+	}
 }

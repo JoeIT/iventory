@@ -1,0 +1,5 @@
+- Agregar la opcion de guaradar fotos.
+- Agregar validadores de campos, qitando caracteres especiales.
+- Agregar buscador.
+- Restringir guardar items duplicados.
+- 

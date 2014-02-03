@@ -177,7 +177,7 @@ class App_Model_Item {
 	}
 	
 	public function getName() {
-		return utf8_encode($this->name);
+		return $this->name;
 	}
 	
 	public function setName($name) {
@@ -286,5 +286,9 @@ class App_Model_Item {
 	
 	public function setComment($comment) {
 		return $this->comment = $comment;
+	}
+	
+	public function toArray() {
+		return get_object_vars($this);
 	}
 }

@@ -17,7 +17,7 @@ class App_Form_ItemForm extends Zend_Form
 		$newCode->setLabel("Nuevo codigo:");
 		$newCode->setRequired(false);
 		
-		$type = new Zend_Form_Element_Select('type');
+		$type = new Zend_Form_Element_Select('type_select');
 		//$type->addMultiOptions($this->typeArray);
 		$type->setLabel("Tipo:");
 		$type->setRequired(false);
@@ -26,29 +26,29 @@ class App_Form_ItemForm extends Zend_Form
 		$name->setLabel("Nombre:");
 		$name->setRequired(false);
 		
-		/*$brand = new Zend_Form_Element_Select('brand');
+		$brand = new Zend_Form_Element_Select('brand_select');
 		$brand->setLabel("Marca:");
 		$brand->setRequired(false);
 		
-		$material = new Zend_Form_Element_Select('material');
+		$material = new Zend_Form_Element_Select('material_select');
 		$material->setLabel("Material:");
 		$material->setRequired(false);
 		
-		$color = new Zend_Form_Element_Select('color');
+		$color = new Zend_Form_Element_Select('color_select');
 		$color->setLabel("Color:");
 		$color->setRequired(false);
 		
-		$origin = new Zend_Form_Element_Select('origin');
+		$origin = new Zend_Form_Element_Select('origin_select');
 		$origin->setLabel("Procedencia:");
 		$origin->setRequired(false);
 		
-		$location = new Zend_Form_Element_Select('location');
+		$location = new Zend_Form_Element_Select('location_select');
 		$location->setLabel("Ubicacion:");
 		$location->setRequired(false);
 		
-		$owner = new Zend_Form_Element_Select('owner');
+		$owner = new Zend_Form_Element_Select('owner_select');
 		$owner->setLabel("Propiedad:");
-		$owner->setRequired(false);*/
+		$owner->setRequired(false);
 		
 		$quantity = new Zend_Form_Element_Text('quantity');
 		$quantity->setLabel("Cantidad:");
@@ -70,13 +70,13 @@ class App_Form_ItemForm extends Zend_Form
 		$salesCost->setLabel("Costo de venta:");
 		$salesCost->setRequired(false);
 		
-		/*$condition = new Zend_Form_Element_Select('condition');
+		$condition = new Zend_Form_Element_Select('condition_select');
 		$condition->setLabel("Estado:");
 		$condition->setRequired(false);
 		
-		$availability = new Zend_Form_Element_Select('availability');
+		$availability = new Zend_Form_Element_Select('availability_select');
 		$availability->setLabel("Disponibilidad:");
-		$availability->setRequired(false);*/
+		$availability->setRequired(false);
 		
 		$comment = new Zend_Form_Element_Textarea('comment');
 		$comment->setLabel("Comentario:");
@@ -94,19 +94,19 @@ class App_Form_ItemForm extends Zend_Form
 				$newCode, 
 				$type, 
 				$name, 
-				/*$brand, 
+				$brand, 
 				$material, 
 				$color, 
 				$origin, 
 				$location, 
-				$owner, */
+				$owner, 
 				$quantity, 
 				$unitCost, 
 				$minimumCost, 
 				$expectedCost, 
 				$salesCost, 
-				/*$condition, 
-				$availability, */
+				$condition, 
+				$availability, 
 				$comment, 
 				$submit));
 	}

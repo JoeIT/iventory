@@ -26,7 +26,7 @@ class App_Dao_ItemOriginDao {
 	
 	// ----------------------------------------------------------------
 	public function getAllLimitOffset($limit, $offset) {
-		$query = $this->entityManager->createQuery ( 'SELECT io FROM App_Model_ItemOrigin io ORDER BY iorigin.name' )->setFirstResult ( $offset )->setMaxResults ( $limit );
+		$query = $this->entityManager->createQuery ( 'SELECT iorigin FROM App_Model_ItemOrigin iorigin ORDER BY iorigin.name' )->setFirstResult ( $offset )->setMaxResults ( $limit );
 		
 		return $query->getResult ();
 	}

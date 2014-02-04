@@ -22,9 +22,6 @@ echo $this->url ( array (
 		<th>Ubicaci&oacute;n</th>
 		<th>Propietario</th>
 		<th>Cantidad</th>
-		<th>Costo unit.</th>
-		<th>Costo esperado</th>
-		<th>Costo de venta</th>
 		<th>Estado</th>
 		<th>Disponibilidad</th>
 		<th></th>
@@ -45,9 +42,6 @@ echo $this->url ( array (
 		<td><?php echo $item->getLocation()->getName(); ?></td>
 		<td><?php echo $item->getOwner()->getName(); ?></td>
 		<td align="right"><?php echo $item->getQuantity(); ?></td>
-		<td align="right"><?php echo $item->getUnitCost(); ?></td>
-		<td align="right"><?php echo $item->getExpectedCost(); ?></td>
-		<td align="right"><?php echo $item->getSalesCost(); ?></td>
 		<td><?php echo $item->getCondition()->getName(); ?></td>
 		<td><?php echo $item->getAvailability()->getName(); ?></td>
 		<td align="center">

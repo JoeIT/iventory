@@ -142,6 +142,21 @@ class App_Model_Item {
 	 * @Column(name="comment", type="string", length=20, nullable=true)
 	 */
 	protected $comment;
+	
+	/**
+	 * @var datetime
+	 *
+	 * @Column(name="creation_date", type="datetime", nullable=true)
+	 */
+	protected $creationDate;
+	
+	/**
+	 * @var datetime
+	 *
+	 * @Column(name="modified_date", type="datetime", nullable=true)
+	 */
+	protected $modifiedDate;
+	
 
 
 	public function getId() {
@@ -286,6 +301,22 @@ class App_Model_Item {
 	
 	public function setComment($comment) {
 		return $this->comment = $comment;
+	}
+	
+	public function getCreationDate() {
+		return $this->creationDate;
+	}
+	
+	public function setCreationDate($creationDate) {
+		return $this->creationDate = $creationDate;
+	}
+	
+	public function getModifiedDate() {
+		return $this->modifiedDate;
+	}
+	
+	public function setModifiedDate($modifiedDate) {
+		return $this->modifiedDate = $modifiedDate;
 	}
 	
 	public function toArray() {

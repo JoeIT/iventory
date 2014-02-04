@@ -14,6 +14,11 @@ class App_Dao_ItemDao {
 		$this->entityManager->flush ();
 	}
 	
+	public function remove(App_Model_Item $item) {
+		$this->entityManager->remove($item);
+		$this->entityManager->flush();
+	}
+	
 	public function getAll() {
 		$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i ORDER BY i.code, i.newCode' );
 
@@ -42,6 +47,6 @@ class App_Dao_ItemDao {
 		if(count($arrayResult) > 0)
 			return $arrayResult[0];
 		else
-			return null;		
+			return null;
 	}
 }

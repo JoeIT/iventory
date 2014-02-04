@@ -80,6 +80,7 @@ class ItemController extends Zend_Controller_Action {
 				$item->setCondition		( $this->_itemConditionDao->getById($formData['condition_select']) );
 				$item->setAvailability	( $this->_itemAvailabilityDao->getById($formData['availability_select']) );
 				$item->setComment		( $formData['comment'] );
+				$item->setCreationDate	( date_create(date('Y-m-d H:m:s')) );
 				
 				$itemDao->save($item);
 				
@@ -112,7 +113,6 @@ class ItemController extends Zend_Controller_Action {
 		
 			if ($form->isValid($formData)) {
 				
-				//$item = new App_Model_Item();
 				$item->setCode			( $formData['code'] );
 				$item->setNewCode		( $formData['newCode'] );
 				$item->setType			( $this->_itemTypeDao->getById($formData['type_select']) );
@@ -130,6 +130,7 @@ class ItemController extends Zend_Controller_Action {
 				$item->setCondition		( $this->_itemConditionDao->getById($formData['condition_select']) );
 				$item->setAvailability	( $this->_itemAvailabilityDao->getById($formData['availability_select']) );
 				$item->setComment		( $formData['comment'] );
+				$item->setModifiedDate	( date_create(date('Y-m-d H:m:s')) );
 		
 				$itemDao->save($item);
 		
@@ -160,6 +161,34 @@ class ItemController extends Zend_Controller_Action {
 		
 		//$this->view->item = $item;
 		$this->view->form = $form;
+	}
+	
+	public function removeAction() {
+		$id = $this->_getParam('id', '');
+		if (empty($id))
+			$this->_helper->redirector('index');
+		
+		$itemDao = new App_Dao_ItemDao();
+		$item = $itemDao->getById($id);
+		
+		if($item == null)
+			$this->_helper->redirector('index');
+		
+		$this->view->item = $item;
+		
+		if ($this->_request->getPost()) {
+			
+			$itemDao->remove($item);
+			$this->_helper->redirector('index');
+			return;			
+		}		
+	}
+	
+	public function testAction() {
+		echo "Running....";
+		
+		mkdir("NewDir", "0777");
+		
 	}
 	
 	private function _loadFormSelects(&$form) {

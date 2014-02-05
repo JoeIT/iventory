@@ -11,7 +11,7 @@ class App_Form_ItemForm extends Zend_Form
 		
 		$code = new Zend_Form_Element_Text('code');
 		$code->setLabel("Codigo:");
-		$code->setRequired(false);
+		$code->setRequired(true);
 		
 		$newCode = new Zend_Form_Element_Text('newCode');
 		$newCode->setLabel("Nuevo codigo:");

@@ -11,6 +11,8 @@ class ItemController extends Zend_Controller_Action {
 	private $_itemConditionDao;
 	private $_itemAvailabilityDao;
 	
+	const PHOTO_ROOT_URL = "Photos/";
+	
 	
 	public function init() {
 		/* Initialize action controller here */
@@ -82,11 +84,22 @@ class ItemController extends Zend_Controller_Action {
 				$item->setComment		( $formData['comment'] );
 				$item->setCreationDate	( date_create(date('Y-m-d H:m:s')) );
 				
-				$itemDao->save($item);
+				$photoUrl = $item->getCode();
 				
-				$this->_helper->redirector('index');
-		
-				return;
+				if( !empty( $item->getNewCode() ) )
+					$photoUrl = $item->getNewCode();
+				
+				$item->setPhotoDir($photoUrl);
+				
+				$dirPermission = "0777";
+				if( mkdir( self::PHOTO_ROOT_URL .  $photoUrl, $dirPermission) )
+				{
+					$itemDao->save($item);
+					$this->_helper->redirector('index');
+					return;
+				}
+				else
+					$this->view->message = "Error al crear directorio de fotografias.";
 			}
 		}
 		$this->view->form = $form;
@@ -113,6 +126,9 @@ class ItemController extends Zend_Controller_Action {
 		
 			if ($form->isValid($formData)) {
 				
+				$lastCode = $item->getCode();
+				$lastNewCode = $item->getNewCode();
+				
 				$item->setCode			( $formData['code'] );
 				$item->setNewCode		( $formData['newCode'] );
 				$item->setType			( $this->_itemTypeDao->getById($formData['type_select']) );
@@ -132,11 +148,33 @@ class ItemController extends Zend_Controller_Action {
 				$item->setComment		( $formData['comment'] );
 				$item->setModifiedDate	( date_create(date('Y-m-d H:m:s')) );
 		
-				$itemDao->save($item);
-		
-				$this->_helper->redirector('index');
-		
-				return;
+				$newPhotoUrl = "";
+				
+				if( !empty($item->getNewCode()) ) {
+					if( $lastNewCode != $item->getNewCode() ) 
+						$newPhotoUrl = $item->getNewCode();
+				}					
+				else {
+					if( !empty($lastNewCode) || $lastCode != $item->getCode() )
+						$newPhotoUrl = $item->getCode();
+				}
+				
+				if( !empty( $newPhotoUrl ) ) {
+					if( rename( self::PHOTO_ROOT_URL . $item->getPhotoDir(), self::PHOTO_ROOT_URL . $newPhotoUrl) )
+					{
+						$item->setPhotoDir( $newPhotoUrl );
+						$itemDao->save($item);
+						$this->_helper->redirector('index');
+						return;
+					}
+					else
+						$this->view->message = "Error al renombrar directorio de fotografias.";
+				}
+				else {
+					$itemDao->save($item);
+					$this->_helper->redirector('index');
+					return;
+				}
 			}
 		}
 		else {
@@ -147,7 +185,7 @@ class ItemController extends Zend_Controller_Action {
 			$form->populate($item->toArray());
 			$this->_loadFormSelects($form);
 			
-			//  
+			// 
 			$form->type_select->		setValue( $item->getType()->getId() );
 			$form->brand_select->		setValue( $item->getBrand()->getId() );
 			$form->material_select->	setValue( $item->getMaterial()->getId() );
@@ -187,8 +225,10 @@ class ItemController extends Zend_Controller_Action {
 	public function testAction() {
 		echo "Running....";
 		
-		mkdir("NewDir", "0777");
-		
+		// Create directory, with full permissions
+		//mkdir("NewDir", "0777");
+		// Rename
+		//rename("newDir", "renameDir");
 	}
 	
 	private function _loadFormSelects(&$form) {

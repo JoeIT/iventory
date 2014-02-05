@@ -144,6 +144,13 @@ class App_Model_Item {
 	protected $comment;
 	
 	/**
+	 * @var string
+	 *
+	 * @Column(name="photo_dir", type="string", length=100, nullable=false)
+	 */
+	protected $photoDir;
+	
+	/**
 	 * @var datetime
 	 *
 	 * @Column(name="creation_date", type="datetime", nullable=true)
@@ -301,6 +308,14 @@ class App_Model_Item {
 	
 	public function setComment($comment) {
 		return $this->comment = $comment;
+	}
+	
+	public function getPhotoDir() {
+		return $this->photoDir;
+	}
+	
+	public function setPhotoDir($photoDir) {
+		return $this->photoDir = $photoDir;
 	}
 	
 	public function getCreationDate() {

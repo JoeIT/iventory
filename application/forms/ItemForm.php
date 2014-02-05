@@ -10,7 +10,7 @@ class App_Form_ItemForm extends Zend_Form
 		$this->getView()->setEscape('stripslashes');
 		
 		$code = new Zend_Form_Element_Text('code');
-		$code->setLabel("Codigo:");
+		$code->setLabel("Codigo (*):");
 		$code->setRequired(true);
 		
 		$newCode = new Zend_Form_Element_Text('newCode');

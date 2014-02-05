@@ -74,6 +74,18 @@
 </tr>
 <tr>
 	<th align="right">Observaciones:</th>
-	<td><?php echo $this->item->getComment(); ?></td>
+	<td><p><?php echo str_replace(chr(13), "<br/>", $this->item->getComment()); ?></p></td>
 </tr>
 </table>
+
+<div id="item_images">
+	<?php
+	$folder = $this->photosPath . $this->item->getPhotoDir() . '/';
+	$filetype = '*.*';
+	$files = glob($folder . $filetype);
+	
+	for ($i=0; $i<count($files); $i++) {
+		echo "<img src='" . $this->rootPath . $files[$i] . "' />";
+	}
+	?>
+</div>

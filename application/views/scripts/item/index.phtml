@@ -1,15 +1,16 @@
 <h1>Lista items:</h1>
 
-<table border='1' align="center">
-	<tr>
-		<td colspan="17" align="right"><a
+
+<div align="right"><a
 			href='<?php
 			
 echo $this->url ( array (
 					'controller' => 'item',
 					'action' => 'add' 
-			), 'default', true )?>'>Agregar item</a></td>
-	</tr>
+			), 'default', true )?>'>Agregar item</a>
+</div>
+	
+<table border='0' align="center">
 	<tr>
 		<th>C&oacute;digo</th>
 		<th>Nuevo c&oacute;digo</th>
@@ -20,10 +21,7 @@ echo $this->url ( array (
 		<th>Color</th>
 		<th>Procedencia</th>
 		<th>Ubicaci&oacute;n</th>
-		<th>Propietario</th>
 		<th>Cantidad</th>
-		<th>Estado</th>
-		<th>Disponibilidad</th>
 		<th></th>
 	</tr>
 
@@ -40,10 +38,7 @@ echo $this->url ( array (
 		<td><?php echo $item->getColor()->getName(); ?></td>
 		<td><?php echo $item->getOrigin()->getName(); ?></td>
 		<td><?php echo $item->getLocation()->getName(); ?></td>
-		<td><?php echo $item->getOwner()->getName(); ?></td>
 		<td align="right"><?php echo $item->getQuantity(); ?></td>
-		<td><?php echo $item->getCondition()->getName(); ?></td>
-		<td><?php echo $item->getAvailability()->getName(); ?></td>
 		<td align="center">
 			<a
 				href='<?php		
@@ -53,6 +48,7 @@ echo $this->url ( array (
 								'id' => $item->getId () 
 						), 'default', true )?>'>Ver
 			</a>
+			<br/>
 			<a
 				href='<?php		
 				echo $this->url ( array (
@@ -61,6 +57,7 @@ echo $this->url ( array (
 								'id' => $item->getId () 
 						), 'default', true )?>'>Modificar
 			</a>
+			<br/>
 			<a
 				href='<?php				
 				echo $this->url ( array (
@@ -73,11 +70,10 @@ echo $this->url ( array (
 	</tr>
 	<?php
 	}
-	?>
-	<tr>
-		<td colspan="17" align="center">
-			<?php echo $this->htmlPaginator; ?>
-		</td>
-	</tr>
+	?>	
 </table>
+
+<div align="center" class="paginator_field">
+			<?php echo $this->htmlPaginator; ?>
+</div>
 

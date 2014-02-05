@@ -249,7 +249,25 @@ img {
 }
 /* end of footer */
 
+/************************************************/
+tr:nth-child(even) {
+  background-color: #625D5D;
+}
+
 th {
 	/*color: #DF7AE6*/
 	color: #6391C6
+}
+
+div img {
+    display: block;
+    margin: 20px auto 10px;
+    max-width: 900px;
+    outline: none;
+}
+div img:active {
+    max-width: 100%;
+}
+.paginator_field {
+	background-color: #363333;
 }

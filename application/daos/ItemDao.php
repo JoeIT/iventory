@@ -20,7 +20,7 @@ class App_Dao_ItemDao {
 	}
 	
 	public function getAll() {
-		$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i ORDER BY i.code, i.newCode' );
+		$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i ORDER BY i.code, i.newCode, i.accountingCode' );
 
 		return $query->getResult ();
 	}
@@ -35,7 +35,7 @@ class App_Dao_ItemDao {
 
 	// ----------------------------------------------------------------
 	public function getAllLimitOffset($limit, $offset) {
-		$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i ORDER BY i.code, i.newCode' )->setFirstResult ( $offset )->setMaxResults ( $limit );
+		$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i ORDER BY i.code, i.newCode, i.accountingCode' )->setFirstResult ( $offset )->setMaxResults ( $limit );
 
 		return $query->getResult ();
 	}

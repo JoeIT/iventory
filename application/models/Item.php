@@ -18,16 +18,23 @@ class App_Model_Item {
 	/**
 	 * @var string
 	 *
-	 * @Column(name="code", type="string", length=20, nullable=true)
+	 * @Column(name="code", type="string", length=50, nullable=true)
 	 */
 	protected $code;
 	
 	/**
 	 * @var string
 	 *
-	 * @Column(name="new_code", type="string", length=20, nullable=true)
+	 * @Column(name="new_code", type="string", length=50, nullable=true)
 	 */
 	protected $newCode;
+	
+	/**
+	 * @var string
+	 *
+	 * @Column(name="accounting_code", type="string", length=50, nullable=true)
+	 */
+	protected $accountingCode;
 	
 	/**
 	 * @var App_Model_ItemType
@@ -188,6 +195,14 @@ class App_Model_Item {
 	
 	public function setNewCode($newCode) {
 		$this->newCode = $newCode;
+	}
+	
+	public function getAccountingCode() {
+		return utf8_encode($this->accountingCode);
+	}
+	
+	public function setAccountingCode($accountingCode) {
+		$this->accountingCode = $accountingCode;
 	}
 	
 	public function getType() {

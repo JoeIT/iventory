@@ -76,6 +76,7 @@ class ItemController extends Zend_Controller_Action {
 				$item = new App_Model_Item();
 				$item->setCode			( $formData['code'] );
 				$item->setNewCode		( $formData['newCode'] );
+				$item->setAccountingCode( $formData['accountingCode'] );
 				$item->setType			( $this->_itemTypeDao->getById($formData['type_select']) );
 				$item->setName			( $formData['name'] );
 				$item->setBrand			( $this->_itemBrandDao->getById($formData['brand_select']) );
@@ -140,6 +141,7 @@ class ItemController extends Zend_Controller_Action {
 				
 				$item->setCode			( $formData['code'] );
 				$item->setNewCode		( $formData['newCode'] );
+				$item->setAccountingCode( $formData['accountingCode'] );
 				$item->setType			( $this->_itemTypeDao->getById($formData['type_select']) );
 				$item->setName			( $formData['name'] );
 				$item->setBrand			( $this->_itemBrandDao->getById($formData['brand_select']) );

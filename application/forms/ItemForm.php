@@ -17,6 +17,10 @@ class App_Form_ItemForm extends Zend_Form
 		$newCode->setLabel("Nuevo codigo:");
 		$newCode->setRequired(false);
 		
+		$accountingCode = new Zend_Form_Element_Text('accountingCode');
+		$accountingCode->setLabel("Codigo contable:");
+		$accountingCode->setRequired(false);
+		
 		$type = new Zend_Form_Element_Select('type_select');
 		//$type->addMultiOptions($this->typeArray);
 		$type->setLabel("Tipo:");
@@ -92,6 +96,7 @@ class App_Form_ItemForm extends Zend_Form
 		
 		$this->addElements(array($code, 
 				$newCode, 
+				$accountingCode, 
 				$type, 
 				$name, 
 				$brand, 

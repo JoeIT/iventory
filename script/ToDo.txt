@@ -3,7 +3,7 @@
 - Agregar buscador.
 - Restringir guardar items duplicados.
 - Restringir borrar items con dependencias.
-
+- Agregar decorators para cada tipo de elemento de un form
 
 
 

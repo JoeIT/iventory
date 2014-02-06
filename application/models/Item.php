@@ -14,7 +14,8 @@ class App_Model_Item {
 	 * @GeneratedValue(strategy="IDENTITY")
 	 */
 	protected $id;
-
+	
+	// The custom format validator depends of this name
 	/**
 	 * @var string
 	 *
@@ -22,6 +23,7 @@ class App_Model_Item {
 	 */
 	protected $code;
 	
+	// The custom format validator depends of this name
 	/**
 	 * @var string
 	 *
@@ -29,6 +31,7 @@ class App_Model_Item {
 	 */
 	protected $newCode;
 	
+	// The custom format validator depends of this name
 	/**
 	 * @var string
 	 *

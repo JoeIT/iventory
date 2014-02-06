@@ -21,6 +21,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		$this->_resourceLoader->addResourceType('dao', 'daos/', 'Dao');
 		$this->_resourceLoader->addResourceType('util', 'utils/', 'Util');
 		$this->_resourceLoader->addResourceType('obj', 'objs/', 'Obj');
+		$this->_resourceLoader->addResourceType('form_validators', 'form_validators/', 'CustomZendValidator');
+		$this->_resourceLoader->addResourceType('form_decorators', 'form_decorators/', 'CustomDecorator');
     }
 	
     /**

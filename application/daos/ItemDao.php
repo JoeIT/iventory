@@ -49,4 +49,31 @@ class App_Dao_ItemDao {
 		else
 			return null;
 	}
+	
+	public function getByCode($code) {
+		$query = $this->entityManager->createQuery( "SELECT i FROM App_Model_Item i WHERE i.code = '$code'" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
+	
+	public function getByNewCode($newCode) {
+		$query = $this->entityManager->createQuery( "SELECT i FROM App_Model_Item i WHERE i.newCode = '$newCode'" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
+	
+	public function getByAccountingCode($accountingCode) {
+		$query = $this->entityManager->createQuery( "SELECT i FROM App_Model_Item i WHERE i.accountingCode = '$accountingCode'" );
+		$arrayResult = $query->getResult();
+		if(count($arrayResult) > 0)
+			return $arrayResult[0];
+		else
+			return null;
+	}
 }

@@ -61,16 +61,13 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~4 rows (approximately)
+-- Dumping data for table inventory.item: ~1 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
-	(21, '04-001', '', '30.06.04.00002', 3, 'MAQUINA DE COSTURA TRIPLE BRAZO LARGO', 9, 5, 6, 17, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 2, 3, 'MAQUINA:\r\nMarca: PFAFF\r\nModelo: PFAFF\r\nSerie: 633860\r\n\r\nMOTOR:\r\nMarca: ZOJE\r\nModelo: DOL12H-1\r\nSerie: 8123272', '04-001', '2014-02-05 15:02:25', '2014-02-06 08:02:30'),
-	(22, 'newnew', '', NULL, 2, '', 8, 1, 4, 2, 5, 1, 0.000, 0.00, 0.00, 0.00, 0.00, 4, 1, 'Hola \r\na\r\ntodos', 'newnew', '2014-02-05 16:02:20', '2014-02-05 17:02:59'),
-	(23, '11', '', NULL, 2, '', 8, 1, 4, 2, 5, 1, 0.000, 0.00, 0.00, 0.00, 0.00, 4, 1, 'Aqui se\r\nsabra\r\nsi funca\r\nesta cosa.', '11', '2014-02-05 17:02:40', NULL),
-	(24, 'dfgdfg', '', NULL, 2, '', 8, 1, 4, 2, 5, 1, 0.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '', 'dfgdfg', '2014-02-05 17:02:33', NULL);
+	(1, '04-001', '', '30.06.04.00002', 3, 'MAQUINA DE COSTURA TRIPLE BRAZO LARGO', 9, 5, 6, 17, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 2, 3, 'MAQUINA:\r\nMarca: PFAFF\r\nModelo: PFAFF\r\nSerie: 633860\r\n\r\nMOTOR:\r\nMarca: ZOJE\r\nModelo: DOL12H-1\r\nSerie: 8123272', '04-001', '2014-02-05 15:02:25', '2014-02-06 08:02:30');
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -81,15 +78,16 @@ CREATE TABLE IF NOT EXISTS `item_availability` (
   `name` varchar(20) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_availability: ~3 rows (approximately)
+-- Dumping data for table inventory.item_availability: ~4 rows (approximately)
 DELETE FROM `item_availability`;
 /*!40000 ALTER TABLE `item_availability` DISABLE KEYS */;
 INSERT INTO `item_availability` (`id`, `name`, `description`) VALUES
-	(1, 'En venta', NULL),
-	(2, 'NO venta', NULL),
-	(3, 'No hay dato', NULL);
+	(1, '- Seleccionar -', NULL),
+	(2, 'En venta', NULL),
+	(3, 'NO venta', NULL),
+	(4, 'No hay dato', NULL);
 /*!40000 ALTER TABLE `item_availability` ENABLE KEYS */;
 
 
@@ -99,22 +97,23 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~10 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~11 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
-	(1, 'Sony'),
-	(2, 'Samsung'),
-	(3, 'Toyota'),
-	(4, 'Fiat'),
-	(5, 'Lg'),
-	(6, 'Dell'),
-	(7, 'Hp'),
-	(8, 'Acer'),
-	(9, 'PFAFF'),
-	(10, 'No hay dato');
+	(1, '- Seleccionar -'),
+	(2, 'Sony'),
+	(3, 'Samsung'),
+	(4, 'Toyota'),
+	(5, 'Fiat'),
+	(6, 'Lg'),
+	(7, 'Dell'),
+	(8, 'Hp'),
+	(9, 'Acer'),
+	(10, 'PFAFF'),
+	(11, 'No hay dato');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -124,18 +123,19 @@ CREATE TABLE IF NOT EXISTS `item_color` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_color: ~6 rows (approximately)
+-- Dumping data for table inventory.item_color: ~7 rows (approximately)
 DELETE FROM `item_color`;
 /*!40000 ALTER TABLE `item_color` DISABLE KEYS */;
 INSERT INTO `item_color` (`id`, `name`) VALUES
-	(1, 'Negro'),
-	(2, 'Azul'),
-	(3, 'Blanco'),
-	(4, 'Amarillo'),
-	(5, 'Verde'),
-	(6, 'No hay dato');
+	(1, '- Seleccionar -'),
+	(2, 'Negro'),
+	(3, 'Azul'),
+	(4, 'Blanco'),
+	(5, 'Amarillo'),
+	(6, 'Verde'),
+	(7, 'No hay dato');
 /*!40000 ALTER TABLE `item_color` ENABLE KEYS */;
 
 
@@ -146,19 +146,20 @@ CREATE TABLE IF NOT EXISTS `item_condition` (
   `name` varchar(20) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_condition: ~7 rows (approximately)
+-- Dumping data for table inventory.item_condition: ~8 rows (approximately)
 DELETE FROM `item_condition`;
 /*!40000 ALTER TABLE `item_condition` DISABLE KEYS */;
 INSERT INTO `item_condition` (`id`, `name`, `description`) VALUES
-	(1, 'Nuevo', NULL),
-	(2, 'Buen estado', NULL),
-	(3, 'Medio uso', NULL),
-	(4, 'Antiguo', NULL),
-	(5, 'Dañado', NULL),
-	(6, 'Inservible', NULL),
-	(7, 'No hay dato', NULL);
+	(1, '- Seleccionar -', NULL),
+	(2, 'Nuevo', NULL),
+	(3, 'Buen estado', NULL),
+	(4, 'Medio uso', NULL),
+	(5, 'Antiguo', NULL),
+	(6, 'Dañado', NULL),
+	(7, 'Inservible', NULL),
+	(8, 'No hay dato', NULL);
 /*!40000 ALTER TABLE `item_condition` ENABLE KEYS */;
 
 
@@ -169,20 +170,30 @@ CREATE TABLE IF NOT EXISTS `item_location` (
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_location: ~8 rows (approximately)
+-- Dumping data for table inventory.item_location: ~9 rows (approximately)
 DELETE FROM `item_location`;
 /*!40000 ALTER TABLE `item_location` DISABLE KEYS */;
 INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
-	(1, 'Sala de reuniones', NULL),
-	(2, 'Oficina Gerencia', NULL),
-	(3, 'Area corte', NULL),
-	(4, 'Area diseño', NULL),
-	(5, 'Almacén', NULL),
-	(6, 'Depósito', NULL),
-	(7, 'Oficina contabilidad', NULL),
-	(8, 'No hay dato', NULL);
+	(1, '- Seleccionar -', NULL),
+	(2, 'Sala de reuniones', NULL),
+	(3, 'Oficina gerencia', NULL),
+	(4, 'Area corte', NULL),
+	(5, 'Area diseño', NULL),
+	(6, 'Area almacén', NULL),
+	(7, 'Depósito bloque oficinas', NULL),
+	(8, 'Oficina contabilidad', NULL),
+	(9, 'No hay dato', NULL),
+	(10, 'Oficina Michelle', NULL),
+	(11, 'Oficina sistemas', NULL),
+	(12, 'Area impresión laser', NULL),
+	(13, 'Oficina showroom', NULL),
+	(14, 'Depósito trasero', NULL),
+	(15, 'Planta línea', NULL),
+	(16, 'Area tapiceria', NULL),
+	(17, 'Area mecánica', NULL),
+	(18, 'Oficinas', NULL);
 /*!40000 ALTER TABLE `item_location` ENABLE KEYS */;
 
 
@@ -193,18 +204,19 @@ CREATE TABLE IF NOT EXISTS `item_material` (
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_material: ~6 rows (approximately)
+-- Dumping data for table inventory.item_material: ~7 rows (approximately)
 DELETE FROM `item_material`;
 /*!40000 ALTER TABLE `item_material` DISABLE KEYS */;
 INSERT INTO `item_material` (`id`, `name`, `description`) VALUES
-	(1, 'Cuero', ''),
-	(2, 'Madera', ''),
-	(3, 'PU', ''),
-	(4, 'Plástico', ''),
-	(5, 'Metal', ''),
-	(6, 'No hay dato', NULL);
+	(1, '- Seleccionar -', NULL),
+	(2, 'Cuero', ''),
+	(3, 'Madera', ''),
+	(4, 'PU', ''),
+	(5, 'Plástico', ''),
+	(6, 'Metal', ''),
+	(7, 'No hay dato', NULL);
 /*!40000 ALTER TABLE `item_material` ENABLE KEYS */;
 
 
@@ -214,29 +226,31 @@ CREATE TABLE IF NOT EXISTS `item_origin` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_origin: ~17 rows (approximately)
+-- Dumping data for table inventory.item_origin: ~19 rows (approximately)
 DELETE FROM `item_origin`;
 /*!40000 ALTER TABLE `item_origin` DISABLE KEYS */;
 INSERT INTO `item_origin` (`id`, `name`) VALUES
-	(1, 'Bolivia'),
-	(2, 'Alemania'),
-	(3, 'Chino'),
-	(4, 'EEUU'),
-	(5, 'Japón'),
-	(6, 'Korea'),
-	(7, 'Taiwán'),
-	(8, 'Mexico'),
-	(9, 'Perú'),
-	(10, 'Argentina'),
-	(11, 'Brasil'),
-	(12, 'Colombia'),
-	(13, 'Venezuela'),
-	(14, 'Paraguay'),
-	(15, 'Italia'),
-	(16, 'Francia'),
-	(17, 'No hay dato');
+	(1, '- Seleccionar -'),
+	(2, 'Bolivia'),
+	(3, 'Alemania'),
+	(4, 'China'),
+	(5, 'EEUU'),
+	(6, 'Japón'),
+	(7, 'Korea'),
+	(8, 'Taiwán'),
+	(9, 'Mexico'),
+	(10, 'Perú'),
+	(11, 'Argentina'),
+	(12, 'Brasil'),
+	(13, 'Colombia'),
+	(14, 'Venezuela'),
+	(15, 'Paraguay'),
+	(16, 'Italia'),
+	(17, 'Francia'),
+	(18, 'Rusia'),
+	(19, 'No hay dato');
 /*!40000 ALTER TABLE `item_origin` ENABLE KEYS */;
 
 
@@ -247,15 +261,16 @@ CREATE TABLE IF NOT EXISTS `item_owner` (
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_owner: ~3 rows (approximately)
+-- Dumping data for table inventory.item_owner: ~4 rows (approximately)
 DELETE FROM `item_owner`;
 /*!40000 ALTER TABLE `item_owner` DISABLE KEYS */;
 INSERT INTO `item_owner` (`id`, `name`, `description`) VALUES
-	(1, 'Ing. Weiss', 'Cosas pertenecientes al Ing. Weiss.'),
-	(2, 'Macaws', NULL),
-	(3, 'No hay dato', NULL);
+	(1, '- Seleccionar -', NULL),
+	(2, 'Ing. Weiss', 'Cosas pertenecientes al Ing. Peter Weiss.'),
+	(3, 'Macaws', NULL),
+	(4, 'No hay dato', NULL);
 /*!40000 ALTER TABLE `item_owner` ENABLE KEYS */;
 
 
@@ -269,16 +284,24 @@ CREATE TABLE IF NOT EXISTS `item_type` (
   PRIMARY KEY (`id`),
   KEY `parent_id` (`parent_id`),
   CONSTRAINT `item_type_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `item_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_type: ~4 rows (approximately)
+-- Dumping data for table inventory.item_type: ~12 rows (approximately)
 DELETE FROM `item_type`;
 /*!40000 ALTER TABLE `item_type` DISABLE KEYS */;
 INSERT INTO `item_type` (`id`, `parent_id`, `name`, `description`) VALUES
-	(1, NULL, 'Silla de oficina', NULL),
-	(2, NULL, 'Escritorio', NULL),
-	(3, NULL, 'Maquina de coser', NULL),
-	(4, NULL, 'No hay dato', NULL);
+	(1, NULL, '- Seleccionar -', NULL),
+	(2, NULL, 'No hay dato', NULL),
+	(3, NULL, 'Mueble', NULL),
+	(4, NULL, 'Artículo de escritorio', NULL),
+	(5, NULL, 'Maquina de coser', NULL),
+	(6, NULL, 'Herramienta', NULL),
+	(7, NULL, 'Automovil', NULL),
+	(8, NULL, 'Maquina para ejercicios', NULL),
+	(9, NULL, 'Artículo de cocina', NULL),
+	(10, NULL, 'Computador', NULL),
+	(11, NULL, 'Repuesto', NULL),
+	(12, NULL, 'Otro', NULL);
 /*!40000 ALTER TABLE `item_type` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

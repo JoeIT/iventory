@@ -37,8 +37,10 @@ class ItemController extends Zend_Controller_Action {
 		$page = $this->_getParam ( 'page', 1 );
 		
 		$itemDao = new App_Dao_ItemDao ();
-		$paginator = new App_Util_Paginator ( $this->getRequest ()->getBaseUrl () . '/item/index', $itemDao->countAll (), $page );
+		$totalItems = $itemDao->countAll ();
+		$paginator = new App_Util_Paginator ( $this->getRequest ()->getBaseUrl () . '/item/index', $totalItems, $page, 30 );
 		
+		$this->view->totalItems = $totalItems;
 		$this->view->dataList = $itemDao->getAllLimitOffset ( $paginator->getLimit (), $paginator->getOffset () );
 		$this->view->htmlPaginator = $paginator->showHtmlPaginator ();
 	}

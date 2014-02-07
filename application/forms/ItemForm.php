@@ -74,7 +74,8 @@ class App_Form_ItemForm extends Zend_Form
 		$quantity = new Zend_Form_Element_Text('quantity');
 		$quantity->setLabel("Cantidad:");
 		$quantity->addValidator(new Zend_Validate_Float());
-		$quantity->setRequired(false);
+		$quantity->setValue("1");
+		$quantity->setRequired(true);
 		//$quantity->setDecorators(array(new App_CustomDecorator_InputData()) );
 		
 		$unitCost = new Zend_Form_Element_Text('unitCost');

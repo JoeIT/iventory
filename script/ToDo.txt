@@ -4,6 +4,7 @@
 - Restringir guardar items duplicados.
 - Restringir borrar items con dependencias.
 - Agregar decorators para cada tipo de elemento de un form
+- Verificar si el directorio de fotos ya existe al crear un nuevo item o modificar sus codigo.
 
 
 

@@ -237,15 +237,55 @@ class ItemController extends Zend_Controller_Action {
 		}		
 	}
 	
-	public function ajaxRefreshSelectElementAction() {
-		$selectElement = $this->_getParam('selectElement', '');
+	public function ajaxrefreshselectelementAction() {
+		$this->_helper->layout->disableLayout();
 		
-		if( !empty($selectElement)) {
+		$selectElement = $this->_getParam('selectElement', '');
+		$optionSelected = $this->_getParam('optionSelected', '');
+		
+		if( empty($selectElement)) {
 			echo "";
 			return;
 		}
 		
-		echo "Hello";
+		$optionsArray = array();
+		
+		switch($selectElement)
+		{
+			case 'type_select':
+				$optionsArray = $this->_itemTypeDao->getAll();
+				break;
+			case 'brand_select':
+				$optionsArray = $this->_itemBrandDao->getAll();
+				break;
+			case 'material_select':
+				$optionsArray = $this->_itemMaterialDao->getAll();
+				break;
+			case 'color_select':
+				$optionsArray = $this->_itemColorDao->getAll();
+				break;
+			case 'origin_select':
+				$optionsArray = $this->_itemOriginDao->getAll();
+				break;
+			case 'location_select':
+				$optionsArray = $this->_itemLocationDao->getAll();
+				break;
+			case 'owner_select':
+				$optionsArray = $this->_itemOwnerDao->getAll();
+				break;
+			case 'condition_select':
+				$optionsArray = $this->_itemConditionDao->getAll();
+				break;
+			case 'availability_select':
+				$optionsArray = $this->_itemAvailabilityDao->getAll();
+				break;
+			default:
+				return;
+		}
+		
+		$this->view->selectId = $selectElement;
+		$this->view->optionSelected = $optionSelected;
+		$this->view->options = $optionsArray;		
 	}
 	
 	private function _loadFormSelects(&$form) {

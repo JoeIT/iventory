@@ -141,6 +141,7 @@ class App_Form_ItemForm extends Zend_Form
 				$availability, 
 				$comment, 
 				$submit));
+		
 	}
 	
 	public function enableEditFormExtraConfig() {

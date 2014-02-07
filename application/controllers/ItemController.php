@@ -28,7 +28,6 @@ class ItemController extends Zend_Controller_Action {
 		$this->_itemConditionDao = new App_Dao_ItemConditionDao();
 		$this->_itemAvailabilityDao = new App_Dao_ItemAvailabilityDao();
 		
-		
 		$uri = "$_SERVER[REQUEST_URI]";
 		$uriPathArray = explode('/', $uri );
 		$this->ROOT_PATH = "http://$_SERVER[HTTP_HOST]" . '/' . $uriPathArray[1] . '/'; // http://localhost/zf/

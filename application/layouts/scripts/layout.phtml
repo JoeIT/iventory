@@ -19,6 +19,12 @@ echo $this->doctype();
 				echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-1.10.2.min.js','text/javascript');
     			echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-ui-1.10.3.custom.min.js','text/javascript');
     			//echo $this->headScript()->appendFile($this->baseUrl() . '/js/item.js','text/javascript');
+    			
+    			$uri = "$_SERVER[REQUEST_URI]";
+    			$uriPathArray = explode('/', $uri );
+    			$SYSTEM_ROOT_PATH = "http://$_SERVER[HTTP_HOST]" . '/' . $uriPathArray[1] . '/'; // http://localhost/zf/
+    			
+    			echo "<input type='hidden' id='SYSTEM_ROOT_PATH' value='$SYSTEM_ROOT_PATH'/>";
     		?>
 			
 		<script language="JavaScript" type="text/javascript">

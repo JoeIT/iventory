@@ -5,11 +5,12 @@ $(document).ready(function() {
 		
 		var select = $(this).attr('type');
 		var optionSelected = $('#' + select).val();
+		var rootPath = $('#SYSTEM_ROOT_PATH').val();
 		
 		$('#' + select).hide();
 		
 		$.ajax({
-            url: "http://localhost/zf/public/item/ajaxrefreshselectelement",
+            url: rootPath + "public/item/ajaxrefreshselectelement",
             type: 'POST',
 			data: { selectElement: select,
 					optionSelected: optionSelected
@@ -21,8 +22,8 @@ $(document).ready(function() {
             },
             error: function(request, textStatus, errorThrown)
 			{
-                message = (request.status == 403) ? request.responseText : message;
-                alert(message);
+                var message = (request.status == 403) ? request.responseText : message;
+                alert("Error retrieving select data - " + message);
             }
         });		
 	} );

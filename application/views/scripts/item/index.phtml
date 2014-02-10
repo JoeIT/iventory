@@ -25,7 +25,6 @@ echo $this->url ( array (
 		<th>Color</th>
 		<th>Procedencia</th>
 		<th>Ubicaci&oacute;n</th>
-		<th>Cantidad</th>
 		<th></th>
 	</tr>
 
@@ -42,7 +41,6 @@ echo $this->url ( array (
 		<td><?php echo $item->getColor()->getName(); ?></td>
 		<td><?php echo $item->getOrigin()->getName(); ?></td>
 		<td><?php echo $item->getLocation()->getName(); ?></td>
-		<td align="right"><?php echo $item->getQuantity(); ?></td>
 		<td align="center">
 			<a
 				href='<?php		

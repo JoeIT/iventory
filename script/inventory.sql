@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~30 rows (approximately)
+-- Dumping data for table inventory.item: ~48 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -96,7 +96,38 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(27, '04-054', '', '30.12.04.00054', 5, 'Maquina de costura TUBO', 19, 6, 1, 7, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: SUNSTAR\r\nMODELO: KM-380\r\nSERIE: 95021232\r\n\r\nMOTOR\r\nMARCA: SUNSTAR\r\nSERIE: 52243\r\n\r\nCON MESA DE MADERA FORRADO CON FORMICA CREMA\r\n', '04-054', '2014-02-07 17:02:51', NULL),
 	(28, '04-055', '', '30.12.04.00055', 5, 'Maquina de costura TUBO', 19, 6, 1, 7, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: SUNSTAR\r\nMODELO: KM-380\r\nSERIE: 97034146\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nSERIE: A-686538\r\n\r\nCON MESA DE MADERA FORRADO CON FORMICA CREMA\r\n', '04-055', '2014-02-07 17:02:49', NULL),
 	(29, '04-064', '', '30.12.04.00064', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 1245-6/01\r\nSERIE: 2571692\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nMODELO: CL 1221\r\nSERIE: E-1106835', '04-064', '2014-02-07 17:02:34', NULL),
-	(30, '04-086', '', '30.12.04.00086', 5, 'Maquina de costura TUBO', 10, 6, 1, 3, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 335-G\r\nSERIE: 508524\r\n\r\nMOTOR\r\nMARCA: JUKI\r\nSERIE: A700897\r\n', '04-086', '2014-02-07 17:02:15', NULL);
+	(30, '04-086', '', '30.12.04.00086', 5, 'Maquina de costura TUBO', 10, 6, 1, 3, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 335-G\r\nSERIE: 508524\r\n\r\nMOTOR\r\nMARCA: JUKI\r\nSERIE: A700897\r\n', '04-086', '2014-02-07 17:02:15', NULL),
+	(31, '04-087', '', '30.12.04.00087', 5, 'Maquina de costura TUBO', 10, 6, 1, 3, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 335-G\r\nSERIE: 503780\r\n\r\nMOTOR\r\nMARCA: JUKI\r\nSERIE: A71 G009\r\n', '04-087', '2014-02-10 09:02:26', '2014-02-10 09:02:43'),
+	(32, '04-092', '', '30.12.04.00092', 5, 'Maquina de costura ZIGZAG', 20, 6, 1, 6, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: SINGER\r\nSERIE: U941105017\r\n\r\nMOTOR\r\nMARCA: HOGSING\r\nSERIE: A472037\r\n', '04-092', '2014-02-10 09:02:42', NULL),
+	(33, '04-142', '', '30.12.04.00142', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 031216512', '04-142', '2014-02-10 09:02:47', NULL),
+	(34, '04-144', '', '30.12.04.00144', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 031216701\r\n', '04-144', '2014-02-10 09:02:03', NULL),
+	(35, '04-145', '', '30.12.04.00145', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 031216716\r\n', '04-145', '2014-02-10 09:02:37', NULL),
+	(36, '04-147', '', '30.12.04.00147', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 031216721\r\n', '04-147', '2014-02-10 09:02:35', NULL),
+	(37, '04-149', '', '30.12.04.00149', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 031216766', '04-149', '2014-02-10 09:02:34', NULL),
+	(38, '04-151', '', '30.12.04.00151', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 031216492', '04-151', '2014-02-10 09:02:24', NULL),
+	(39, '04-152', '', '30.12.04.00152', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 312680', '04-152', '2014-02-10 09:02:35', '2014-02-10 09:02:10'),
+	(40, '04-153', '', '30.12.04.00153', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 312674', '04-153', '2014-02-10 09:02:48', NULL),
+	(41, '04-156', '', '30.12.04.00156', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 312669', '04-156', '2014-02-10 09:02:45', NULL),
+	(42, '04-158', '', '30.12.04.00158', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 312674', '04-158', '2014-02-10 10:02:06', NULL),
+	(43, '04-160', '', '30.12.04.00160', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR:\r\nSERIE: # 312672', '04-160', '2014-02-10 10:02:02', NULL),
+	(44, '04-161', '', '30.12.04.00161', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 312677', '04-161', '2014-02-10 10:02:21', NULL),
+	(45, '04-162', '', '30.12.04.00162', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 312695', '04-162', '2014-02-10 10:02:12', NULL),
+	(46, '04-163', '', '30.12.04.00163', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 312698', '04-163', '2014-02-10 10:02:09', NULL),
+	(47, '04-164', '', '30.12.04.00164', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 9, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 312679', '04-164', '2014-02-10 10:02:48', NULL),
+	(48, '04-165', '', '30.12.04.00165', 5, 'Maquina de costura PLANA', 15, 6, 1, 4, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 312672', '04-165', '2014-02-10 10:02:26', NULL),
+	(49, '04-166', '', '30.12.04.00166', 5, 'Maquina de costura TRIPLE', 15, 6, 1, 4, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: FDM\r\n\r\nMOTOR\r\nSERIE: # 031216728', '04-166', '2014-02-10 10:02:29', NULL),
+	(50, '04-172', '', '30.12.04.00172', 5, '', 10, 6, 1, 3, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMOTOR Y MESA PARA MAQUINA PFAFF # 02572109', '04-172', '2014-02-10 10:02:52', NULL),
+	(51, '04-173', '', '30.12.04.00173', 5, 'Maquina de costura TUBO', 10, 6, 1, 3, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMOTOR Y MESA PARA MAQUINA PFAFF # 02566785', '04-173', '2014-02-10 10:02:42', NULL),
+	(52, '04-040', '', '30.14.04.00040', 5, 'Maquina de costura TUBO', 10, 6, 1, 3, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 2, 1, '1 GLB.\r\n\r\nCABEZAL MAQUINA MARCA PFAFF MOTOR 2566792 (EN CAJA)', '04-040', '2014-02-10 10:02:11', NULL),
+	(53, '04-042', '', '30.14.04.00042', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 2, 1, '1 GLB.\r\n\r\nCABEZAL MAQUINA MARCA PFAFF MOTOR 2566791 (EN CAJA)', '04-042', '2014-02-10 10:02:53', NULL),
+	(54, '04-043', '', '30.14.04.00043', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 2, 1, '1 GLB.\r\n\r\nMOTOR PARA MAQUINA DE COSER MARCA PFAFF NO. 2563836 (EN CAJA)', '04-043', '2014-02-10 10:02:28', NULL),
+	(55, '04-049', '', '40.06.04.00049', 5, 'Maquina de costura TUBO', 10, 6, 1, 3, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF DE POSTE\r\nMODELO: 595-H3-6/01\r\nSERIE: 584761', '04-049', '2014-02-10 10:02:28', '2014-02-10 11:02:58'),
+	(56, '04-056', '', '40.06.04.00056', 5, 'Maquina de costura ZAPATERIA', 21, 6, 1, 4, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: TAKING\r\nMODELO: TK-2971\r\nSERIE: 29710222\r\n\r\nMOTOR\r\nMARCA: FREMOTOR\r\nMODELO: "N"\r\nSERIE: 12043', '04-056', '2014-02-10 10:02:27', '2014-02-10 11:02:40'),
+	(57, '04-057', '', '40.06.04.00057', 5, 'Maquina de costura TUBO', 10, 6, 1, 3, 1, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 595-H3- 6/01\r\nSERIE: 584774\r\n\r\nMOTOR\r\nMARCA: ZOJE\r\nSERIE: 0047966', '04-057', '2014-02-10 10:02:21', '2014-02-10 11:02:12'),
+	(58, '04-066', '', '40.06.04.00066', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 1245 -6/01\r\nSERIE: 2571695\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nSERIE: E-1106006', '04-066', '2014-02-10 10:02:43', '2014-02-10 11:02:32'),
+	(59, '04-116', '', '40.06.04.00116', 5, 'Maquina de costura de BRAZO', 12, 6, 1, 3, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: SADA DURKOPP ADLER\r\nMODELO: 267 C/SA\r\n\r\nMOTOR\r\nMARCA: COMELZ ARGO 42/A ADK 504', '04-116', '2014-02-10 11:02:33', '2014-02-10 11:02:24'),
+	(60, '04-003', '', '40.16.04.00003', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 1, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nSERIE: 2571691\r\nMODELO: 1245\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nSERIE: E-1106940\r\n\r\nCON MESON DE MADERA DE 0,80M X 1,20M X 0,55M COLORBLANCO', '04-003', '2014-02-10 11:02:51', NULL),
+	(61, '04-063', '', '40.16.04.00063', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 1245 -6/01\r\nSERIE: 2571693\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nMODELO: CL 1221\r\nSERIE: E1106457', '04-063', '2014-02-10 11:02:49', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -126,9 +157,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~19 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~20 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -150,7 +181,9 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(16, 'CONSEW'),
 	(17, 'SIRUBA'),
 	(18, 'TIPPMANN'),
-	(19, 'SUNSTAR');
+	(19, 'SUNSTAR'),
+	(20, 'SINGER'),
+	(21, 'TAKING');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -299,7 +332,7 @@ CREATE TABLE IF NOT EXISTS `item_owner` (
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table inventory.item_owner: ~4 rows (approximately)
 DELETE FROM `item_owner`;

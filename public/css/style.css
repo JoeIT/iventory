@@ -271,3 +271,8 @@ div img:active {
 .paginator_field {
 	background-color: #363333;
 }
+
+/************************************************/
+.css-input_text_form {
+	width: 200px;
+}

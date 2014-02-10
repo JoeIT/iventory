@@ -18,18 +18,19 @@ class App_Form_ItemForm extends Zend_Form
 		$code->setLabel("Codigo (*):");
 		//$code->addValidator( new App_CustomZendValidator_CodeExist("code") );
 		$code->setRequired(true);
-		
-		
+		$code->setAttrib('class', 'css-input_text_form');
 		
 		$newCode = new Zend_Form_Element_Text('newCode');
 		$newCode->setLabel("Nuevo codigo:");
 		//$newCode->addValidator( new App_CustomZendValidator_CodeExist("newCode") );
 		$newCode->setRequired(false);
+		$newCode->setAttrib('class', 'css-input_text_form');
 		
 		$accountingCode = new Zend_Form_Element_Text('accountingCode');
 		$accountingCode->setLabel("Codigo contable:");
 		//$accountingCode->addValidator( new App_CustomZendValidator_CodeExist("accountingCode") );
 		$accountingCode->setRequired(false);
+		$accountingCode->setAttrib('class', 'css-input_text_form');
 		
 		$type = new Zend_Form_Element_Select('type_select');
 		//$type->addMultiOptions($this->typeArray);
@@ -39,6 +40,7 @@ class App_Form_ItemForm extends Zend_Form
 		$name = new Zend_Form_Element_Text('name');
 		$name->setLabel("Nombre:");
 		$name->setRequired(false);
+		$name->setAttrib('class', 'css-input_text_form');
 		
 		$brand = new Zend_Form_Element_Select('brand_select');
 		$brand->setLabel("Marca:");
@@ -100,7 +102,7 @@ class App_Form_ItemForm extends Zend_Form
 		
 		$comment = new Zend_Form_Element_Textarea('comment');
 		$comment->setLabel("Comentario:");
-		$comment->setAttrib("cols", "60");
+		$comment->setAttrib("cols", "50");
 		$comment->setAttrib("rows", "15");
 		
 		$submit = new Zend_Form_Element_Submit('submit', array('label' => 'GUARDAR'));
@@ -140,7 +142,6 @@ class App_Form_ItemForm extends Zend_Form
 				array('Label', array('tag' => 'td')),
 				array(array('row' => 'HtmlTag'), array('tag' => 'tr'))
 		));
-		
 	}
 	
 	public function enableEditFormExtraConfig() {

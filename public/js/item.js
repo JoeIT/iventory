@@ -37,5 +37,16 @@ $(document).ready(function() {
 		if(! $('#' + id).length )
 			$(this).after(" <a href='javascript:void(0)' id='"+ id +"' class='refreshSelectElement' type='"+ selectType +"'>Resfrescar</a> ");
 	});
+	
+	//$('dl').replaceWith('<table></table>');
+	
+	/*$('dt').each(function(){
+		$(this).replaceWith('<th>' + $(this).html() + '</th>');		
+	});
+	
+	$('dd').each(function(){
+		$(this).replaceWith('<th>' + $(this).html() + '</th>');		
+	});*/
+	
 
 });

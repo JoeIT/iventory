@@ -11,7 +11,6 @@ class App_Form_ItemForm extends Zend_Form
 		
 		
 		//$this->setElementDecorators(array(new App_CustomDecorator_InputData()) );
-		
 		//$id = new Zend_Form_Element_Hidden('id');
 				
 		$code = new Zend_Form_Element_Text('code');
@@ -61,6 +60,7 @@ class App_Form_ItemForm extends Zend_Form
 		$location = new Zend_Form_Element_Select('location_select');
 		$location->setLabel("Ubicacion:");
 		$location->setRequired(false);
+		//$location->setValue('11');
 		
 		$owner = new Zend_Form_Element_Select('owner_select');
 		$owner->setLabel("Propiedad:");

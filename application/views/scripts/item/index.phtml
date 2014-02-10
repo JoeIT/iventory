@@ -21,8 +21,6 @@ echo $this->url ( array (
 		<th>Tipo</th>
 		<th>Nombre</th>
 		<th>Marca</th>
-		<th>Material</th>
-		<th>Color</th>
 		<th>Procedencia</th>
 		<th>Ubicaci&oacute;n</th>
 		<th></th>
@@ -37,8 +35,6 @@ echo $this->url ( array (
 		<td><?php echo $item->getType()->getName(); ?></td>
 		<td><?php echo $item->getName(); ?></td>
 		<td><?php echo $item->getBrand()->getName(); ?></td>
-		<td><?php echo $item->getMaterial()->getName(); ?></td>
-		<td><?php echo $item->getColor()->getName(); ?></td>
 		<td><?php echo $item->getOrigin()->getName(); ?></td>
 		<td><?php echo $item->getLocation()->getName(); ?></td>
 		<td align="center">

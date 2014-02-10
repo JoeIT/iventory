@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~61 rows (approximately)
+-- Dumping data for table inventory.item: ~62 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -128,7 +128,18 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(59, '04-116', '', '40.06.04.00116', 5, 'Maquina de costura de BRAZO', 12, 6, 1, 3, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: SADA DURKOPP ADLER\r\nMODELO: 267 C/SA\r\n\r\nMOTOR\r\nMARCA: COMELZ ARGO 42/A ADK 504', '04-116', '2014-02-10 11:02:33', '2014-02-10 11:02:24'),
 	(60, '04-00003', '', '40.16.04.00003', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 1, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nSERIE: 2571691\r\nMODELO: 1245\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nSERIE: E-1106940\r\n\r\nCON MESON DE MADERA DE 0,80M X 1,20M X 0,55M COLORBLANCO', '04-00003', '2014-02-10 11:02:51', '2014-02-10 11:02:06'),
 	(61, '04-063', '', '40.16.04.00063', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 1245 -6/01\r\nSERIE: 2571693\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nMODELO: CL 1221\r\nSERIE: E1106457', '04-063', '2014-02-10 11:02:49', NULL),
-	(62, '03-007', '', '', 10, 'Telefono', 22, 5, 4, 6, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, 'TELEFONO\r\nMARCA: PANASONIC\r\nModelo: KX-T7730', '03-007', '2014-02-10 11:02:09', NULL);
+	(62, '03-007', '', '', 10, 'Telefono', 22, 5, 4, 6, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, 'TELEFONO\r\nMARCA: PANASONIC\r\nModelo: KX-T7730', '03-007', '2014-02-10 11:02:09', NULL),
+	(63, 'X-1', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Mesa pequeÃ±a tipo escritorio de 90cm largo x 40cm ancho x 72cm alto.', 'X-1', '2014-02-10 14:02:37', '2014-02-10 15:02:23'),
+	(64, 'X-2', '', '', 3, 'Vitrina', 11, 3, 10, 19, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Vitrina:\r\n2 puertas superiores de vidrio\r\n2 cajones medios de madera\r\n2 puertas de madera inferiores', 'X-2', '2014-02-10 14:02:55', NULL),
+	(65, 'X-3', '', '', 12, 'Muestrario', 11, 6, 10, 19, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Muestrario de armazÃ³n metÃ¡lico y barras transversales de madera.', 'X-3', '2014-02-10 14:02:31', NULL),
+	(66, 'X-4', '', '', 12, 'Muestrario', 1, 8, 4, 1, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Muestrario de cartÃ³n prensado, con ganchos metÃ¡licos plateados.', 'X-4', '2014-02-10 14:02:54', NULL),
+	(67, 'p-030', '', '', 10, 'Televisor ', 23, 10, 2, 5, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Marca: RCA\r\nModelo: MCR66R400\r\nTamaÃ±o: 25 pulgadas\r\n\r\nCon control remoto color blanco.', 'p-030', '2014-02-10 14:02:37', '2014-02-10 14:02:49'),
+	(68, 'X-5', '', '', 10, 'Receptor de seÃ±al satelital', 25, 10, 2, 7, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Receptor de seÃ±al satelital, con control remoto color negro.', 'X-5', '2014-02-10 14:02:31', '2014-02-10 14:02:53'),
+	(69, 'S-008', '', '', 3, 'Armario para televisor y mini componente', 11, 9, 2, 1, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Armario para televisor y mini componente, con divisiones laterales, frente de vidrio con una puerta.', 'S-008', '2014-02-10 14:02:50', NULL),
+	(70, 'X-6', '', '', 12, 'Pantalla para proyectar imagen', 26, 5, 2, 5, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Pantalla para proyectar imÃ¡genes, colo blanco, con armazÃ³n y marco color negro.', 'X-6', '2014-02-10 15:02:02', NULL),
+	(71, 'S-022', '', '', 3, 'Mesita', 1, 1, 1, 1, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Mesita pequeÃ±a de 100cm largo x 34cm ancho x 41cm alto.', 'S-022', '2014-02-10 15:02:12', NULL),
+	(72, '03-278', '', '', 12, 'Pizarra acrÃ­lica', 11, 11, 4, 19, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Pizarra acrÃ­lica de 80cm alto x 120cm alto.', '03-278', '2014-02-10 15:02:38', NULL),
+	(73, 'S-226', '', '', 3, 'Mesa para proyectora', 11, 6, 4, 19, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Mesita para ubicar la proyectora y accesorios de 50cm x 50cm de base, con 86cm de alto.', 'S-226', '2014-02-10 15:02:51', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -160,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~21 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~22 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -185,7 +196,11 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(19, 'SUNSTAR'),
 	(20, 'SINGER'),
 	(21, 'TAKING'),
-	(22, 'PANASONIC');
+	(22, 'PANASONIC'),
+	(23, 'RCA'),
+	(24, 'PHILIPS'),
+	(25, 'SUPERBOX'),
+	(26, '3M');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -209,7 +224,8 @@ INSERT INTO `item_color` (`id`, `name`) VALUES
 	(6, 'Verde'),
 	(7, 'No hay dato'),
 	(8, 'Beige'),
-	(9, 'Plomo');
+	(9, 'Plomo'),
+	(10, 'Café');
 /*!40000 ALTER TABLE `item_color` ENABLE KEYS */;
 
 
@@ -289,7 +305,11 @@ INSERT INTO `item_material` (`id`, `name`, `description`) VALUES
 	(4, 'PU', ''),
 	(5, 'Plástico', ''),
 	(6, 'Metal', ''),
-	(7, 'No hay dato', NULL);
+	(7, 'No hay dato', NULL),
+	(8, 'Cartón prensado', NULL),
+	(9, 'Madera aglomerada', NULL),
+	(10, 'Multiple', NULL),
+	(11, 'Acrílico', NULL);
 /*!40000 ALTER TABLE `item_material` ENABLE KEYS */;
 
 

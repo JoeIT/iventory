@@ -209,8 +209,10 @@ class ItemController extends Zend_Controller_Action {
 			$form->availability_select->setValue( $item->getAvailability()->getId() );
 		}
 		
-		//$this->view->item = $item;
+		$this->view->item = $item;
 		$this->view->form = $form;
+		$this->view->rootPath = $this->ROOT_PATH . 'public/';
+		$this->view->photosPath = self::PHOTO_ROOT_URL;
 	}
 	
 	public function removeAction() {

@@ -5,8 +5,7 @@ class App_Form_ItemForm extends Zend_Form
 	{
 		parent::__construct();
 		
-		$this->setMethod('post');
-		
+		$this->setMethod('post');		
 		$this->getView()->setEscape('stripslashes');
 		
 		
@@ -60,7 +59,7 @@ class App_Form_ItemForm extends Zend_Form
 		$location = new Zend_Form_Element_Select('location_select');
 		$location->setLabel("Ubicacion:");
 		$location->setRequired(false);
-		$location->setValue('11');
+		$location->setValue('10');
 		
 		$owner = new Zend_Form_Element_Select('owner_select');
 		$owner->setLabel("Propiedad:");

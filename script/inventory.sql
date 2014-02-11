@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~92 rows (approximately)
+-- Dumping data for table inventory.item: ~145 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -162,7 +162,21 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(93, '03-008', '', '20.18.03.00008', 10, 'Central telefonica', 22, 10, 4, 6, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'CENTRAL TELEFONICA MCA.\r\nPANASONIC\r\nMOD KX-TE5824', '03-008', '2014-02-10 17:02:56', '2014-02-10 17:02:40'),
 	(94, 'X-8', '', '', 10, 'Link Station', 27, 10, 2, 5, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Marca: Buffalo\r\nModelo: LS-CHL344\r\nCapacidad: 850Gb', 'X-8', '2014-02-10 18:02:54', NULL),
 	(95, '07-060', '', '20.18.07.00060', 10, 'Link Station', 27, 10, 2, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Marca: Buffalo\r\nModelo: LS-CHL344\r\nCapacidad: 465Gb', '07-060', '2014-02-10 18:02:13', NULL),
-	(96, '03-292', '', '20.18.03.00292', 10, 'Estabilizador', 28, 10, 12, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\nESTABILIZADOR\r\nMARCA: STAVOL MATSUNAKA SVC 1000 N', '03-292', '2014-02-10 18:02:56', NULL);
+	(96, '03-292', '', '20.18.03.00292', 10, 'Estabilizador', 28, 10, 12, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\nESTABILIZADOR\r\nMARCA: STAVOL MATSUNAKA SVC 1000 N', '03-292', '2014-02-10 18:02:56', NULL),
+	(97, '07-00094', '', '20.09.07.00094', 10, 'IMAC INTEL 2', 29, 10, 9, 5, 10, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCOMPUTADORA IMAC INTEL 2"\r\nMODELO A1312\r\nSERIE NO. W8026777DB6 32GMZ/46/B/ITB/SD\r\n\r\nCON TECLADO DELUX Y RATON GENIUS.', '07-00094', '2014-02-11 09:02:58', '2014-02-11 09:02:42'),
+	(98, '07-108', '', '20.09.07.00108', 10, 'Impresora a tinta', 31, 10, 2, 6, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA\r\nIMPRESORA\r\nMARCA: CANON\r\nMODELO: MP230\r\n\r\nCON SISTEMA DE TINTA CONTINUA.', '07-108', '2014-02-11 09:02:33', NULL),
+	(99, '07-089', '', '20.18.07.00089', 10, 'Monitor LCD', 9, 10, 2, 8, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nMONITOR\r\nMARCA: ACER\r\nMODELO: X183HB\r\nSERIE: ETLEZ0W0030070AD934329\r\nTAMAÃ‘O: 18.5 PULGADAS', '07-089', '2014-02-11 09:02:56', NULL),
+	(100, '07-086', '', '20.18.07.00086', 10, 'CPU', 30, 6, 2, 5, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nCASE\r\nMARCA: EMACHINES\r\nMODELO: ET 1831-07\r\nSERIE PTNB602022006021CB2700\r\n\r\nCON TECLADO MARCA EMACHINES Y MOUSE GENIUS', '07-086', '2014-02-11 10:02:30', NULL),
+	(101, '03-238', '', '10.01.03.00238', 10, 'Silla giratoria', 11, 5, 9, 19, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA\r\n\r\nSILLA GIRATORIA', '03-238', '2014-02-11 10:02:34', NULL),
+	(102, '03-203', '', '20.09.03.00203', 10, 'Estabilizador', 28, 10, 12, 4, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nESTABILIZADOR DE 500V MODELO AUTOVOL N1000VA\r\n', '03-203', '2014-02-11 10:02:26', NULL),
+	(103, 'X-9', '', '', 3, 'Mesa de escritorio', 11, 12, 8, 19, 10, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'ESCRITORIO, COLOR BEIGE, CON UNA FILA DE 2 CAJONES.\r\nMEDIDAS 148cm x 75cm x 76.5cm alto', 'X-9', '2014-02-11 10:02:34', '2014-02-11 11:02:44'),
+	(104, '03-284', '', '20.19.03.00284', 3, 'Silla giratoria', 11, 5, 3, 19, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA. SILLA RECLINABLE GIRATORIA CON APOYADERAS Y RUEDAS COLOR AZUL, CON EL ESPALDAR Y BASE DAÃ‘ADOS\r\n', '03-284', '2014-02-11 11:02:40', NULL),
+	(105, '03-205', '', '20.06.03.00205', 10, 'Estabilizador', 28, 10, 12, 4, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB. ESTABILIZADOR MARCA MATSUNAKA STAVOL SVC 500N COLOR ROJO\r\n', '03-205', '2014-02-11 11:02:48', NULL),
+	(106, 'X-10', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 10, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'TELEFONO DIGITAL\r\nMARCA: PANASONIC\r\nMODELO: KX-TS580LX W', 'X-10', '2014-02-11 11:02:04', NULL),
+	(107, '03-230', '', '20.09.03.00230', 3, 'Mesa de escritorio', 11, 12, 10, 19, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '2 PZA.\r\n\r\n1 MUEBLE DE ESCRITORIO [160cm x 79.5cm x65cm alto]\r\n1 CAJONERIA MOVIBLE [42cm x 49cm x 63cm alto]', '03-230', '2014-02-11 11:02:53', '2014-02-11 11:02:28'),
+	(108, '07-061', '', '20.09.07.00061', 12, 'Mini estudio fotogrÃ¡fico', 32, 10, 13, 5, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GBL.\r\n\r\nMARCA: ORTERY\r\n\r\nMINI ESTUDIO PHOTOSIMILE 200 A, DIGITAL PHOTOGRAPHY KIT INCLUDES LIGHT BOX SOFTWARE PRODUCT STAND', '07-061', '2014-02-11 11:02:39', NULL),
+	(109, 'X-11', '', '', 3, 'Silla', 11, 3, 2, 19, 10, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA. SILLA DE MADERA CON TAPIZADO FLOREADO.\r\n\r\nMEDIDAS 56cm largo x 51cm ancho x 76 cm alto.', 'X-11', '2014-02-11 11:02:55', NULL),
+	(110, 'P-038', '', '', 12, 'Tripode para cÃ¡mara', 2, 6, 2, 6, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1PZA.\r\n\r\nTRIPODE PARA CAMARA FOTOGRAFICA\r\nMARCA: SONY\r\nMODELO: VCT-700\r\nALTO: 105cm.', 'P-038', '2014-02-11 12:02:26', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -192,9 +206,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~26 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~32 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -225,7 +239,11 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(25, 'SUPERBOX'),
 	(26, '3M'),
 	(27, 'BUFFALO'),
-	(28, 'MATSUNAKA STAVOL');
+	(28, 'MATSUNAKA STAVOL'),
+	(29, 'APPLE'),
+	(30, 'EMACHINES'),
+	(31, 'CANON'),
+	(32, 'ORTERY');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -235,9 +253,9 @@ CREATE TABLE IF NOT EXISTS `item_color` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_color: ~10 rows (approximately)
+-- Dumping data for table inventory.item_color: ~13 rows (approximately)
 DELETE FROM `item_color`;
 /*!40000 ALTER TABLE `item_color` DISABLE KEYS */;
 INSERT INTO `item_color` (`id`, `name`) VALUES
@@ -251,7 +269,9 @@ INSERT INTO `item_color` (`id`, `name`) VALUES
 	(8, 'Beige'),
 	(9, 'Plomo'),
 	(10, 'Café'),
-	(12, 'Rojo');
+	(12, 'Rojo'),
+	(13, 'Plateado'),
+	(14, 'Dorado');
 /*!40000 ALTER TABLE `item_color` ENABLE KEYS */;
 
 
@@ -308,7 +328,7 @@ INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
 	(15, 'Area línea producción', NULL),
 	(16, 'Area tapiceria', NULL),
 	(17, 'Area mecánica', NULL),
-	(18, 'Oficinas', NULL);
+	(18, 'Oficina cubículos', NULL);
 /*!40000 ALTER TABLE `item_location` ENABLE KEYS */;
 
 
@@ -319,7 +339,7 @@ CREATE TABLE IF NOT EXISTS `item_material` (
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table inventory.item_material: ~12 rows (approximately)
 DELETE FROM `item_material`;

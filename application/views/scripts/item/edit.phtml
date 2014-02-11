@@ -16,3 +16,15 @@
 <div align="center">
 	<?php echo $this->message; ?>
 </div>
+
+<div id="item_images">
+	<?php
+	$folder = $this->photosPath . $this->item->getPhotoDir() . '/';
+	$filetype = '*.*';
+	$files = glob($folder . $filetype);
+	
+	for ($i=0; $i<count($files); $i++) {
+		echo "<img src='" . $this->rootPath . $files[$i] . "' />";
+	}
+	?>
+</div>

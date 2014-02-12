@@ -2,7 +2,7 @@
 -- Host:                         127.0.0.1
 -- Server version:               5.6.11 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
--- HeidiSQL Version:             8.1.0.4545
+-- HeidiSQL Version:             8.3.0.4694
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=154 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~141 rows (approximately)
+-- Dumping data for table inventory.item: ~191 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -129,11 +129,11 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(60, '04-00003', '', '40.16.04.00003', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 1, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nSERIE: 2571691\r\nMODELO: 1245\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nSERIE: E-1106940\r\n\r\nCON MESON DE MADERA DE 0,80M X 1,20M X 0,55M COLORBLANCO', '04-00003', '2014-02-10 11:02:51', '2014-02-10 11:02:06'),
 	(61, '04-063', '', '40.16.04.00063', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 1245 -6/01\r\nSERIE: 2571693\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nMODELO: CL 1221\r\nSERIE: E1106457', '04-063', '2014-02-10 11:02:49', NULL),
 	(62, '03-007', '', '20.18.03.00007', 10, 'Telefono', 22, 5, 4, 6, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, 'TELEFONO\r\nMARCA: PANASONIC\r\nModelo: KX-T7730', '03-007', '2014-02-10 11:02:09', '2014-02-10 17:02:28'),
-	(63, 'X-0001', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Mesa pequeÃ±a tipo escritorio de 90cm largo x 40cm ancho x 72cm alto.', 'X-0001', '2014-02-10 14:02:37', '2014-02-11 12:02:46'),
+	(63, '03-232', '', '20.09.03.00232', 3, 'Mesa de escritorio', 11, 3, 10, 19, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Mesa pequeÃ±a tipo escritorio de 90cm largo x 40cm ancho x 72cm alto.', '03-232', '2014-02-10 14:02:37', '2014-02-12 09:02:34'),
 	(64, 'X-0002', '', '', 3, 'Vitrina', 11, 3, 10, 19, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Vitrina:\r\n2 puertas superiores de vidrio\r\n2 cajones medios de madera\r\n2 puertas de madera inferiores', 'X-0002', '2014-02-10 14:02:55', '2014-02-11 12:02:11'),
 	(65, 'X-0003', '', '', 12, 'Muestrario', 11, 6, 10, 19, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Muestrario de armazÃ³n metÃ¡lico y barras transversales de madera.', 'X-0003', '2014-02-10 14:02:31', '2014-02-11 12:02:17'),
 	(66, 'X-0004', '', '', 12, 'Muestrario', 1, 8, 4, 1, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Muestrario de cartÃ³n prensado, con ganchos metÃ¡licos plateados.', 'X-0004', '2014-02-10 14:02:54', '2014-02-11 12:02:27'),
-	(67, 'p-030', '', '', 10, 'Televisor ', 23, 10, 2, 5, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Marca: RCA\r\nModelo: MCR66R400\r\nTamaÃ±o: 25 pulgadas\r\n\r\nCon control remoto color blanco.', 'p-030', '2014-02-10 14:02:37', '2014-02-10 14:02:49'),
+	(67, 'P-030', '', '', 10, 'Televisor ', 23, 10, 2, 5, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Marca: RCA\r\nModelo: MCR66R400\r\nTamaÃ±o: 25 pulgadas\r\n\r\nCon control remoto color blanco.', 'P-030', '2014-02-10 14:02:37', '2014-02-12 11:02:08'),
 	(68, 'X-0005', '', '', 10, 'Receptor de seÃ±al satelital', 25, 10, 2, 7, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Receptor de seÃ±al satelital, con control remoto color negro.', 'X-0005', '2014-02-10 14:02:31', '2014-02-11 12:02:02'),
 	(69, 'S-008', '', '', 3, 'Armario para televisor y mini componente', 11, 9, 2, 1, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Armario para televisor y mini componente, con divisiones laterales, frente de vidrio con una puerta.', 'S-008', '2014-02-10 14:02:50', NULL),
 	(70, 'X-0006', '', '', 12, 'Pantalla para proyectar imagen', 26, 5, 2, 5, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Pantalla para proyectar imÃ¡genes, colo blanco, con armazÃ³n y marco color negro.', 'X-0006', '2014-02-10 15:02:02', '2014-02-11 12:02:12'),
@@ -141,7 +141,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(72, '03-278', '', '', 12, 'Pizarra acrÃ­lica', 11, 11, 4, 19, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Pizarra acrÃ­lica de 80cm alto x 120cm alto.', '03-278', '2014-02-10 15:02:38', NULL),
 	(73, 'S-226', '', '', 3, 'Mesa para proyectora', 11, 6, 4, 19, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Mesita para ubicar la proyectora y accesorios de 50cm x 50cm de base, con 86cm de alto.', 'S-226', '2014-02-10 15:02:51', NULL),
 	(74, '03-242', '', '', 3, 'Silla giratoria', 11, 10, 9, 19, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Silla giratoria\r\nPlomo, ajustable en altura y con 5 patas con ruedas.', '03-242', '2014-02-10 16:02:32', '2014-02-10 16:02:56'),
-	(75, '03-247', '', '', 3, 'Silla giratoria', 11, 10, 9, 19, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Silla giratoria\r\nPlomo, ajustable en altura y con 5 patas con ruedas.', '03-247', '2014-02-10 16:02:44', NULL),
+	(75, '03-247', '', '20.09.03.00247', 3, 'Silla giratoria', 11, 10, 9, 19, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Silla giratoria\r\nPlomo, ajustable en altura y con 5 patas con ruedas.', '03-247', '2014-02-10 16:02:44', '2014-02-12 11:02:09'),
 	(76, '03-244', '', '', 3, 'Silla giratoria', 11, 10, 9, 19, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Silla giratoria\r\nPlomo, ajustable en altura y con 5 patas con ruedas.', '03-244', '2014-02-10 16:02:52', NULL),
 	(77, '03-241', '', '', 3, 'Silla giratoria', 11, 10, 9, 19, 2, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Silla giratoria\r\nPlomo, ajustable en altura y con 5 patas con ruedas.', '03-241', '2014-02-10 16:02:54', NULL),
 	(78, 'X-0007', '', '', 3, 'Silla giratoria', 11, 10, 9, 19, 2, 4, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Silla giratoria\r\nPlomo, ajustable en altura y con 5 patas con ruedas.', 'X-0007', '2014-02-10 16:02:39', '2014-02-11 12:02:21'),
@@ -199,7 +199,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(130, 'X-0019', '', '', 10, 'Impresora de carro a cinta', 40, 10, 4, 6, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nIMPRESORA EPSON ACTION PRINTER 5000, DE CARRO A CINTA.', 'X-0019', '2014-02-11 16:02:41', NULL),
 	(131, 'X-0020', '', '', 10, 'Estabilizador', 41, 10, 8, 6, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR OMEGA PLUS\r\nMODELO: SVR - 1500W', 'X-0020', '2014-02-11 16:02:39', NULL),
 	(132, 'S-146', '', '', 3, 'Silla', 11, 6, 6, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO DE COLOR VERDE CON ASIENTO DE MADERA CUADRADO\r\n\r\n', 'S-146', '2014-02-11 16:02:31', '2014-02-11 17:02:20'),
-	(133, '03-041', '', '30.11.03.00041', 3, 'Taburete', 11, 6, 6, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO DE COLOR VERDE CON ASIENTO DE MADERA CUADRADO\r\n', '03-041', '2014-02-11 17:02:07', NULL),
+	(133, '03-041', '', '30.11.03.00041', 3, 'Taburete', 11, 6, 6, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO DE COLOR VERDE CON ASIENTO DE MADERA CUADRADO.', '03-041', '2014-02-11 17:02:07', '2014-02-12 14:02:04'),
 	(134, '03-215', '', '20.18.03.00215', 3, 'Silla giratoria', 11, 5, 2, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 5 RODAPIES.\r\n', '03-215', '2014-02-11 17:02:52', NULL),
 	(135, '03-298', '', '20.09.03.00298', 3, 'Silla giratoria', 11, 5, 3, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLA AZUL GIRATORIA CON APOYADERAS Y RUEDAS.', '03-298', '2014-02-11 17:02:18', NULL),
 	(136, '03-289', '', '20.18.03.00289', 10, 'Estabilizador', 28, 6, 12, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 PZA.\r\n\r\nESTABILIZADOR MATSUNAKA STAVOL, MODELO SVC 1500 N DE 1500 W.\r\n', '03-289', '2014-02-11 17:02:37', NULL),
@@ -219,7 +219,60 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(150, 'X-0027', '', '', 3, 'MesÃ³n', 11, 9, 10, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO LARGO, CON BASE DE MADERA AGLOMERADA COLOR CAFE Y ESTRUCTURA DE METAL COLOR CAFE, CON MEDIDAS [370cm x 75cm x 79cm de alto]', 'X-0027', '2014-02-11 17:02:41', '2014-02-11 17:02:56'),
 	(151, 'X-0028', '', '', 3, 'MesÃ³n', 11, 9, 10, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO LARGO, CON BASE DE MADERA AGLOMERADA COLOR CAFE Y ESTRUCTURA DE METAL COLOR CAFE, CON MEDIDAS [230cm x 75cm x 79cm de alto]', 'X-0028', '2014-02-11 17:02:54', NULL),
 	(152, 'S-436', '', '', 3, 'Mesa de trabajo', 11, 3, 2, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO DE MADERA, CON MEDIDAS [100cm x 80cm x 74cm de alto]', 'S-436', '2014-02-11 17:02:15', '2014-02-11 18:02:41'),
-	(153, 'X-0029', '', '', 3, 'Librero', 11, 3, 10, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA, CON 5 DIVISIONES, CON MEDIDAS [74.5cm x 30cm x 183cm de alto]', 'X-0029', '2014-02-11 18:02:36', NULL);
+	(153, 'X-0029', '', '', 3, 'Librero', 11, 3, 10, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA, CON 5 DIVISIONES, CON MEDIDAS [74.5cm x 30cm x 183cm de alto]', 'X-0029', '2014-02-11 18:02:36', NULL),
+	(154, 'S-271', '', '', 1, 'CPU', 1, 1, 1, 1, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '', 'S-271', '2014-02-12 11:02:10', NULL),
+	(155, '03-167', '', '20.18.03.00167', 3, 'Mesa de escritorio', 11, 3, 10, 19, 19, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nESCRITORIO MEDIANO DE MADERA CON 3 CAJONES LADO DERECHO, MEDIDAS [127cm x 74cm x 75cm alto]', '03-167', '2014-02-12 12:02:39', '2014-02-12 12:02:25'),
+	(156, 'S-162', '', '', 3, 'Buro', 11, 3, 10, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBURO PEQUEÃ‘O, CON 2 PUERTAS, MEDIDAS [130cm x 53cm x 82cm alto]', 'S-162', '2014-02-12 12:02:43', NULL),
+	(157, 'S-010', '', '', 3, 'Silla', 11, 6, 9, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA METALICA PLOMA.', 'S-010', '2014-02-12 12:02:45', NULL),
+	(158, 'S-028', '', '', 3, 'Cajoneria', 11, 3, 10, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCAJONERIA CAFE CON 4 CAJONES, MEDIDAS [115.5cm X 38cm x 60cm alto]', 'S-028', '2014-02-12 12:02:28', NULL),
+	(159, 'S-145', '', '', 1, 'Taburete', 11, 6, 6, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO VERDE CON BASE DE MADERA.', 'S-145', '2014-02-12 13:02:58', NULL),
+	(160, 'X-0001', '', '', 12, 'Muestrario', 11, 5, 4, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUESTRARIO COLOR VERDE CON LOGO FORTTE Y GANCHOS PARA ACOMODAR PRODUCTOS.', 'X-0001', '2014-02-12 13:02:22', NULL),
+	(161, 'X-0030', '', '', 12, 'Banner publicitario', 11, 1, 4, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBANNER PUBLICITARIO DEL SISTEMA DE GESTION INTEGRADO', 'X-0030', '2014-02-12 13:02:51', NULL),
+	(162, 'S-030', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO CON 3 CAJONES AL LADO IZQUIERDO Y 1 AL LADO DERECHO, MEDIDAS [167cm x 80cm x 60cm alto]', 'S-030', '2014-02-12 13:02:22', NULL),
+	(163, '03-166', '', '10.04.03.00166', 10, 'Fotocopiadora', 44, 10, 4, 6, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nFOTOCOPIADORA\r\nMARCA: MINOLTA\r\nMODELO: EP1052 CS-PRO\r\nSERIE: 21719517', '03-166', '2014-02-12 13:02:12', '2014-02-12 13:02:15'),
+	(164, 'S-025', '', '', 3, 'Archivero', 11, 6, 9, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nARCHIVERO DE METAL, CON 1 CAJON CON LLAVE Y 2 PUERTAS', 'S-025', '2014-02-12 13:02:59', NULL),
+	(165, 'X-0031', '', '', 12, 'Banner publicitario', 11, 5, 15, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBANNER PUBLICITARIO DE MACAWS SRL.', 'X-0031', '2014-02-12 13:02:00', '2014-02-12 13:02:50'),
+	(166, 'X-0032', '', '', 3, 'Buro', 11, 1, 10, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBURO DE MADERA CAFE, CON 2 PUERTAS.', 'X-0032', '2014-02-12 13:02:40', NULL),
+	(167, 'X-0033', '', '', 10, 'Refrigerador', 45, 6, 13, 20, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREFRIGERADOR ELECTROLUX, DE 2 PUERTAS, MODELO DX45X', 'X-0033', '2014-02-12 13:02:15', NULL),
+	(168, '03-288', '', '10.01.03.00288', 10, 'Estabilizador', 28, 6, 12, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MATSUNAKA STAVOL MODELO SVC 1500 N DE 100 W.', '03-288', '2014-02-12 13:02:56', NULL),
+	(169, 'S-230', '', '', 3, 'Cajoneria', 11, 12, 4, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCAJONERIA DE COLOR BLANCO CON 4 CAJONES.', 'S-230', '2014-02-12 13:02:31', NULL),
+	(170, 'S-018', '', '', 3, 'Silla giratoria', 11, 5, 9, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA, DE COLOR PLOMO CON 5 RODAPIES.', 'S-018', '2014-02-12 13:02:06', NULL),
+	(171, 'X-0034', '', '', 3, 'Cubiculo de oficina', 11, 12, 4, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '', 'X-0034', '2014-02-12 13:02:01', NULL),
+	(172, '03-171', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL PANASONIC, MODELO KX-T7433', '03-171', '2014-02-12 13:02:55', NULL),
+	(173, 'S-237', '', '', 3, 'Cajoneria', 11, 12, 4, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCAJONERIA BLANCA, CON 4 CAJONES.', 'S-237', '2014-02-12 13:02:41', NULL),
+	(174, 'S-266', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL PANASONIC BLANCO, MODELO KX-T7450X', 'S-266', '2014-02-12 13:02:36', NULL),
+	(175, '03-198', '', '10.04.03.00198', 1, 'Mueble de trabajo', 11, 12, 8, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE DE TRABAJO MELAMINICO COLOR BEIJE CON NEGRO DE 4 CUERPOS CON 12 CAJONES, 3 EN CADA SECCION.', '03-198', '2014-02-12 13:02:22', NULL),
+	(176, '03-214', '', '20.18.03.00214', 3, 'Silla giratoria', 11, 5, 9, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA DE OFICINA GIRATORIO CON 5 RODAPIES.', '03-214', '2014-02-12 13:02:21', NULL),
+	(177, 'X-0035', '', '', 12, 'Banner publicitario', 11, 5, 15, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBANNER PUBLICITARIO DE MACAWS SRL.', 'X-0035', '2014-02-12 13:02:47', NULL),
+	(178, 'X-0036', '', '', 8, 'Caminadora', 1, 10, 2, 5, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nCAMINADORA PROFORM CROSS-WALK.', 'X-0036', '2014-02-12 14:02:23', NULL),
+	(179, '03-218', '', '10.01.03.00218', 3, 'Silla giratoria', 11, 5, 9, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA DE OFICINA GIRATORIO CON 5 RODAPIES.', '03-218', '2014-02-12 14:02:18', NULL),
+	(180, '03-115', '', '30.11.03.00115', 3, 'Silla', 11, 6, 9, 1, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA PLEGABLE DE 0,78M DE ALTO COLOR PLOMO', '03-115', '2014-02-12 14:02:57', NULL),
+	(181, '03-164', '', '30.11.03.00164', 3, 'Archivero', 11, 6, 9, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE METALICO PARA OFICINA DE 4 GAVETAS COLOR PLOMO\r\n', '03-164', '2014-02-12 14:02:50', NULL),
+	(182, '03-234', '', '30.11.03.00234', 3, 'Archivero', 11, 6, 3, 2, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nGAVETERO DE 4 CAJONES C/MARIPOSA', '03-234', '2014-02-12 14:02:48', '2014-02-12 14:02:32'),
+	(183, 'X-0037', '', '', 3, 'Silla giratoria', 11, 5, 9, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 5 RODAPIES.', 'X-0037', '2014-02-12 14:02:43', NULL),
+	(184, 'X-0038', '', '', 12, 'Basurero papelero', 11, 5, 15, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBASURERO PAPELERO DE PLASTICO CON TAPA CAFE Y CONTENEDOR CREMA.', 'X-0038', '2014-02-12 14:02:35', NULL),
+	(185, '03-274', '', '30.11.03.00274', 3, 'Archivero', 11, 6, 3, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nGAVETERO DE 4 CAJONES C/ MARIPOSA.', '03-274', '2014-02-12 14:02:08', NULL),
+	(186, '03-235', '', '10.04.03.00235', 10, 'Destructora de papel', 1, 5, 4, 1, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nDESTRUCTORA DE PAPEL PAPER MONSTER JUNIOR.', '03-235', '2014-02-12 14:02:20', NULL),
+	(187, '03-174', '', '30.11.03.00174', 3, 'Silla giratoria', 11, 5, 9, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE OFICINA GIRATORIO CON 5 RODAPIES.', '03-174', '2014-02-12 14:02:41', NULL),
+	(188, 'X-0039', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL PANASONIC, MODELO KX-TS500LX W', 'X-0039', '2014-02-12 14:02:02', NULL),
+	(189, 'X-0040', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL PANASONIC, MODELO KX-TS500LX W.', 'X-0040', '2014-02-12 14:02:07', NULL),
+	(190, '03-204', '', '10.01.03.00204', 12, 'Caja de llaves', 11, 6, 4, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nARCHIVERO DE LLAVES MODELO 60/2 COLOR BLANCO.', '03-204', '2014-02-12 14:02:46', NULL),
+	(191, '03-297', '', '20.18.03.00297', 10, 'Estabilizador', 28, 6, 12, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA STAVOL MATSUNAKA SVC 1500 N.', '03-297', '2014-02-12 14:02:27', NULL),
+	(192, 'X-0041', '', '', 10, 'Switch', 46, 5, 2, 4, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nENCORE SWITCH DE 24 PUERTOS, MODELO ENH924-AUT.', 'X-0041', '2014-02-12 15:02:37', NULL),
+	(193, 'X-0042', '', '', 10, 'Calentador de agua', 24, 5, 4, 21, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCALENTADOR DE AGUA PHILIPS, DE 1.5 LITROS DE CAPACIDAD.', 'X-0042', '2014-02-12 15:02:27', NULL),
+	(194, 'P-023', '', '', 10, 'Hub', 43, 5, 9, 8, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nDLINK DFE-816, CON 16 PUERTOS.', 'P-023', '2014-02-12 15:02:13', NULL),
+	(195, 'P-017', '', '', 10, 'Calentador de agua', 47, 5, 4, 1, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nCALENTADOR DE AGUA OSTER, 2 LITROS DE CAPACIDAD.', 'P-017', '2014-02-12 15:02:09', NULL),
+	(196, '03-219', '', '30.11.03.00219', 3, 'Silla giratoria', 11, 5, 9, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA COLOR PLOMA, CON 5 RODAPIES.', '03-219', '2014-02-12 15:02:44', '2014-02-12 15:02:28'),
+	(197, 'X-0043', '', '', 12, 'Calefactor de aire a gas', 1, 6, 16, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 8, 1, '1 PZA.\r\n\r\nCALEFACTOR DE AIRE A GAS VOLCAN.', 'X-0043', '2014-02-12 15:02:57', NULL),
+	(198, 'S-033', '', '', 3, 'Librero', 11, 3, 10, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA CON 5 REPISAS.', 'S-033', '2014-02-12 15:02:03', NULL),
+	(199, 'X-0044', '', '', 12, 'Gavetero', 11, 5, 5, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nGAVETERO CON 45 COMPARTIMENTOS PARA COSAS PEQUEÃ‘AS.', 'X-0044', '2014-02-12 15:02:53', NULL),
+	(200, 'X-0045', '', '', 6, 'Casco de soldadura', 11, 5, 2, 4, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCASCO DE SOLDADURA, CARECE DEL LENTE PROTECTOR.', 'X-0045', '2014-02-12 15:02:09', NULL),
+	(201, '03-008-2', '', '30.11.03.00008', 10, 'Estabilizador', 28, 6, 10, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA SHUAN HSIN MODELO MVS-5 COLOR CAFEÂ‰ DE 500V.', '03-008-2', '2014-02-12 15:02:22', NULL),
+	(202, 'S-246', '', '', 12, 'Extintor de incendios', 48, 6, 12, 12, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nEXTINTOR DE 4 KILOS.', 'S-246', '2014-02-12 15:02:12', NULL),
+	(203, 'X-0046', '', '', 12, 'Banner publicitario', 11, 5, 4, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBANNER PUBLICITARIO DE SISTEMA DE GESTION INTEGRADO.', 'X-0046', '2014-02-12 15:02:14', NULL),
+	(204, 'S-031', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO CON 2 CAJONES Y UNA GAVETA, MEDIDAS [108cm x 60cm x 132 alto]', 'S-031', '2014-02-12 15:02:32', NULL),
+	(205, 'S-222', '', '', 3, 'MesÃ³n', 11, 12, 4, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '2 PZA.\r\n\r\nMESON FORMA L', 'S-222', '2014-02-12 15:02:35', NULL),
+	(206, 'X-0047', '', '', 1, 'Mini estudio fotogrÃ¡fico', 11, 10, 4, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '4 PZAS.\r\n\r\n1 MINI ESTUDIO CON ESTRUCTURA METALICA Y CUBIERTO DE TELA.\r\n3 LAMPARAS DE ILUMINACION.', 'X-0047', '2014-02-12 16:02:34', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -249,9 +302,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~43 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~45 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -297,7 +350,12 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(40, 'EPSON'),
 	(41, 'OMEGA'),
 	(42, 'CHUAN HSIN'),
-	(43, 'D-LINK');
+	(43, 'D-LINK'),
+	(44, 'MINOLTA'),
+	(45, 'ELECTROLUX'),
+	(46, 'ENCORE'),
+	(47, 'OSTER'),
+	(48, 'RESIL');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -307,9 +365,9 @@ CREATE TABLE IF NOT EXISTS `item_color` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_color: ~13 rows (approximately)
+-- Dumping data for table inventory.item_color: ~14 rows (approximately)
 DELETE FROM `item_color`;
 /*!40000 ALTER TABLE `item_color` DISABLE KEYS */;
 INSERT INTO `item_color` (`id`, `name`) VALUES
@@ -325,7 +383,9 @@ INSERT INTO `item_color` (`id`, `name`) VALUES
 	(10, 'Café'),
 	(12, 'Rojo'),
 	(13, 'Plateado'),
-	(14, 'Dorado');
+	(14, 'Dorado'),
+	(15, 'Crema'),
+	(16, 'Celeste');
 /*!40000 ALTER TABLE `item_color` ENABLE KEYS */;
 
 
@@ -345,7 +405,7 @@ INSERT INTO `item_condition` (`id`, `name`, `description`) VALUES
 	(1, '- Seleccionar -', NULL),
 	(2, '1 - Nuevo', NULL),
 	(3, '2 - Buen estado', NULL),
-	(4, '3 - Medio uso', NULL),
+	(4, '3 - Con desgaste', NULL),
 	(6, '4 - Dañado', NULL),
 	(7, '5 - Inservible', NULL),
 	(8, 'No hay dato', NULL);
@@ -359,9 +419,9 @@ CREATE TABLE IF NOT EXISTS `item_location` (
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_location: ~18 rows (approximately)
+-- Dumping data for table inventory.item_location: ~19 rows (approximately)
 DELETE FROM `item_location`;
 /*!40000 ALTER TABLE `item_location` DISABLE KEYS */;
 INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
@@ -382,7 +442,8 @@ INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
 	(15, 'Area línea producción', NULL),
 	(16, 'Area tapiceria', NULL),
 	(17, 'Area mecánica', NULL),
-	(18, 'Oficina cubículos', NULL);
+	(18, 'Oficina cubículos', NULL),
+	(19, 'Pasillos oficinas', NULL);
 /*!40000 ALTER TABLE `item_location` ENABLE KEYS */;
 
 
@@ -410,7 +471,7 @@ INSERT INTO `item_material` (`id`, `name`, `description`) VALUES
 	(9, 'Madera aglomerada', NULL),
 	(10, 'Varios', NULL),
 	(11, 'Acrílico', NULL),
-	(12, 'Madera aglomerada melaminada', NULL);
+	(12, 'Madera aglomerada melaminica', NULL);
 /*!40000 ALTER TABLE `item_material` ENABLE KEYS */;
 
 
@@ -420,9 +481,9 @@ CREATE TABLE IF NOT EXISTS `item_origin` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_origin: ~19 rows (approximately)
+-- Dumping data for table inventory.item_origin: ~20 rows (approximately)
 DELETE FROM `item_origin`;
 /*!40000 ALTER TABLE `item_origin` DISABLE KEYS */;
 INSERT INTO `item_origin` (`id`, `name`) VALUES
@@ -444,7 +505,9 @@ INSERT INTO `item_origin` (`id`, `name`) VALUES
 	(16, 'Italia'),
 	(17, 'Francia'),
 	(18, 'Rusia'),
-	(19, 'No hay dato');
+	(19, 'No hay dato'),
+	(20, 'Suecia'),
+	(21, 'Polonia');
 /*!40000 ALTER TABLE `item_origin` ENABLE KEYS */;
 
 

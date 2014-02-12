@@ -105,8 +105,8 @@ class ItemController extends Zend_Controller_Action {
 				if( mkdir( self::PHOTO_ROOT_URL .  $photoUrl, $dirPermission) )
 				{
 					$itemDao->save($item);
-					//$this->_helper->redirector('index');
-					$this->_helper->redirector('add');
+					$this->_helper->redirector('index');
+					//$this->_helper->redirector('add');
 					return;
 				}
 				else

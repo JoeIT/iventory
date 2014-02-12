@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=219 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~191 rows (approximately)
+-- Dumping data for table inventory.item: ~214 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -272,7 +272,19 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(203, 'X-0046', '', '', 12, 'Banner publicitario', 11, 5, 4, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBANNER PUBLICITARIO DE SISTEMA DE GESTION INTEGRADO.', 'X-0046', '2014-02-12 15:02:14', NULL),
 	(204, 'S-031', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO CON 2 CAJONES Y UNA GAVETA, MEDIDAS [108cm x 60cm x 132 alto]', 'S-031', '2014-02-12 15:02:32', NULL),
 	(205, 'S-222', '', '', 3, 'MesÃ³n', 11, 12, 4, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '2 PZA.\r\n\r\nMESON FORMA L', 'S-222', '2014-02-12 15:02:35', NULL),
-	(206, 'X-0047', '', '', 1, 'Mini estudio fotogrÃ¡fico', 11, 10, 4, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '4 PZAS.\r\n\r\n1 MINI ESTUDIO CON ESTRUCTURA METALICA Y CUBIERTO DE TELA.\r\n3 LAMPARAS DE ILUMINACION.', 'X-0047', '2014-02-12 16:02:34', NULL);
+	(206, 'X-0047', '', '', 1, 'Mini estudio fotogrÃ¡fico', 11, 10, 4, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '4 PZAS.\r\n\r\n1 MINI ESTUDIO CON ESTRUCTURA METALICA Y CUBIERTO DE TELA.\r\n3 LAMPARAS DE ILUMINACION.', 'X-0047', '2014-02-12 16:02:34', NULL),
+	(207, 'S-029', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO DE MADERA CAFE, CON 2 CAJONES AL LADO DERECHO Y BASE PARA TECLADO, MEDIDAS [120cm x 62cm x 76cm alto]', 'S-029', '2014-02-12 16:02:46', '2014-02-12 17:02:41'),
+	(208, '07-034', '', '', 10, 'CPU', 7, 10, 9, 5, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 GLB.\r\n\r\nCPU CASE, INTEL CELERON 2.53GHZ, 40GB DISCO DURO\r\n\r\nCON TECLADO Y MOUSE DELL.', '07-034', '2014-02-12 16:02:06', NULL),
+	(209, '07-092', '', '20.18.07.00092', 10, 'Monitor LCD', 9, 5, 2, 8, 12, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR LCD\r\nMARCA: ACER\r\nMODELO: X183HB\r\nSERIE: ETLEZ0W0030070AD8A4329', '07-092', '2014-02-12 16:02:23', NULL),
+	(210, 'X-0048', '', '', 10, 'Estabilizador', 28, 6, 12, 4, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA MATSUNAKA STAVOL, MODELO SVC-4000N', 'X-0048', '2014-02-12 16:02:38', NULL),
+	(211, 'X-0049', '', '', 3, 'Silla giratoria', 11, 5, 9, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 5 RODAPIES.', 'X-0049', '2014-02-12 17:02:18', '2014-02-12 17:02:49'),
+	(212, '07-072', '', '30.06.07.00072', 10, 'Laser', 49, 6, 9, 5, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nEQUIPO DE GRABADO LASER CON MESA INCORPORADA.', '07-072', '2014-02-12 17:02:31', NULL),
+	(213, '03-216', '', '20.18.03.00216', 3, 'Silla giratoria', 11, 5, 9, 19, 12, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 PZA.\r\n\r\nSILLA DE OFICINA GIRATORIO CON 5 RODAPIES.', '03-216', '2014-02-12 17:02:51', NULL),
+	(214, '03-220', '', '30.11.03.00220', 3, 'Silla giratoria', 11, 5, 9, 19, 12, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA DE OFICINA GIRATORIO CON 5 RODAPIES.', '03-220', '2014-02-12 17:02:47', NULL),
+	(215, 'S-267', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 13, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO CON 3 CAJONES A CADA LADO Y 1 AL CENTRO.', 'S-267', '2014-02-12 17:02:58', NULL),
+	(216, '03-282', '', '20.19.03.00282', 10, 'Aire acondicionado', 6, 6, 4, 7, 13, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nEQUIPO DE AIRE ACONDICIONADO\r\nMARCA LG DE 18000 BTU.\r\nMODELO: LWC186NBMM3', '03-282', '2014-02-12 17:02:25', '2014-02-12 17:02:34'),
+	(217, 'X-0050', '', '', 12, 'Banner publicitario', 11, 1, 13, 19, 13, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBANNER PUBLICITARIO DE FORTTE Y BELLAGIO.', 'X-0050', '2014-02-12 17:02:01', NULL),
+	(218, 'X-0051', '', '', 12, 'Muestrario', 11, 5, 4, 19, 13, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUESTRARIO FORTTE, COLOR BLANCO CON GANCHOS.', 'X-0051', '2014-02-12 17:02:03', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -302,9 +314,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~45 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~49 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -355,7 +367,8 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(45, 'ELECTROLUX'),
 	(46, 'ENCORE'),
 	(47, 'OSTER'),
-	(48, 'RESIL');
+	(48, 'RESIL'),
+	(49, 'UNIVERSAL LASER SYSTEMS');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -365,9 +378,9 @@ CREATE TABLE IF NOT EXISTS `item_color` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_color: ~14 rows (approximately)
+-- Dumping data for table inventory.item_color: ~15 rows (approximately)
 DELETE FROM `item_color`;
 /*!40000 ALTER TABLE `item_color` DISABLE KEYS */;
 INSERT INTO `item_color` (`id`, `name`) VALUES
@@ -481,9 +494,9 @@ CREATE TABLE IF NOT EXISTS `item_origin` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_origin: ~20 rows (approximately)
+-- Dumping data for table inventory.item_origin: ~21 rows (approximately)
 DELETE FROM `item_origin`;
 /*!40000 ALTER TABLE `item_origin` DISABLE KEYS */;
 INSERT INTO `item_origin` (`id`, `name`) VALUES

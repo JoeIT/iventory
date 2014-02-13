@@ -11,13 +11,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for inventory
-DROP DATABASE IF EXISTS `inventory`;
 CREATE DATABASE IF NOT EXISTS `inventory` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `inventory`;
 
 
 -- Dumping structure for table inventory.item
-DROP TABLE IF EXISTS `item`;
 CREATE TABLE IF NOT EXISTS `item` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `code` varchar(50) DEFAULT NULL,
@@ -61,9 +59,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=219 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~214 rows (approximately)
+-- Dumping data for table inventory.item: ~198 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -220,7 +218,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(151, 'X-0028', '', '', 3, 'MesÃ³n', 11, 9, 10, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO LARGO, CON BASE DE MADERA AGLOMERADA COLOR CAFE Y ESTRUCTURA DE METAL COLOR CAFE, CON MEDIDAS [230cm x 75cm x 79cm de alto]', 'X-0028', '2014-02-11 17:02:54', NULL),
 	(152, 'S-436', '', '', 3, 'Mesa de trabajo', 11, 3, 2, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO DE MADERA, CON MEDIDAS [100cm x 80cm x 74cm de alto]', 'S-436', '2014-02-11 17:02:15', '2014-02-11 18:02:41'),
 	(153, 'X-0029', '', '', 3, 'Librero', 11, 3, 10, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA, CON 5 DIVISIONES, CON MEDIDAS [74.5cm x 30cm x 183cm de alto]', 'X-0029', '2014-02-11 18:02:36', NULL),
-	(154, 'S-271', '', '', 1, 'CPU', 1, 1, 1, 1, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '', 'S-271', '2014-02-12 11:02:10', NULL),
+	(154, 'S-271', '', '', 1, 'CPU', 1, 1, 1, 1, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 GLB.\r\n\r\nCPU CASE PPTI, PENTIUM 4, GHZ, 1 GB RAM.', 'S-271', '2014-02-12 11:02:10', '2014-02-12 18:02:19'),
 	(155, '03-167', '', '20.18.03.00167', 3, 'Mesa de escritorio', 11, 3, 10, 19, 19, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nESCRITORIO MEDIANO DE MADERA CON 3 CAJONES LADO DERECHO, MEDIDAS [127cm x 74cm x 75cm alto]', '03-167', '2014-02-12 12:02:39', '2014-02-12 12:02:25'),
 	(156, 'S-162', '', '', 3, 'Buro', 11, 3, 10, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBURO PEQUEÃ‘O, CON 2 PUERTAS, MEDIDAS [130cm x 53cm x 82cm alto]', 'S-162', '2014-02-12 12:02:43', NULL),
 	(157, 'S-010', '', '', 3, 'Silla', 11, 6, 9, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA METALICA PLOMA.', 'S-010', '2014-02-12 12:02:45', NULL),
@@ -284,12 +282,47 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(215, 'S-267', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 13, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO CON 3 CAJONES A CADA LADO Y 1 AL CENTRO.', 'S-267', '2014-02-12 17:02:58', NULL),
 	(216, '03-282', '', '20.19.03.00282', 10, 'Aire acondicionado', 6, 6, 4, 7, 13, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nEQUIPO DE AIRE ACONDICIONADO\r\nMARCA LG DE 18000 BTU.\r\nMODELO: LWC186NBMM3', '03-282', '2014-02-12 17:02:25', '2014-02-12 17:02:34'),
 	(217, 'X-0050', '', '', 12, 'Banner publicitario', 11, 1, 13, 19, 13, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBANNER PUBLICITARIO DE FORTTE Y BELLAGIO.', 'X-0050', '2014-02-12 17:02:01', NULL),
-	(218, 'X-0051', '', '', 12, 'Muestrario', 11, 5, 4, 19, 13, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUESTRARIO FORTTE, COLOR BLANCO CON GANCHOS.', 'X-0051', '2014-02-12 17:02:03', NULL);
+	(218, 'X-0051', '', '', 12, 'Muestrario', 11, 5, 4, 19, 13, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUESTRARIO FORTTE, COLOR BLANCO CON GANCHOS.', 'X-0051', '2014-02-12 17:02:03', NULL),
+	(219, '03-197', '', '10.01.03.00197', 3, 'Gavetero', 4, 6, 9, 2, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nGAVETERO METALICO DE 2 GAVETAS MARCA MACA CON 4 RODAPIES.\r\n', '03-197', '2014-02-13 10:02:37', NULL),
+	(220, '03-178', '', '10.01.03.00178', 4, 'Balanza', 50, 6, 4, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 GLB.\r\n\r\nBALANZA DIGITAL MARCA DETECTO CAPACIDAD 15 x 0,005KG COLOR PLOMO CON BANDEJA BLANCA', '03-178', '2014-02-13 10:02:40', NULL),
+	(221, 'S-005', '', '', 3, 'Armario', 11, 12, 4, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nARMARIO CON 2 GAVETAS SUPERIORES, 2 INFERIORES Y UN ESPACIO CENTRAL, MEDIDAS [100 cm x 30cm x 202cm alto].', 'S-005', '2014-02-13 10:02:42', NULL),
+	(222, '03-193', '', '10.01.03.00193', 1, 'Librero', 11, 3, 10, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA DE 5 DIVISIONES [75.5cm x 30cm x 1981cm alto]', '03-193', '2014-02-13 11:02:21', NULL),
+	(223, '03-189', '', '10.01.03.00189', 12, 'Caja de llaves', 11, 6, 9, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nARCHIVERO DE LLAVES METALICO COLOR PLOMO.', '03-189', '2014-02-13 11:02:03', NULL),
+	(224, 'X-0052', '', '', 3, 'MesÃ³n', 11, 7, 8, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON CON CAJONERIA Y UNA GAVETA EN LA PARTE INFERIOR.', 'X-0052', '2014-02-13 11:02:56', NULL),
+	(225, '03-194', '', '10.01.03.00194', 10, 'Aire acondicionado', 22, 10, 4, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nACONDICIONADOR DE AIRE MARCA PANASONIC, COLOR BLANCO.\r\n', '03-194', '2014-02-13 11:02:05', NULL),
+	(226, '03-196', '', '10.01.03.00196', 3, 'Gavetero', 11, 12, 4, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE GAVETERO BLANCO DE 4 PUERTAS, MEDIDAS [200cm x 62.5cm x 90cm alto]', '03-196', '2014-02-13 11:02:09', NULL),
+	(227, '03-179', '', '10.01.03.00179', 3, 'Librero', 11, 3, 10, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA CON 6 DIVISIONES [86cm x 33.5cm x 240cm alto].', '03-179', '2014-02-13 11:02:16', NULL),
+	(228, '03-180', '', '10.01.03.00180', 3, 'Librero', 11, 3, 10, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA CON 6 DIVISIONES [86cm x 33.5cm x 240cm alto].', '03-180', '2014-02-13 11:02:48', NULL),
+	(229, 'S-004', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO DE MADERA, COLOR CAFE, EN FORMA DE L, MEDIDAS [220cm x 70cm x 76cm alto] SECCION LARGA, Y [75cm x 70cm x 76cm alto] SECCION CORTA.', 'S-004', '2014-02-13 11:02:26', '2014-02-13 12:02:23'),
+	(230, '07-088', '', '20.18.07.00088', 10, 'CPU', 30, 6, 2, 5, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB,\r\n\r\nCPU, MARCA EMACHINES, MOD. ET 1831-07, SERIE PTNB602022009017312700.\r\n\r\nCON TECLADO Y MOUSE.', '07-088', '2014-02-13 13:02:50', '2014-02-13 13:02:06'),
+	(231, '07-091', '', '20.18.07.00091', 10, 'Monitor LCD', 9, 5, 2, 8, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMONITOR LCD\r\nMARCA: ACER\r\nMODELO: X183HB\r\nSERIE: ETLEZ0W0030070AD8B4329.', '07-091', '2014-02-13 13:02:21', NULL),
+	(232, '03-302', '', '10.01.03.00302', 3, 'Silla giratoria', 11, 5, 2, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON RUEDAS COLOR NEGRO ANATOMICA CON ESPALDAR DE RED NEGRA.', '03-302', '2014-02-13 13:02:51', NULL),
+	(233, 'S-241', '', '', 3, 'Mesa de trabajo', 11, 9, 10, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESA DE MADERA AGLOMERADA, COLOR CAFE, CON ESTRUCTURA DE METAL.', 'S-241', '2014-02-13 13:02:47', NULL),
+	(234, '07-041', '', '20.18.07.00041', 10, 'CPU', 8, 6, 3, 5, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCPU CASE HP PAVILION A450Y, 160 GB QUEMADOR DE DVD , 2.80 GHZ 512 RAM 160 DD SN MXP413059Z Y MONITOR HP PAVILION MX7003 DE 17" CNNIGOB932 TECLADO BF40718541 MOUSE K034531 764\r\n', '07-041', '2014-02-13 13:02:54', NULL),
+	(235, '07-052', '', '', 10, 'Equipo computacion', 2, 5, 2, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCPU SONY VAIO\r\n\r\nMONITOR SONY LCD.', '07-052', '2014-02-13 13:02:22', '2014-02-13 15:02:38'),
+	(236, 'S-242', '', '', 10, 'Impresora a toner', 8, 5, 9, 5, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nIMPRESORA HP LASERJET P2015.', 'S-242', '2014-02-13 13:02:27', NULL),
+	(237, '07-082', '', '20.19.07.00082', 10, 'MultifunciÃ³n', 51, 5, 9, 6, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMULTIFUNCION (ESCANER, COPIADORA Y FAX) MARCA BROTHER, MODELO MFC7440N, SERIE U62036L9N561433.', '07-082', '2014-02-13 13:02:23', NULL),
+	(238, '03-303', '', '20.19.03.00303', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTELEFONO PANASONIC, MODELO KX-TS500LXW.', '03-303', '2014-02-13 14:02:41', '2014-02-13 14:02:27'),
+	(239, '03-304', '', '20.19.03.00304', 10, 'TelÃ©fono digital', 22, 5, 2, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL, PANASONIC MODELO KX-TS500LXB.', '03-304', '2014-02-13 14:02:26', NULL),
+	(240, '03-305', '', '10.01.03.00305', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL PANASONIC, MODELO KX-T7730.', '03-305', '2014-02-13 14:02:12', NULL),
+	(241, 'P-046', '', '', 10, 'TelÃ©fono inalambrico', 52, 5, 13, 4, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTELEFONO INALAMBRICO VTECH.', 'P-046', '2014-02-13 14:02:02', NULL),
+	(242, 'X-0053', '', '', 10, 'Estabilizador', 28, 6, 12, 4, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MATSUNAKA STAVOL, MODELO SVC-100N.', 'X-0053', '2014-02-13 15:02:06', NULL),
+	(243, 'X-0054', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nPANASONIC DIGITAL KX-T7730.', 'X-0054', '2014-02-13 15:02:57', NULL),
+	(244, '03-294', '', '10.01.03.00294', 10, 'Estabilizador', 28, 6, 12, 4, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA STAVOL MATSUNAKA SVC-1000N.', '03-294', '2014-02-13 15:02:03', NULL),
+	(245, '07-076', '', '20.19.07.00076', 10, 'CPU', 8, 5, 2, 5, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCOMPUTADORA MARCA HP,\r\nCPU PAVILION MODELO E9110T NO. SERIE MXV92700HQ.\r\n\r\nMONITOR NO. SERIE 3CQ9163N45.\r\n\r\nCON TECLADO Y MOUSE HP.', '07-076', '2014-02-13 15:02:10', NULL),
+	(246, '07-104', '', '20.19.07.00104', 10, 'Laptop', 53, 5, 2, 4, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLAPTOP TOSHIBA SATELLITE PRO L740-EZ1420D, SERIAL YB105866W.', '07-104', '2014-02-13 15:02:06', NULL),
+	(247, '03-187', '', '10.01.03.00187', 3, 'Silla', 11, 5, 10, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLON DE ESPERA COLOR CAFE.', '03-187', '2014-02-13 16:02:33', '2014-02-13 16:02:10'),
+	(248, 'X-0055', '', '', 10, 'Escaner', 8, 5, 4, 5, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCANER HP, MODELO C9870A', 'X-0055', '2014-02-13 16:02:33', NULL),
+	(249, '03-188', '', '10.01.03.00188', 10, 'Silla', 11, 5, 10, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLON DE ESPERA COLOR CAFE.', '03-188', '2014-02-13 16:02:57', NULL),
+	(250, '03-181', '', '10.01.03.00181', 3, 'Gavetero', 11, 3, 10, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 PZA.\r\n\r\nGAVETERO DE 3 GAVETAS DE MADERA CON CHAPA PEQUEÃ‘A AL COSTADO DERECHO, MEDIDAS [55cm x 42cm x 60cm alto].', '03-181', '2014-02-13 16:02:35', NULL),
+	(251, '03-231', '', '10.01.03.00231', 3, 'Gavetero', 11, 6, 6, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE GAVETERO VERDE, CON 4 GAVETAS CON MEDIDAS [47cm x 66cm x 136cm alto].', '03-231', '2014-02-13 16:02:40', '2014-02-13 16:02:01'),
+	(252, '03-182', '', '10.01.03.00182', 3, 'Gavetero', 11, 6, 6, 2, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE GAVETERO VERDE, CON 4 GAVETAS CON MEDIDAS [47cm x 66cm x 136cm alto].\r\n', '03-182', '2014-02-13 16:02:57', '2014-02-13 16:02:14'),
+	(253, '03-183', '', '10.01.03.00183', 2, 'Gavetero', 11, 6, 6, 2, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE GAVETERO VERDE, CON 4 GAVETAS CON MEDIDAS [47cm x 66cm x 136cm alto].', '03-183', '2014-02-13 16:02:04', '2014-02-13 16:02:27'),
+	(254, '03-184', '', '10.01.03.00184', 3, 'Gavetero', 11, 6, 6, 2, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE GAVETERO VERDE, CON 4 GAVETAS CON MEDIDAS [47cm x 66cm x 136cm alto].', '03-184', '2014-02-13 16:02:58', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
 -- Dumping structure for table inventory.item_availability
-DROP TABLE IF EXISTS `item_availability`;
 CREATE TABLE IF NOT EXISTS `item_availability` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
@@ -309,21 +342,20 @@ INSERT INTO `item_availability` (`id`, `name`, `description`) VALUES
 
 
 -- Dumping structure for table inventory.item_brand
-DROP TABLE IF EXISTS `item_brand`;
 CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~49 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~53 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(1, '- Seleccionar -'),
 	(2, 'SONY'),
 	(3, 'SAMSUNG'),
-	(4, 'TOYOTA'),
+	(4, 'MACA'),
 	(5, 'FIAT'),
 	(6, 'LG'),
 	(7, 'DELL'),
@@ -368,12 +400,15 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(46, 'ENCORE'),
 	(47, 'OSTER'),
 	(48, 'RESIL'),
-	(49, 'UNIVERSAL LASER SYSTEMS');
+	(49, 'UNIVERSAL LASER SYSTEMS'),
+	(50, 'DETECTO'),
+	(51, 'BROTHER'),
+	(52, 'VTECH'),
+	(53, 'TOSHIBA');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
 -- Dumping structure for table inventory.item_color
-DROP TABLE IF EXISTS `item_color`;
 CREATE TABLE IF NOT EXISTS `item_color` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -403,7 +438,6 @@ INSERT INTO `item_color` (`id`, `name`) VALUES
 
 
 -- Dumping structure for table inventory.item_condition
-DROP TABLE IF EXISTS `item_condition`;
 CREATE TABLE IF NOT EXISTS `item_condition` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
@@ -426,7 +460,6 @@ INSERT INTO `item_condition` (`id`, `name`, `description`) VALUES
 
 
 -- Dumping structure for table inventory.item_location
-DROP TABLE IF EXISTS `item_location`;
 CREATE TABLE IF NOT EXISTS `item_location` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -461,7 +494,6 @@ INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
 
 
 -- Dumping structure for table inventory.item_material
-DROP TABLE IF EXISTS `item_material`;
 CREATE TABLE IF NOT EXISTS `item_material` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -489,7 +521,6 @@ INSERT INTO `item_material` (`id`, `name`, `description`) VALUES
 
 
 -- Dumping structure for table inventory.item_origin
-DROP TABLE IF EXISTS `item_origin`;
 CREATE TABLE IF NOT EXISTS `item_origin` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -525,7 +556,6 @@ INSERT INTO `item_origin` (`id`, `name`) VALUES
 
 
 -- Dumping structure for table inventory.item_owner
-DROP TABLE IF EXISTS `item_owner`;
 CREATE TABLE IF NOT EXISTS `item_owner` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -545,7 +575,6 @@ INSERT INTO `item_owner` (`id`, `name`, `description`) VALUES
 
 
 -- Dumping structure for table inventory.item_type
-DROP TABLE IF EXISTS `item_type`;
 CREATE TABLE IF NOT EXISTS `item_type` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `parent_id` int(8) DEFAULT NULL,
@@ -563,7 +592,7 @@ INSERT INTO `item_type` (`id`, `parent_id`, `name`, `description`) VALUES
 	(1, NULL, '- Seleccionar -', NULL),
 	(2, NULL, 'No hay dato', NULL),
 	(3, NULL, 'Mueble', NULL),
-	(4, NULL, 'Artículo de escritorio', NULL),
+	(4, NULL, 'Equipo de precisión', NULL),
 	(5, NULL, 'Maquina de coser', NULL),
 	(6, NULL, 'Herramienta', NULL),
 	(7, NULL, 'Automovil', NULL),

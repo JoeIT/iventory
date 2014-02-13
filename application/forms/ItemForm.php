@@ -59,7 +59,7 @@ class App_Form_ItemForm extends Zend_Form
 		$location = new Zend_Form_Element_Select('location_select');
 		$location->setLabel("Ubicacion:");
 		$location->setRequired(false);
-		//$location->setValue('13');
+		$location->setValue('3');
 		
 		$owner = new Zend_Form_Element_Select('owner_select');
 		$owner->setLabel("Propiedad:");
@@ -102,7 +102,7 @@ class App_Form_ItemForm extends Zend_Form
 		$comment = new Zend_Form_Element_Textarea('comment');
 		$comment->setLabel("Comentario:");
 		$comment->setAttrib("cols", "50");
-		$comment->setAttrib("rows", "15");
+		$comment->setAttrib("rows", "10");
 		
 		$submit = new Zend_Form_Element_Submit('submit', array('label' => 'GUARDAR'));
 		

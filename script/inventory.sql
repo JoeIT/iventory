@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~198 rows (approximately)
+-- Dumping data for table inventory.item: ~259 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -318,7 +318,16 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(251, '03-231', '', '10.01.03.00231', 3, 'Gavetero', 11, 6, 6, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE GAVETERO VERDE, CON 4 GAVETAS CON MEDIDAS [47cm x 66cm x 136cm alto].', '03-231', '2014-02-13 16:02:40', '2014-02-13 16:02:01'),
 	(252, '03-182', '', '10.01.03.00182', 3, 'Gavetero', 11, 6, 6, 2, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE GAVETERO VERDE, CON 4 GAVETAS CON MEDIDAS [47cm x 66cm x 136cm alto].\r\n', '03-182', '2014-02-13 16:02:57', '2014-02-13 16:02:14'),
 	(253, '03-183', '', '10.01.03.00183', 2, 'Gavetero', 11, 6, 6, 2, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE GAVETERO VERDE, CON 4 GAVETAS CON MEDIDAS [47cm x 66cm x 136cm alto].', '03-183', '2014-02-13 16:02:04', '2014-02-13 16:02:27'),
-	(254, '03-184', '', '10.01.03.00184', 3, 'Gavetero', 11, 6, 6, 2, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE GAVETERO VERDE, CON 4 GAVETAS CON MEDIDAS [47cm x 66cm x 136cm alto].', '03-184', '2014-02-13 16:02:58', NULL);
+	(254, '03-184', '', '10.01.03.00184', 3, 'Gavetero', 11, 6, 6, 2, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE GAVETERO VERDE, CON 4 GAVETAS CON MEDIDAS [47cm x 66cm x 136cm alto].', '03-184', '2014-02-13 16:02:58', NULL),
+	(255, '03-192', '', '10.01.03.00192', 3, 'Librero', 11, 3, 10, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA DE 5 DIVISIONES [75cm x 30cm x 180cm alto].', '03-192', '2014-02-13 17:02:15', NULL),
+	(256, '07-025', '', '30.11.07.00025', 10, 'Sistema de seguridad', 1, 6, 4, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nSISTEMA DE SEGURIDAD ANTIROBOS (CAJA COLOR BLANCO DE METAL)\r\n\r\nCON CIRCUITO DIGITAL MARCA PANASONIC SERIE 7EBUH009512 4CO DIGITAL SUPER HYBRID SYSTEM.', '07-025', '2014-02-13 17:02:30', '2014-02-13 17:02:08'),
+	(257, 'X-0056', '', '', 10, 'Central telefonica', 22, 5, 4, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCENTRAL TELEFONICA LOCAL\r\nMARCA: PANASONIC\r\nMODELO: KX-TEM824', 'X-0056', '2014-02-13 17:02:09', NULL),
+	(258, 'S-003', '', '', 3, 'Cajoneria', 11, 3, 10, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE CON 2 CAJAS\r\nMEDIDAS [79cm x 50cm x 78cm alto]', 'S-003', '2014-02-13 17:02:51', NULL),
+	(259, 'S-002', '', '', 3, 'Cajoneria', 11, 3, 10, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUEBLE CON 2 CAJAS\r\nMEDIDAS [79cm x 50cm x 78cm alto]', 'S-002', '2014-02-13 17:02:59', NULL),
+	(260, '03-233', '', '10.01.03.00233', 10, 'Destructora de papel', 11, 5, 4, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nDESTRUCTORA DE PAPEL.', '03-233', '2014-02-13 17:02:59', NULL),
+	(261, 'T-0001', '', '', 13, 'Puff', 54, 2, 10, 2, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 2, 1, '1 PZA.\r\n\r\nPUFF GRANDE, CUERO CAFE.', 'T-0001', '2014-02-13 17:02:01', '2014-02-13 17:02:35'),
+	(262, 'X-0057', '', '', 3, 'Mostrador', 11, 3, 17, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMOSTRADOR CON PUERTA DE VIDRIO\r\n2 DIVISIONES\r\nMEDIDAS [57cm x 42cm x 125cm lado]', 'X-0057', '2014-02-13 17:02:23', NULL),
+	(263, 'X-0058', '', '', 10, 'Refrigerador', 3, 6, 13, 7, 3, 2, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREFRIGERADOR DE 2 PUERTAS.', 'X-0058', '2014-02-13 17:02:42', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -404,7 +413,9 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(50, 'DETECTO'),
 	(51, 'BROTHER'),
 	(52, 'VTECH'),
-	(53, 'TOSHIBA');
+	(53, 'TOSHIBA'),
+	(54, 'BELLAGIO'),
+	(55, 'MACAWS');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -433,7 +444,8 @@ INSERT INTO `item_color` (`id`, `name`) VALUES
 	(13, 'Plateado'),
 	(14, 'Dorado'),
 	(15, 'Crema'),
-	(16, 'Celeste');
+	(16, 'Celeste'),
+	(17, 'Vino');
 /*!40000 ALTER TABLE `item_color` ENABLE KEYS */;
 
 
@@ -600,7 +612,8 @@ INSERT INTO `item_type` (`id`, `parent_id`, `name`, `description`) VALUES
 	(9, NULL, 'Artículo de cocina', NULL),
 	(10, NULL, 'Equipo electrónico', NULL),
 	(11, NULL, 'Repuesto', NULL),
-	(12, NULL, 'Otro', NULL);
+	(12, NULL, 'Otro', NULL),
+	(13, NULL, 'Producto terminado', NULL);
 /*!40000 ALTER TABLE `item_type` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

@@ -11,11 +11,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for inventory
+DROP DATABASE IF EXISTS `inventory`;
 CREATE DATABASE IF NOT EXISTS `inventory` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `inventory`;
 
 
 -- Dumping structure for table inventory.item
+DROP TABLE IF EXISTS `item`;
 CREATE TABLE IF NOT EXISTS `item` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `code` varchar(50) DEFAULT NULL,
@@ -59,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=255 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=285 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~259 rows (approximately)
+-- Dumping data for table inventory.item: ~398 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -176,7 +178,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(109, 'X-0011', '', '', 3, 'Silla', 11, 3, 2, 19, 10, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA. SILLA DE MADERA CON TAPIZADO FLOREADO.\r\n\r\nMEDIDAS 56cm largo x 51cm ancho x 76 cm alto.', 'X-0011', '2014-02-11 11:02:55', '2014-02-11 12:02:07'),
 	(110, 'P-038', '', '', 12, 'Tripode para cÃ¡mara', 2, 6, 2, 6, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1PZA.\r\n\r\nTRIPODE PARA CAMARA FOTOGRAFICA\r\nMARCA: SONY\r\nMODELO: VCT-700\r\nALTO: 105cm.', 'P-038', '2014-02-11 12:02:26', NULL),
 	(111, 'X-0012', '', '', 10, 'VoIP', 33, 10, 8, 8, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nVOIP\r\nMARCA: INNOMEDIA\r\nMODELO: MTA3328-2RE', 'X-0012', '2014-02-11 13:02:15', '2014-02-11 13:02:42'),
-	(112, 'X-0013', '', '', 10, 'Switch', 7, 10, 2, 1, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSWITCH DELL POWERCONNECT 2324, 26 PUERTOS.', 'X-0013', '2014-02-11 13:02:54', '2014-02-11 13:02:23'),
+	(112, 'X-0013', '', '', 10, 'Switch', 7, 10, 2, 5, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSWITCH DELL POWERCONNECT 2324, 26 PUERTOS.', 'X-0013', '2014-02-11 13:02:54', '2014-02-14 08:02:39'),
 	(113, 'S-268', '', '', 10, 'Proyectora de imagen', 34, 10, 9, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '8 PZAS.\r\n\r\nPROYECTOR DE IMAGENES\r\nMARCA: INFOCUS\r\nMODELO: X1\r\nSERIE: AHHP31201521\r\n\r\n1 CONTROL REMOTO\r\n1 CABLE DE ALIMENTACION ELECTRICA\r\n1 A/V\r\n1 CABLE VGA\r\n2 MANUALES\r\n1 BOLSO', 'S-268', '2014-02-11 13:02:49', '2014-02-11 13:02:17'),
 	(114, 'X-0014', '', '', 10, 'Router wireless', 35, 10, 2, 5, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 2, 1, '1 PZA.\r\n\r\nLINKSYS ROUTER WIRELESS-G\r\nMODELO: WRT54GL\r\n\r\nDE 2 ANTENAS', 'X-0014', '2014-02-11 14:02:42', '2014-02-11 14:02:10'),
 	(115, 'X-0015', '', '', 10, 'Lector de cÃ³digo de barras', 36, 10, 2, 5, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '2 PZAS.\r\n\r\n1 LECTOR DE CODIGO DE BARRAS WASPNEST BUSINESS EDITION\r\n\r\n1 LIBRO MANUAL', 'X-0015', '2014-02-11 14:02:37', NULL),
@@ -327,11 +329,33 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(260, '03-233', '', '10.01.03.00233', 10, 'Destructora de papel', 11, 5, 4, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nDESTRUCTORA DE PAPEL.', '03-233', '2014-02-13 17:02:59', NULL),
 	(261, 'T-0001', '', '', 13, 'Puff', 54, 2, 10, 2, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 2, 1, '1 PZA.\r\n\r\nPUFF GRANDE, CUERO CAFE.', 'T-0001', '2014-02-13 17:02:01', '2014-02-13 17:02:35'),
 	(262, 'X-0057', '', '', 3, 'Mostrador', 11, 3, 17, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMOSTRADOR CON PUERTA DE VIDRIO\r\n2 DIVISIONES\r\nMEDIDAS [57cm x 42cm x 125cm lado]', 'X-0057', '2014-02-13 17:02:23', NULL),
-	(263, 'X-0058', '', '', 10, 'Refrigerador', 3, 6, 13, 7, 3, 2, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREFRIGERADOR DE 2 PUERTAS.', 'X-0058', '2014-02-13 17:02:42', NULL);
+	(263, 'X-0058', '', '', 10, 'Refrigerador', 3, 6, 13, 7, 3, 2, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREFRIGERADOR DE 2 PUERTAS.', 'X-0058', '2014-02-13 17:02:42', NULL),
+	(264, '03-114', '', '30.11.03.00114', 3, 'Mesa de trabajo', 11, 6, 6, 19, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICO COLOR VERDE\r\nMEDIDAS [250cm x 130cm x 95cm alto]', '03-114', '2014-02-14 10:02:27', NULL),
+	(265, '03-126', '', '20.07.03.00126', 3, 'Mesa de escritorio', 11, 3, 10, 19, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO DE MADERA CON 3 CAJONES DEL LADO DERECHO.\r\nMEDIDAS [120cm x 66cm x 80cm]\r\n', '03-126', '2014-02-14 10:02:19', NULL),
+	(266, 'X-0059', '', '', 3, 'Gavetero', 11, 3, 10, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '2 PZA.\r\n\r\nGAVETERO DE 3 PUERTAS INFERIORES Y 4 CAJONES AL LADO IZQUIERDO\r\n\r\nGAVETERO SUPERIOR DE 4 PUERTAS', 'X-0059', '2014-02-14 10:02:05', NULL),
+	(267, '03-068', '', '20.07.03.00068', 3, 'Mesa de trabajo', 11, 6, 6, 19, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO COLOR VERDE CON ASIENTO CUADRADO DE MADERA.', '03-068', '2014-02-14 10:02:49', NULL),
+	(268, '03-200', '', '30.13.03.00200', 3, 'Silla giratoria', 11, 5, 9, 19, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA DE OFICINA GIRATORIA CON 5 RODAPIES.\r\n', '03-200', '2014-02-14 10:02:23', NULL),
+	(269, '04-112', '', '30.08.04.00112', 14, 'Maquina selladora', 56, 6, 16, 8, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA SELLADORA MANUAL PARA PLASTICOS\r\nMARCA TEW\r\nSERIE 960517', '04-112', '2014-02-14 10:02:40', NULL),
+	(270, '07-006', '', '20.18.07.00006', 15, 'CPU', 57, 6, 1, 1, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 GLB.\r\n\r\nCPU MARCA GATEWAY\r\nLECTOR CD\r\nINTEL PENTIUM 4, 1,6 GHZ\r\nDD 80,8 GB\r\nSERIE 26413715\r\nTARJETA RED 02:03:47:E5:39:06\r\n\r\nCON MOUSE DELL Y TECLADO GENIUS', '07-006', '2014-02-14 11:02:04', NULL),
+	(271, '07-036', '', '10.03.07.00036', 15, 'Monitor LCD', 3, 5, 2, 7, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR PANTALLA PLANA\r\nMARCA: SAMSUNG\r\nMODELO: SYNCMASTER 591S\r\nTAMAÃ‘O: 15 PULGADAS\r\n', '07-036', '2014-02-14 11:02:58', NULL),
+	(272, '03-024', '', '30.08.03.00024', 4, 'Balanza', 58, 10, 15, 12, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nBALANZA DIGITAL\r\nMARCA: TOLEDO\r\nMODELO: 3400-I\r\nSERIE: 99612957-CA\r\nCAPACIDAD: 2,5 KG', '03-024', '2014-02-14 11:02:38', NULL),
+	(273, '03-140', '', '20.07.03.00140', 3, 'Mesa de trabajo', 11, 6, 9, 2, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA CON FOCO FLUORECENTE\r\nCOLOR PLOMO Y CAJON LADO DERECHO\r\nMEDIDAS [120CM x 75cm x 100cm alto]\r\n', '03-140', '2014-02-14 11:02:46', NULL),
+	(274, '03-076', '', '20.07.03.00076', 3, 'Mesa de trabajo', 11, 6, 6, 2, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO METALICO\r\nCOLOR VERDE DE CON FOCO EN LA PARTE CENTRAL\r\nMEDIDAS [250cm x  130cm x 106.5cm alto]', '03-076', '2014-02-14 11:02:47', NULL),
+	(275, '04-089', '', '30.11.04.00089', 14, 'Maquina para quemar hilos', 59, 6, 3, 16, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nMAQUINA PARA QUEMAR HILOS CON BASE AZUL SIN SERIE.', '04-089', '2014-02-14 11:02:25', NULL),
+	(276, 'S-147', '', '', 3, 'Taburete', 11, 6, 6, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE COLOR VERDE CON BASE DE MADERA.', 'S-147', '2014-02-14 11:02:13', NULL),
+	(277, 'X-0060', '', '', 3, 'Taburete', 11, 6, 13, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO, CON BASE CIRCULAR.', 'X-0060', '2014-02-14 11:02:14', NULL),
+	(278, '03-122', '', '20.07.03.00122', 3, 'Mesa de trabajo', 11, 6, 6, 19, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCOLOR PLOMO\r\nMEDIDAS [205cm x 105cm x 95cm alto]', '03-122', '2014-02-14 11:02:42', NULL),
+	(279, '03-127', '', '30.12.03.00127', 3, '', 11, 6, 6, 19, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE CON ASIENTO DE MADERA CUADRADO.', '03-127', '2014-02-14 11:02:43', NULL),
+	(280, '04-125', '', '10.05.04.00125', 12, 'Caja de instalaciones elÃ©ctricas', 11, 6, 9, 19, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCAJA DE INSTALACIONES ELECTRICAS.', '04-125', '2014-02-14 14:02:55', NULL),
+	(281, 'S-049', '', '', 3, 'Taburete con espaldar', 11, 6, 9, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE COLOR PLOMO CON ESPALDAR.', 'S-049', '2014-02-14 16:02:21', NULL),
+	(282, '03-071', '', '20.07.03.00071', 12, 'Reloj analÃ³gico', 60, 6, 2, 6, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nRELOJ MARCA CASIO GRANDE DE COLOR PLATEADO Y NEGRO.', '03-071', '2014-02-14 16:02:15', NULL),
+	(283, 'S-081', '', '', 3, 'Taburete', 11, 6, 6, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE VERDE, CON BASE FORRADA DE TELA.', 'S-081', '2014-02-14 16:02:29', NULL),
+	(284, 'S-107', '', '', 12, 'Porta bandejas', 11, 6, 3, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nPORTA BANDEJAS METALICO DE VARIOS BRAZOS.', 'S-107', '2014-02-14 16:02:38', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
 -- Dumping structure for table inventory.item_availability
+DROP TABLE IF EXISTS `item_availability`;
 CREATE TABLE IF NOT EXISTS `item_availability` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
@@ -351,13 +375,14 @@ INSERT INTO `item_availability` (`id`, `name`, `description`) VALUES
 
 
 -- Dumping structure for table inventory.item_brand
+DROP TABLE IF EXISTS `item_brand`;
 CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~53 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~60 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -415,18 +440,24 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(52, 'VTECH'),
 	(53, 'TOSHIBA'),
 	(54, 'BELLAGIO'),
-	(55, 'MACAWS');
+	(55, 'MACAWS'),
+	(56, 'TEW'),
+	(57, 'GATEWAY'),
+	(58, 'TOLEDO'),
+	(59, 'PIDIGI'),
+	(60, 'CASIO');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
 -- Dumping structure for table inventory.item_color
+DROP TABLE IF EXISTS `item_color`;
 CREATE TABLE IF NOT EXISTS `item_color` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_color: ~15 rows (approximately)
+-- Dumping data for table inventory.item_color: ~16 rows (approximately)
 DELETE FROM `item_color`;
 /*!40000 ALTER TABLE `item_color` DISABLE KEYS */;
 INSERT INTO `item_color` (`id`, `name`) VALUES
@@ -450,9 +481,10 @@ INSERT INTO `item_color` (`id`, `name`) VALUES
 
 
 -- Dumping structure for table inventory.item_condition
+DROP TABLE IF EXISTS `item_condition`;
 CREATE TABLE IF NOT EXISTS `item_condition` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
+  `name` varchar(40) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
@@ -464,7 +496,7 @@ INSERT INTO `item_condition` (`id`, `name`, `description`) VALUES
 	(1, '- Seleccionar -', NULL),
 	(2, '1 - Nuevo', NULL),
 	(3, '2 - Buen estado', NULL),
-	(4, '3 - Con desgaste', NULL),
+	(4, '3 - Con cierto desgaste por uso', NULL),
 	(6, '4 - Dañado', NULL),
 	(7, '5 - Inservible', NULL),
 	(8, 'No hay dato', NULL);
@@ -472,14 +504,15 @@ INSERT INTO `item_condition` (`id`, `name`, `description`) VALUES
 
 
 -- Dumping structure for table inventory.item_location
+DROP TABLE IF EXISTS `item_location`;
 CREATE TABLE IF NOT EXISTS `item_location` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_location: ~19 rows (approximately)
+-- Dumping data for table inventory.item_location: ~20 rows (approximately)
 DELETE FROM `item_location`;
 /*!40000 ALTER TABLE `item_location` DISABLE KEYS */;
 INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
@@ -501,11 +534,13 @@ INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
 	(16, 'Area tapiceria', NULL),
 	(17, 'Area mecánica', NULL),
 	(18, 'Oficina cubículos', NULL),
-	(19, 'Pasillos oficinas', NULL);
+	(19, 'Pasillos oficinas', NULL),
+	(20, 'Area control de calidad', NULL);
 /*!40000 ALTER TABLE `item_location` ENABLE KEYS */;
 
 
 -- Dumping structure for table inventory.item_material
+DROP TABLE IF EXISTS `item_material`;
 CREATE TABLE IF NOT EXISTS `item_material` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -533,6 +568,7 @@ INSERT INTO `item_material` (`id`, `name`, `description`) VALUES
 
 
 -- Dumping structure for table inventory.item_origin
+DROP TABLE IF EXISTS `item_origin`;
 CREATE TABLE IF NOT EXISTS `item_origin` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -568,6 +604,7 @@ INSERT INTO `item_origin` (`id`, `name`) VALUES
 
 
 -- Dumping structure for table inventory.item_owner
+DROP TABLE IF EXISTS `item_owner`;
 CREATE TABLE IF NOT EXISTS `item_owner` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -587,6 +624,7 @@ INSERT INTO `item_owner` (`id`, `name`, `description`) VALUES
 
 
 -- Dumping structure for table inventory.item_type
+DROP TABLE IF EXISTS `item_type`;
 CREATE TABLE IF NOT EXISTS `item_type` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `parent_id` int(8) DEFAULT NULL,
@@ -595,9 +633,9 @@ CREATE TABLE IF NOT EXISTS `item_type` (
   PRIMARY KEY (`id`),
   KEY `parent_id` (`parent_id`),
   CONSTRAINT `item_type_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `item_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_type: ~12 rows (approximately)
+-- Dumping data for table inventory.item_type: ~15 rows (approximately)
 DELETE FROM `item_type`;
 /*!40000 ALTER TABLE `item_type` DISABLE KEYS */;
 INSERT INTO `item_type` (`id`, `parent_id`, `name`, `description`) VALUES
@@ -613,7 +651,9 @@ INSERT INTO `item_type` (`id`, `parent_id`, `name`, `description`) VALUES
 	(10, NULL, 'Equipo electrónico', NULL),
 	(11, NULL, 'Repuesto', NULL),
 	(12, NULL, 'Otro', NULL),
-	(13, NULL, 'Producto terminado', NULL);
+	(13, NULL, 'Producto terminado', NULL),
+	(14, NULL, 'Maquina otros', NULL),
+	(15, NULL, 'Artefacto informático', NULL);
 /*!40000 ALTER TABLE `item_type` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

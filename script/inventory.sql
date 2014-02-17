@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=329 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=344 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~292 rows (approximately)
+-- Dumping data for table inventory.item: ~307 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -394,7 +394,22 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(325, '04-061', '', '30.12.04.00061', 5, 'Dobladora manual', 64, 6, 6, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nMAQUINA DOBLADORA MANUAL\r\nMARCA: SADA\r\nMODELO: LT/70\r\nSERIE: 1126\r\n\r\nCON MESA METALICA Y BASE SUPERIOR DE MADERA PRENSADA.', '04-061', '2014-02-17 14:02:17', NULL),
 	(326, 'S-207', '', '', 3, 'Mesa de trabajo', 11, 6, 5, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE METAL, CON PISADERAS PARA 2 REMACHADORAS.', 'S-207', '2014-02-17 14:02:28', NULL),
 	(327, '06-035', '', '', 5, 'Remachadora', 11, 6, 5, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA REMACHADORA METALICA.', '06-035', '2014-02-17 14:02:27', NULL),
-	(328, 'S-206', '', '', 5, 'Remachadora', 11, 6, 2, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA REMACHADORA METALICA.', 'S-206', '2014-02-17 14:02:37', NULL);
+	(328, 'S-206', '', '', 5, 'Remachadora', 11, 6, 2, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA REMACHADORA METALICA.', 'S-206', '2014-02-17 14:02:37', NULL),
+	(329, 'S-048', '', '', 3, 'Taburete', 11, 6, 9, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO CON BASE DE MADERA MELAMINADA', 'S-048', '2014-02-17 16:02:25', NULL),
+	(330, 'S-052', '', '', 3, 'Silla', 11, 3, 10, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA, TAPIZADA CON TELA.', 'S-052', '2014-02-17 16:02:53', NULL),
+	(331, 'S-043', '', '', 5, 'Pistola neumatica de impacto', 65, 10, 12, 5, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nPISTOLA NEUMATICA DE IMPACTO PARA CLAVOS.', 'S-043', '2014-02-17 17:02:26', NULL),
+	(332, 'X-0072', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO CON CUBIERTA DE COLOR PLOMO.\r\nMEDIDAS [98cm x 81cm x 74cm alto]', 'X-0072', '2014-02-17 17:02:06', NULL),
+	(333, '03-016', '', '40.16.03.00016', 3, 'Mesa de trabajo', 11, 6, 18, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA. MESA METALICA COLOR NARANJA\r\nCON MEDIDAS [98cm x 81cm x 74cm alto]', '03-016', '2014-02-17 17:02:49', NULL),
+	(334, 'X-0073', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA, VERDE, FORRADA CON PLASTICO AMARILLO, CON MEDIDAS [250 cm x 130cm x 91cm alto]', 'X-0073', '2014-02-17 17:02:51', NULL),
+	(335, 'X-0074', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA, VERDE, FORRADA CON PLASTICO AMARILLO, CON MEDIDAS [250 cm x 130cm x 91cm alto]', 'X-0074', '2014-02-17 17:02:09', NULL),
+	(336, 'S-068', '', '', 12, 'Caballete', 11, 3, 10, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA, COLOR CAFE.', 'S-068', '2014-02-17 17:02:26', NULL),
+	(337, '03-257', '', '30.10.03.00257', 3, 'Silla', 11, 3, 10, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA, CON FORRO VIOLETA.\r\n', '03-257', '2014-02-17 17:02:19', NULL),
+	(338, '03-253', '', '30.12.03.00253', 3, 'Silla', 11, 3, 10, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-253', '2014-02-17 17:02:59', NULL),
+	(339, '03-267', '', '30.12.03.00267', 3, 'Silla', 11, 3, 10, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-267', '2014-02-17 17:02:16', NULL),
+	(340, '03-094', '', '30.11.03.00094', 3, 'Mesa de trabajo', 11, 6, 6, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO METALICO, COLOR VERDE CON BASE SUPERIOR DE MADERA PRENSADA CON MEDIDA [275cm x 160cm x 91cm alto].\r\n', '03-094', '2014-02-17 18:02:05', NULL),
+	(341, '03-014', '', '40.06.03.00014', 3, 'Mesa de trabajo', 11, 3, 10, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO DE MADERA CON MEDIDAS [266cm x 94cm x 100cm alto]', '03-014', '2014-02-17 18:02:17', NULL),
+	(342, '03-283', '', '10.04.03.00283', 10, 'Refrigerador', 66, 6, 4, 5, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nREFRIGERADOR MARCA WHIRLPOOL 260\r\nMODELO N # R- 24 SER.\r\n', '03-283', '2014-02-17 18:02:57', NULL),
+	(343, '06-031', '', '', 6, 'Llaves de dado', 11, 6, 6, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nCAJA DE LLAVES DE DADO DE 21 PIEZAS.', '06-031', '2014-02-17 18:02:46', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -424,9 +439,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~64 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~66 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -493,7 +508,9 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(61, 'ZKTECHNOLOGY'),
 	(62, 'MAGEFESA'),
 	(63, 'BIBO'),
-	(64, 'SADA');
+	(64, 'SADA'),
+	(65, 'CRAFTSMAN'),
+	(66, 'WHIRLPOOL');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -503,9 +520,9 @@ CREATE TABLE IF NOT EXISTS `item_color` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_color: ~16 rows (approximately)
+-- Dumping data for table inventory.item_color: ~17 rows (approximately)
 DELETE FROM `item_color`;
 /*!40000 ALTER TABLE `item_color` DISABLE KEYS */;
 INSERT INTO `item_color` (`id`, `name`) VALUES
@@ -524,7 +541,8 @@ INSERT INTO `item_color` (`id`, `name`) VALUES
 	(14, 'Dorado'),
 	(15, 'Crema'),
 	(16, 'Celeste'),
-	(17, 'Vino');
+	(17, 'Vino'),
+	(18, 'Naranja');
 /*!40000 ALTER TABLE `item_color` ENABLE KEYS */;
 
 
@@ -612,7 +630,7 @@ INSERT INTO `item_material` (`id`, `name`, `description`) VALUES
 	(9, 'Madera aglomerada', NULL),
 	(10, 'Varios', NULL),
 	(11, 'Acrílico', NULL),
-	(12, 'Madera aglomerada melaminica', NULL);
+	(12, 'Madera aglomerada melaminada', NULL);
 /*!40000 ALTER TABLE `item_material` ENABLE KEYS */;
 
 

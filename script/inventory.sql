@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=344 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=351 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~307 rows (approximately)
+-- Dumping data for table inventory.item: ~355 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -409,7 +409,14 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(340, '03-094', '', '30.11.03.00094', 3, 'Mesa de trabajo', 11, 6, 6, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO METALICO, COLOR VERDE CON BASE SUPERIOR DE MADERA PRENSADA CON MEDIDA [275cm x 160cm x 91cm alto].\r\n', '03-094', '2014-02-17 18:02:05', NULL),
 	(341, '03-014', '', '40.06.03.00014', 3, 'Mesa de trabajo', 11, 3, 10, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO DE MADERA CON MEDIDAS [266cm x 94cm x 100cm alto]', '03-014', '2014-02-17 18:02:17', NULL),
 	(342, '03-283', '', '10.04.03.00283', 10, 'Refrigerador', 66, 6, 4, 5, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nREFRIGERADOR MARCA WHIRLPOOL 260\r\nMODELO N # R- 24 SER.\r\n', '03-283', '2014-02-17 18:02:57', NULL),
-	(343, '06-031', '', '', 6, 'Llaves de dado', 11, 6, 6, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nCAJA DE LLAVES DE DADO DE 21 PIEZAS.', '06-031', '2014-02-17 18:02:46', NULL);
+	(343, '06-031', '', '', 6, 'Llaves de dado', 11, 6, 6, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nCAJA DE LLAVES DE DADO DE 21 PIEZAS.', '06-031', '2014-02-17 18:02:46', NULL),
+	(344, '03-154', '', '30.10.03.00154', 3, 'Silla', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-154', '2014-02-18 17:02:22', NULL),
+	(345, '03-064', '', '30.10.03.00064', 3, 'Taburete', 11, 6, 6, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO COLOR VERDE CON ASIENTO CUADRADO DE MADERA CON FORRADO ROJO.\r\n', '03-064', '2014-02-18 17:02:41', NULL),
+	(346, '03-155', '', '30.11.03.00155', 3, 'Taburete', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE DE MADERA CON ASIENTO REDONDO.', '03-155', '2014-02-18 17:02:18', NULL),
+	(347, '03-063', '', '30.10.03.00063', 3, 'Mesa de trabajo', 11, 6, 3, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO PEQUEÃ‘Â‘O COLOR AZUL CON BRAZO PARA FOCO.\r\n\r\nMEDIDAS [100cm x 80cm x 105cm alto]', '03-063', '2014-02-18 17:02:47', '2014-02-18 17:02:37'),
+	(348, 'S-104', '', '', 12, 'Caballete', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA.', 'S-104', '2014-02-18 17:02:57', NULL),
+	(349, '03-011-2', '', '', 3, 'SillÃ³n', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLON DE MADERA.', '03-011-2', '2014-02-18 18:02:32', NULL),
+	(350, '03-010', '', '30.11.03.00010', 3, 'SillÃ³n', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLON DE MADERA.', '03-010', '2014-02-18 18:02:23', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 

@@ -1,5 +1,24 @@
 <?php echo $this->headScript()->appendFile($this->baseUrl() . '/js/item.js','text/javascript'); ?>
 
+<!-- START TO DELETE  -->
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('input,select').removeClass('noEditedYet');
+	
+	$('input,select').change(function(){
+		$(this).addClass('noEditedYet');
+	});
+});
+</script>
+
+<style>
+.noEditedYet {
+	background: #8CDCB4;
+}
+</style>
+
+<!-- END TO DELETE  -->
 <h1>Agregar item:</h1>
 
 <a href='<?php echo $this->url ( array (

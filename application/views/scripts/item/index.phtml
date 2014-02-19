@@ -29,7 +29,7 @@ echo $this->url ( array (
 	<?php
 	foreach ( $this->dataList as $item ) {
 		?>
-		<tr>
+	<tr title="<?php echo $item->getComment(); ?>">
 		<td><?php echo $item->getCode(); ?></td>
 		<td><?php echo $item->getNewCode(); ?></td>
 		<td><?php echo $item->getType()->getName(); ?></td>

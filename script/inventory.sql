@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=351 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=399 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~355 rows (approximately)
+-- Dumping data for table inventory.item: ~415 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -351,7 +351,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(282, '03-071', '', '20.07.03.00071', 12, 'Reloj analÃ³gico', 60, 6, 2, 6, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nRELOJ MARCA CASIO GRANDE DE COLOR PLATEADO Y NEGRO.', '03-071', '2014-02-14 16:02:15', NULL),
 	(283, 'S-081', '', '', 3, 'Taburete', 11, 6, 6, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE VERDE, CON BASE FORRADA DE TELA.', 'S-081', '2014-02-14 16:02:29', NULL),
 	(284, 'S-107', '', '', 12, 'Porta bandejas', 11, 6, 3, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nPORTA BANDEJAS METALICO DE VARIOS BRAZOS.', 'S-107', '2014-02-14 16:02:38', NULL),
-	(285, '03-084', '', '20.07.03.00084', 3, 'Taburete', 11, 6, 6, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO COLOR VERDE CON ASIENTO CUADRADO DE MADERA.\r\n', '03-084', '2014-02-17 10:02:38', NULL),
+	(285, '03-047', '', '20.07.03.00047', 3, 'Taburete', 11, 6, 6, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO COLOR VERDE CON ASIENTO CUADRADO DE MADERA.\r\n', '03-047', '2014-02-17 10:02:38', '2014-02-19 17:02:35'),
 	(286, '03-145', '', '20.07.03.00145', 3, 'Mesa de trabajo', 11, 6, 9, 19, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA CON FOCO FLUORECENTE\r\nCOLOR PLOMO Y CAJON LADO DERECHO.\r\n', '03-145', '2014-02-17 10:02:07', NULL),
 	(287, '03-260', '', '30.10.03.00260', 3, 'Silla', 11, 3, 10, 19, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA CON ESPALDAR.', '03-260', '2014-02-17 10:02:42', NULL),
 	(288, 'S-053', '', '', 3, 'Silla', 11, 3, 10, 19, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA CON ESPALDAR.', 'S-053', '2014-02-17 10:02:17', NULL),
@@ -416,7 +416,55 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(347, '03-063', '', '30.10.03.00063', 3, 'Mesa de trabajo', 11, 6, 3, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO PEQUEÃ‘Â‘O COLOR AZUL CON BRAZO PARA FOCO.\r\n\r\nMEDIDAS [100cm x 80cm x 105cm alto]', '03-063', '2014-02-18 17:02:47', '2014-02-18 17:02:37'),
 	(348, 'S-104', '', '', 12, 'Caballete', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA.', 'S-104', '2014-02-18 17:02:57', NULL),
 	(349, '03-011-2', '', '', 3, 'SillÃ³n', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLON DE MADERA.', '03-011-2', '2014-02-18 18:02:32', NULL),
-	(350, '03-010', '', '30.11.03.00010', 3, 'SillÃ³n', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLON DE MADERA.', '03-010', '2014-02-18 18:02:23', NULL);
+	(350, '03-010', '', '30.11.03.00010', 3, 'SillÃ³n', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLON DE MADERA.', '03-010', '2014-02-18 18:02:23', NULL),
+	(351, '03-057', '', '30.10.03.00057', 3, 'Mesa de escritorio', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO DE MADERA CON 4 CAJONES, 2 DERECHO Y 2 IZQUIERDO DE MEDIDAS [160.5cm x 79cm x 77cm alto]', '03-057', '2014-02-19 14:02:56', NULL),
+	(352, 'S-189', '', '', 3, 'Silla giratoria', 11, 5, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 5 RODAPIES.', 'S-189', '2014-02-19 14:02:24', NULL),
+	(353, '03-058', '', '30.10.03.00058', 3, 'Mesa para computadora', 11, 12, 8, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\nESCRITORIO PARA COMPUTADORA\r\nCON CAJON LADO DERECHO Y DESLIZANTE PARA TECLADO\r\nLADO IZQUIERDO CON 4 RODAPIES DE 0,75M X 1,06M X 1,48\r\n', '03-058', '2014-02-19 14:02:14', NULL),
+	(354, '07-045', '', '20.18.07.00045', 15, 'CPU', 7, 6, 19, 5, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCPU DELL DIMENSION 3000\r\nPROCESADOR 2.80 GHZ\r\n512 MB RAM\r\nDD 40 GB\r\nSN 42940 4 BM02WI\r\n\r\nMONITOR SAMSUNG SYNC MASTER 591S\r\nSN LE15HCDXC21994E\r\n\r\nCON TECLADO Y MOUSE', '07-045', '2014-02-19 15:02:24', '2014-02-19 15:02:26'),
+	(355, '03-062', '', '30.10.03.00062', 3, 'Estante', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTANTE DE MADERA\r\n3 DIVISIONES\r\nMEDIDAS [75cm x 60cm x 136cm alto]', '03-062', '2014-02-19 15:02:03', NULL),
+	(356, '03-193-2', '', '', 3, 'Gavetero', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nGAVETERO DE MADERA CAFE\r\n4 GAVETAS.', '03-193-2', '2014-02-19 15:02:44', NULL),
+	(357, 'P-022', '', '', 3, 'Ventiladora', 11, 1, 4, 19, 5, 2, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nVENTILADORA\r\n3 ASPAS CELESTES\r\nBRAZO GIRATORIO', 'P-022', '2014-02-19 15:02:09', NULL),
+	(358, '03-085', '', '30.10.03.00085', 3, 'Taburete', 11, 6, 6, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON BASE CUADRADA DE MADERA FORRADA DE AZUL.', '03-085', '2014-02-19 15:02:35', '2014-02-19 15:02:30'),
+	(359, '03-050', '', '30.11.03.00050', 3, 'Silla', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-050', '2014-02-19 15:02:51', NULL),
+	(360, '03-042', '', '20.07.03.00042', 3, 'Taburete con espaldar', 11, 6, 6, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO Y ESPALDAR\r\nFORRADO CON TELA COLOR MORADA.', '03-042', '2014-02-19 15:02:01', NULL),
+	(361, '03-258', '', '30.10.03.00258', 3, 'Silla', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-258', '2014-02-19 15:02:25', NULL),
+	(362, '03-056', '', '30.10.03.00056', 3, 'Mesa de trabajo', 11, 6, 2, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '2 GLB.\r\n\r\nMESON DE TRABAJO METALICO DIVIDIDO EN 2\r\nCOLOR NEGRO\r\n1)\r\nCON 3 CAJONES LADO DERECHO\r\nCON BRAZO PARA FOCO\r\nMEDIDAS [100cm x 98xm x 102cm alto]\r\n2)\r\nMEDIDAS [102cm x 98xm x 102cm alto]', '03-056', '2014-02-19 15:02:23', '2014-02-19 15:02:21'),
+	(363, '03-061', '', '30.10.03.00061', 3, 'Estante', 11, 6, 15, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTANTE DE FIERRO ANGULAR\r\nDE COLOR CREMA\r\nDE 7 BANDEJAS\r\nMEDIDAS [91cm x 40cm x 208cm alto].', '03-061', '2014-02-19 15:02:34', NULL),
+	(364, 'S-184', '', '', 5, 'Maquina selladora', 67, 6, 9, 12, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 4, '1 GLB.\r\n\r\nMAQUINA SELLADORA (CLICHES)\r\nCON CALOR Y PRESION\r\n\r\nMESA METALICA AZUL\r\nCON BASE DE MADERA PRENSADA\r\nMEDIDAS [98cm x 42cm x 118cm alto]', 'S-184', '2014-02-19 15:02:43', NULL),
+	(365, 'S-143', '', '', 5, 'Prensa', 11, 6, 3, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nPRENSA METALICA AZUL\r\n\r\nCON MESA METALICA COLOR AZUL\r\nCON BASE DE MADERA PRENSADA\r\nMEDIDAS [110cm x 70cm x 86cm alto]', 'S-143', '2014-02-19 16:02:58', NULL),
+	(366, 'X-0075', '', '', 5, 'Remachadora', 11, 6, 3, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMAQUINA REMACHADORA AZUL.', 'X-0075', '2014-02-19 16:02:08', NULL),
+	(367, '06-036', '', '', 5, 'Remachadora', 11, 6, 18, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMAQUINA REMACHADORA NARANJA.', '06-036', '2014-02-19 16:02:11', NULL),
+	(368, 'S-210', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA METALICA COLOR VERDE\r\nMEDIDAS [97cm x 80cm x 74cm alto]', 'S-210', '2014-02-19 16:02:57', NULL),
+	(369, '03-092', '', '20.07.03.00092', 3, 'Taburete con espaldar', 11, 6, 6, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA.', '03-092', '2014-02-19 16:02:46', NULL),
+	(370, '03-053', '', '30.11.03.00053', 3, 'Mesa de trabajo', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCON 3 CAJONES AL LADO DERECHO\r\nCON BRAZO METALICO PARA FOCO\r\nMEDIDAS [201cm x 102cm x 103cm alto]', '03-053', '2014-02-19 16:02:59', NULL),
+	(371, '04-119', '', '30.10.04.00119', 5, 'Generador de calor', 64, 10, 2, 16, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nGENERADOR DE CALOR\r\nMARCA SADA\r\nMODELO 952000', '04-119', '2014-02-19 16:02:58', NULL),
+	(372, '04-060', '', '30.10.04.00060', 5, 'Maquina dobladora', 68, 6, 4, 16, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DOBLADORA ELECTRICA\r\nMARCA BIMAC\r\nMODELO RL55R\r\nSERIE 350032\r\n\r\nCON MESA METALICA\r\nCON BASE SUPERIOR DE MADERA PRENSADA.', '04-060', '2014-02-19 16:02:50', NULL),
+	(373, 'S-131', '', '', 3, 'Silla', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'S-131', '2014-02-19 16:02:30', NULL),
+	(374, '03-034', '', '20.07.03.00034', 3, 'Taburete', 11, 6, 6, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nDE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-034', '2014-02-19 16:02:55', NULL),
+	(375, '03-009', '', '30.11.03.00009', 3, 'Silla', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-009', '2014-02-19 16:02:13', NULL),
+	(376, 'S-182', '', '', 3, 'MesÃ³n', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON PARA APOYO DE MAQUINA.', 'S-182', '2014-02-19 16:02:28', NULL),
+	(377, '04-115', '', '30.10.04.00115', 5, 'Pinta tiros', 63, 6, 8, 16, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PINTA TIROS\r\nMARCA BIBO MTB74\r\nSERIE 74914', '04-115', '2014-02-19 16:02:20', NULL),
+	(378, '03-271', '', '30.12.03.00271', 3, 'Silla', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-271', '2014-02-19 16:02:31', NULL),
+	(379, '03-051', '', '30.10.03.00051', 3, 'Mesa de trabajo', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO DE MADERA\r\nMEDIDAS [206cm x 92cm x 100cm alto]', '03-051', '2014-02-19 17:02:26', NULL),
+	(380, '03-084', '', '20.07.03.00084', 3, 'Taburete', 11, 6, 6, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA FORRADO DE CAFE.', '03-084', '2014-02-19 17:02:56', NULL),
+	(381, 'X-0076', '', '', 3, 'Silla', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'X-0076', '2014-02-19 17:02:12', NULL),
+	(382, 'S-200', '', '', 6, 'Regla milimÃ©trica', 11, 6, 13, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREGLA MILIMETRICA DE 1 METRO.', 'S-200', '2014-02-19 17:02:21', NULL),
+	(383, '06-046', '', '', 6, 'Regla milimÃ©trica', 69, 6, 13, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREGLA MILIMETRICA DE 60CM.', '06-046', '2014-02-19 17:02:15', NULL),
+	(384, '03-251', '', '30.12.03.00251', 3, 'Silla', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-251', '2014-02-19 17:02:01', NULL),
+	(385, '03-103', '', '20.07.03.00103', 3, 'Taburete con espaldar', 11, 6, 6, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA', '03-103', '2014-02-19 17:02:47', NULL),
+	(386, '04-090', '', '30.12.04.00090', 5, 'Maquina para quemar hilos', 11, 6, 3, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA QUEMAR HILOS\r\nCON BASE AZUL\r\nSIN SERIE.', '04-090', '2014-02-19 17:02:13', NULL),
+	(387, '03-052', '', '30.11.03.00052', 3, 'Mesa de trabajo', 11, 6, 2, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCOLOR NEGRO\r\nCON 3 CAJONES LADO DERECHO\r\nMEDIDAS [200cm x 98.5cm x 102cm alto]', '03-052', '2014-02-19 17:02:53', NULL),
+	(388, 'S-202', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCON BASE DE MADERA PRENSADA, CUBIERTA CON UNA LAMINA DE METAL\r\nMEDIDAS [189cm x 106cm x 95cm alto]', 'S-202', '2014-02-19 17:02:13', NULL),
+	(389, '03-130', '', '30.13.03.00130', 3, 'Taburete', 11, 6, 6, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-130', '2014-02-19 17:02:55', NULL),
+	(390, '04-073', '', '30.11.04.00073', 5, 'Maquina para colocar pegamento', 70, 6, 3, 16, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA COLOCAR PEGAMENTO\r\nMARCA OVERMEC\r\nMODELO TS1\r\nSERIE 9812245', '04-073', '2014-02-19 17:02:33', NULL),
+	(391, 'S-205', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCOLOR VERDE\r\nBASE DE MADERA PRENSADA\r\nMEDIDAS [187cm x 107cm x 104cm alto]', 'S-205', '2014-02-19 17:02:34', NULL),
+	(392, '03-118', '', '30.11.03.00118', 3, 'Taburete', 11, 6, 2, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR NEGRO\r\nCON ASIENTO REDONDO DE MADERA.', '03-118', '2014-02-19 17:02:05', NULL),
+	(393, '03-156', '', '30.11.03.00156', 3, 'Taburete', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE DE MADERA\r\nCON ASIENTO REDONDO.', '03-156', '2014-02-19 17:02:41', NULL),
+	(394, '03-134', '', '30.10.03.00134', 3, 'Taburete', 11, 6, 1, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-134', '2014-02-19 17:02:29', NULL),
+	(395, 'S-264', '', '', 3, 'Mesa de trabajo', 11, 3, 10, 19, 22, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE MADERA\r\nMEDIDAS [110cm x 58cm x 77cm alto]', 'S-264', '2014-02-19 17:02:46', NULL),
+	(396, 'S-262', '', '', 3, 'Silla', 11, 3, 10, 19, 22, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'S-262', '2014-02-19 17:02:53', NULL),
+	(397, 'S-261', '', '', 5, 'Mesa de serigrafiado', 11, 6, 4, 19, 22, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMESA DE SERIGRAFIADO\r\nMETALICO\r\nCOLOR BLANCO\r\nCON 6 TUBOS FLUORESCENTES.', 'S-261', '2014-02-19 17:02:36', NULL),
+	(398, 'S-263', '', '', 3, 'Taburete', 11, 6, 6, 19, 22, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE DE METAL COLOR VERDE\r\nCON BASE DE MADERA.', 'S-263', '2014-02-19 17:02:38', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -446,9 +494,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~66 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~70 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -517,7 +565,11 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(63, 'BIBO'),
 	(64, 'SADA'),
 	(65, 'CRAFTSMAN'),
-	(66, 'WHIRLPOOL');
+	(66, 'WHIRLPOOL'),
+	(67, 'RIMAQ'),
+	(68, 'BIMAC'),
+	(69, 'TAJIMA'),
+	(70, 'OVERMEC');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -527,9 +579,9 @@ CREATE TABLE IF NOT EXISTS `item_color` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_color: ~17 rows (approximately)
+-- Dumping data for table inventory.item_color: ~18 rows (approximately)
 DELETE FROM `item_color`;
 /*!40000 ALTER TABLE `item_color` DISABLE KEYS */;
 INSERT INTO `item_color` (`id`, `name`) VALUES
@@ -549,7 +601,8 @@ INSERT INTO `item_color` (`id`, `name`) VALUES
 	(15, 'Crema'),
 	(16, 'Celeste'),
 	(17, 'Vino'),
-	(18, 'Naranja');
+	(18, 'Naranja'),
+	(19, 'Violeta');
 /*!40000 ALTER TABLE `item_color` ENABLE KEYS */;
 
 
@@ -583,9 +636,9 @@ CREATE TABLE IF NOT EXISTS `item_location` (
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_location: ~21 rows (approximately)
+-- Dumping data for table inventory.item_location: ~22 rows (approximately)
 DELETE FROM `item_location`;
 /*!40000 ALTER TABLE `item_location` DISABLE KEYS */;
 INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
@@ -609,7 +662,8 @@ INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
 	(18, 'Oficina cubículos', NULL),
 	(19, 'Pasillos oficinas', NULL),
 	(20, 'Area control de calidad', NULL),
-	(21, 'Ingreso galpón', NULL);
+	(21, 'Ingreso galpón', NULL),
+	(22, 'Area serigrafía', NULL);
 /*!40000 ALTER TABLE `item_location` ENABLE KEYS */;
 
 

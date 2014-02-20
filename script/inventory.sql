@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=409 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=447 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~436 rows (approximately)
+-- Dumping data for table inventory.item: ~386 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -438,7 +438,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(369, '03-092', '', '20.07.03.00092', 3, 'Taburete con espaldar', 11, 6, 6, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA.', '03-092', '2014-02-19 16:02:46', NULL),
 	(370, '03-053', '', '30.11.03.00053', 3, 'Mesa de trabajo', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCON 3 CAJONES AL LADO DERECHO\r\nCON BRAZO METALICO PARA FOCO\r\nMEDIDAS [201cm x 102cm x 103cm alto]', '03-053', '2014-02-19 16:02:59', NULL),
 	(371, '04-119', '', '30.10.04.00119', 5, 'Generador de calor', 64, 10, 2, 16, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nGENERADOR DE CALOR\r\nMARCA SADA\r\nMODELO 952000', '04-119', '2014-02-19 16:02:58', NULL),
-	(372, '04-060', '', '30.10.04.00060', 5, 'Maquina dobladora', 68, 6, 4, 16, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DOBLADORA ELECTRICA\r\nMARCA BIMAC\r\nMODELO RL55R\r\nSERIE 350032\r\n\r\nCON MESA METALICA\r\nCON BASE SUPERIOR DE MADERA PRENSADA.', '04-060', '2014-02-19 16:02:50', NULL),
+	(372, '04-060', '', '30.10.04.00060', 5, 'Maquina dobladora', 68, 6, 4, 16, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DOBLADORA ELECTRICA\r\nMARCA BIMAC\r\nMODELO RL55R\r\nSERIE 350032\r\n\r\nCON MESA METALICA\r\nCON BASE SUPERIOR DE MADERA PRENSADA\r\nMEDIDA [120cm x 50cm x 92cm alto].', '04-060', '2014-02-19 16:02:50', '2014-02-20 12:02:59'),
 	(373, 'S-131', '', '', 3, 'Silla', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'S-131', '2014-02-19 16:02:30', NULL),
 	(374, '03-034', '', '20.07.03.00034', 3, 'Taburete', 11, 6, 6, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nDE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-034', '2014-02-19 16:02:55', NULL),
 	(375, '03-009', '', '30.11.03.00009', 3, 'Silla', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-009', '2014-02-19 16:02:13', NULL),
@@ -463,18 +463,56 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(394, '03-134', '', '30.10.03.00134', 3, 'Taburete', 11, 6, 1, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-134', '2014-02-19 17:02:29', NULL),
 	(395, 'S-264', '', '', 3, 'Mesa de trabajo', 11, 3, 10, 19, 22, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE MADERA\r\nMEDIDAS [110cm x 58cm x 77cm alto]', 'S-264', '2014-02-19 17:02:46', NULL),
 	(396, 'S-262', '', '', 3, 'Silla', 11, 3, 10, 19, 22, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'S-262', '2014-02-19 17:02:53', NULL),
-	(397, 'S-261', '', '', 5, 'Mesa de serigrafiado', 11, 6, 4, 19, 22, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMESA DE SERIGRAFIADO\r\nMETALICO\r\nCOLOR BLANCO\r\nCON 6 TUBOS FLUORESCENTES.', 'S-261', '2014-02-19 17:02:36', NULL),
+	(397, 'S-261', '', '', 5, 'Mesa de serigrafiado', 11, 6, 4, 19, 22, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMESA DE SERIGRAFIADO\r\nMETALICO\r\nCOLOR BLANCO\r\nCON 6 TUBOS FLUORESCENTES.\r\nMEDIDA [80cm x 60cm x 86cm alto]', 'S-261', '2014-02-19 17:02:36', '2014-02-20 12:02:38'),
 	(398, 'S-263', '', '', 3, 'Taburete', 11, 6, 6, 19, 22, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE DE METAL COLOR VERDE\r\nCON BASE DE MADERA.', 'S-263', '2014-02-19 17:02:38', NULL),
-	(399, '04-025', '', '30.11.04.00025', 5, 'Montacarga', 71, 6, 5, 12, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMONTACARGA MANUAL\r\nMARCA LIFTRANS\r\nSERIE 0594382\r\nCOLOR AMARILLO Y ROJO', '04-025', '2014-02-20 10:02:41', NULL),
-	(400, '04-077', '', '30.11.04.00077', 5, 'Montacarga', 71, 6, 5, 12, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMONTACARGA MANUAL\r\nMARCA LIFTRANS\r\nSERIE 0594383\r\nCOLOR AMARILLO Y ROJO', '04-077', '2014-02-20 10:02:43', NULL),
-	(401, '04-082', '', '30.11.04.00082', 1, 'Remachadora', 11, 6, 9, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nPRENSA REMACHADORA\r\nCOLOR PLOMO Y AMARILLO\r\nCON TABURETE.\r\n', '04-082', '2014-02-20 10:02:35', NULL),
+	(399, '04-025', '', '30.11.04.00025', 5, 'Montacarga', 71, 6, 5, 12, 23, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMONTACARGA MANUAL\r\nMARCA LIFTRANS\r\nSERIE 0594382\r\nCOLOR AMARILLO Y ROJO', '04-025', '2014-02-20 10:02:41', '2014-02-20 13:02:29'),
+	(400, '04-077', '', '30.11.04.00077', 5, 'Montacarga', 71, 6, 5, 12, 23, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMONTACARGA MANUAL\r\nMARCA LIFTRANS\r\nSERIE 0594383\r\nCOLOR AMARILLO Y ROJO', '04-077', '2014-02-20 10:02:43', '2014-02-20 13:02:22'),
+	(401, '04-082', '', '30.11.04.00082', 1, 'Remachadora', 11, 6, 9, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nPRENSA REMACHADORA\r\nCOLOR PLOMO Y AMARILLO\r\nCON TABURETE.\r\n', '04-082', '2014-02-20 10:02:35', '2014-02-20 13:02:55'),
 	(402, '03-067', '', '30.15.03.00067', 3, 'Silla plegable', 11, 6, 9, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLA METALICA PLEGABLE\r\nCOLOR PLOMO', '03-067', '2014-02-20 10:02:02', NULL),
 	(403, '04-074', '', '30.11.04.00074', 5, 'Maquina para colocar pegamento', 70, 6, 3, 16, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA COLOCAR PEGAMENTO\r\nMARCA OVERMEC\r\nMODELO TS1\r\nSERIE 9812243', '04-074', '2014-02-20 10:02:25', NULL),
-	(404, '03-065', '', '30.13.03.00065', 3, 'Silla plegable', 11, 6, 9, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA METALICA PLEGABLE\r\nCOLOR PLOMO', '03-065', '2014-02-20 10:02:49', NULL),
-	(405, '04-075', '', '30.11.04.00075', 5, 'Maquina para colocar pegamento', 70, 6, 3, 16, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA COLOCAR PEGAMENTO\r\nMARCA OVERMEC\r\nMODELO TS1\r\nSERIE 9812242', '04-075', '2014-02-20 10:02:48', NULL),
+	(404, '03-065', '', '30.13.03.00065', 3, 'Silla plegable', 11, 6, 9, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA METALICA PLEGABLE\r\nCOLOR PLOMO', '03-065', '2014-02-20 10:02:49', '2014-02-20 13:02:17'),
+	(405, '04-075', '', '30.11.04.00075', 5, 'Maquina para colocar pegamento', 70, 6, 3, 16, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA COLOCAR PEGAMENTO\r\nMARCA OVERMEC\r\nMODELO TS1\r\nSERIE 9812242', '04-075', '2014-02-20 10:02:48', '2014-02-20 13:02:02'),
 	(406, 'S-208', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA VERDE\r\nCON BASE DE MADERA PRENSADA\r\nMEDIDAS [410cm x 184cm x 93cm alto]', 'S-208', '2014-02-20 10:02:01', NULL),
-	(407, 'X-0077', '', '', 6, 'Pistola neumatica engrapadora', 72, 6, 12, 12, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nENGRAPADORA NEUMATICA\r\nMARCA PACAR', 'X-0077', '2014-02-20 10:02:54', NULL),
-	(408, 'X-0078', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA VERDE\r\nCON BASE DE MADERA PRENSADA\r\nMEDIDAS [410cm x 184cm x 93cm alto]', 'X-0078', '2014-02-20 10:02:45', NULL);
+	(407, 'X-0077', '', '', 6, 'Pistola neumatica engrapadora', 72, 6, 12, 12, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nENGRAPADORA NEUMATICA\r\nMARCA PACAR', 'X-0077', '2014-02-20 10:02:54', '2014-02-20 13:02:26'),
+	(408, 'X-0078', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA VERDE\r\nCON BASE DE MADERA PRENSADA\r\nMEDIDAS [410cm x 184cm x 93cm alto]', 'X-0078', '2014-02-20 10:02:45', '2014-02-20 13:02:35'),
+	(409, '04-076', '', '30.11.04.00076', 5, 'Maquina para colocar pegamento', 70, 6, 3, 16, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA PARA COLOCAR PEGAMENTO\r\nMARCA OVERMEC\r\nMODELO TS1\r\nSERIE 9812244', '04-076', '2014-02-20 13:02:22', '2014-02-20 13:02:33'),
+	(410, '03-044', '', '30.11.03.00044', 3, 'Taburete', 11, 6, 6, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-044', '2014-02-20 13:02:20', '2014-02-20 13:02:02'),
+	(411, '03-131', '', '30.12.03.00131', 3, 'Taburete', 11, 6, 6, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-131', '2014-02-20 13:02:16', '2014-02-20 13:02:36'),
+	(412, '03-095', '', '30.12.03.00095', 3, 'Taburete', 11, 6, 6, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nASIENTO CUADRADO FORRADO CON TELA.', '03-095', '2014-02-20 13:02:31', '2014-02-20 13:02:57'),
+	(413, '03-083', '', '20.07.03.00083', 3, 'Taburete', 11, 6, 6, 19, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA.', '03-083', '2014-02-20 13:02:29', '2014-02-20 13:02:44'),
+	(414, '03-088', '', '30.12.03.00088', 3, 'Taburete', 11, 6, 6, 19, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA.', '03-088', '2014-02-20 13:02:26', NULL),
+	(415, '04-072', '', '30.11.04.00072', 5, 'Dobladora manual', 63, 6, 13, 16, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nDOBLADORA MANUAL\r\nMARCA BIBO\r\nSERIE No 290813\r\nCON MESA DE MADERA DE 0,95M X 1M X 0,50M', '04-072', '2014-02-20 13:02:35', NULL),
+	(416, '04-059', '', '30.12.04.00059', 5, 'Dobladora manual', 63, 6, 13, 16, 16, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nDOBLADORA MANUAL\r\nMARCA BIBO\r\nSERIE No 290547\r\nCON MESA DE MADERA DE 0,95M X 1M X 0,50M', '04-059', '2014-02-20 13:02:24', NULL),
+	(417, 'S-093', '', '', 3, 'SillÃ³n', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLON DE MADERA\r\nCON FORRO DE TELA FLOREADA.', 'S-093', '2014-02-20 16:02:55', NULL),
+	(418, '03-048', '', '30.13.03.00048', 3, 'Mesa de trabajo', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nDE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-048', '2014-02-20 16:02:34', NULL),
+	(419, '04-169', '', '30.13.04.00169', 5, 'Maquina selladora de plÃ¡sticos', 11, 6, 3, 4, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA SELLADORA DE PLASTICOS\r\nIND. CHINA LY-2210', '04-169', '2014-02-20 16:02:31', NULL),
+	(420, '04-033', '', '30.13.04.00033', 5, 'Maquina selladora', 73, 6, 6, 23, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA SELLADORA\r\nMARCA ATOM\r\nMODELO PL10\r\nSERIE 23P000019', '04-033', '2014-02-20 16:02:51', NULL),
+	(421, '04-044', '', '30.13.04.00044', 5, 'Maquina para grabado en cuero', 73, 6, 6, 23, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA GRABAR EN CUERO\r\nMARCA ATOM\r\nMODELO PL1250\r\nSERIE 10006181', '04-044', '2014-02-20 16:02:56', NULL),
+	(422, 'S-092', '', '', 3, 'Mesa de trabajo', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO\r\nDE MADERA\r\nMEDIDAS [100cm x 79cm x 75cm alto]', 'S-092', '2014-02-20 16:02:15', NULL),
+	(423, '04-034', '', '30.13.04.00034', 5, 'Maquina selladora de cuero', 74, 6, 16, 5, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA SELLADORA DE CUEROS Y PLASTICOS\r\nMARCA WSK\r\nTIPO PP33F\r\nSERIE 490497\r\nCOLOR CELESTE Y NARANJA.', '04-034', '2014-02-20 16:02:11', NULL),
+	(424, 'S-258', '', '', 5, 'Maquina selladora manual', 75, 6, 15, 12, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA SELLADORA MANUAL.', 'S-258', '2014-02-20 16:02:08', NULL),
+	(425, '04-035', '', '30.13.04.00035', 5, 'Maquina desbastadora de cuero', 76, 6, 8, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DESBASTADORA\r\nMARCA ELLEGI\r\nMODELO GL12AC\r\nSERIE 9034067 F5106645', '04-035', '2014-02-20 16:02:59', NULL),
+	(426, '03-054', '', '30.13.03.00054', 3, 'Silla', 11, 3, 10, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-054', '2014-02-20 16:02:58', NULL),
+	(427, '04-052', '', '30.13.04.00052', 5, 'Maquina desbastadora de cuero', 76, 6, 8, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DESBASTADORA\r\nMARCA ELLEGI\r\nMODELO GL12AC\r\nSERIE 9034347', '04-052', '2014-02-20 17:02:31', NULL),
+	(428, 'S-094', '', '', 3, 'Silla', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'S-094', '2014-02-20 17:02:30', NULL),
+	(429, '04-036', '', '30.13.04.00036', 5, 'Maquina desbastadora de cuero', 76, 6, 8, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DESBASTADORA\r\nMARCA ELLEGI\r\nMODELO GL12AC\r\nSERIE 9034477', '04-036', '2014-02-20 17:02:59', NULL),
+	(430, '04-038', '', '30.13.04.00038', 5, 'Maquina desbastadora de cuero', 76, 6, 8, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DESBASTADORA\r\nMARCA ELLEGI\r\nMODELO GL12AC\r\nSERIE 9034247', '04-038', '2014-02-20 17:02:41', NULL),
+	(431, '03-146', '', '30.13.03.00146', 3, 'Silla', 11, 3, 10, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-146', '2014-02-20 17:02:44', NULL),
+	(432, 'P-028', '', '', 5, 'Ventiladora', 77, 6, 4, 6, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 GLB.\r\n\r\nVENTILADORA CON PEDESTAL\r\n3 VELOCIDADES.', 'P-028', '2014-02-20 17:02:13', NULL),
+	(433, '04-047', '', '30.13.04.00047', 5, 'Maquina desbastadora de cuero', 73, 6, 16, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DESBASTADORA DE CUERO\r\nMARCA ATOM\r\nMODELO GL12S\r\nSERIE 10011748\r\nDE COLOR CELESTE Y BLANCO', '04-047', '2014-02-20 17:02:21', NULL),
+	(434, 'X-0079', '', '', 6, 'Calibrador', 78, 6, 13, 16, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nHERRAMIENTA CALIBRADORA.', 'X-0079', '2014-02-20 17:02:10', NULL),
+	(435, '04-096', '', '30.13.04.00096', 5, 'Maquina desbastadora de cuero', 73, 6, 16, 23, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DESBASTADORA DE CUERO\r\nMARCA ATOM\r\nMODELO GL12S\r\nSERIE 10011747', '04-096', '2014-02-20 17:02:38', NULL),
+	(436, '04-021', '', '30.13.04.00021', 5, 'Maquina cortadora de cuero', 79, 6, 20, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA CORTADORA DE CUERO\r\nMARCA CAMOGA\r\nMODELO C520L\r\nSERIE 52L2003\r\nCOLOR GUINDO Y NEGRO.', '04-021', '2014-02-20 17:02:50', NULL),
+	(437, 'P-007', '', '', 5, 'Estabilizador', 64, 6, 12, 19, 4, 2, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nESTABILIZADOR\r\nMARCA SANWA\r\nCOLOR ROJO\r\nMODELO SVC-500N', 'P-007', '2014-02-20 17:02:23', NULL),
+	(438, 'S-096', '', '', 5, 'Balanza', 81, 6, 4, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nBALANZA ELECTRONICA DE PISO.', 'S-096', '2014-02-20 17:02:51', NULL),
+	(439, 'S-097', '', '', 3, 'Estante', 11, 6, 3, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nESTANTE METALICO\r\nCOLOR AZUL\r\nCON 10 COLUMNAS\r\nY CON 15 REPISAS POR COLUMNA.', 'S-097', '2014-02-20 17:02:07', NULL),
+	(440, 'S-098', '', '', 12, 'Escalerilla con apoyo', 11, 6, 3, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nESCALERA METALICA PEQUEÃ‘A\r\nMETALICA\r\nCON 3 PISADERAS.', 'S-098', '2014-02-20 17:02:44', NULL),
+	(441, '03-026', '', '30.13.03.00026', 3, 'Silla', 11, 3, 10, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-026', '2014-02-20 17:02:13', NULL),
+	(442, '04-020', '', '30.13.04.00020', 5, 'Maquina divididora elÃ©ctrica', 76, 6, 14, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA ELECTRICA\r\nPARA DIVIDIR CUERO\r\nMARCA ELLEGI\r\nMODELO GL 40SE\r\nSERIE 99164\r\nCOLOR VERDE.', '04-020', '2014-02-20 17:02:44', NULL),
+	(443, '03-030', '', '30.13.03.00030', 3, 'Mesa de trabajo', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO METALICO\r\nCOLOR VERDE\r\nMEDIDAS [250cm x 130cm x 96cm alto]', '03-030', '2014-02-20 17:02:13', NULL),
+	(444, 'S-108', '', '', 12, 'Porta bandejas', 11, 6, 4, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nPORTA-BANDEJAS\r\nCON 4 NIVELES.', 'S-108', '2014-02-20 17:02:25', NULL),
+	(445, '03-121', '', '30.13.03.00121', 3, 'Mesa de trabajo', 11, 6, 9, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCOLOR VERDE\r\nMEDIDAS [205cm x 92cm x 100cm alto]', '03-121', '2014-02-20 17:02:21', NULL),
+	(446, 'X-0080', '', '', 12, 'Caballete', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA.', 'X-0080', '2014-02-20 17:02:32', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -504,9 +542,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~72 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~81 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -581,7 +619,16 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(69, 'TAJIMA'),
 	(70, 'OVERMEC'),
 	(71, 'LIFTTRANS'),
-	(72, 'PACAR');
+	(72, 'PACAR'),
+	(73, 'ATOM'),
+	(74, 'WSK'),
+	(75, 'CARDOSO'),
+	(76, 'ELLEGI'),
+	(77, 'CROWN'),
+	(78, 'CALATI'),
+	(79, 'CAMOGA'),
+	(80, 'SANWA'),
+	(81, 'SBC');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -591,9 +638,9 @@ CREATE TABLE IF NOT EXISTS `item_color` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_color: ~18 rows (approximately)
+-- Dumping data for table inventory.item_color: ~19 rows (approximately)
 DELETE FROM `item_color`;
 /*!40000 ALTER TABLE `item_color` DISABLE KEYS */;
 INSERT INTO `item_color` (`id`, `name`) VALUES
@@ -614,7 +661,8 @@ INSERT INTO `item_color` (`id`, `name`) VALUES
 	(16, 'Celeste'),
 	(17, 'Vino'),
 	(18, 'Naranja'),
-	(19, 'Violeta');
+	(19, 'Violeta'),
+	(20, 'Guindo');
 /*!40000 ALTER TABLE `item_color` ENABLE KEYS */;
 
 
@@ -648,9 +696,9 @@ CREATE TABLE IF NOT EXISTS `item_location` (
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_location: ~22 rows (approximately)
+-- Dumping data for table inventory.item_location: ~23 rows (approximately)
 DELETE FROM `item_location`;
 /*!40000 ALTER TABLE `item_location` DISABLE KEYS */;
 INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
@@ -675,7 +723,8 @@ INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
 	(19, 'Pasillos oficinas', NULL),
 	(20, 'Area control de calidad', NULL),
 	(21, 'Ingreso galpón', NULL),
-	(22, 'Area serigrafía', NULL);
+	(22, 'Area serigrafía', NULL),
+	(23, 'Area producto terminado', NULL);
 /*!40000 ALTER TABLE `item_location` ENABLE KEYS */;
 
 
@@ -713,9 +762,9 @@ CREATE TABLE IF NOT EXISTS `item_origin` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_origin: ~22 rows (approximately)
+-- Dumping data for table inventory.item_origin: ~23 rows (approximately)
 DELETE FROM `item_origin`;
 /*!40000 ALTER TABLE `item_origin` DISABLE KEYS */;
 INSERT INTO `item_origin` (`id`, `name`) VALUES
@@ -740,7 +789,8 @@ INSERT INTO `item_origin` (`id`, `name`) VALUES
 	(19, 'No hay dato'),
 	(20, 'Suecia'),
 	(21, 'Polonia'),
-	(22, 'España');
+	(22, 'España'),
+	(23, 'Reino Unido');
 /*!40000 ALTER TABLE `item_origin` ENABLE KEYS */;
 
 

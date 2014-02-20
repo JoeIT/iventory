@@ -61,7 +61,7 @@ class App_Form_ItemForm extends Zend_Form
 		$location = new Zend_Form_Element_Select('location_select');
 		$location->setLabel("Ubicacion:");
 		$location->setRequired(false);
-		$location->setValue('5');
+		$location->setValue('4');
 		
 		$owner = new Zend_Form_Element_Select('owner_select');
 		$owner->setLabel("Propiedad:");

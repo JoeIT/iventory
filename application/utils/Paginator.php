@@ -6,8 +6,12 @@ class App_Util_Paginator
 	private $_limit = 10;
 	private $_offset = 0;
 	private $_pageNumber = 1;
+	// Root url
 	private $_url = null;
 	private $_extraUrl = '';
+	private $_showLinkPageNumbers = true;
+	// Number of number link pages to show, is recommended to set an odd number
+	private $_maxLinkNumbers = 7;
 	
 	public function __construct($url, $totalRows, $currentPage, $limit = 10)
 	{
@@ -36,6 +40,16 @@ class App_Util_Paginator
 	public function clearExtraUrlData()
 	{
 		$this->_extraUrl = '';
+	}
+	
+	public function setMaxLinkNumbers($maximunToShow)
+	{
+		$this->_maxLinkNumbers = $maximunToShow;
+	}
+	
+	public function showLinkPageNumbers($boolean)
+	{
+		$this->_showLinkPageNumbers = $boolean;
 	}
 		
 	public function showHtmlPaginator()
@@ -70,7 +84,7 @@ class App_Util_Paginator
 			// First page link
 			if ($this->_pageNumber != 1)
 				//$htmlPaginator .= "<a href='" . $this->url(array('page' => '1')) ."'>Primero</a> |";
-				$htmlPaginator .= "<a href='".$this->_url."/page/1". $this->_extraUrl ."'> Primero</a> |";
+				$htmlPaginator .= " <a href='".$this->_url."/page/1". $this->_extraUrl ."'>Primero</a> |";
 			else
 				$htmlPaginator .= "<span class='disabled'> Primero </span> |";
 			
@@ -78,21 +92,62 @@ class App_Util_Paginator
 			// Previous page link
 			if (isset($previous))
 				//$htmlPaginator .= "<a href='". $this->url(array('page' => $previous)) . "'>&lt; Previo</a> |";
-				$htmlPaginator .= "<a href='".$this->_url."/page/$previous". $this->_extraUrl ."'> &lt; Previo</a> |";
+				$htmlPaginator .= " <a href='".$this->_url."/page/$previous". $this->_extraUrl ."'>&lt; Previo</a> |";
 			else
 				$htmlPaginator .= "<span class='disabled'> &lt; Previo</span> |";
 			
+			
+			// Show numbers
+			if($this->_showLinkPageNumbers == true)
+			{
+				$initial = 1;
+				$final = $totalPages;
+				
+				if($this->_maxLinkNumbers < $totalPages)
+				{
+					$showHalf = round(($this->_maxLinkNumbers / 2), 0, PHP_ROUND_HALF_DOWN);
+					
+					$initial = $this->_pageNumber - $showHalf;
+					$final = $this->_pageNumber + $showHalf;
+					
+					// If the number to pages to show is integer, 
+					if($showHalf == ($this->_maxLinkNumbers / 2))
+						$initial += 1; 
+					
+					if($initial <= 0)
+					{
+						$right = ($initial * (-1)) + 1; 
+						$initial = 1;
+						$final += $right;
+					}
+					else if($final > $totalPages)
+					{
+						$left = $final - $totalPages;
+						$final = $totalPages;
+						$initial -= $left; 
+					}
+				}
+				
+				for($page = $initial; $page <= $final; $page++)
+				{
+					if($page != $this->_pageNumber)
+						$htmlPaginator .= " <a href='".$this->_url."/page/$page". $this->_extraUrl ."'>$page</a> ";
+					else
+						$htmlPaginator .= "<span class='disabled'> <b>$page</b></span>";
+				}
+				
+				$htmlPaginator .= " |";
+			}
+			
 			// Next page link
 			if (isset($next))
-				//$htmlPaginator .= "<a href='". $this->url(array('page' => $next)) ."'>Siguiente &gt;</a> |";
-				$htmlPaginator .= "<a href='".$this->_url."/page/$next". $this->_extraUrl ."'> Siguiente &gt; </a> |";
+				$htmlPaginator .= " <a href='".$this->_url."/page/$next". $this->_extraUrl ."'>Siguiente &gt;</a> |";
 			else
 				$htmlPaginator .= "<span class='disabled'> Siguiente &gt; </span> |";
 			
 			// Last page link
 			if ($this->_pageNumber != $totalPages)
-				//$htmlPaginator .= "<a href='". $this->url(array('page' => $totalPages)) ."'>Ultimo</a>";
-				$htmlPaginator .= "<a href='".$this->_url."/page/$totalPages". $this->_extraUrl ."'> Ultimo </a>";
+				$htmlPaginator .= " <a href='".$this->_url."/page/$totalPages". $this->_extraUrl ."'>Ultimo</a> ";
 			else
 				$htmlPaginator .= "<span class='disabled'> Ultimo </span>";
 			

@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=501 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=522 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~515 rows (approximately)
+-- Dumping data for table inventory.item: ~536 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -566,7 +566,28 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(497, '07-046', '', '30.11.07.00046', 15, 'CPU', 7, 5, 19, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1GLB.\r\n\r\nCPU DIMENSION 2400\r\nPENTIUM 4\r\n80 GB\r\n2.66 GHZ\r\n256 MB RAM\r\nLECTOR CD\r\nSERIE CN QR2034 42940 42PQOFQ\r\nCON TECLADO DELUXE Y MOUSE GENERICO', '07-046', '2014-02-21 16:02:01', NULL),
 	(498, 'X-0085', '', '', 15, 'Impresora de carro a cinta', 40, 5, 15, 6, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nIMPRESORA EPSON A CINTA\r\nMODELO LX 300 + II', 'X-0085', '2014-02-21 16:02:21', NULL),
 	(499, '07-008', '', '', 15, 'Monitor ', 3, 10, 15, 7, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR SAMSUNG\r\nMODELO SYNCMASTER 753S\r\nTAMAÃ‘O 17 PULGADAS', '07-008', '2014-02-21 16:02:49', NULL),
-	(500, 'S-109', '', '', 12, 'Repicero', 11, 6, 2, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCOLOR NEGRO\r\nCON 4 NIVELES', 'S-109', '2014-02-21 16:02:56', NULL);
+	(500, 'S-109', '', '', 12, 'Repicero', 11, 6, 2, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCOLOR NEGRO\r\nCON 4 NIVELES', 'S-109', '2014-02-21 16:02:56', NULL),
+	(501, 'S-087', '', '', 3, 'Mesa de trabajo', 11, 9, 10, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO\r\nDE MADERA PRENSADA\r\nCOLOR CAFE\r\nMEDIDAS [244cm x 80cm x 110cm alto]', 'S-087', '2014-02-21 16:02:15', NULL),
+	(502, '03-106', '', '10.14.03.00106', 3, 'Taburete', 11, 6, 6, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA FORRADO', '03-106', '2014-02-21 16:02:09', NULL),
+	(503, 'S-086', '', '', 3, 'Silla giratoria', 11, 5, 10, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 5 RODAPIES.', 'S-086', '2014-02-21 16:02:34', NULL),
+	(504, '03-012', '', '20.08.03.00012', 1, 'Taburete', 11, 3, 10, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE DE MADERA\r\nCON ASIENTO FORRADO CON CUERINA CAFEÂ‰.', '03-012', '2014-02-21 16:02:28', NULL),
+	(505, 'X-0086', '', '', 10, 'Calentador de agua', 84, 5, 4, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCALENTADOR DE AGUA NATIONAL.', 'X-0086', '2014-02-21 16:02:27', NULL),
+	(506, 'S-013', '', '', 10, 'Calculadora', 60, 5, 8, 6, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCALCULADORA CASIO\r\nMODELO DR-120L\r\nCON IMPRESORA', 'S-013', '2014-02-21 17:02:24', NULL),
+	(507, '07-073', '', '20.19.07.00073', 15, 'Impresora laser', 8, 5, 19, 5, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nIMPRESORA\r\nMARCA HP\r\nMODELO LASER JET M1319F MFP\r\nSERIE CNCZ84MHSX', '07-073', '2014-02-21 17:02:36', NULL),
+	(508, '03-290', '', '10.04.03.00290', 10, 'Estabilizador', 28, 6, 12, 4, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR\r\nMARCA MATSUNAKA STAVOL\r\nMODELO SVC 1500 N\r\nDE 1500 W.', '03-290', '2014-02-21 17:02:35', NULL),
+	(509, '03-023', '', '30.14.03.00023', 3, 'Mesa para computadora', 11, 12, 8, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO PARA COMPUTADORA\r\nCOLOR BEIJE\r\nCON 4 RODAPIES\r\nUN CAJON LADO DERECHO\r\nCON DESLIZANTE PARA TECLADO LADO IZQUIERDO', '03-023', '2014-02-21 17:02:16', NULL),
+	(510, '07-069', '', '30.11.07.00069', 15, 'Equipo computacion', 7, 6, 13, 5, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCPU DIMENSION C 521\r\nAMD ATHLON 64\r\nPROCESSOR 3200 2 GHZ\r\nRAM 958 MB.\r\n\r\nMONITOR DELL CN OW 4 318-72872-6CD-1LGL\r\n\r\nCON MOUSE DELUX Y TECLADO DELL.\r\n', '07-069', '2014-02-21 17:02:48', NULL),
+	(511, '07-033', '', '20.18.07.00033', 15, 'CPU', 7, 10, 19, 5, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCPU DIMENSION 2400\r\nPENTIUM 4\r\n\r\nCON TECLADO Y MOUSE.', '07-033', '2014-02-21 17:02:31', NULL),
+	(512, 'X-0087', '', '', 15, 'Monitor', 3, 10, 4, 7, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR\r\nMARCA: SAMSUNG\r\nMODELO: SYNCMASTER 551V\r\nTAMAÃ‘O: 15 PULGADAS', 'X-0087', '2014-02-21 17:02:32', NULL),
+	(513, 'S-085', '', '', 3, 'Silla giratoria', 11, 6, 10, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 4 RODAPIES.', 'S-085', '2014-02-21 17:02:19', NULL),
+	(514, 'S-084', '', '', 3, 'Mesa de trabajo', 11, 3, 10, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO DE MADERA CAFE\r\nMEDIDAS [152cm x 80cm x 74cm alto]', 'S-084', '2014-02-21 18:02:34', NULL),
+	(515, '03-153', '', '10.14.03.00153', 3, 'Mesa de trabajo', 11, 9, 10, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESA METALICA\r\nCOLOR NARANJA\r\nCON BASE DE MADERA PRENSADA\r\nMEDIDAS [98cm x 80cm x 74cm alto]', '03-153', '2014-02-21 18:02:55', NULL),
+	(516, '03-285', '', '30.14.03.00285', 3, 'Mesa de trabajo', 11, 3, 10, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE MADERA\r\nMEDIDAS [250cm x 111cm x 78cm alto]', '03-285', '2014-02-21 18:02:09', NULL),
+	(517, 'S-133', '', '', 3, 'Silla', 11, 3, 10, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'S-133', '2014-02-21 18:02:05', NULL),
+	(518, '03-112', '', '10.14.03.00112', 3, 'Taburete', 11, 6, 2, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR NEGRO\r\nCON ASIENTO REDONDO DE MADERA PRENSADA.', '03-112', '2014-02-21 18:02:46', NULL),
+	(519, 'S-066', '', '', 12, 'Caballete', 11, 3, 10, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA.', 'S-066', '2014-02-21 18:02:51', NULL),
+	(520, '04-017', '', '30.14.04.00017', 5, 'Maquina medidora de cuero', 85, 6, 3, 12, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMEDIDORA DE CUERO\r\nMARCA MASTER\r\nTIPO MMC 30\r\nSERIE 734-03-99\r\nCOLOR AZUL Y PLOMO', '04-017', '2014-02-21 18:02:59', NULL),
+	(521, '03-107', '', '10.14.03.00107', 3, 'Taburete', 11, 3, 10, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA CON FORRO CAFE', '03-107', '2014-02-21 18:02:53', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -596,9 +617,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~83 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~85 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -684,7 +705,9 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(80, 'SANWA'),
 	(81, 'SBC'),
 	(82, 'ARES'),
-	(83, 'STAVOL');
+	(83, 'STAVOL'),
+	(84, 'NATIONAL'),
+	(85, 'MASTER');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -805,10 +828,10 @@ INSERT INTO `item_material` (`id`, `name`, `description`) VALUES
 	(6, 'Metal', ''),
 	(7, 'No hay dato', NULL),
 	(8, 'Cartón prensado', NULL),
-	(9, 'Madera aglomerada', NULL),
+	(9, 'Madera prensada', NULL),
 	(10, 'Varios', NULL),
 	(11, 'Acrílico', NULL),
-	(12, 'Madera aglomerada melaminada', NULL);
+	(12, 'Madera prensada melaminada', NULL);
 /*!40000 ALTER TABLE `item_material` ENABLE KEYS */;
 
 
@@ -880,7 +903,7 @@ CREATE TABLE IF NOT EXISTS `item_type` (
   PRIMARY KEY (`id`),
   KEY `parent_id` (`parent_id`),
   CONSTRAINT `item_type_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `item_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table inventory.item_type: ~13 rows (approximately)
 DELETE FROM `item_type`;
@@ -894,11 +917,11 @@ INSERT INTO `item_type` (`id`, `parent_id`, `name`, `description`) VALUES
 	(6, NULL, 'Herramienta', NULL),
 	(7, NULL, 'Automovil', NULL),
 	(9, NULL, 'Artículo de cocina', NULL),
-	(10, NULL, 'Equipo electrónico', NULL),
+	(10, NULL, 'Dispositivo electrónico', NULL),
 	(11, NULL, 'Repuesto', NULL),
 	(12, NULL, 'Otro', NULL),
 	(13, NULL, 'Producto terminado', NULL),
-	(15, NULL, 'Dispositivo informático', NULL);
+	(15, NULL, 'Equipo informático', NULL);
 /*!40000 ALTER TABLE `item_type` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

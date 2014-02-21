@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=447 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=501 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~386 rows (approximately)
+-- Dumping data for table inventory.item: ~515 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -126,7 +126,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(57, '04-057', '', '40.06.04.00057', 5, 'Maquina de costura TUBO', 10, 6, 1, 3, 1, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 595-H3- 6/01\r\nSERIE: 584774\r\n\r\nMOTOR\r\nMARCA: ZOJE\r\nSERIE: 0047966', '04-057', '2014-02-10 10:02:21', '2014-02-10 11:02:12'),
 	(58, '04-066', '', '40.06.04.00066', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 1245 -6/01\r\nSERIE: 2571695\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nSERIE: E-1106006', '04-066', '2014-02-10 10:02:43', '2014-02-10 11:02:32'),
 	(59, '04-116', '', '40.06.04.00116', 5, 'Maquina de costura de BRAZO', 12, 6, 1, 3, 7, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: SADA DURKOPP ADLER\r\nMODELO: 267 C/SA\r\n\r\nMOTOR\r\nMARCA: COMELZ ARGO 42/A ADK 504', '04-116', '2014-02-10 11:02:33', '2014-02-10 11:02:24'),
-	(60, '04-00003', '', '40.16.04.00003', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 1, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nSERIE: 2571691\r\nMODELO: 1245\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nSERIE: E-1106940\r\n\r\nCON MESON DE MADERA DE 0,80M X 1,20M X 0,55M COLORBLANCO', '04-00003', '2014-02-10 11:02:51', '2014-02-10 11:02:06'),
+	(60, '04-003', '', '40.16.04.00003', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 1, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nSERIE: 2571691\r\nMODELO: 1245\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nSERIE: E-1106940\r\n\r\nCON MESON DE MADERA DE 0,80M X 1,20M X 0,55M COLORBLANCO', '04-003', '2014-02-10 11:02:51', '2014-02-21 14:02:11'),
 	(61, '04-063', '', '40.16.04.00063', 5, 'Maquina de costura TRIPLE', 10, 6, 1, 3, 16, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE COSER\r\nMARCA: PFAFF\r\nMODELO: 1245 -6/01\r\nSERIE: 2571693\r\n\r\nMOTOR\r\nMARCA: HOHSING\r\nMODELO: CL 1221\r\nSERIE: E1106457', '04-063', '2014-02-10 11:02:49', NULL),
 	(62, '03-007', '', '20.18.03.00007', 10, 'Telefono', 22, 5, 4, 6, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, 'TELEFONO\r\nMARCA: PANASONIC\r\nModelo: KX-T7730', '03-007', '2014-02-10 11:02:09', '2014-02-10 17:02:28'),
 	(63, '03-232', '', '20.09.03.00232', 3, 'Mesa de escritorio', 11, 3, 10, 19, 2, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Mesa pequeÃ±a tipo escritorio de 90cm largo x 40cm ancho x 72cm alto.', '03-232', '2014-02-10 14:02:37', '2014-02-12 09:02:34'),
@@ -215,7 +215,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(146, '07-087', '', '20.18.07.00087', 15, 'CPU', 30, 10, 2, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCPU, MARCA EMACHINES, MOD. ET 1831-07, SERIE PTNB602022006021DF2700\r\n\r\nCON TECLADO DELUX Y MOUSE GENIUS.', '07-087', '2014-02-11 17:02:21', NULL),
 	(147, 'X-0026', '', '', 15, 'Router wireless', 43, 5, 2, 8, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nROUTER DLINK MODELO DIR-615, CON 2 ANTENAS.', 'X-0026', '2014-02-11 17:02:15', NULL),
 	(148, 'S-269', '', '', 10, 'Aire acondicionado', 6, 6, 4, 7, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA DE AIRE ACONDICIONADO, MARCA LG, MODELO LWN22XXX\r\n\r\nCON CONTROL REMOTO', 'S-269', '2014-02-11 17:02:15', '2014-02-11 18:02:25'),
-	(149, 'S-227', '', '', 3, 'MesÃ³n', 11, 9, 10, 1, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO LARGA, CON BASE DE MADERA AGLOMERADA COLOR CAFE Y ESTRUCTURA DE METAL COLOR CAFE, CON MEDIDAS [505cm x 75cm x 77cm de alto]', 'S-227', '2014-02-11 17:02:52', NULL),
+	(149, 'S-227', '', '', 3, 'MesÃ³n', 11, 9, 10, 1, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO LARGA\r\nCON BASE DE MADERA AGLOMERADA\r\nCOLOR CAFE\r\nESTRUCTURA DE METAL COLOR CAFE\r\nMEDIDAS [505cm x 75cm x 77cm de alto]', 'S-227', '2014-02-11 17:02:52', '2014-02-21 13:02:40'),
 	(150, 'X-0027', '', '', 3, 'MesÃ³n', 11, 9, 10, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO LARGO, CON BASE DE MADERA AGLOMERADA COLOR CAFE Y ESTRUCTURA DE METAL COLOR CAFE, CON MEDIDAS [370cm x 75cm x 79cm de alto]', 'X-0027', '2014-02-11 17:02:41', '2014-02-11 17:02:56'),
 	(151, 'X-0028', '', '', 3, 'MesÃ³n', 11, 9, 10, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO LARGO, CON BASE DE MADERA AGLOMERADA COLOR CAFE Y ESTRUCTURA DE METAL COLOR CAFE, CON MEDIDAS [230cm x 75cm x 79cm de alto]', 'X-0028', '2014-02-11 17:02:54', NULL),
 	(152, 'S-436', '', '', 3, 'Mesa de trabajo', 11, 3, 2, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO DE MADERA, CON MEDIDAS [100cm x 80cm x 74cm de alto]', 'S-436', '2014-02-11 17:02:15', '2014-02-11 18:02:41'),
@@ -512,7 +512,61 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(443, '03-030', '', '30.13.03.00030', 3, 'Mesa de trabajo', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO METALICO\r\nCOLOR VERDE\r\nMEDIDAS [250cm x 130cm x 96cm alto]', '03-030', '2014-02-20 17:02:13', NULL),
 	(444, 'S-108', '', '', 12, 'Porta bandejas', 11, 6, 4, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nPORTA-BANDEJAS\r\nCON 4 NIVELES.', 'S-108', '2014-02-20 17:02:25', NULL),
 	(445, '03-121', '', '30.13.03.00121', 3, 'Mesa de trabajo', 11, 6, 9, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCOLOR VERDE\r\nMEDIDAS [205cm x 92cm x 100cm alto]', '03-121', '2014-02-20 17:02:21', NULL),
-	(446, 'X-0080', '', '', 12, 'Caballete', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA.', 'X-0080', '2014-02-20 17:02:32', NULL);
+	(446, 'X-0080', '', '', 12, 'Caballete', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA.', 'X-0080', '2014-02-20 17:02:32', NULL),
+	(447, '03-031', '', '30.13.03.00031', 3, 'Mesa de trabajo', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO METALICO\r\nCOLOR VERDE\r\nMEDIDAS [250cm x 130cm x 106cm alto]', '03-031', '2014-02-21 10:02:37', NULL),
+	(448, 'S-254', '', '', 12, 'Caballete', 11, 6, 5, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE METAL\r\nCOLOR AMARILLO\r\nLARGO 200cm\r\nALTO 173cm', 'S-254', '2014-02-21 10:02:13', NULL),
+	(449, 'S-256', '', '', 12, 'Caballete', 11, 6, 5, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE METAL\r\nCOLOR AMARILLO\r\nLARGO 117cm\r\nALTO 154cm', 'S-256', '2014-02-21 10:02:18', '2014-02-21 11:02:09'),
+	(450, 'S-252', '', '', 12, 'Caballete', 11, 6, 5, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE METAL\r\nCOLOR AMARILLO\r\nLARGO 117cm\r\nALTO 154cm', 'S-252', '2014-02-21 10:02:06', '2014-02-21 11:02:28'),
+	(451, 'S-253', '', '', 12, 'Caballete', 11, 6, 5, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE METAL\r\nCOLOR AMARILLO\r\nLARGO 117cm\r\nALTO 154cm', 'S-253', '2014-02-21 10:02:06', '2014-02-21 11:02:55'),
+	(452, 'S-257', '', '', 12, 'Caballete', 11, 6, 5, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE METAL\r\nCOLOR AMARILLO\r\nLARGO 117cm\r\nALTO 154cm', 'S-257', '2014-02-21 10:02:01', '2014-02-21 11:02:34'),
+	(453, 'S-255', '', '', 12, 'Caballete', 11, 6, 5, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE METAL\r\nCOLOR AMARILLO\r\nLARGO 200cm\r\nALTO 173cm', 'S-255', '2014-02-21 10:02:54', NULL),
+	(454, '03-074', '', '30.11.03.00074', 3, 'Mesa de trabajo', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO METALICO\r\nCOLOR VERDE\r\nMEDIDAS [250cm x 130cm x 95cm alto]', '03-074', '2014-02-21 10:02:39', NULL),
+	(455, '03-029', '', '30.13.03.00029', 3, 'Mesa de trabajo', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO METALICO\r\nCOLOR VERDE\r\nMEDIDAS [250cm x 130cm x 94cm alto]', '03-029', '2014-02-21 10:02:15', NULL),
+	(456, 'S-101', '', '', 12, 'Caballete', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA\r\nALTO 99cm\r\nLARGO 141cm', 'S-101', '2014-02-21 11:02:07', NULL),
+	(457, 'S-095', '', '', 3, 'Gavetero', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nGAVETERO DE MADERA\r\nCON 2 PUERTAS CENTRALES\r\nY 2 CAJONES EN LA PARTE INFERIOR\r\nMEDIDAS [83cm x 49cm x 82cm alto]', 'S-095', '2014-02-21 11:02:17', NULL),
+	(458, '03-027', '', '30.13.03.00027', 3, 'Silla', 11, 3, 10, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-027', '2014-02-21 11:02:08', NULL),
+	(459, '03-080', '', '30.13.03.00080', 3, 'Taburete', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE CON ASIENTO CUADRADO DE MADERA.', '03-080', '2014-02-21 11:02:26', NULL),
+	(460, '03-093', '', '30.12.03.00093', 3, 'Taburete', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE CON ASIENTO CUADRADO DE MADERA\r\nCON FORRO DE TELA EN LA BASE.\r\n', '03-093', '2014-02-21 11:02:31', NULL),
+	(461, 'S-102', '', '', 12, 'Caballete', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA\r\nALTO 141cm\r\nLARGO 99cm', 'S-102', '2014-02-21 11:02:21', NULL),
+	(462, 'S-103', '', '', 12, 'Caballete', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA\r\nALTO 141cm\r\nLARGO 99cm', 'S-103', '2014-02-21 11:02:22', NULL),
+	(463, '03-039', '', '30.13.03.00039', 3, 'Taburete', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-039', '2014-02-21 11:02:04', NULL),
+	(464, 'X-0081', '', '', 12, 'Caballete', 11, 6, 18, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE METAL\r\nCOLOR NARANJA\r\nCON RUEDITAS\r\nLARGO 200cm\r\nALTO 173cm', 'X-0081', '2014-02-21 11:02:05', NULL),
+	(465, '03-046', '', '30.13.03.00046', 3, 'Estante', 11, 6, 8, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTANTE DE FIERRO ANGULAR\r\nCON 5 BANDEJAS\r\nCOLOR CREMA\r\nMEDIDAS [90cm x 40cm x 200cm alto]', '03-046', '2014-02-21 11:02:06', NULL),
+	(466, 'S-121', '', '', 3, 'Estante', 11, 6, 8, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTANTE DE FIERRO ANGULAR\r\nCON 5 BANDEJAS\r\nCOLOR CREMA\r\nMEDIDAS [90cm x 40cm x 200cm alto]', 'S-121', '2014-02-21 11:02:18', NULL),
+	(467, 'S-122', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO DE MADERA\r\nCON DIVISION PARA CAJON\r\nMEDIDAS [190cm x 80cm x 100cm alto]', 'S-122', '2014-02-21 11:02:54', NULL),
+	(468, '03-033', '', '30.13.03.00033', 3, 'Taburete', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO', '03-033', '2014-02-21 11:02:04', NULL),
+	(469, 'X-0082', '', '', 3, 'Caballete', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA MEDIANO.', 'X-0082', '2014-02-21 11:02:47', '2014-02-21 11:02:24'),
+	(470, 'X-0083', '', '', 3, 'Caballete', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA PEQUEÃ‘O.', 'X-0083', '2014-02-21 11:02:17', NULL),
+	(471, '03-028', '', '30.13.03.000280', 3, 'Silla', 11, 3, 10, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-028', '2014-02-21 11:02:51', NULL),
+	(472, 'S-120', '', '', 3, 'Armario', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 GLB.\r\n\r\nARMARIO DE MADERA\r\nCON 6 PUERTAS.', 'S-120', '2014-02-21 11:02:25', NULL),
+	(473, 'S-112', '', '', 12, 'Repicero', 11, 6, 2, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nREPICERO METALICO\r\nCON 7 REPISAS', 'S-112', '2014-02-21 13:02:23', NULL),
+	(474, '03-032', '', '30.13.03.00032', 3, 'Mesa de trabajo', 11, 6, 2, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1PZA.\r\n\r\nMESON DE TRABAJO METALICO\r\nCON 3 CAJONES LADO DERECHO\r\nSOPORTE PARA FOCO FLUORECENTE\r\nMEDIDAS [200cm x 100cm x 103cm alto]', '03-032', '2014-02-21 13:02:54', NULL),
+	(475, '03-038', '', '30.13.03.00038', 3, 'Taburete', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO DE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-038', '2014-02-21 13:02:51', NULL),
+	(476, '04-027', '', '30.13.04.00027', 5, 'Maquina troqueladora', 82, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA DE BRAZO\r\nMARCA ARES\r\nSERIE F45\r\nMODELO 900X430\r\nMATRICULA 91187 COLOR VERDE Y NARANJA', '04-027', '2014-02-21 14:02:59', NULL),
+	(477, '04-028', '', '30.13.04.00028', 5, 'Maquina troqueladora', 82, 6, 6, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA DE BRAZO\r\nMARCA ARES\r\nSERIE F45\r\nMODELO 900X430\r\nMATRICULA 91197\r\nCOLOR VERDE Y NARANJA.', '04-028', '2014-02-21 14:02:13', NULL),
+	(478, 'S-113', '', '', 12, 'Repicero', 11, 6, 2, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nREPICERA METALICA\r\nCON 6 DIVISIONES.', 'S-113', '2014-02-21 14:02:42', NULL),
+	(479, 'S-114', '', '', 12, 'Repicero', 11, 6, 3, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 6 DIVISIONES.', 'S-114', '2014-02-21 14:02:06', NULL),
+	(480, '04-029', '', '30.13.04.00029', 5, 'Maquina troqueladora', 73, 6, 6, 21, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA\r\nMARCA ATOM\r\nMODELO SE20C\r\nSERIE 20A072747\r\nCOLOR VERDE Y NARANJA.', '04-029', '2014-02-21 14:02:47', NULL),
+	(481, 'S-111', '', '', 12, 'Repicero', 11, 6, 9, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 4 DIVISIONES.', 'S-111', '2014-02-21 14:02:04', NULL),
+	(482, 'S-110', '', '', 12, 'Repicero', 11, 6, 3, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 4 DIVISIONES.', 'S-110', '2014-02-21 14:02:57', NULL),
+	(483, '04-030', '', '30.13.04.00030', 5, 'Maquina troqueladora', 73, 6, 6, 23, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA\r\nMARCA ATOM\r\nMODELO SE20C\r\nSERIE 21A073705\r\nCOLOR VERDE Y NARANJA.', '04-030', '2014-02-21 14:02:34', NULL),
+	(484, 'S-117', '', '', 12, 'Repicero', 11, 6, 2, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 6 DIVISIONES.', 'S-117', '2014-02-21 14:02:57', NULL),
+	(485, 'S-119', '', '', 3, 'Mesa de trabajo', 11, 12, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nMESA METALICA PLEGABLE\r\nCON BASE DE MADERA PRENSADA.', 'S-119', '2014-02-21 14:02:33', NULL),
+	(486, '04-031', '', '30.13.04.00031', 5, 'Maquina troqueladora', 73, 6, 6, 23, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA\r\nMARCA ATOM\r\nMODELO SE20C\r\nSERIE 21A073706\r\nCOLOR VERDE Y NARANJA', '04-031', '2014-02-21 14:02:56', NULL),
+	(487, 'S-116', '', '', 12, 'Repicero', 11, 6, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 6 DIVISIONES.', 'S-116', '2014-02-21 14:02:19', NULL),
+	(488, 'S-115', '', '', 12, 'Repicero', 11, 6, 3, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO METALICO\r\nCON 6 DIVISIONES.', 'S-115', '2014-02-21 14:02:27', NULL),
+	(489, '04-032', '', '30.13.04.00032', 5, '', 73, 6, 18, 23, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA\r\nMARCA ATOM\r\nMODELO SE20C\r\nSERIE 21A073458 COLOR NARANJA Y VERDE.', '04-032', '2014-02-21 14:02:11', NULL),
+	(490, 'S-047', '', '', 3, 'Taburete', 11, 6, 6, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON BASE BASE CUADRADA', 'S-047', '2014-02-21 14:02:36', NULL),
+	(491, 'X-0084', '', '', 12, 'Carrito de carga', 11, 6, 5, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCARRITO DE CARGA PEQUEÃ‘O\r\nMETALICO\r\nCOLOR AMARILLO\r\nCON 4 RUEDAS', 'X-0084', '2014-02-21 15:02:14', NULL),
+	(492, '04-026', '', '30.13.04.00026', 5, 'Maquina troqueladora', 82, 6, 18, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA DE BRAZO\r\nMARCA ARES\r\nSERIE F70\r\nMODELO 1200X500\r\nMATRICULA 95168\r\nCOLOR NARANJA Y VERDE', '04-026', '2014-02-21 15:02:18', NULL),
+	(493, '03-273', '', '30.11.03.00273', 5, '', 83, 6, 13, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBALANZA ELECTRONICA\r\nMARCA STAVOL', '03-273', '2014-02-21 15:02:26', NULL),
+	(494, 'S-017', '', '', 3, 'Silla giratoria', 11, 5, 9, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 5 RODAPIES.', 'S-017', '2014-02-21 16:02:05', NULL),
+	(495, 'S-026', '', '', 3, 'Mesa de trabajo', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO DE MADERA\r\nMEDIDAS [83cm x 83cm x 70cm alto]', 'S-026', '2014-02-21 16:02:34', NULL),
+	(496, '03-307', '', '30.13.03.00307', 3, 'Mesa para computadora', 11, 12, 8, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nESCRITORIO PARA COMPUTADORA\r\nCON 2 GAVETAS DEL LADO DERECHO\r\nCON TABLERO DE VIDRIO\r\nMEDIDAS [132cm x 61cm x 89cm alto]', '03-307', '2014-02-21 16:02:01', NULL),
+	(497, '07-046', '', '30.11.07.00046', 15, 'CPU', 7, 5, 19, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1GLB.\r\n\r\nCPU DIMENSION 2400\r\nPENTIUM 4\r\n80 GB\r\n2.66 GHZ\r\n256 MB RAM\r\nLECTOR CD\r\nSERIE CN QR2034 42940 42PQOFQ\r\nCON TECLADO DELUXE Y MOUSE GENERICO', '07-046', '2014-02-21 16:02:01', NULL),
+	(498, 'X-0085', '', '', 15, 'Impresora de carro a cinta', 40, 5, 15, 6, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nIMPRESORA EPSON A CINTA\r\nMODELO LX 300 + II', 'X-0085', '2014-02-21 16:02:21', NULL),
+	(499, '07-008', '', '', 15, 'Monitor ', 3, 10, 15, 7, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR SAMSUNG\r\nMODELO SYNCMASTER 753S\r\nTAMAÃ‘O 17 PULGADAS', '07-008', '2014-02-21 16:02:49', NULL),
+	(500, 'S-109', '', '', 12, 'Repicero', 11, 6, 2, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCOLOR NEGRO\r\nCON 4 NIVELES', 'S-109', '2014-02-21 16:02:56', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -542,9 +596,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~81 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~83 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -628,7 +682,9 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(78, 'CALATI'),
 	(79, 'CAMOGA'),
 	(80, 'SANWA'),
-	(81, 'SBC');
+	(81, 'SBC'),
+	(82, 'ARES'),
+	(83, 'STAVOL');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 

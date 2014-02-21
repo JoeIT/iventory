@@ -33,11 +33,10 @@ img {
 	width: 960px;
 	margin: 0 auto;
 	padding: 0 10px;
-	background: #1c1c1b url(../images/bg.jpg) repeat-y;
+	background: #1c1c1b url(../images/bg.jpg) repeat-y;	
 }
 
 /* menu */
-
 #before-header {
 	width: 960px;
 	height: 45px;

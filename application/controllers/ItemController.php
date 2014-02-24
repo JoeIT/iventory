@@ -1,6 +1,7 @@
 <?php
 class ItemController extends Zend_Controller_Action {
 	
+	private $_itemDao;
 	private $_itemTypeDao;
 	private $_itemBrandDao;
 	private $_itemMaterialDao;
@@ -18,6 +19,7 @@ class ItemController extends Zend_Controller_Action {
 	
 	public function init() {
 		/* Initialize action controller here */
+		$this->_itemDao = new App_Dao_ItemDao ();
 		$this->_itemTypeDao = new App_Dao_ItemTypeDao();
 		$this->_itemBrandDao = new App_Dao_ItemBrandDao();
 		$this->_itemMaterialDao = new App_Dao_ItemMaterialDao();
@@ -30,18 +32,18 @@ class ItemController extends Zend_Controller_Action {
 		
 		$uri = "$_SERVER[REQUEST_URI]";
 		$uriPathArray = explode('/', $uri );
-		$this->ROOT_PATH = "http://$_SERVER[HTTP_HOST]" . '/' . $uriPathArray[1] . '/'; // http://localhost/zf/
+		$this->ROOT_PATH = "http://$_SERVER[HTTP_HOST]" . '/' . $uriPathArray[1] . '/'; // http://localhost/zf/		
 	}
 	
 	public function indexAction() {
 		$page = $this->_getParam ( 'page', 1 );
 		
-		$itemDao = new App_Dao_ItemDao ();
-		$totalItems = $itemDao->countAll ();
+		//$itemDao = new App_Dao_ItemDao ();
+		$totalItems = $this->_itemDao->countAll ();
 		$paginator = new App_Util_Paginator ( $this->getRequest ()->getBaseUrl () . '/item/index', $totalItems, $page, 30 );
 		
 		$this->view->totalItems = $totalItems;
-		$this->view->dataList = $itemDao->getAllLimitOffset ( $paginator->getLimit (), $paginator->getOffset () );
+		$this->view->dataList = $this->_itemDao->getAllLimitOffset ( $paginator->getLimit (), $paginator->getOffset () );
 		$this->view->htmlPaginator = $paginator->showHtmlPaginator ();
 	}
 	
@@ -51,9 +53,9 @@ class ItemController extends Zend_Controller_Action {
 		if(empty($id))
 			$this->_helper->redirector('index');
 
-		$itemDao = new App_Dao_ItemDao ();
+		//$itemDao = new App_Dao_ItemDao ();
 		
-		$item = $itemDao->getById($id);
+		$item = $this->_itemDao->getById($id);
 		if($item == null)
 			$this->_helper->redirector('index');
 		
@@ -63,7 +65,7 @@ class ItemController extends Zend_Controller_Action {
 	}
 	
 	public function addAction() {
-		$itemDao = new App_Dao_ItemDao();
+		//$itemDao = new App_Dao_ItemDao();
 		$form = new App_Form_ItemForm();
 		
 		$this->_loadFormSelects($form);
@@ -104,7 +106,7 @@ class ItemController extends Zend_Controller_Action {
 				$dirPermission = "0777";
 				if( mkdir( self::PHOTO_ROOT_URL .  $photoUrl, $dirPermission) )
 				{
-					$itemDao->save($item);
+					$this->_itemDao->save($item);
 					//$this->_helper->redirector('index');
 					$this->_helper->redirector('add');
 					return;
@@ -122,8 +124,8 @@ class ItemController extends Zend_Controller_Action {
 		if (empty($id))
 			$this->_helper->redirector('index');
 		
-		$itemDao = new App_Dao_ItemDao();
-		$item = $itemDao->getById($id);
+		//$itemDao = new App_Dao_ItemDao();
+		$item = $this->_itemDao->getById($id);
 		
 		if($item == null)
 			$this->_helper->redirector('index');
@@ -174,7 +176,7 @@ class ItemController extends Zend_Controller_Action {
 					if( rename( self::PHOTO_ROOT_URL . $item->getPhotoDir(), self::PHOTO_ROOT_URL . $newPhotoUrl) )
 					{
 						$item->setPhotoDir( $newPhotoUrl );
-						$itemDao->save($item);
+						$this->_itemDao->save($item);
 						$this->_helper->redirector('index');
 						return;
 					}
@@ -182,7 +184,7 @@ class ItemController extends Zend_Controller_Action {
 						$this->view->message = "Error al renombrar directorio de fotografias.";
 				}
 				else {
-					$itemDao->save($item);
+					$this->_itemDao->save($item);
 					$this->_helper->redirector('index');
 					return;
 				}
@@ -221,8 +223,8 @@ class ItemController extends Zend_Controller_Action {
 		if (empty($id))
 			$this->_helper->redirector('index');
 		
-		$itemDao = new App_Dao_ItemDao();
-		$item = $itemDao->getById($id);
+		//$itemDao = new App_Dao_ItemDao();
+		$item = $this->_itemDao->getById($id);
 		
 		if($item == null)
 			$this->_helper->redirector('index');
@@ -235,7 +237,7 @@ class ItemController extends Zend_Controller_Action {
 			
 			rename( self::PHOTO_ROOT_URL . $item->getPhotoDir(), self::PHOTO_ROOT_URL . "(BORRADO)" . $item->getPhotoDir() );
 			
-			$itemDao->remove($item);
+			$this->_itemDao->remove($item);
 			$this->_helper->redirector('index');
 			return;			
 		}		

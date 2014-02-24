@@ -11,7 +11,7 @@ class App_Util_Paginator
 	private $_extraUrl = '';
 	private $_showLinkPageNumbers = true;
 	// Number of number link pages to show, is recommended to set an odd number
-	private $_maxLinkNumbers = 7;
+	private $_maxLinkNumbers = 9;
 	
 	public function __construct($url, $totalRows, $currentPage, $limit = 10)
 	{
@@ -96,7 +96,7 @@ class App_Util_Paginator
 			else
 				$htmlPaginator .= "<span class='disabled'> &lt; Previo</span> |";
 			
-			
+			//--------------------------------------------------------------------------
 			// Show numbers
 			if($this->_showLinkPageNumbers == true)
 			{
@@ -128,6 +128,10 @@ class App_Util_Paginator
 					}
 				}
 				
+				if($initial > 1)
+					$htmlPaginator .= " ...";
+				
+				
 				for($page = $initial; $page <= $final; $page++)
 				{
 					if($page != $this->_pageNumber)
@@ -136,9 +140,13 @@ class App_Util_Paginator
 						$htmlPaginator .= "<span class='disabled'> <b>$page</b></span>";
 				}
 				
+				if($final < $totalPages)
+					$htmlPaginator .= "... ";
+				
 				$htmlPaginator .= " |";
 			}
 			
+			//--------------------------------------------------------------------------			
 			// Next page link
 			if (isset($next))
 				$htmlPaginator .= " <a href='".$this->_url."/page/$next". $this->_extraUrl ."'>Siguiente &gt;</a> |";

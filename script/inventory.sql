@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=534 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=542 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~547 rows (approximately)
+-- Dumping data for table inventory.item: ~555 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -415,7 +415,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(346, '03-155', '', '30.11.03.00155', 3, 'Taburete', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE DE MADERA CON ASIENTO REDONDO.', '03-155', '2014-02-18 17:02:18', NULL),
 	(347, '03-063', '', '30.10.03.00063', 3, 'Mesa de trabajo', 11, 6, 3, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO PEQUEÃ‘Â‘O COLOR AZUL CON BRAZO PARA FOCO.\r\n\r\nMEDIDAS [100cm x 80cm x 105cm alto]', '03-063', '2014-02-18 17:02:47', '2014-02-18 17:02:37'),
 	(348, 'S-104', '', '', 12, 'Caballete', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA.', 'S-104', '2014-02-18 17:02:57', NULL),
-	(349, '03-011-2', '', '', 3, 'SillÃ³n', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLON DE MADERA.', '03-011-2', '2014-02-18 18:02:32', NULL),
+	(349, '03-011-2', '', '', 3, 'SillÃ³n', 11, 3, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLON DE MADERA.', '03-011-2', '2014-02-18 18:02:32', '2014-02-24 09:02:49'),
 	(350, '03-010', '', '30.11.03.00010', 3, 'SillÃ³n', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLON DE MADERA.', '03-010', '2014-02-18 18:02:23', NULL),
 	(351, '03-057', '', '30.10.03.00057', 3, 'Mesa de escritorio', 11, 3, 10, 19, 5, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO DE MADERA CON 4 CAJONES, 2 DERECHO Y 2 IZQUIERDO DE MEDIDAS [160.5cm x 79cm x 77cm alto]', '03-057', '2014-02-19 14:02:56', NULL),
 	(352, 'S-189', '', '', 3, 'Silla giratoria', 11, 5, 10, 19, 5, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 5 RODAPIES.', 'S-189', '2014-02-19 14:02:24', NULL),
@@ -490,7 +490,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(421, '04-044', '', '30.13.04.00044', 5, 'Maquina para grabado en cuero', 73, 6, 6, 23, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA GRABAR EN CUERO\r\nMARCA ATOM\r\nMODELO PL1250\r\nSERIE 10006181', '04-044', '2014-02-20 16:02:56', NULL),
 	(422, 'S-092', '', '', 3, 'Mesa de trabajo', 11, 3, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO\r\nDE MADERA\r\nMEDIDAS [100cm x 79cm x 75cm alto]', 'S-092', '2014-02-20 16:02:15', NULL),
 	(423, '04-034', '', '30.13.04.00034', 5, 'Maquina selladora de cuero', 74, 6, 16, 5, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA SELLADORA DE CUEROS Y PLASTICOS\r\nMARCA WSK\r\nTIPO PP33F\r\nSERIE 490497\r\nCOLOR CELESTE Y NARANJA.', '04-034', '2014-02-20 16:02:11', NULL),
-	(424, 'S-258', '', '', 5, 'Maquina selladora manual', 75, 6, 15, 12, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA SELLADORA MANUAL.', 'S-258', '2014-02-20 16:02:08', NULL),
+	(424, 'S-258', '', '', 5, 'Maquina selladora manual', 75, 6, 15, 12, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA SELLADORA MANUAL\r\nCON MESA MEDIDAS [100cm x 50cm x 120cm alto]', 'S-258', '2014-02-20 16:02:08', '2014-02-24 09:02:43'),
 	(425, '04-035', '', '30.13.04.00035', 5, 'Maquina desbastadora de cuero', 76, 6, 8, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DESBASTADORA\r\nMARCA ELLEGI\r\nMODELO GL12AC\r\nSERIE 9034067 F5106645', '04-035', '2014-02-20 16:02:59', NULL),
 	(426, '03-054', '', '30.13.03.00054', 3, 'Silla', 11, 3, 10, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-054', '2014-02-20 16:02:58', NULL),
 	(427, '04-052', '', '30.13.04.00052', 5, 'Maquina desbastadora de cuero', 76, 6, 8, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DESBASTADORA\r\nMARCA ELLEGI\r\nMODELO GL12AC\r\nSERIE 9034347', '04-052', '2014-02-20 17:02:31', NULL),
@@ -544,17 +544,17 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(475, '03-038', '', '30.13.03.00038', 3, 'Taburete', 11, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO DE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-038', '2014-02-21 13:02:51', NULL),
 	(476, '04-027', '', '30.13.04.00027', 5, 'Maquina troqueladora', 82, 6, 6, 19, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA DE BRAZO\r\nMARCA ARES\r\nSERIE F45\r\nMODELO 900X430\r\nMATRICULA 91187 COLOR VERDE Y NARANJA', '04-027', '2014-02-21 14:02:59', NULL),
 	(477, '04-028', '', '30.13.04.00028', 5, 'Maquina troqueladora', 82, 6, 6, 16, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA DE BRAZO\r\nMARCA ARES\r\nSERIE F45\r\nMODELO 900X430\r\nMATRICULA 91197\r\nCOLOR VERDE Y NARANJA.', '04-028', '2014-02-21 14:02:13', NULL),
-	(478, 'S-113', '', '', 12, 'Repicero', 11, 6, 2, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nREPICERA METALICA\r\nCON 6 DIVISIONES.', 'S-113', '2014-02-21 14:02:42', NULL),
-	(479, 'S-114', '', '', 12, 'Repicero', 11, 6, 3, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 6 DIVISIONES.', 'S-114', '2014-02-21 14:02:06', NULL),
+	(478, 'S-113', '', '', 12, 'Repicero', 11, 6, 2, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nREPICERA METALICA\r\nCON 6 DIVISIONES\r\nMEDIDAS [60cm x 43cm x 110cm alto].', 'S-113', '2014-02-21 14:02:42', '2014-02-24 09:02:36'),
+	(479, 'S-114', '', '', 12, 'Repicero', 11, 6, 3, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 6 DIVISIONES\r\nMEDIDAS [60cm x 43cm x 110cm alto].', 'S-114', '2014-02-21 14:02:06', '2014-02-24 09:02:45'),
 	(480, '04-029', '', '30.13.04.00029', 5, 'Maquina troqueladora', 73, 6, 6, 21, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA\r\nMARCA ATOM\r\nMODELO SE20C\r\nSERIE 20A072747\r\nCOLOR VERDE Y NARANJA.', '04-029', '2014-02-21 14:02:47', NULL),
 	(481, 'S-111', '', '', 12, 'Repicero', 11, 6, 9, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 4 DIVISIONES.', 'S-111', '2014-02-21 14:02:04', NULL),
 	(482, 'S-110', '', '', 12, 'Repicero', 11, 6, 3, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 4 DIVISIONES.', 'S-110', '2014-02-21 14:02:57', NULL),
 	(483, '04-030', '', '30.13.04.00030', 5, 'Maquina troqueladora', 73, 6, 6, 23, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA\r\nMARCA ATOM\r\nMODELO SE20C\r\nSERIE 21A073705\r\nCOLOR VERDE Y NARANJA.', '04-030', '2014-02-21 14:02:34', NULL),
-	(484, 'S-117', '', '', 12, 'Repicero', 11, 6, 2, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 6 DIVISIONES.', 'S-117', '2014-02-21 14:02:57', NULL),
+	(484, 'S-117', '', '', 12, 'Repicero', 11, 6, 2, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 6 DIVISIONES\r\nMEDIDAS [60cm x 43cm x 110cm alto].', 'S-117', '2014-02-21 14:02:57', '2014-02-24 09:02:15'),
 	(485, 'S-119', '', '', 3, 'Mesa de trabajo', 11, 12, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nMESA METALICA PLEGABLE\r\nCON BASE DE MADERA PRENSADA.', 'S-119', '2014-02-21 14:02:33', NULL),
 	(486, '04-031', '', '30.13.04.00031', 5, 'Maquina troqueladora', 73, 6, 6, 23, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA\r\nMARCA ATOM\r\nMODELO SE20C\r\nSERIE 21A073706\r\nCOLOR VERDE Y NARANJA', '04-031', '2014-02-21 14:02:56', NULL),
-	(487, 'S-116', '', '', 12, 'Repicero', 11, 6, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 6 DIVISIONES.', 'S-116', '2014-02-21 14:02:19', NULL),
-	(488, 'S-115', '', '', 12, 'Repicero', 11, 6, 3, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO METALICO\r\nCON 6 DIVISIONES.', 'S-115', '2014-02-21 14:02:27', NULL),
+	(487, 'S-116', '', '', 12, 'Repicero', 11, 6, 10, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO DE METAL\r\nCON 6 DIVISIONES\r\nMEDIDAS [60cm x 43cm x 110cm alto].', 'S-116', '2014-02-21 14:02:19', '2014-02-24 09:02:06'),
+	(488, 'S-115', '', '', 12, 'Repicero', 11, 6, 3, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREPICERO METALICO\r\nCON 6 DIVISIONES\r\nMEDIDAS [60cm x 43cm x 110cm alto].', 'S-115', '2014-02-21 14:02:27', '2014-02-24 09:02:58'),
 	(489, '04-032', '', '30.13.04.00032', 5, '', 73, 6, 18, 23, 4, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA\r\nMARCA ATOM\r\nMODELO SE20C\r\nSERIE 21A073458 COLOR NARANJA Y VERDE.', '04-032', '2014-02-21 14:02:11', NULL),
 	(490, 'S-047', '', '', 3, 'Taburete', 11, 6, 6, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON BASE BASE CUADRADA', 'S-047', '2014-02-21 14:02:36', NULL),
 	(491, 'X-0084', '', '', 12, 'Carrito de carga', 11, 6, 5, 19, 4, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCARRITO DE CARGA PEQUEÃ‘O\r\nMETALICO\r\nCOLOR AMARILLO\r\nCON 4 RUEDAS', 'X-0084', '2014-02-21 15:02:14', NULL),
@@ -599,7 +599,15 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(530, 'S-045', '', '', 3, 'Taburete', 11, 6, 9, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR PLOMO\r\nCON BASE DE MADERA PRENSADA MELAMINADA.', 'S-045', '2014-02-24 09:02:33', NULL),
 	(531, '03-020', '', '30.14.03.00020', 1, 'Silla', 11, 3, 10, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-020', '2014-02-24 09:02:55', NULL),
 	(532, 'S-064', '', '', 12, '', 86, 6, 13, 5, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nESCALERA METALICA\r\nMARCA: WERNER\r\nMODELO: D716-2\r\nALTURA MAXIMA: 3 METROS', 'S-064', '2014-02-24 09:02:20', '2014-02-24 09:02:36'),
-	(533, 'S-090', '', '', 12, 'Estante', 11, 6, 3, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nESTANTE METALICO\r\nCON 5 DIVISIONES\r\nCOLOR AZUL Y NARANJA', 'S-090', '2014-02-24 09:02:47', NULL);
+	(533, 'S-090', '', '', 12, 'Estante', 11, 6, 3, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nESTANTE METALICO\r\nCON 5 DIVISIONES\r\nCOLOR AZUL Y NARANJA', 'S-090', '2014-02-24 09:02:47', NULL),
+	(534, '04-023', '', '30.13.04.00023', 5, 'Maquina troqueladora', 73, 6, 6, 23, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA OLEODINAMICA\r\nMARCA ATOM\r\nMODELO SP 588/3\r\nSERIE 22B030842', '04-023', '2014-02-24 13:02:43', '2014-02-24 15:02:33'),
+	(535, 'S-065', '', '', 12, 'Carrito de carga', 11, 6, 5, 19, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nCARRITO DE CARGA PEQUEÃ‘O\r\nCON 4 RUEDITAS\r\nMANGO COLOR NEGRO', 'S-065', '2014-02-24 14:02:38', NULL),
+	(536, '03-152', '', '30.13.03.00152', 3, 'Mesa de trabajo', 11, 6, 5, 19, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA METALICA\r\nCOLOR NARANJA\r\nCON BASE SUPERIOR DE MADERA PRENSADA\r\nMEDIDAS [97cm x 80cm x 93cm alto]', '03-152', '2014-02-24 14:02:13', NULL),
+	(537, '03-070', '', '30.13.03.00070', 3, 'Taburete', 11, 6, 6, 19, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA', '03-070', '2014-02-24 17:02:24', NULL),
+	(538, '03-125', '', '20.07.03.00125', 3, 'Mesa de trabajo', 11, 6, 18, 19, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON PEQUEÃ‘O METALICO\r\nCOLOR NARANJA\r\nMEDIDAS [97cm x 80cm x 93cm alto].', '03-125', '2014-02-24 17:02:53', NULL),
+	(539, '04-022', '', '30.13.04.00022', 5, 'Maquina troqueladora', 11, 6, 6, 16, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA DE PUENTE \r\nMARCA ARES\r\nSERIE K5\r\nMODELO 1700X530\r\nMATRICULA 95128.', '04-022', '2014-02-24 17:02:21', NULL),
+	(540, 'X-0089', '', '', 3, 'Taburete', 11, 6, 6, 19, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE DE METAL.', 'X-0089', '2014-02-24 17:02:20', NULL),
+	(541, 'S-221', '', '', 3, 'Armario', 11, 3, 10, 19, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 GLB.\r\n\r\nARMARIO DE MADERA\r\nCOLOR CAFE\r\nDE 3 PUERTAS\r\nCON DIVISIONES INTERNAS.', 'S-221', '2014-02-24 17:02:43', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -788,9 +796,9 @@ CREATE TABLE IF NOT EXISTS `item_location` (
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_location: ~23 rows (approximately)
+-- Dumping data for table inventory.item_location: ~24 rows (approximately)
 DELETE FROM `item_location`;
 /*!40000 ALTER TABLE `item_location` DISABLE KEYS */;
 INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
@@ -816,7 +824,8 @@ INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
 	(20, 'Area control de calidad', NULL),
 	(21, 'Ingreso galpón', NULL),
 	(22, 'Area serigrafía', NULL),
-	(23, 'Area producto terminado', NULL);
+	(23, 'Area producto terminado', NULL),
+	(24, 'Area entre almacén y mecánica', NULL);
 /*!40000 ALTER TABLE `item_location` ENABLE KEYS */;
 
 

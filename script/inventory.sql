@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=522 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=534 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~536 rows (approximately)
+-- Dumping data for table inventory.item: ~547 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -587,7 +587,19 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(518, '03-112', '', '10.14.03.00112', 3, 'Taburete', 11, 6, 2, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR NEGRO\r\nCON ASIENTO REDONDO DE MADERA PRENSADA.', '03-112', '2014-02-21 18:02:46', NULL),
 	(519, 'S-066', '', '', 12, 'Caballete', 11, 3, 10, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA.', 'S-066', '2014-02-21 18:02:51', NULL),
 	(520, '04-017', '', '30.14.04.00017', 5, 'Maquina medidora de cuero', 85, 6, 3, 12, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMEDIDORA DE CUERO\r\nMARCA MASTER\r\nTIPO MMC 30\r\nSERIE 734-03-99\r\nCOLOR AZUL Y PLOMO', '04-017', '2014-02-21 18:02:59', NULL),
-	(521, '03-107', '', '10.14.03.00107', 3, 'Taburete', 11, 3, 10, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA CON FORRO CAFE', '03-107', '2014-02-21 18:02:53', NULL);
+	(521, '03-107', '', '10.14.03.00107', 3, 'Taburete', 11, 3, 10, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA CON FORRO CAFE', '03-107', '2014-02-21 18:02:53', NULL),
+	(522, 'S-140', '', '', 3, 'Silla', 11, 3, 10, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'S-140', '2014-02-24 08:02:08', NULL),
+	(523, '03-104', '', '10.14.03.00104', 3, 'Taburete', 11, 6, 6, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA FORRADO DE NEGRO.', '03-104', '2014-02-24 08:02:53', NULL),
+	(524, '03-021', '', '30.14.03.00021', 3, 'Mesa de trabajo', 11, 6, 6, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON METALICO\r\nCOLOR VERDE\r\nMEDIDAS [251cm x 130cm x 98cm alto]', '03-021', '2014-02-24 08:02:23', NULL),
+	(525, 'S-089', '', '', 12, 'Estante', 11, 6, 3, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nESTANTE METALICO\r\nCON 5 DIVISIONES\r\nCOLOR AZUL Y NARANJA.', 'S-089', '2014-02-24 08:02:22', NULL),
+	(526, '04-019', '', '30.11.04.00019', 5, 'Montacarga', 71, 6, 5, 12, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMONTACARGA ELECTRICO\r\nMARCA LIFTRANS\r\nMODELO LE 3400-A\r\nSERIE 0591279\r\nCOLOR AMARILLO Y ROJO', '04-019', '2014-02-24 09:02:55', NULL),
+	(527, 'S-070', '', '', 12, 'Caballete', 11, 3, 10, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA.', 'S-070', '2014-02-24 09:02:17', NULL),
+	(528, 'S-067', '', '', 12, 'Caballete', 11, 3, 10, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCABALLETE DE MADERA.', 'S-067', '2014-02-24 09:02:32', NULL),
+	(529, 'X-0088', '', '', 12, 'Carrito de carga', 11, 6, 5, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nCARRITO DE CARGA\r\nCON 4 RUEDAS\r\nCON MANGO NEGRO.', 'X-0088', '2014-02-24 09:02:11', NULL),
+	(530, 'S-045', '', '', 3, 'Taburete', 11, 6, 9, 19, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR PLOMO\r\nCON BASE DE MADERA PRENSADA MELAMINADA.', 'S-045', '2014-02-24 09:02:33', NULL),
+	(531, '03-020', '', '30.14.03.00020', 1, 'Silla', 11, 3, 10, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-020', '2014-02-24 09:02:55', NULL),
+	(532, 'S-064', '', '', 12, '', 86, 6, 13, 5, 6, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nESCALERA METALICA\r\nMARCA: WERNER\r\nMODELO: D716-2\r\nALTURA MAXIMA: 3 METROS', 'S-064', '2014-02-24 09:02:20', '2014-02-24 09:02:36'),
+	(533, 'S-090', '', '', 12, 'Estante', 11, 6, 3, 19, 6, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nESTANTE METALICO\r\nCON 5 DIVISIONES\r\nCOLOR AZUL Y NARANJA', 'S-090', '2014-02-24 09:02:47', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -617,9 +629,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~85 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~86 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -707,7 +719,8 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(82, 'ARES'),
 	(83, 'STAVOL'),
 	(84, 'NATIONAL'),
-	(85, 'MASTER');
+	(85, 'MASTER'),
+	(86, 'WERNER');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -903,7 +916,7 @@ CREATE TABLE IF NOT EXISTS `item_type` (
   PRIMARY KEY (`id`),
   KEY `parent_id` (`parent_id`),
   CONSTRAINT `item_type_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `item_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table inventory.item_type: ~13 rows (approximately)
 DELETE FROM `item_type`;

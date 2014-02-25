@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=542 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=557 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~555 rows (approximately)
+-- Dumping data for table inventory.item: ~556 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -377,16 +377,16 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(308, 'X-0068', '', '', 12, 'Caja de instalaciones elÃ©ctricas', 11, 6, 8, 19, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCAJA DE INSTALACIONES ELECTRICAS, CON INTERRUPTOR DE CORRIENTE ELECTRICA.', 'X-0068', '2014-02-17 13:02:51', '2014-02-17 13:02:28'),
 	(309, 'X-0069', '', '', 12, 'Muestrario', 11, 6, 9, 19, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMUESTRARIO FORTTE DE METAL COLOR PLOMO Y ZONA INTERNA DE COLOR CAFE.', 'X-0069', '2014-02-17 13:02:02', NULL),
 	(310, '03-087', '', '30.12.03.00087', 1, 'Taburete', 11, 6, 6, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO COLOR VERDE CON ASIENTO CUADRADO DE MADERA.', '03-087', '2014-02-17 13:02:31', NULL),
-	(311, '04-099', '', '30.11.04.00099', 5, 'Maquina redondeadora de bordes', 63, 6, 6, 19, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA REDONDEAR CANTOS\r\nMARCA: BIBO\r\nMODELO: MMB 82\r\nSERIE: 020708 CON UN DISCO\r\n\r\nCON MESA COLOR VERDE.', '04-099', '2014-02-17 13:02:42', '2014-02-17 13:02:52'),
-	(312, '04-098', '', '30.11.04.00098', 5, 'Maquina redondeadora de bordes', 63, 6, 6, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA REDONDEAR CANTOS\r\nMARCA: BIBO\r\nMODELO: MMB 82\r\nSERIE: 020707\r\n\r\nCON UN DISCO\r\nCON MESA COLOR VERDE.', '04-098', '2014-02-17 13:02:35', NULL),
-	(313, '04-100', '', '30.11.04.00100', 5, 'Maquina redondeadora de bordes', 63, 6, 6, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA REDONDEAR CANTOS\r\nMARCA: BIBO\r\nMODELO: MMB 82\r\nSERIE: 020709\r\n\r\nCON UN DISCO\r\nCON MESA DE METAL VERDE.', '04-100', '2014-02-17 13:02:38', NULL),
+	(311, '04-099', '', '30.11.04.00099', 5, 'Maquina redondeadora de bordes', 63, 6, 6, 16, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA REDONDEAR CANTOS\r\nMARCA: BIBO\r\nMODELO: MMB 82\r\nSERIE: 020708 CON UN DISCO\r\n\r\nCON MESA COLOR VERDE.', '04-099', '2014-02-17 13:02:42', '2014-02-17 13:02:52'),
+	(312, '04-098', '', '30.11.04.00098', 5, 'Maquina redondeadora de bordes', 63, 6, 6, 16, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA REDONDEAR CANTOS\r\nMARCA: BIBO\r\nMODELO: MMB 82\r\nSERIE: 020707\r\n\r\nCON UN DISCO\r\nCON MESA COLOR VERDE.', '04-098', '2014-02-17 13:02:35', NULL),
+	(313, '04-100', '', '30.11.04.00100', 5, 'Maquina redondeadora de bordes', 63, 6, 6, 16, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA REDONDEAR CANTOS\r\nMARCA: BIBO\r\nMODELO: MMB 82\r\nSERIE: 020709\r\n\r\nCON UN DISCO\r\nCON MESA DE METAL VERDE.', '04-100', '2014-02-17 13:02:38', NULL),
 	(314, '03-266', '', '30.12.03.00266', 3, 'Silla', 11, 3, 10, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-266', '2014-02-17 14:02:05', NULL),
 	(315, 'X-0070', '', '', 12, 'Caja de instalaciones elÃ©ctricas', 11, 6, 8, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCAJA DE INSTALACIONES ELECTRICAS, CON INTERRUPTOR DE CORRIENTE ELECTRICA.', 'X-0070', '2014-02-17 14:02:35', NULL),
 	(316, 'S-138', '', '', 12, 'Pizarra acrÃ­lica', 11, 5, 4, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nPIZARRA ACRILICA\r\nMEDIDAS [190cm x 267cm]', 'S-138', '2014-02-17 14:02:24', NULL),
 	(317, '03-254', '', '30.12.03.00254', 3, 'Silla', 11, 3, 10, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-254', '2014-02-17 14:02:55', NULL),
 	(318, 'S-144', '', '', 5, 'Amoladora', 11, 6, 6, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nAMOLADORA DE DOBLE LADO.', 'S-144', '2014-02-17 14:02:33', NULL),
 	(319, 'X-0071', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 15, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO.', 'X-0071', '2014-02-17 14:02:13', NULL),
-	(320, '04-058', '', '30.12.04.00058', 5, 'Dobladora manual', 63, 6, 13, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nDOBLADORA MANUAL\r\nMARCA: BIBO\r\nSERIE: 290548\r\n\r\nCON MESA DE MADERA DE 0,95M X 1M X 0,50M.', '04-058', '2014-02-17 14:02:24', NULL),
+	(320, '04-058', '', '30.12.04.00058', 5, 'Dobladora manual', 63, 6, 13, 16, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nDOBLADORA MANUAL\r\nMARCA: BIBO\r\nSERIE: 290548\r\n\r\nCON MESA DE MADERA DE 0,95M X 1M X 0,50M.', '04-058', '2014-02-17 14:02:24', NULL),
 	(321, '03-248', '', '30.12.03.00248', 3, 'Silla', 11, 3, 10, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-248', '2014-02-17 14:02:07', NULL),
 	(322, '03-261', '', '30.10.03.00261', 3, 'Silla', 11, 3, 10, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-261', '2014-02-17 14:02:19', NULL),
 	(323, '03-263', '', '30.11.03.00263', 3, 'Silla', 11, 3, 10, 19, 15, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-263', '2014-02-17 14:02:40', NULL),
@@ -607,7 +607,37 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(538, '03-125', '', '20.07.03.00125', 3, 'Mesa de trabajo', 11, 6, 18, 19, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON PEQUEÃ‘O METALICO\r\nCOLOR NARANJA\r\nMEDIDAS [97cm x 80cm x 93cm alto].', '03-125', '2014-02-24 17:02:53', NULL),
 	(539, '04-022', '', '30.13.04.00022', 5, 'Maquina troqueladora', 11, 6, 6, 16, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA TROQUELADORA DE PUENTE \r\nMARCA ARES\r\nSERIE K5\r\nMODELO 1700X530\r\nMATRICULA 95128.', '04-022', '2014-02-24 17:02:21', NULL),
 	(540, 'X-0089', '', '', 3, 'Taburete', 11, 6, 6, 19, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE DE METAL.', 'X-0089', '2014-02-24 17:02:20', NULL),
-	(541, 'S-221', '', '', 3, 'Armario', 11, 3, 10, 19, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 GLB.\r\n\r\nARMARIO DE MADERA\r\nCOLOR CAFE\r\nDE 3 PUERTAS\r\nCON DIVISIONES INTERNAS.', 'S-221', '2014-02-24 17:02:43', NULL);
+	(541, 'S-221', '', '', 3, 'Armario', 11, 3, 10, 19, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 GLB.\r\n\r\nARMARIO DE MADERA\r\nCOLOR CAFE\r\nDE 3 PUERTAS\r\nCON DIVISIONES INTERNAS.', 'S-221', '2014-02-24 17:02:43', NULL),
+	(542, 'S-220', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCOLOR VERDE\r\nMEDIDAS [245cm x 123cm x 99cm alto].', 'S-220', '2014-02-25 10:02:21', '2014-02-25 10:02:23'),
+	(543, '03-036', '', '20.07.03.00036', 3, 'Taburete con espaldar', 11, 6, 6, 19, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nDE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-036', '2014-02-25 10:02:35', NULL),
+	(544, '04-102', '', '30.11.04.00102', 5, 'Maquina dobladora manual', 63, 6, 9, 16, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nDOBLADORA MANUAL\r\nMARCA BIBO\r\nSERIE NO 290812\r\n\r\nCON MESA DE MADERA\r\nMEDIDAS [72cm x 50cm x 94cm alto].', '04-102', '2014-02-25 10:02:44', NULL),
+	(545, '04-081', '', '30.11.04.00081', 5, 'Maquina remachadora', 87, 6, 9, 11, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA REMACHADORA MANUAL\r\nMARCA APHOLOS\r\nNÃ‚o. 5892\r\nCOLOR PLOMO.', '04-081', '2014-02-25 10:02:45', NULL),
+	(546, '03-252', '', '30.12.03.00252', 3, 'Silla', 11, 3, 10, 19, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-252', '2014-02-25 10:02:03', '2014-02-25 10:02:10'),
+	(547, 'X-0090', '', '', 12, 'Futbolin', 11, 3, 12, 2, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nFUTBOLIN DE MADERA.', 'X-0090', '2014-02-25 10:02:22', NULL),
+	(548, 'S-161', '', '', 3, 'Gavetero', 11, 3, 10, 19, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nGAVETERO DE 2 PUERTAS.', 'S-161', '2014-02-25 11:02:43', NULL),
+	(549, 'P-005', '', '', 5, 'Compresor de aire', 11, 6, 3, 19, 24, 2, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCOMPRESOR DE AIRE.', 'P-005', '2014-02-25 11:02:30', NULL),
+	(550, '04-007', '', '30.15.04.00007', 5, 'Compresor de aire', 88, 6, 12, 3, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCOMPRESOR DE AIRE (TRIFASICO)\r\nMARCA MULLER\r\nNo. 0295\r\nCOLOR ROJO\r\nMODELO HP - 4', '04-007', '2014-02-25 11:02:40', NULL),
+	(551, '03-157', '', '20.08.03.00157', 12, 'Remolque', 11, 6, 3, 19, 24, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nREMOLQUE (CHATA)\r\nCOLOR AZUL Y AMARILLO\r\nCON 2 RUEDAS GEMELAS.', '03-157', '2014-02-25 11:02:20', NULL),
+	(552, 'S-139', '', '', 5, 'Maquina lijadora', 11, 6, 9, 19, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA LIJADORA\r\nCOLOR PLOMA\r\nMEDIDAS [80cm x 51cm x 101cm alto]', 'S-139', '2014-02-25 11:02:59', NULL),
+	(553, 'S-126', '', '', 3, 'Silla', 11, 3, 10, 19, 24, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'S-126', '2014-02-25 11:02:44', NULL),
+	(554, 'X-0091', '', '', 5, 'Sierra de mesa', 89, 6, 8, 4, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nSIERRA DE MESA\r\nMARCA NEO\r\nMODELO SM910\r\nPOTENCIA 2000W', 'X-0091', '2014-02-25 11:02:38', NULL),
+	(555, '03-119', '', '20.07.03.00119', 3, 'Mesa de trabajo', 11, 6, 6, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCOLOR VERDE\r\nMEDIDAS [206cm x 105cm x 100cm]', '03-119', '2014-02-25 11:02:18', NULL),
+	(556, 'X-0092', '', '', 3, 'Mesa de trabajo', 11, 6, 4, 19, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE METAL\r\nCOLOR BLANCO\r\nMEDIDAS [100cm x 100cm x 86.5cm alto]', 'X-0092', '2014-02-25 11:02:35', NULL),
+	(557, 'X-0093', '', '', 5, 'Maquina cortadora', 90, 6, 18, 4, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA CORTADORA DE METAL\r\nPOTENCIA: 1800W\r\nDIAM. DISCO: 355MM.', 'X-0093', '2014-02-25 13:02:42', NULL),
+	(558, '03-078', '', '30.15.03.00078', 3, 'Mesa de trabajo', 11, 6, 18, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMUEBLE METALICO\r\nPARA TRABAJOS DE SERIGRAFIA\r\nCON TAPA DE VIDRIO\r\nMEDIDAS [200cm x 102cm x 90cm alto].', '03-078', '2014-02-25 13:02:10', NULL),
+	(559, '03-091', '', '20.07.03.00091', 3, 'Taburete', 11, 6, 5, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCON ASIENTO CUADRADO DE MADERA', '03-091', '2014-02-25 13:02:54', NULL),
+	(560, 'X-0094', '', '', 3, 'Gavetero', 11, 6, 3, 19, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nGAVETERO METALICO\r\nCON 42 GAVETAS\r\n7 FILAS X 6 COLUMNAS\r\nMEDIDAS [102cm x 30cm x 110cm alto]', 'X-0094', '2014-02-25 13:02:40', '2014-02-25 15:02:46'),
+	(561, 'X-0095', '', '', 3, 'Estante', 11, 6, 3, 2, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTANTE METALICO\r\nDE 5 DIVISIONES.', 'X-0095', '2014-02-25 15:02:19', NULL),
+	(562, 'P-006', '', '', 3, 'Silla giratoria', 11, 5, 3, 19, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA\r\nCON 5 RODAPIES.', 'P-006', '2014-02-25 15:02:39', NULL),
+	(563, 'S-057', '', '', 3, 'Mesa de trabajo', 11, 6, 2, 19, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO DE METAL\r\nCOLOR NEGRO\r\nCON BASE DE MADERA PRENSADA\r\nMEDIDAS [305cm x 102cm x 85cm alto].', 'S-057', '2014-02-25 15:02:55', NULL),
+	(564, '04-050', '', '30.10.04.00050', 5, 'Maquina para quemar hilos', 59, 6, 3, 16, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA PARA QUEMAR HILOS\r\nMARCA PIDIGI\r\nBASE COLOR AZUL.', '04-050', '2014-02-25 15:02:59', NULL),
+	(565, '06-008', '', '30.15.06.00008', 5, '', 91, 6, 12, 3, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nTALADRO DE BANCO\r\nMARCA SCHULZ\r\nMODELO FSB 5/8\r\nSERIE 79701122', '06-008', '2014-02-25 15:02:59', NULL),
+	(566, 'S-058', '', '', 3, 'Mesa de trabajo', 11, 6, 2, 19, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE METAL\r\nCOLOR NEGRO\r\nMEDIDAS [102cm x 102cm x 82cm alto]', 'S-058', '2014-02-25 15:02:46', NULL),
+	(567, '06-009', '', '30.15.06.00009', 5, 'Esmeril', 92, 6, 13, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESMERIL DE BANCO\r\nMARCA POWER TOOLS\r\nMODELO E- 8800', '06-009', '2014-02-25 15:02:55', NULL),
+	(568, '04-009', '', '30.15.04.00009', 5, 'Maquina para fabricaciÃ³n de cuchillas', 93, 6, 9, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA FABRICACION CUCHILLAS\r\nMARCA STERN\r\nCOLOR PLOMO\r\nMODELO 9400000\r\nSERIE No. 111 (ARCMATIC 2025)', '04-009', '2014-02-25 15:02:10', NULL),
+	(569, 'S-063', '', '', 5, 'Maquina de soldadura', 94, 6, 12, 5, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '\r\nMARCA LINCOLN ELECTRIC\r\nMODELO AC-225 ARC WELDER', 'S-063', '2014-02-25 15:02:08', NULL),
+	(570, '04-170', '', '30.15.04.00170', 5, 'Torno', 11, 6, 8, 4, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nTORNO MULTIUSO\r\nSERIE 0451214', '04-170', '2014-02-25 15:02:28', NULL),
+	(571, '03-173', '', '10.01.03.00173', 3, 'Silla giratoria', 11, 5, 2, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLON DE OFICINA GIRATORIO\r\nCON 5 RODAPIES', '03-173', '2014-02-25 17:02:41', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -637,9 +667,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~86 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~89 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -728,7 +758,15 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(83, 'STAVOL'),
 	(84, 'NATIONAL'),
 	(85, 'MASTER'),
-	(86, 'WERNER');
+	(86, 'WERNER'),
+	(87, 'APHOLOS'),
+	(88, 'MULLER'),
+	(89, 'NEO'),
+	(90, 'GLADIATOR'),
+	(91, 'SCHULZ'),
+	(92, 'POWER TOOLS'),
+	(93, 'STERN'),
+	(94, 'LINCOLN ELECTRIC');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 

@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=557 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=598 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~556 rows (approximately)
+-- Dumping data for table inventory.item: ~680 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -162,16 +162,16 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(93, '03-008', '', '20.18.03.00008', 10, 'Central telefonica', 22, 10, 4, 6, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'CENTRAL TELEFONICA MCA.\r\nPANASONIC\r\nMOD KX-TE5824', '03-008', '2014-02-10 17:02:56', '2014-02-10 17:02:40'),
 	(94, 'X-0008', '', '', 15, 'Link Station', 27, 10, 2, 5, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Marca: Buffalo\r\nModelo: LS-CHL344\r\nCapacidad: 850Gb', 'X-0008', '2014-02-10 18:02:54', '2014-02-11 12:02:31'),
 	(95, '07-060', '', '20.18.07.00060', 15, 'Link Station', 27, 10, 2, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Marca: Buffalo\r\nModelo: LS-CHL344\r\nCapacidad: 465Gb', '07-060', '2014-02-10 18:02:13', NULL),
-	(96, '03-292', '', '20.18.03.00292', 15, 'Estabilizador', 28, 10, 12, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\nESTABILIZADOR\r\nMARCA: STAVOL MATSUNAKA SVC 1000 N', '03-292', '2014-02-10 18:02:56', NULL),
+	(96, '03-292', '', '20.18.03.00292', 10, 'Estabilizador', 28, 10, 12, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\nESTABILIZADOR\r\nMARCA: STAVOL MATSUNAKA SVC 1000 N', '03-292', '2014-02-10 18:02:56', NULL),
 	(97, '07-00094', '', '20.09.07.00094', 15, 'IMAC INTEL 2', 29, 10, 9, 5, 10, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCOMPUTADORA IMAC INTEL 2"\r\nMODELO A1312\r\nSERIE NO. W8026777DB6 32GMZ/46/B/ITB/SD\r\n\r\nCON TECLADO DELUX Y RATON GENIUS.', '07-00094', '2014-02-11 09:02:58', '2014-02-11 09:02:42'),
 	(98, '07-108', '', '20.09.07.00108', 15, 'Impresora a tinta', 31, 10, 2, 6, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA\r\nIMPRESORA\r\nMARCA: CANON\r\nMODELO: MP230\r\n\r\nCON SISTEMA DE TINTA CONTINUA.', '07-108', '2014-02-11 09:02:33', NULL),
 	(99, '07-089', '', '20.18.07.00089', 15, 'Monitor LCD', 9, 10, 2, 8, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nMONITOR\r\nMARCA: ACER\r\nMODELO: X183HB\r\nSERIE: ETLEZ0W0030070AD934329\r\nTAMAÃ‘O: 18.5 PULGADAS', '07-089', '2014-02-11 09:02:56', NULL),
 	(100, '07-086', '', '20.18.07.00086', 15, 'CPU', 30, 6, 2, 5, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nCASE\r\nMARCA: EMACHINES\r\nMODELO: ET 1831-07\r\nSERIE PTNB602022006021CB2700\r\n\r\nCON TECLADO MARCA EMACHINES Y MOUSE GENIUS', '07-086', '2014-02-11 10:02:30', NULL),
 	(101, '03-238', '', '10.01.03.00238', 3, 'Silla giratoria', 11, 5, 9, 19, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA\r\n\r\nSILLA GIRATORIA', '03-238', '2014-02-11 10:02:34', '2014-02-17 11:02:05'),
-	(102, '03-203', '', '20.09.03.00203', 15, 'Estabilizador', 28, 10, 12, 4, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nESTABILIZADOR DE 500V MODELO AUTOVOL N1000VA\r\n', '03-203', '2014-02-11 10:02:26', NULL),
+	(102, '03-203', '', '20.09.03.00203', 10, 'Estabilizador', 28, 10, 12, 4, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nESTABILIZADOR DE 500V MODELO AUTOVOL N1000VA\r\n', '03-203', '2014-02-11 10:02:26', NULL),
 	(103, 'X-0009', '', '', 3, 'Mesa de escritorio', 11, 12, 8, 19, 10, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'ESCRITORIO, COLOR BEIGE, CON UNA FILA DE 2 CAJONES.\r\nMEDIDAS 148cm x 75cm x 76.5cm alto', 'X-0009', '2014-02-11 10:02:34', '2014-02-11 12:02:42'),
 	(104, '03-284', '', '20.19.03.00284', 3, 'Silla giratoria', 11, 5, 3, 19, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA. SILLA RECLINABLE GIRATORIA CON APOYADERAS Y RUEDAS COLOR AZUL, CON EL ESPALDAR Y BASE DAÃ‘ADOS\r\n', '03-284', '2014-02-11 11:02:40', NULL),
-	(105, '03-205', '', '20.06.03.00205', 15, 'Estabilizador', 28, 10, 12, 4, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB. ESTABILIZADOR MARCA MATSUNAKA STAVOL SVC 500N COLOR ROJO\r\n', '03-205', '2014-02-11 11:02:48', NULL),
+	(105, '03-205', '', '20.06.03.00205', 10, 'Estabilizador', 28, 10, 12, 4, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB. ESTABILIZADOR MARCA MATSUNAKA STAVOL SVC 500N COLOR ROJO\r\n', '03-205', '2014-02-11 11:02:48', NULL),
 	(106, 'X-0010', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 10, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'TELEFONO DIGITAL\r\nMARCA: PANASONIC\r\nMODELO: KX-TS580LX W', 'X-0010', '2014-02-11 11:02:04', '2014-02-11 12:02:56'),
 	(107, '03-230', '', '20.09.03.00230', 3, 'Mesa de escritorio', 11, 12, 10, 19, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '2 PZA.\r\n\r\n1 MUEBLE DE ESCRITORIO [160cm x 79.5cm x65cm alto]\r\n1 CAJONERIA MOVIBLE [42cm x 49cm x 63cm alto]', '03-230', '2014-02-11 11:02:53', '2014-02-11 11:02:28'),
 	(108, '07-061', '', '20.09.07.00061', 12, 'Mini estudio fotogrÃ¡fico', 32, 10, 13, 5, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GBL.\r\n\r\nMARCA: ORTERY\r\n\r\nMINI ESTUDIO PHOTOSIMILE 200 A, DIGITAL PHOTOGRAPHY KIT INCLUDES LIGHT BOX SOFTWARE PRODUCT STAND', '07-061', '2014-02-11 11:02:39', NULL),
@@ -197,18 +197,18 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(128, 'X-0018', '', '', 3, 'Cajoneria', 11, 3, 10, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nARCHIVERO DE MADERA, CON 2 CAJONES.', 'X-0018', '2014-02-11 16:02:48', '2014-02-11 16:02:10'),
 	(129, '03-236', '', '', 3, 'Cajoneria', 11, 3, 4, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nARCHIVERO CON 4 CAJONES.', '03-236', '2014-02-11 16:02:39', NULL),
 	(130, 'X-0019', '', '', 15, 'Impresora de carro a cinta', 40, 10, 4, 6, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nIMPRESORA EPSON ACTION PRINTER 5000, DE CARRO A CINTA.', 'X-0019', '2014-02-11 16:02:41', NULL),
-	(131, 'X-0020', '', '', 15, 'Estabilizador', 41, 10, 8, 6, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR OMEGA PLUS\r\nMODELO: SVR - 1500W', 'X-0020', '2014-02-11 16:02:39', NULL),
+	(131, 'X-0020', '', '', 10, 'Estabilizador', 41, 10, 8, 6, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR OMEGA PLUS\r\nMODELO: SVR - 1500W', 'X-0020', '2014-02-11 16:02:39', NULL),
 	(132, 'S-146', '', '', 3, 'Silla', 11, 6, 6, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO DE COLOR VERDE CON ASIENTO DE MADERA CUADRADO\r\n\r\n', 'S-146', '2014-02-11 16:02:31', '2014-02-11 17:02:20'),
 	(133, '03-041', '', '30.11.03.00041', 3, 'Taburete', 11, 6, 6, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO DE COLOR VERDE CON ASIENTO DE MADERA CUADRADO.', '03-041', '2014-02-11 17:02:07', '2014-02-12 14:02:04'),
 	(134, '03-215', '', '20.18.03.00215', 3, 'Silla giratoria', 11, 5, 2, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 5 RODAPIES.\r\n', '03-215', '2014-02-11 17:02:52', NULL),
 	(135, '03-298', '', '20.09.03.00298', 3, 'Silla giratoria', 11, 5, 3, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLA AZUL GIRATORIA CON APOYADERAS Y RUEDAS.', '03-298', '2014-02-11 17:02:18', NULL),
-	(136, '03-289', '', '20.18.03.00289', 15, 'Estabilizador', 28, 6, 12, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 PZA.\r\n\r\nESTABILIZADOR MATSUNAKA STAVOL, MODELO SVC 1500 N DE 1500 W.\r\n', '03-289', '2014-02-11 17:02:37', NULL),
+	(136, '03-289', '', '20.18.03.00289', 10, 'Estabilizador', 28, 6, 12, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 PZA.\r\n\r\nESTABILIZADOR MATSUNAKA STAVOL, MODELO SVC 1500 N DE 1500 W.\r\n', '03-289', '2014-02-11 17:02:37', NULL),
 	(137, 'X-0021', '', '', 15, 'Quemador externo de DVD', 3, 5, 2, 7, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nQUEMADOR EXTERNO DE DVD, MODELO SE-S084', 'X-0021', '2014-02-11 17:02:28', NULL),
 	(138, 'S-228', '', '', 3, 'SillÃ³n', 11, 3, 2, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLON PEQUEÃ‘O DE MADERA CAFE, TAPIZADO DE COLOR NEGRO.', 'S-228', '2014-02-11 17:02:32', NULL),
 	(139, 'X-0022', '', '', 3, 'Silla giratoria', 11, 5, 10, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA DE COLOR CAFE, CON BRAZOS NEGROS Y 5 RODAPIES.', 'X-0022', '2014-02-11 17:02:28', NULL),
-	(140, 'X-0023', '', '', 15, 'Estabilizador', 41, 6, 8, 6, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR OMEGA PLUS, MODELO SVR-1500W.', 'X-0023', '2014-02-11 17:02:12', NULL),
+	(140, 'X-0023', '', '', 10, 'Estabilizador', 41, 6, 8, 6, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR OMEGA PLUS, MODELO SVR-1500W.', 'X-0023', '2014-02-11 17:02:12', NULL),
 	(141, '03-217', '', '20.18.03.00217', 3, 'Silla giratoria', 11, 5, 12, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIO COLOR ROJO CON 5 RODAPIES.\r\n', '03-217', '2014-02-11 17:02:50', '2014-02-17 11:02:38'),
-	(142, '03-060', '', '10.14.03.00060', 15, 'Estabilizador', 42, 6, 10, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA CHUAN HSIN MODELO MVS-5 DE 500 VOLTIOS\r\n', '03-060', '2014-02-11 17:02:32', NULL),
+	(142, '03-060', '', '10.14.03.00060', 10, 'Estabilizador', 42, 6, 10, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA CHUAN HSIN MODELO MVS-5 DE 500 VOLTIOS\r\n', '03-060', '2014-02-11 17:02:32', NULL),
 	(143, 'X-0024', '', '', 15, 'Monitor LCD', 3, 5, 2, 7, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR SAMSUNG SYNCMASTER 932NWE PLUS, PANTALLA PLANA, 19 PULGADAS.', 'X-0024', '2014-02-11 17:02:30', NULL),
 	(144, 'X-0025', '', '', 15, 'Monitor LCD', 3, 5, 2, 7, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR SAMSUNG SYNCMASTER 932NWE PLUS, PANTALLA PLANA, 19 PULGADAS.', 'X-0025', '2014-02-11 17:02:40', NULL),
 	(145, '07-085', '', '20.18.07.00085', 1, 'CPU', 30, 10, 2, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCPU, MARCA EMACHINES, MOD. ET 1831-07, SERIE PTNB6020220090A8822700\r\n\r\nCON TECLADO DELUX Y MOUSE SIN MARCA.', '07-085', '2014-02-11 17:02:15', NULL),
@@ -234,7 +234,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(165, 'X-0031', '', '', 12, 'Banner publicitario', 11, 5, 15, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBANNER PUBLICITARIO DE MACAWS SRL.', 'X-0031', '2014-02-12 13:02:00', '2014-02-12 13:02:50'),
 	(166, 'X-0032', '', '', 3, 'Buro', 11, 1, 10, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBURO DE MADERA CAFE, CON 2 PUERTAS.', 'X-0032', '2014-02-12 13:02:40', NULL),
 	(167, 'X-0033', '', '', 10, 'Refrigerador', 45, 6, 13, 20, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nREFRIGERADOR ELECTROLUX, DE 2 PUERTAS, MODELO DX45X', 'X-0033', '2014-02-12 13:02:15', NULL),
-	(168, '03-288', '', '10.01.03.00288', 15, 'Estabilizador', 28, 6, 12, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MATSUNAKA STAVOL MODELO SVC 1500 N DE 100 W.', '03-288', '2014-02-12 13:02:56', NULL),
+	(168, '03-288', '', '10.01.03.00288', 10, 'Estabilizador', 28, 6, 12, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MATSUNAKA STAVOL MODELO SVC 1500 N DE 100 W.', '03-288', '2014-02-12 13:02:56', NULL),
 	(169, 'S-230', '', '', 3, 'Cajoneria', 11, 12, 4, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCAJONERIA DE COLOR BLANCO CON 4 CAJONES.', 'S-230', '2014-02-12 13:02:31', NULL),
 	(170, 'S-018', '', '', 3, 'Silla giratoria', 11, 5, 9, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA, DE COLOR PLOMO CON 5 RODAPIES.', 'S-018', '2014-02-12 13:02:06', NULL),
 	(171, 'X-0034', '', '', 3, 'Cubiculo de oficina', 11, 12, 4, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '', 'X-0034', '2014-02-12 13:02:01', NULL),
@@ -257,7 +257,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(188, 'X-0039', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL PANASONIC, MODELO KX-TS500LX W', 'X-0039', '2014-02-12 14:02:02', NULL),
 	(189, 'X-0040', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL PANASONIC, MODELO KX-TS500LX W.', 'X-0040', '2014-02-12 14:02:07', NULL),
 	(190, '03-204', '', '10.01.03.00204', 12, 'Caja de llaves', 11, 6, 4, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nARCHIVERO DE LLAVES MODELO 60/2 COLOR BLANCO.', '03-204', '2014-02-12 14:02:46', NULL),
-	(191, '03-297', '', '20.18.03.00297', 15, 'Estabilizador', 28, 6, 12, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA STAVOL MATSUNAKA SVC 1500 N.', '03-297', '2014-02-12 14:02:27', NULL),
+	(191, '03-297', '', '20.18.03.00297', 10, 'Estabilizador', 28, 6, 12, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA STAVOL MATSUNAKA SVC 1500 N.', '03-297', '2014-02-12 14:02:27', NULL),
 	(192, 'X-0041', '', '', 15, 'Switch', 46, 5, 2, 4, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nENCORE SWITCH DE 24 PUERTOS, MODELO ENH924-AUT.', 'X-0041', '2014-02-12 15:02:37', NULL),
 	(193, 'X-0042', '', '', 10, 'Calentador de agua', 24, 5, 4, 21, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCALENTADOR DE AGUA PHILIPS, DE 1.5 LITROS DE CAPACIDAD.', 'X-0042', '2014-02-12 15:02:27', NULL),
 	(194, 'P-023', '', '', 15, 'Hub', 43, 5, 9, 8, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nDLINK DFE-816, CON 16 PUERTOS.', 'P-023', '2014-02-12 15:02:13', NULL),
@@ -267,7 +267,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(198, 'S-033', '', '', 3, 'Librero', 11, 3, 10, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA CON 5 REPISAS.', 'S-033', '2014-02-12 15:02:03', NULL),
 	(199, 'X-0044', '', '', 12, 'Gavetero', 11, 5, 5, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nGAVETERO CON 45 COMPARTIMENTOS PARA COSAS PEQUEÃ‘AS.', 'X-0044', '2014-02-12 15:02:53', NULL),
 	(200, 'X-0045', '', '', 6, 'Casco de soldadura', 11, 5, 2, 4, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCASCO DE SOLDADURA, CARECE DEL LENTE PROTECTOR.', 'X-0045', '2014-02-12 15:02:09', NULL),
-	(201, '03-008-2', '', '30.11.03.00008', 15, 'Estabilizador', 28, 6, 10, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA SHUAN HSIN MODELO MVS-5 COLOR CAFEÂ‰ DE 500V.', '03-008-2', '2014-02-12 15:02:22', NULL),
+	(201, '03-008-2', '', '30.11.03.00008', 10, 'Estabilizador', 28, 6, 10, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA SHUAN HSIN MODELO MVS-5 COLOR CAFEÂ‰ DE 500V.', '03-008-2', '2014-02-12 15:02:22', NULL),
 	(202, 'S-246', '', '', 12, 'Extintor de incendios', 48, 6, 12, 12, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nEXTINTOR DE 4 KILOS.', 'S-246', '2014-02-12 15:02:12', NULL),
 	(203, 'X-0046', '', '', 12, 'Banner publicitario', 11, 5, 4, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBANNER PUBLICITARIO DE SISTEMA DE GESTION INTEGRADO.', 'X-0046', '2014-02-12 15:02:14', NULL),
 	(204, 'S-031', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO CON 2 CAJONES Y UNA GAVETA, MEDIDAS [108cm x 60cm x 132 alto]', 'S-031', '2014-02-12 15:02:32', NULL),
@@ -276,7 +276,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(207, 'S-029', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO DE MADERA CAFE, CON 2 CAJONES AL LADO DERECHO Y BASE PARA TECLADO, MEDIDAS [120cm x 62cm x 76cm alto]', 'S-029', '2014-02-12 16:02:46', '2014-02-12 17:02:41'),
 	(208, '07-034', '', '', 15, 'CPU', 7, 10, 9, 5, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 GLB.\r\n\r\nCPU CASE, INTEL CELERON 2.53GHZ, 40GB DISCO DURO\r\n\r\nCON TECLADO Y MOUSE DELL.', '07-034', '2014-02-12 16:02:06', NULL),
 	(209, '07-092', '', '20.18.07.00092', 15, 'Monitor LCD', 9, 5, 2, 8, 12, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR LCD\r\nMARCA: ACER\r\nMODELO: X183HB\r\nSERIE: ETLEZ0W0030070AD8A4329', '07-092', '2014-02-12 16:02:23', NULL),
-	(210, 'X-0048', '', '', 15, 'Estabilizador', 28, 6, 12, 4, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA MATSUNAKA STAVOL, MODELO SVC-4000N', 'X-0048', '2014-02-12 16:02:38', NULL),
+	(210, 'X-0048', '', '', 10, 'Estabilizador', 28, 6, 12, 4, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA MATSUNAKA STAVOL, MODELO SVC-4000N', 'X-0048', '2014-02-12 16:02:38', NULL),
 	(211, 'X-0049', '', '', 3, 'Silla giratoria', 11, 5, 9, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 5 RODAPIES.', 'X-0049', '2014-02-12 17:02:18', '2014-02-12 17:02:49'),
 	(212, '07-072', '', '30.06.07.00072', 10, 'Laser', 49, 6, 9, 5, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nEQUIPO DE GRABADO LASER CON MESA INCORPORADA.', '07-072', '2014-02-12 17:02:31', NULL),
 	(213, '03-216', '', '20.18.03.00216', 3, 'Silla giratoria', 11, 5, 9, 19, 12, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 PZA.\r\n\r\nSILLA DE OFICINA GIRATORIO CON 5 RODAPIES.', '03-216', '2014-02-12 17:02:51', NULL),
@@ -308,9 +308,9 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(239, '03-304', '', '20.19.03.00304', 10, 'TelÃ©fono digital', 22, 5, 2, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL, PANASONIC MODELO KX-TS500LXB.', '03-304', '2014-02-13 14:02:26', NULL),
 	(240, '03-305', '', '10.01.03.00305', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL PANASONIC, MODELO KX-T7730.', '03-305', '2014-02-13 14:02:12', NULL),
 	(241, 'P-046', '', '', 10, 'TelÃ©fono inalambrico', 52, 5, 13, 4, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTELEFONO INALAMBRICO VTECH.', 'P-046', '2014-02-13 14:02:02', NULL),
-	(242, 'X-0053', '', '', 15, 'Estabilizador', 28, 6, 12, 4, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MATSUNAKA STAVOL, MODELO SVC-100N.', 'X-0053', '2014-02-13 15:02:06', NULL),
+	(242, 'X-0053', '', '', 10, 'Estabilizador', 28, 6, 12, 4, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MATSUNAKA STAVOL, MODELO SVC-100N.', 'X-0053', '2014-02-13 15:02:06', NULL),
 	(243, 'X-0054', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nPANASONIC DIGITAL KX-T7730.', 'X-0054', '2014-02-13 15:02:57', NULL),
-	(244, '03-294', '', '10.01.03.00294', 15, 'Estabilizador', 28, 6, 12, 4, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA STAVOL MATSUNAKA SVC-1000N.', '03-294', '2014-02-13 15:02:03', NULL),
+	(244, '03-294', '', '10.01.03.00294', 10, 'Estabilizador', 28, 6, 12, 4, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA STAVOL MATSUNAKA SVC-1000N.', '03-294', '2014-02-13 15:02:03', NULL),
 	(245, '07-076', '', '20.19.07.00076', 15, 'CPU', 8, 5, 2, 5, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCOMPUTADORA MARCA HP,\r\nCPU PAVILION MODELO E9110T NO. SERIE MXV92700HQ.\r\n\r\nMONITOR NO. SERIE 3CQ9163N45.\r\n\r\nCON TECLADO Y MOUSE HP.', '07-076', '2014-02-13 15:02:10', NULL),
 	(246, '07-104', '', '20.19.07.00104', 15, 'Laptop', 53, 5, 2, 4, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLAPTOP TOSHIBA SATELLITE PRO L740-EZ1420D, SERIAL YB105866W.', '07-104', '2014-02-13 15:02:06', NULL),
 	(247, '03-187', '', '10.01.03.00187', 3, 'Silla', 11, 5, 10, 19, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLON DE ESPERA COLOR CAFE.', '03-187', '2014-02-13 16:02:33', '2014-02-13 16:02:10'),
@@ -637,7 +637,33 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(568, '04-009', '', '30.15.04.00009', 5, 'Maquina para fabricaciÃ³n de cuchillas', 93, 6, 9, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA FABRICACION CUCHILLAS\r\nMARCA STERN\r\nCOLOR PLOMO\r\nMODELO 9400000\r\nSERIE No. 111 (ARCMATIC 2025)', '04-009', '2014-02-25 15:02:10', NULL),
 	(569, 'S-063', '', '', 5, 'Maquina de soldadura', 94, 6, 12, 5, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '\r\nMARCA LINCOLN ELECTRIC\r\nMODELO AC-225 ARC WELDER', 'S-063', '2014-02-25 15:02:08', NULL),
 	(570, '04-170', '', '30.15.04.00170', 5, 'Torno', 11, 6, 8, 4, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nTORNO MULTIUSO\r\nSERIE 0451214', '04-170', '2014-02-25 15:02:28', NULL),
-	(571, '03-173', '', '10.01.03.00173', 3, 'Silla giratoria', 11, 5, 2, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLON DE OFICINA GIRATORIO\r\nCON 5 RODAPIES', '03-173', '2014-02-25 17:02:41', NULL);
+	(571, '03-173', '', '10.01.03.00173', 3, 'Silla giratoria', 11, 5, 2, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLON DE OFICINA GIRATORIO\r\nCON 5 RODAPIES', '03-173', '2014-02-25 17:02:41', NULL),
+	(572, '04-167', '', '30.15.04.00167', 5, 'Maquina cortadora', 11, 6, 6, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA DE CORTE EXCENTRICA.', '04-167', '2014-02-26 11:02:45', NULL),
+	(573, '04-016', '', '30.15.04.00016', 5, 'Maquina aplicadora de punzones', 93, 6, 18, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA APLICA PUNZONES\r\nMARCA STERN\r\nMODELO 9.312.000\r\nSERIE No. 161', '04-016', '2014-02-26 13:02:55', NULL),
+	(574, '04-012', '', '30.15.04.00012', 5, 'Maquina para fabricaciÃ³n de cuchillas', 93, 6, 18, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA FABRICACION CUCHILLAS\r\nMARCA: STERN\r\nCOLOR: NARANJA\r\nMODELO: 8.510.000\r\nSERIE No. 116', '04-012', '2014-02-26 15:02:35', NULL),
+	(575, '03-018', '', '30.13.03.00018', 3, 'Silla', 11, 3, 10, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-018', '2014-02-26 15:02:10', NULL),
+	(576, '04-011', '', '30.15.04.00011', 5, 'Maquina para fabricaciÃ³n de cuchillas', 93, 6, 18, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA FABRICACION CUCHILLAS\r\nMARCA STERN\r\nCOLOR NARANJA\r\nMODELO 8.1 52.000\r\nSERIE NÃ‚Âº 146\r\n\r\nCON MESA DE MADERA PRENSADA.', '04-011', '2014-02-26 15:02:21', NULL),
+	(577, 'S-148', '', '', 3, 'Taburete con espaldar', 11, 6, 2, 2, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR NEGRO\r\nCON FORRO EN LA BASE.', 'S-148', '2014-02-26 15:02:47', NULL),
+	(578, '04-010', '', '30.15.04.00010', 5, 'Maquina para fabricaciÃ³n de cuchillas', 93, 6, 18, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA FABRICACION CUCHILLAS\r\nMARCA STERN\r\nCOLOR NARANJA\r\nMODELO 8.600.000\r\nSERIE NO. 181', '04-010', '2014-02-26 15:02:39', NULL),
+	(579, 'S-219', '', '', 12, 'Carrito de carga', 11, 6, 2, 19, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nCARRITO DE CARGA PEQUEÃ‘O.', 'S-219', '2014-02-26 15:02:15', NULL),
+	(580, '04-015', '', '30.15.04.00015', 5, 'Cizalla hidraulica punzonadora', 93, 6, 18, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCIZALLA HIDRAULICA PUNZONADORA\r\nMARCA STERN\r\nMODELO 8.104.000\r\nSERIE NO. 233', '04-015', '2014-02-26 15:02:16', NULL),
+	(581, 'S-061', '', '', 3, 'Estante', 11, 6, 3, 2, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTANTE DE METAL\r\nCON 3 DIVISIONES.', 'S-061', '2014-02-26 15:02:38', NULL),
+	(582, '04-014', '', '30.15.04.00014', 5, 'Maquina brochadora', 93, 6, 18, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA BROCHADORA HIDRAULICA PARA ANGULOS\r\nMARCA: STERN\r\nMODELO: 8.103.000\r\nSERIE: 229', '04-014', '2014-02-26 15:02:21', NULL),
+	(583, '04-091', '', '30.06.04.00091', 5, 'Maquina para quemar hilos', 59, 6, 3, 16, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA QUEMAR HILOS\r\nCON BASE AZUL\r\nSIN SERIE.', '04-091', '2014-02-26 15:02:46', NULL),
+	(584, '04-008', '', '30.15.04.00008', 5, 'Maquina para fabricaciÃ³n de cuchillas', 93, 6, 18, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA FABRICACION CUCHILLAS\r\nMARCA STERN\r\nCOLOR NARANJA\r\nMODELO 0.106.000\r\nSERIE 119', '04-008', '2014-02-26 16:02:50', NULL),
+	(585, 'X-0096', '', '', 3, 'Mesa de trabajo', 11, 6, 6, 19, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCOLOR VERDE\r\nMEDIDAS [189cm x 65cm x 105cm alto]', 'X-0096', '2014-02-26 16:02:41', NULL),
+	(586, 'S-238', '', '', 10, 'Estabilizador', 42, 6, 15, 4, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR\r\nMARCA CHUAN HSIN\r\nMODELO MVS-5', 'S-238', '2014-02-26 16:02:39', NULL),
+	(587, '06-017', '', '', 5, 'Prensa para tubos', 11, 6, 3, 19, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 GLB.\r\n\r\nPRENSA PARA TUBOS METALICA\r\nCON TRIPODE.', '06-017', '2014-02-26 16:02:18', NULL),
+	(588, 'X-0097', '', '', 3, 'Silla', 11, 3, 10, 19, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'X-0097', '2014-02-26 16:02:01', NULL),
+	(589, '04-013', '', '30.15.04.00013', 5, 'Maquina para fabricaciÃ³n de cuchillas', 93, 6, 18, 19, 17, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMAQUINA PARA FABRICACION CUCHILLAS\r\nMARCA STERN\r\nCOLOR NARANJA\r\nMODELO 10.100.000\r\nSERIE No. 324', '04-013', '2014-02-26 16:02:02', NULL),
+	(590, 'S-054', '', '', 12, 'Caja de herramientas', 11, 6, 9, 19, 17, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nCAJA DE HERRAMIENTAS METALICA\r\nCOLOR PLOMO.', 'S-054', '2014-02-26 16:02:40', NULL),
+	(591, '03-002', '', '10.03.03.00002', 3, 'Mesa de escritorio', 11, 3, 10, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO DE MADERA\r\nCON 3 CAJONES DEL LADO IZQUIERDO,\r\n3 DEL LADO DERECHO\r\nY 1 CAJON CENTRAL\r\nMEDIDAS [154cm x 74cm x 79cm alto].', '03-002', '2014-02-26 16:02:23', NULL),
+	(592, '07-067', '', '10.02.07.00067', 15, 'Equipo computacion', 7, 10, 2, 5, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMONITOR DELL PLANA LCD CN 0Y441 1 JCL\r\nCPU DELL \r\nMODELO DIMENSION 5150 PD805\r\nPROCESADOR 2.66 GHZ\r\nDISCO DURO 160 GB\r\nMEMORIA RAM 1 GB SDRAM 533 MHZ 2 X 512 MB\r\n\r\nCON TECLADO Y MOUSE.', '07-067', '2014-02-26 16:02:23', NULL),
+	(593, '07-084', '', '20.18.07.00084', 15, 'CPU', 30, 10, 2, 5, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCPU EMACHINES\r\nMOD. ET 1831-07\r\nSERIE PTNB602022009016D8270', '07-084', '2014-02-26 17:02:29', NULL),
+	(594, 'X-0098', '', '', 15, 'Monitor LCD', 7, 5, 2, 5, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR LCD\r\nMARCA DELL\r\nMODELO E177FPF\r\nTAMAÃ‘O 17 PULGADAS\r\n\r\nPOSIBLE CODIGO 07-066', 'X-0098', '2014-02-26 17:02:12', NULL),
+	(595, '03-116', '', '10.02.03.00116', 3, 'Silla plegable', 11, 6, 16, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA PLEGABLE\r\nDE 78CM DE ALTO\r\nCOLOR PLOMO.', '03-116', '2014-02-26 17:02:53', NULL),
+	(596, 'P-008', '', '', 10, 'Calentador de agua', 47, 5, 4, 19, 8, 2, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCALENTADOR DE AGUA\r\nMARCA OSTER\r\nCAPACIDAD 2 LITROS.', 'P-008', '2014-02-26 17:02:57', NULL),
+	(597, 'S-020', '', '', 3, 'Silla giratoria', 11, 5, 9, 19, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA\r\nCON 5 RODAPIES.', 'S-020', '2014-02-26 17:02:10', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -667,9 +693,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~89 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~94 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES

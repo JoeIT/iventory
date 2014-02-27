@@ -61,7 +61,7 @@ class App_Form_ItemForm extends Zend_Form
 		$location = new Zend_Form_Element_Select('location_select');
 		$location->setLabel("Ubicacion:");
 		$location->setRequired(false);
-		$location->setValue('8');
+		$location->setValue('25');
 		
 		$owner = new Zend_Form_Element_Select('owner_select');
 		$owner->setLabel("Propiedad:");
@@ -72,26 +72,31 @@ class App_Form_ItemForm extends Zend_Form
 		$quantity->addValidator(new Zend_Validate_Float());
 		$quantity->setValue("1");
 		$quantity->setRequired(true);
+		$quantity->setAttrib('class', 'css-input_number_form');
 		
 		$unitCost = new Zend_Form_Element_Text('unitCost');
 		$unitCost->setLabel("Costo unitario:");
 		$unitCost->addValidator(new Zend_Validate_Float());
 		$unitCost->setRequired(false);
+		$unitCost->setAttrib('class', 'css-input_number_form');
 		
 		$minimumCost = new Zend_Form_Element_Text('minimumCost');
 		$minimumCost->setLabel("Costo minimo:");
 		$minimumCost->addValidator(new Zend_Validate_Float());
 		$minimumCost->setRequired(false);
+		$minimumCost->setAttrib('class', 'css-input_number_form');
 		
 		$expectedCost = new Zend_Form_Element_Text('expectedCost');
 		$expectedCost->setLabel("Costo esperado:");
 		$expectedCost->addValidator(new Zend_Validate_Float());
 		$expectedCost->setRequired(false);
+		$expectedCost->setAttrib('class', 'css-input_number_form');
 		
 		$salesCost = new Zend_Form_Element_Text('salesCost');
 		$salesCost->setLabel("Costo de venta:");
 		$salesCost->addValidator(new Zend_Validate_Float());
 		$salesCost->setRequired(false);
+		$salesCost->setAttrib('class', 'css-input_number_form');
 		
 		$condition = new Zend_Form_Element_Select('condition_select');
 		$condition->setLabel("Estado:");
@@ -104,8 +109,8 @@ class App_Form_ItemForm extends Zend_Form
 		
 		$comment = new Zend_Form_Element_Textarea('comment');
 		$comment->setLabel("Comentario:");
-		$comment->setAttrib("cols", "50");
-		$comment->setAttrib("rows", "10");
+		$comment->setAttrib("cols", "45");
+		$comment->setAttrib("rows", "8");
 		
 		$submit = new Zend_Form_Element_Submit('submit', array('label' => 'GUARDAR'));
 		

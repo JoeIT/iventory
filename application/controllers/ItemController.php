@@ -38,13 +38,14 @@ class ItemController extends Zend_Controller_Action {
 	public function indexAction() {
 		$page = $this->_getParam ( 'page', 1 );
 		
-		//$itemDao = new App_Dao_ItemDao ();
 		$totalItems = $this->_itemDao->countAll ();
-		$paginator = new App_Util_Paginator ( $this->getRequest ()->getBaseUrl () . '/item/index', $totalItems, $page, 30 );
+		$paginator = new App_Util_Paginator ( $this->getRequest ()->getBaseUrl () . '/item/index', $totalItems, $page, 50 );
 		
 		$this->view->totalItems = $totalItems;
 		$this->view->dataList = $this->_itemDao->getAllLimitOffset ( $paginator->getLimit (), $paginator->getOffset () );
 		$this->view->htmlPaginator = $paginator->showHtmlPaginator ();
+		
+		$this->view->rootPath = $this->ROOT_PATH . 'public/';
 	}
 	
 	public function viewAction() {
@@ -53,8 +54,6 @@ class ItemController extends Zend_Controller_Action {
 		if(empty($id))
 			$this->_helper->redirector('index');
 
-		//$itemDao = new App_Dao_ItemDao ();
-		
 		$item = $this->_itemDao->getById($id);
 		if($item == null)
 			$this->_helper->redirector('index');
@@ -65,7 +64,6 @@ class ItemController extends Zend_Controller_Action {
 	}
 	
 	public function addAction() {
-		//$itemDao = new App_Dao_ItemDao();
 		$form = new App_Form_ItemForm();
 		
 		$this->_loadFormSelects($form);
@@ -124,7 +122,6 @@ class ItemController extends Zend_Controller_Action {
 		if (empty($id))
 			$this->_helper->redirector('index');
 		
-		//$itemDao = new App_Dao_ItemDao();
 		$item = $this->_itemDao->getById($id);
 		
 		if($item == null)
@@ -197,7 +194,7 @@ class ItemController extends Zend_Controller_Action {
 		if (!empty($item)) {
 			$form->populate($item->toArray());
 			$form->enableEditFormExtraConfig();
-			//print_r($form->getValues());
+			
 			$this->_loadFormSelects($form);
 			
 			// 
@@ -223,7 +220,6 @@ class ItemController extends Zend_Controller_Action {
 		if (empty($id))
 			$this->_helper->redirector('index');
 		
-		//$itemDao = new App_Dao_ItemDao();
 		$item = $this->_itemDao->getById($id);
 		
 		if($item == null)
@@ -322,11 +318,11 @@ class ItemController extends Zend_Controller_Action {
 	
 		/*$uri = "$_SERVER[REQUEST_URI]";
 			$arr = explode('/', $uri );
-	
+			
 		$path = "$_SERVER[HTTP_HOST]" . '/' . $arr[1] . '/';
-	
+		
 		echo "<br/>Test Path: http://$path";*/
-	
+		
 		// Create directory, with full permissions
 		//mkdir("NewDir", "0777");
 		// Rename

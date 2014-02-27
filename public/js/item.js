@@ -32,9 +32,11 @@ $(document).ready(function() {
 		
 		var selectType = $(this).attr('name');
 		var id = 'refresh_' + selectType;
+		var path = $('#SYSTEM_ROOT_PATH').val() + "public/images/refresh.png";		
+		var refreshImage = '<img src="'+ path +'" title="ACTUALIZAR" height="16px" width="16px">';
 		
 		// Avoid create more than one link per select element
 		if(! $('#' + id).length )
-			$(this).after(" <a href='javascript:void(0)' id='"+ id +"' class='refreshSelectElement' type='"+ selectType +"'>Resfrescar</a> ");
+			$(this).after(" <a href='javascript:void(0)' id='"+ id +"' class='refreshSelectElement' type='"+ selectType +"'>"+ refreshImage +"</a> ");
 	});
 });

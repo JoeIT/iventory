@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=598 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=630 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~680 rows (approximately)
+-- Dumping data for table inventory.item: ~713 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -163,7 +163,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(94, 'X-0008', '', '', 15, 'Link Station', 27, 10, 2, 5, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Marca: Buffalo\r\nModelo: LS-CHL344\r\nCapacidad: 850Gb', 'X-0008', '2014-02-10 18:02:54', '2014-02-11 12:02:31'),
 	(95, '07-060', '', '20.18.07.00060', 15, 'Link Station', 27, 10, 2, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, 'Marca: Buffalo\r\nModelo: LS-CHL344\r\nCapacidad: 465Gb', '07-060', '2014-02-10 18:02:13', NULL),
 	(96, '03-292', '', '20.18.03.00292', 10, 'Estabilizador', 28, 10, 12, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\nESTABILIZADOR\r\nMARCA: STAVOL MATSUNAKA SVC 1000 N', '03-292', '2014-02-10 18:02:56', NULL),
-	(97, '07-00094', '', '20.09.07.00094', 15, 'IMAC INTEL 2', 29, 10, 9, 5, 10, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCOMPUTADORA IMAC INTEL 2"\r\nMODELO A1312\r\nSERIE NO. W8026777DB6 32GMZ/46/B/ITB/SD\r\n\r\nCON TECLADO DELUX Y RATON GENIUS.', '07-00094', '2014-02-11 09:02:58', '2014-02-11 09:02:42'),
+	(97, '07-094', '', '20.09.07.00094', 15, 'IMAC INTEL 2', 29, 10, 9, 5, 10, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCOMPUTADORA IMAC INTEL 2"\r\nMODELO A1312\r\nSERIE NO. W8026777DB6 32GMZ/46/B/ITB/SD\r\n\r\nCON TECLADO DELUX Y RATON GENIUS.', '07-094', '2014-02-11 09:02:58', '2014-02-27 16:02:18'),
 	(98, '07-108', '', '20.09.07.00108', 15, 'Impresora a tinta', 31, 10, 2, 6, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA\r\nIMPRESORA\r\nMARCA: CANON\r\nMODELO: MP230\r\n\r\nCON SISTEMA DE TINTA CONTINUA.', '07-108', '2014-02-11 09:02:33', NULL),
 	(99, '07-089', '', '20.18.07.00089', 15, 'Monitor LCD', 9, 10, 2, 8, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nMONITOR\r\nMARCA: ACER\r\nMODELO: X183HB\r\nSERIE: ETLEZ0W0030070AD934329\r\nTAMAÃ‘O: 18.5 PULGADAS', '07-089', '2014-02-11 09:02:56', NULL),
 	(100, '07-086', '', '20.18.07.00086', 15, 'CPU', 30, 6, 2, 5, 10, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nCASE\r\nMARCA: EMACHINES\r\nMODELO: ET 1831-07\r\nSERIE PTNB602022006021CB2700\r\n\r\nCON TECLADO MARCA EMACHINES Y MOUSE GENIUS', '07-086', '2014-02-11 10:02:30', NULL),
@@ -187,8 +187,8 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(118, '07-083', '', '20.18.07.00083', 15, 'CPU', 8, 10, 2, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nCPU\r\nMARCA: HP\r\nMODELO: PAVILION ELITE HPE-150+\r\nSERIE: MXV012023W\r\n\r\nCON UN TECLADO Y MOUSE HP.', '07-083', '2014-02-11 15:02:58', NULL),
 	(119, '07-093', '', '20.18.07.00093', 15, 'Monitor LCD', 9, 10, 2, 8, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nMONITOR LCD PLANA\r\nMARCA: ACER\r\nMODELO: X183HB\r\nSERIE: ETLEZ0W0030070AD954329', '07-093', '2014-02-11 15:02:49', NULL),
 	(120, '07-056', '', '', 15, 'CPU', 11, 10, 4, 4, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '3 PZAS.\r\n\r\nCPU CASE, PENTIUM 4, 3GHZ PROCESADOR, 1GB RAM\r\n\r\nCON TECLADO DELUX Y MOUSE SIN MARCA.', '07-056', '2014-02-11 16:02:19', NULL),
-	(121, '07-074', '', '20.18.07.00074', 15, 'Impresora a toner', 8, 5, 9, 12, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nIMPRESORA HP LASERJET P1505\r\nMODELO: CB412A\r\nSERIE: BRBS84YG8X\r\n\r\nINDUSTRIA BRASILERA', '07-074', '2014-02-11 16:02:43', NULL),
-	(122, '07-106', '', '20.18.07.00106', 15, 'Impresora a toner', 8, 5, 4, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nIMPRESORA LASER JET\r\nMARCA: HP\r\nMODELO: P2035\r\nSERIE: VNB3J02653', '07-106', '2014-02-11 16:02:11', NULL),
+	(121, '07-074', '', '20.18.07.00074', 15, 'Impresora laser', 8, 5, 9, 12, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nIMPRESORA HP LASERJET P1505\r\nMODELO: CB412A\r\nSERIE: BRBS84YG8X\r\n\r\nINDUSTRIA BRASILERA', '07-074', '2014-02-11 16:02:43', NULL),
+	(122, '07-106', '', '20.18.07.00106', 15, 'Impresora laser', 8, 5, 4, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nIMPRESORA LASER JET\r\nMARCA: HP\r\nMODELO: P2035\r\nSERIE: VNB3J02653', '07-106', '2014-02-11 16:02:11', NULL),
 	(123, '07-098', '', '20.18.07.00098', 15, 'Escaner', 38, 5, 2, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nESCANER\r\nMARCA: BULLETSCAN\r\nMODELO: F200\r\nSERIE: CN109CSC81300188', '07-098', '2014-02-11 16:02:54', NULL),
 	(124, '07-058', '', '20.18.07.00058', 15, 'CPU', 7, 10, 4, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCPU DELL AMD 64 DIMENSION C 521 ATHLON 64 PROCESSOR 3200 1 GHZ RAM 958 MB 80 DD MONITOR DELL S/R 72872 6 CD 1 L4L\r\n\r\nCON TECLADO SIN MARCA Y MOUSE GENIUS.\r\n', '07-058', '2014-02-11 16:02:16', NULL),
 	(125, '03-011', '', '30.10.03.00011', 10, 'TelÃ©fono digital', 22, 10, 4, 6, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 8, 1, '1 GLB.\r\n\r\nTEÂ‰LEFONO DIGITAL PANASONIC, MOD. KX-T7450X', '03-011', '2014-02-11 16:02:30', NULL),
@@ -212,7 +212,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(143, 'X-0024', '', '', 15, 'Monitor LCD', 3, 5, 2, 7, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR SAMSUNG SYNCMASTER 932NWE PLUS, PANTALLA PLANA, 19 PULGADAS.', 'X-0024', '2014-02-11 17:02:30', NULL),
 	(144, 'X-0025', '', '', 15, 'Monitor LCD', 3, 5, 2, 7, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR SAMSUNG SYNCMASTER 932NWE PLUS, PANTALLA PLANA, 19 PULGADAS.', 'X-0025', '2014-02-11 17:02:40', NULL),
 	(145, '07-085', '', '20.18.07.00085', 1, 'CPU', 30, 10, 2, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCPU, MARCA EMACHINES, MOD. ET 1831-07, SERIE PTNB6020220090A8822700\r\n\r\nCON TECLADO DELUX Y MOUSE SIN MARCA.', '07-085', '2014-02-11 17:02:15', NULL),
-	(146, '07-087', '', '20.18.07.00087', 15, 'CPU', 30, 10, 2, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCPU, MARCA EMACHINES, MOD. ET 1831-07, SERIE PTNB602022006021DF2700\r\n\r\nCON TECLADO DELUX Y MOUSE GENIUS.', '07-087', '2014-02-11 17:02:21', NULL),
+	(146, '07-087', '', '20.18.07.00087', 15, 'CPU', 30, 10, 2, 5, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCPU\r\nMARCA EMACHINES\r\nMOD. ET 1831-07\r\nSERIE PTNB602022006021DF2700\r\n\r\nCON TECLADO DELUX Y MOUSE GENIUS.', '07-087', '2014-02-11 17:02:21', '2014-02-27 16:02:13'),
 	(147, 'X-0026', '', '', 15, 'Router wireless', 43, 5, 2, 8, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nROUTER DLINK MODELO DIR-615, CON 2 ANTENAS.', 'X-0026', '2014-02-11 17:02:15', NULL),
 	(148, 'S-269', '', '', 10, 'Aire acondicionado', 6, 6, 4, 7, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA DE AIRE ACONDICIONADO, MARCA LG, MODELO LWN22XXX\r\n\r\nCON CONTROL REMOTO', 'S-269', '2014-02-11 17:02:15', '2014-02-11 18:02:25'),
 	(149, 'S-227', '', '', 3, 'MesÃ³n', 11, 9, 10, 1, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO LARGA\r\nCON BASE DE MADERA AGLOMERADA\r\nCOLOR CAFE\r\nESTRUCTURA DE METAL COLOR CAFE\r\nMEDIDAS [505cm x 75cm x 77cm de alto]', 'S-227', '2014-02-11 17:02:52', '2014-02-21 13:02:40'),
@@ -220,7 +220,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(151, 'X-0028', '', '', 3, 'MesÃ³n', 11, 9, 10, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO LARGO, CON BASE DE MADERA AGLOMERADA COLOR CAFE Y ESTRUCTURA DE METAL COLOR CAFE, CON MEDIDAS [230cm x 75cm x 79cm de alto]', 'X-0028', '2014-02-11 17:02:54', NULL),
 	(152, 'S-436', '', '', 3, 'Mesa de trabajo', 11, 3, 2, 19, 11, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO DE MADERA, CON MEDIDAS [100cm x 80cm x 74cm de alto]', 'S-436', '2014-02-11 17:02:15', '2014-02-11 18:02:41'),
 	(153, 'X-0029', '', '', 3, 'Librero', 11, 3, 10, 19, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA, CON 5 DIVISIONES, CON MEDIDAS [74.5cm x 30cm x 183cm de alto]', 'X-0029', '2014-02-11 18:02:36', NULL),
-	(154, 'S-271', '', '', 1, 'CPU', 1, 1, 1, 1, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 GLB.\r\n\r\nCPU CASE PPTI, PENTIUM 4, GHZ, 1 GB RAM.', 'S-271', '2014-02-12 11:02:10', '2014-02-12 18:02:19'),
+	(154, 'S-271', '', '', 1, 'CPU', 1, 1, 1, 1, 11, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 GLB.\r\n\r\nCPU CASE PPTI\r\nPENTIUM 4\r\n1 GB RAM.', 'S-271', '2014-02-12 11:02:10', '2014-02-27 15:02:10'),
 	(155, '03-167', '', '20.18.03.00167', 3, 'Mesa de escritorio', 11, 3, 10, 19, 19, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nESCRITORIO MEDIANO DE MADERA CON 3 CAJONES LADO DERECHO, MEDIDAS [127cm x 74cm x 75cm alto]', '03-167', '2014-02-12 12:02:39', '2014-02-12 12:02:25'),
 	(156, 'S-162', '', '', 3, 'Buro', 11, 3, 10, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBURO PEQUEÃ‘O, CON 2 PUERTAS, MEDIDAS [130cm x 53cm x 82cm alto]', 'S-162', '2014-02-12 12:02:43', NULL),
 	(157, 'S-010', '', '', 3, 'Silla', 11, 6, 9, 19, 19, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA METALICA PLOMA.', 'S-010', '2014-02-12 12:02:45', NULL),
@@ -267,7 +267,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(198, 'S-033', '', '', 3, 'Librero', 11, 3, 10, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nLIBRERO DE MADERA CON 5 REPISAS.', 'S-033', '2014-02-12 15:02:03', NULL),
 	(199, 'X-0044', '', '', 12, 'Gavetero', 11, 5, 5, 19, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nGAVETERO CON 45 COMPARTIMENTOS PARA COSAS PEQUEÃ‘AS.', 'X-0044', '2014-02-12 15:02:53', NULL),
 	(200, 'X-0045', '', '', 6, 'Casco de soldadura', 11, 5, 2, 4, 18, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCASCO DE SOLDADURA, CARECE DEL LENTE PROTECTOR.', 'X-0045', '2014-02-12 15:02:09', NULL),
-	(201, '03-008-2', '', '30.11.03.00008', 10, 'Estabilizador', 28, 6, 10, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR MARCA SHUAN HSIN MODELO MVS-5 COLOR CAFEÂ‰ DE 500V.', '03-008-2', '2014-02-12 15:02:22', NULL),
+	(201, '03-008-2', '', '30.11.03.00008', 10, 'Estabilizador', 28, 6, 10, 4, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTABILIZADOR\r\nMARCA SHUAN HSIN\r\nMODELO MVS-5\r\nCOLOR CAFEÂ‰\r\nDE 500V.', '03-008-2', '2014-02-12 15:02:22', '2014-02-27 13:02:29'),
 	(202, 'S-246', '', '', 12, 'Extintor de incendios', 48, 6, 12, 12, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nEXTINTOR DE 4 KILOS.', 'S-246', '2014-02-12 15:02:12', NULL),
 	(203, 'X-0046', '', '', 12, 'Banner publicitario', 11, 5, 4, 19, 18, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBANNER PUBLICITARIO DE SISTEMA DE GESTION INTEGRADO.', 'X-0046', '2014-02-12 15:02:14', NULL),
 	(204, 'S-031', '', '', 3, 'Mesa de escritorio', 11, 3, 10, 19, 12, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO CON 2 CAJONES Y UNA GAVETA, MEDIDAS [108cm x 60cm x 132 alto]', 'S-031', '2014-02-12 15:02:32', NULL),
@@ -302,7 +302,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(233, 'S-241', '', '', 3, 'Mesa de trabajo', 11, 9, 10, 19, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESA DE MADERA AGLOMERADA, COLOR CAFE, CON ESTRUCTURA DE METAL.', 'S-241', '2014-02-13 13:02:47', NULL),
 	(234, '07-041', '', '20.18.07.00041', 15, 'CPU', 8, 6, 3, 5, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCPU CASE HP PAVILION A450Y, 160 GB QUEMADOR DE DVD , 2.80 GHZ 512 RAM 160 DD SN MXP413059Z Y MONITOR HP PAVILION MX7003 DE 17" CNNIGOB932 TECLADO BF40718541 MOUSE K034531 764\r\n', '07-041', '2014-02-13 13:02:54', NULL),
 	(235, '07-052', '', '', 15, 'Equipo computacion', 2, 5, 2, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCPU SONY VAIO\r\n\r\nMONITOR SONY LCD.', '07-052', '2014-02-13 13:02:22', '2014-02-13 15:02:38'),
-	(236, 'S-242', '', '', 15, 'Impresora a toner', 8, 5, 9, 5, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nIMPRESORA HP LASERJET P2015.', 'S-242', '2014-02-13 13:02:27', NULL),
+	(236, 'S-242', '', '', 15, 'Impresora laser', 8, 5, 9, 5, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nIMPRESORA HP LASERJET P2015.', 'S-242', '2014-02-13 13:02:27', NULL),
 	(237, '07-082', '', '20.19.07.00082', 15, 'MultifunciÃ³n', 51, 5, 9, 6, 3, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nMULTIFUNCION (ESCANER, COPIADORA Y FAX) MARCA BROTHER, MODELO MFC7440N, SERIE U62036L9N561433.', '07-082', '2014-02-13 13:02:23', NULL),
 	(238, '03-303', '', '20.19.03.00303', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTELEFONO PANASONIC, MODELO KX-TS500LXW.', '03-303', '2014-02-13 14:02:41', '2014-02-13 14:02:27'),
 	(239, '03-304', '', '20.19.03.00304', 10, 'TelÃ©fono digital', 22, 5, 2, 6, 3, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 PZA.\r\n\r\nTELEFONO DIGITAL, PANASONIC MODELO KX-TS500LXB.', '03-304', '2014-02-13 14:02:26', NULL),
@@ -337,7 +337,7 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(268, '03-200', '', '30.13.03.00200', 3, 'Silla giratoria', 11, 5, 9, 19, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA DE OFICINA GIRATORIA CON 5 RODAPIES.\r\n', '03-200', '2014-02-14 10:02:23', NULL),
 	(269, '04-112', '', '30.08.04.00112', 5, 'Maquina selladora', 56, 6, 16, 8, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA SELLADORA MANUAL PARA PLASTICOS\r\nMARCA TEW\r\nSERIE 960517', '04-112', '2014-02-14 10:02:40', NULL),
 	(270, '07-006', '', '20.18.07.00006', 15, 'CPU', 57, 6, 1, 1, 20, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 1, 1, '1 GLB.\r\n\r\nCPU MARCA GATEWAY\r\nLECTOR CD\r\nINTEL PENTIUM 4, 1,6 GHZ\r\nDD 80,8 GB\r\nSERIE 26413715\r\nTARJETA RED 02:03:47:E5:39:06\r\n\r\nCON MOUSE DELL Y TECLADO GENIUS', '07-006', '2014-02-14 11:02:04', NULL),
-	(271, '07-036', '', '10.03.07.00036', 15, 'Monitor LCD', 3, 5, 2, 7, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR PANTALLA PLANA\r\nMARCA: SAMSUNG\r\nMODELO: SYNCMASTER 591S\r\nTAMAÃ‘O: 15 PULGADAS\r\n', '07-036', '2014-02-14 11:02:58', NULL),
+	(271, '07-036', '', '10.03.07.00036', 15, 'Monitor LCD', 7, 6, 2, 5, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCPU\r\nMARCA: DELL\r\nMODELO: DIMENSION 2400\r\nPROCESADOR: PENTIUM 4\r\n\r\nMONITOR PANTALLA PLANA LCD\r\nMARCA: SAMSUNG\r\nMODELO: SYNCMASTER 591S\r\nTAMAÃ‘O: 15 PULGADAS\r\n\r\nMONITOR LOCALIZADO EN AREA DE CONTROL DE CALIDAD', '07-036', '2014-02-14 11:02:58', '2014-02-27 15:02:49'),
 	(272, '03-024', '', '30.08.03.00024', 4, 'Balanza', 58, 10, 15, 12, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nBALANZA DIGITAL\r\nMARCA: TOLEDO\r\nMODELO: 3400-I\r\nSERIE: 99612957-CA\r\nCAPACIDAD: 2,5 KG', '03-024', '2014-02-14 11:02:38', NULL),
 	(273, '03-140', '', '20.07.03.00140', 3, 'Mesa de trabajo', 11, 6, 9, 2, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA CON FOCO FLUORECENTE\r\nCOLOR PLOMO Y CAJON LADO DERECHO\r\nMEDIDAS [120CM x 75cm x 100cm alto]\r\n', '03-140', '2014-02-14 11:02:46', NULL),
 	(274, '03-076', '', '20.07.03.00076', 3, 'Mesa de trabajo', 11, 6, 6, 2, 20, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO METALICO\r\nCOLOR VERDE DE CON FOCO EN LA PARTE CENTRAL\r\nMEDIDAS [250cm x  130cm x 106.5cm alto]', '03-076', '2014-02-14 11:02:47', NULL),
@@ -663,7 +663,39 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(594, 'X-0098', '', '', 15, 'Monitor LCD', 7, 5, 2, 5, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR LCD\r\nMARCA DELL\r\nMODELO E177FPF\r\nTAMAÃ‘O 17 PULGADAS\r\n\r\nPOSIBLE CODIGO 07-066', 'X-0098', '2014-02-26 17:02:12', NULL),
 	(595, '03-116', '', '10.02.03.00116', 3, 'Silla plegable', 11, 6, 16, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nSILLA PLEGABLE\r\nDE 78CM DE ALTO\r\nCOLOR PLOMO.', '03-116', '2014-02-26 17:02:53', NULL),
 	(596, 'P-008', '', '', 10, 'Calentador de agua', 47, 5, 4, 19, 8, 2, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCALENTADOR DE AGUA\r\nMARCA OSTER\r\nCAPACIDAD 2 LITROS.', 'P-008', '2014-02-26 17:02:57', NULL),
-	(597, 'S-020', '', '', 3, 'Silla giratoria', 11, 5, 9, 19, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA\r\nCON 5 RODAPIES.', 'S-020', '2014-02-26 17:02:10', NULL);
+	(597, 'S-020', '', '', 3, 'Silla giratoria', 11, 5, 9, 19, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA\r\nCON 5 RODAPIES.', 'S-020', '2014-02-26 17:02:10', NULL),
+	(598, '03-158', '', '10.02.03.00158', 3, 'Estante', 11, 3, 10, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTANTE DE MADERA\r\nDE 5 DIVISIONES\r\nMEDIDAS [75cm x 38cm x 180cm alto]', '03-158', '2014-02-27 09:02:39', NULL),
+	(599, '03-006', '', '10.03.03.00006', 3, 'Armario', 11, 12, 10, 4, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nARMARIO DE MADERA\r\nCON 4 PUERTAS, 2 SUPERIORES Y 2 INFERIORES\r\nMEDIDAS [62cm x 39cm x 178cm alto]', '03-006', '2014-02-27 09:02:21', NULL),
+	(600, '03-165', '', '10.01.03.00165', 3, 'Silla giratoria', 11, 5, 9, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA GIRATORIA\r\nCON 5 RODAPIES.', '03-165', '2014-02-27 09:02:04', NULL),
+	(601, '03-001', '', '10.03.03.00001', 3, 'Mesa de escritorio', 11, 3, 10, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO DE MADERA\r\nCON 3 CAJONES LADO IZQUIERDO,\r\n1 CAJON CENTRAL Y 1 PUERTA LADO DERECHO\r\nMEDIDAS [150cm x 77cm x 79cm alto]', '03-001', '2014-02-27 09:02:41', NULL),
+	(602, '03-168', '', '10.03.03.00168', 3, 'Mesa de escritorio', 11, 3, 10, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO MEDIANO\r\nDE MADERA\r\nCON 3 CAJONES LADO IZQUIERDO\r\nMEDIDAS [120cm x 65cm x 80cm alto]', '03-168', '2014-02-27 09:02:56', NULL),
+	(603, 'P-013', '', '', 12, 'Altavoz', 11, 5, 9, 19, 8, 2, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nALTAVOZ\r\nCOLOR BLANCO.', 'P-013', '2014-02-27 09:02:20', NULL),
+	(604, 'S-034', '', '', 3, 'Buro', 11, 3, 10, 19, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBURO DE MADERA\r\nCON 2 PUERTAS\r\nMEDIDAS [125cm x 44cm x 90cm alto]', 'S-034', '2014-02-27 09:02:48', NULL),
+	(605, '03-159', '', '10.02.03.00159', 3, 'Estante', 11, 3, 4, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTANTE DE MADERA\r\nDE 5 DIVISIONES\r\nMEDIDAS [75cm x 38cm x 180cm alto]', '03-159', '2014-02-27 09:02:01', NULL),
+	(606, '03-162', '', '10.02.03.00162', 3, 'Silla giratoria', 11, 5, 10, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLON DE OFICINA GIRATORIO\r\nCON 5 RODAPIES.', '03-162', '2014-02-27 09:02:03', '2014-02-27 09:02:30'),
+	(607, 'S-036', '', '', 3, 'Estante', 11, 12, 4, 19, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESTANTE DE MADERA PRENSADA MELAMINADA\r\nCON 5 DIVISIONES\r\nMEDIDAS [130cm x 56cm x 240cm alto]', 'S-036', '2014-02-27 15:02:16', NULL),
+	(608, '03-161', '', '10.02.03.00161', 3, 'Mesa de escritorio', 11, 1, 10, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nESCRITORIO DE MADERA\r\nCON 4 CAJONES,\r\n2 AL LADO DERECHO\r\nY 2 AL IZQUIERDO\r\nMEDIDAS [166cm x 80cm x 77cm alto].', '03-161', '2014-02-27 15:02:13', NULL),
+	(609, 'X-0099', '', '', 10, 'TelÃ©fono digital', 22, 5, 4, 6, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nTELEFONO DIGITAL\r\nMARCA: PANASONIC\r\nMODELO: KX-TS580LX\r\nSERIE: 2EBKC072295', 'X-0099', '2014-02-27 15:02:11', NULL),
+	(610, '03-037', '', '20.07.03.00037', 3, 'Taburete con espaldar', 11, 6, 6, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nDE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO\r\nCON ESPALDAR.', '03-037', '2014-02-27 15:02:02', NULL),
+	(611, '07-100', '', '10.02.07.00100', 15, 'CPU', 95, 6, 2, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nCPU\r\nMARCA SYX\r\nMODELO DESKTOP\r\nSERIE NO. 107376334.', '07-100', '2014-02-27 15:02:24', NULL),
+	(612, 'X-0100', '', '', 15, 'Monitor LCD', 3, 5, 2, 19, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMONITOR PLANO LCD\r\nMARCA: SAMSUNG\r\nMODELO: SYNCMASTER 932NWE PLUS\r\nTAMAÃ‘O: 19 PULGADAS.', 'X-0100', '2014-02-27 16:02:06', NULL),
+	(613, '07-099', '', '10.02.07.00099', 15, 'Monitor LCD', 30, 5, 2, 5, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB\r\n\r\nMONITOR PANTALLA PLANA LCD\r\nMARCA EMACHINES\r\nMODELO E180HV B\r\nSERIE ETQ3W0D00113302F7D8500.', '07-099', '2014-02-27 16:02:53', NULL),
+	(614, '07-105', '', '10.02.07.00105', 1, 'Impresora laser', 8, 5, 4, 19, 8, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nIMPRESORA LASER JET\r\nMARCA: HP\r\nMODELO: P2035\r\nSERIE NO.: VNB3J02655.', '07-105', '2014-02-27 16:02:07', NULL),
+	(615, 'S-039', '', '', 3, 'Gavetero', 11, 3, 10, 19, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nGAVETERO DE MADERA\r\nCON 1 DIVISION AL LADO IZQUIERDO\r\nCON 1 CAJON Y GAVETA AL LADO DERECHO\r\nMEDIDAS [80cm x 38cm x 67cm alto].', 'S-039', '2014-02-27 16:02:51', NULL),
+	(616, 'X-0101', '', '', 10, 'Radio', 24, 5, 2, 24, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nRADIO\r\nCON 2 PARLANTES.', 'X-0101', '2014-02-27 16:02:08', NULL),
+	(617, 'X-0102', '', '', 3, 'Mesa de escritorio', 11, 6, 10, 19, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESA DE METAL\r\nCON BASE DE MADERA PRENSADA\r\nMEDIDAS [125cm x 56cm x 76cm alto]', 'X-0102', '2014-02-27 16:02:12', NULL),
+	(618, 'S-035', '', '', 3, 'Mesita', 11, 3, 10, 19, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESITA DE MADERA PEQUEÃ‘A\r\nCON UNA DIVISION\r\nMEDIDAS [60cm x 52cm x 74cm alto].', 'S-035', '2014-02-27 16:02:27', NULL),
+	(619, 'X-0103', '', '', 12, 'BOTIQUIN', 11, 5, 18, 19, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nBOTIQUIN DE PRIMEROS AUXILIOS\r\nCOLOR NARANJA Y NEGRO.', 'X-0103', '2014-02-27 16:02:35', NULL),
+	(620, 'S-040', '', '', 5, 'Maquina de escribir', 22, 10, 2, 6, 8, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMAQUINA DE ESCRIBIR\r\nMARCA: PANASONIC\r\nMODELO: ELECTRONIC TYPEWRITER R340.', 'S-040', '2014-02-27 16:02:02', NULL),
+	(621, 'S-232', '', '', 3, 'Cajoneria', 11, 12, 4, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 GLB.\r\n\r\nCAJONERIA CON 4 CAJONES.', 'S-232', '2014-02-27 17:02:59', NULL),
+	(622, '03-101', '', '20.08.03.00101', 3, 'Taburete', 11, 6, 6, 19, 25, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA.', '03-101', '2014-02-27 17:02:20', NULL),
+	(623, 'S-235', '', '', 3, 'Cubiculo de oficina', 11, 12, 4, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nCUBICULO EN L\r\nDE MADERA PRENSADA MELAMINADA\r\nCON REPISA PEQUEÃ‘A.', 'S-235', '2014-02-27 17:02:37', NULL),
+	(624, 'X-0104', '', '', 3, 'Taburete con espaldar', 11, 6, 6, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ESPALDAR.', 'X-0104', '2014-02-27 17:02:13', NULL),
+	(625, '03-124', '', '20.08.03.00124', 3, 'Mesa de trabajo', 11, 6, 6, 19, 25, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESON DE TRABAJO METALICO\r\nCON FOCOS EN LA PARTE CENTRAL\r\nMEDIDAS [245cm x 130cm x 100cm alto].', '03-124', '2014-02-27 17:02:07', NULL),
+	(626, 'X-0105', '', '', 3, 'Taburete', 11, 6, 6, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON BASE DE MADERA FORRADO.', 'X-0105', '2014-02-27 17:02:43', NULL),
+	(627, '03-129', '', '20.08.03.00129', 3, 'Taburete', 11, 6, 6, 19, 25, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-129', '2014-02-27 17:02:49', NULL),
+	(628, '03-120', '', '20.08.03.00120', 3, 'Mesa de trabajo', 11, 6, 6, 19, 25, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCOLOR VERDE\r\nMEDIDAS [206cm x 105cm x 100cm alto].', '03-120', '2014-02-27 17:02:04', NULL),
+	(629, '03-087-2', '', '', 3, 'Taburete con espaldar', 11, 6, 6, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE.', '03-087-2', '2014-02-27 17:02:19', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -693,9 +725,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~94 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~95 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -792,7 +824,8 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(91, 'SCHULZ'),
 	(92, 'POWER TOOLS'),
 	(93, 'STERN'),
-	(94, 'LINCOLN ELECTRIC');
+	(94, 'LINCOLN ELECTRIC'),
+	(95, 'SYX');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -860,9 +893,9 @@ CREATE TABLE IF NOT EXISTS `item_location` (
   `name` varchar(50) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_location: ~24 rows (approximately)
+-- Dumping data for table inventory.item_location: ~25 rows (approximately)
 DELETE FROM `item_location`;
 /*!40000 ALTER TABLE `item_location` DISABLE KEYS */;
 INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
@@ -889,7 +922,8 @@ INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
 	(21, 'Ingreso galpón', NULL),
 	(22, 'Area serigrafía', NULL),
 	(23, 'Area producto terminado', NULL),
-	(24, 'Area entre almacén y mecánica', NULL);
+	(24, 'Area entre almacén y mecánica', NULL),
+	(25, 'Depósito sobre control de calidad', NULL);
 /*!40000 ALTER TABLE `item_location` ENABLE KEYS */;
 
 
@@ -927,9 +961,9 @@ CREATE TABLE IF NOT EXISTS `item_origin` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_origin: ~23 rows (approximately)
+-- Dumping data for table inventory.item_origin: ~24 rows (approximately)
 DELETE FROM `item_origin`;
 /*!40000 ALTER TABLE `item_origin` DISABLE KEYS */;
 INSERT INTO `item_origin` (`id`, `name`) VALUES
@@ -937,7 +971,7 @@ INSERT INTO `item_origin` (`id`, `name`) VALUES
 	(2, 'Bolivia'),
 	(3, 'Alemania'),
 	(4, 'China'),
-	(5, 'EEUU'),
+	(5, 'E.E.U.U.'),
 	(6, 'Japón'),
 	(7, 'Korea'),
 	(8, 'Taiwán'),
@@ -955,7 +989,8 @@ INSERT INTO `item_origin` (`id`, `name`) VALUES
 	(20, 'Suecia'),
 	(21, 'Polonia'),
 	(22, 'España'),
-	(23, 'Reino Unido');
+	(23, 'Reino Unido'),
+	(24, 'Holanda');
 /*!40000 ALTER TABLE `item_origin` ENABLE KEYS */;
 
 

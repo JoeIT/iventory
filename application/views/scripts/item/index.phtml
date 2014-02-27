@@ -1,20 +1,23 @@
 <h1>Lista items:</h1>
 
 
-<div align="right"><a
+<div align="right">
+			<a
 			href='<?php
 			
 echo $this->url ( array (
 					'controller' => 'item',
 					'action' => 'add' 
-			), 'default', true )?>'>Agregar item</a>
+			), 'default', true )?>'>
+				<img src="<?php echo $this->rootPath ?>images/add.png" title="AGREGAR" height="16px" width="16px" border="0"> AGREGAR
+			</a>
 
 			<br/>
 			Total items registrados: <?php echo $this->totalItems;?>
 			
 </div>
 
-<table border='0' align="center">
+<table border='0' align="center" class="css-table-index">
 	<tr>
 		<th>C&oacute;digo</th>
 		<th>Nuevo c&oacute;digo</th>
@@ -23,7 +26,7 @@ echo $this->url ( array (
 		<th>Marca</th>
 		<th>Procedencia</th>
 		<th>Ubicaci&oacute;n</th>
-		<th></th>
+		<th colspan="3"></th>
 	</tr>
 
 	<?php
@@ -37,32 +40,34 @@ echo $this->url ( array (
 		<td><?php echo $item->getBrand()->getName(); ?></td>
 		<td><?php echo $item->getOrigin()->getName(); ?></td>
 		<td><?php echo $item->getLocation()->getName(); ?></td>
-		<td align="center">
+		<td>
 			<a
 				href='<?php		
 				echo $this->url ( array (
 								'controller' => 'item',
 								'action' => 'view',
 								'id' => $item->getId () 
-						), 'default', true )?>'>Ver
+						), 'default', true )?>'><img src="<?php echo $this->rootPath ?>images/view.png" title="VER">
 			</a>
-			<br/>
+		</td>
+		<td>
 			<a
 				href='<?php		
 				echo $this->url ( array (
 								'controller' => 'item',
 								'action' => 'edit',
 								'id' => $item->getId () 
-						), 'default', true )?>'>Modificar
+						), 'default', true )?>'><img src="<?php echo $this->rootPath ?>images/edit.png" title="EDITAR">
 			</a>
-			<br/>
+		</td>
+		<td>
 			<a
 				href='<?php				
 				echo $this->url ( array (
 								'controller' => 'item',
 								'action' => 'remove',
 								'id' => $item->getId () 
-						), 'default', true )?>'>Eliminar
+						), 'default', true )?>'><img src="<?php echo $this->rootPath ?>images/remove.png" title="BORRAR">
 			</a>
 		</td>
 	</tr>

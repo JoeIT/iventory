@@ -258,20 +258,32 @@ th {
 	color: #6391C6
 }
 
-div img {
+.css-table-index tr:hover :not(th)  
+{
+	background-color: #AED4B2;
+	color: #000000;
+}
+
+.css-div-images img {
     display: block;
     margin: 20px auto 10px;
     max-width: 900px;
     outline: none;
 }
-div img:active {
+
+.css-div-images img:active {
     max-width: 100%;
 }
+
 .paginator_field {
 	background-color: #363333;
 }
 
 /************************************************/
 .css-input_text_form {
-	width: 200px;
+	width: 250px;
+}
+
+.css-input_number_form {
+	width: 50px;
 }

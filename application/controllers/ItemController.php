@@ -30,9 +30,13 @@ class ItemController extends Zend_Controller_Action {
 		$this->_itemConditionDao = new App_Dao_ItemConditionDao();
 		$this->_itemAvailabilityDao = new App_Dao_ItemAvailabilityDao();
 		
+		/*
 		$uri = "$_SERVER[REQUEST_URI]";
 		$uriPathArray = explode('/', $uri );
-		$this->ROOT_PATH = "http://$_SERVER[HTTP_HOST]" . '/' . $uriPathArray[1] . '/'; // http://localhost/zf/		
+		$this->ROOT_PATH = "http://$_SERVER[HTTP_HOST]" . '/' . $uriPathArray[1] . '/'; // http://localhost/zf/
+		$this->view->rootPath = $this->ROOT_PATH . 'public/';*/
+		
+		$this->view->rootPath = $this->getFrontController()->getBaseUrl() . '/'; // /zf/public/
 	}
 	
 	public function indexAction() {
@@ -43,9 +47,7 @@ class ItemController extends Zend_Controller_Action {
 		
 		$this->view->totalItems = $totalItems;
 		$this->view->dataList = $this->_itemDao->getAllLimitOffset ( $paginator->getLimit (), $paginator->getOffset () );
-		$this->view->htmlPaginator = $paginator->showHtmlPaginator ();
-		
-		$this->view->rootPath = $this->ROOT_PATH . 'public/';
+		$this->view->htmlPaginator = $paginator->showHtmlPaginator ();		
 	}
 	
 	public function viewAction() {
@@ -59,7 +61,6 @@ class ItemController extends Zend_Controller_Action {
 			$this->_helper->redirector('index');
 		
 		$this->view->item = $item;
-		$this->view->rootPath = $this->ROOT_PATH . 'public/';
 		$this->view->photosPath = self::PHOTO_ROOT_URL;
 	}
 	
@@ -211,7 +212,6 @@ class ItemController extends Zend_Controller_Action {
 		
 		$this->view->item = $item;
 		$this->view->form = $form;
-		$this->view->rootPath = $this->ROOT_PATH . 'public/';
 		$this->view->photosPath = self::PHOTO_ROOT_URL;
 	}
 	
@@ -226,7 +226,6 @@ class ItemController extends Zend_Controller_Action {
 			$this->_helper->redirector('index');
 		
 		$this->view->item = $item;
-		$this->view->rootPath = $this->ROOT_PATH . 'public/';
 		$this->view->photosPath = self::PHOTO_ROOT_URL;
 		
 		if ($this->_request->getPost()) {

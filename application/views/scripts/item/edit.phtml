@@ -5,7 +5,8 @@
 <a href='<?php echo $this->url ( array (
 					'controller' => 'item',
 					'action' => 'index' 
-						), 'default', true )?>'>Volver al listado</a>
+						), 'default', true )?>'>
+						<img src="<?php echo $this->rootPath ?>images/back.png" title="VOLVER AL LISTADO" border="0"> Volver al listado</a>
 
 <br/>
 
@@ -24,7 +25,7 @@
 	$files = glob($folder . $filetype);
 	
 	for ($i=0; $i<count($files); $i++) {
-		echo "<img src='" . $this->rootPath . $files[$i] . "' />";
+		echo "<img src='" . $this->rootPath . "/" . $files[$i] . "' />";
 	}
 	?>
 </div>

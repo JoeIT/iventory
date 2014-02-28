@@ -20,18 +20,22 @@ echo $this->doctype();
     			echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-ui-1.10.3.custom.min.js','text/javascript');
     			//echo $this->headScript()->appendFile($this->baseUrl() . '/js/item.js','text/javascript');
     			
-    			$uri = "$_SERVER[REQUEST_URI]";
-    			$uriPathArray = explode('/', $uri );
-    			$SYSTEM_ROOT_PATH = "http://$_SERVER[HTTP_HOST]" . '/' . $uriPathArray[1] . '/'; // http://localhost/zf/
-    			
-    			echo "<input type='hidden' id='SYSTEM_ROOT_PATH' value='$SYSTEM_ROOT_PATH'/>";
+    			echo "<input type='hidden' id='SYSTEM_ROOT_PATH' value='http://$_SERVER[HTTP_HOST]" . $this->baseUrl() ."/'/>";
     		?>
 			
 		<script language="JavaScript" type="text/javascript">
 			
 			$(document).ready(function()
 			{
+				//alert('URL: ' + $('#SYSTEM_ROOT_PATH').val());
+				//alert('URL: ' + location.href);
 			});
+
+			function updateCurrentMenuBar(currentMenu)
+			{
+				$('#menu li a').removeClass('current');
+				$('#menu_' + currentMenu).addClass('current');
+			}
 		
 		</script>
 	</head>
@@ -41,21 +45,35 @@ echo $this->doctype();
 				<div id="menu">
 					<ul>
 						<li>
-							<a href="<?php echo $this->baseUrl() . "/index"; ?>" class="current">Inicio</a>
+							<a href="<?php echo $this->baseUrl() . "/index"; ?>"  id="menu_index" class="current">Inicio</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->baseUrl(); ?>/item/index">Items</a>
+							<a href="<?php echo $this->baseUrl(); ?>/item/index" id="menu_item">Items</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->baseUrl(); ?>/itemorigin/index">Procedencias</a>
+							<a href="<?php echo $this->baseUrl(); ?>/itemtype/index" id="menu_item_type">Tipos</a>
+						</li>
+						<li>
+							<a href="<?php echo $this->baseUrl(); ?>/itembrand/index" id="menu_item_brand">Marcas</a>
+						</li>
+						<li>
+							<a href="<?php echo $this->baseUrl(); ?>/itemmaterial/index" id="menu_item_material">Materiales</a>
+						</li>
+						<li>
+							<a href="<?php echo $this->baseUrl(); ?>/itemcolor/index" id="menu_item_color">Colores</a>
+						</li>
+						<li>
+							<a href="<?php echo $this->baseUrl(); ?>/itemorigin/index" id="menu_item_origin">Procedencias</a>
+						</li>
+						<li>
+							<a href="<?php echo $this->baseUrl(); ?>/itemlocation/index" id="menu_item_location">Ubicaciones</a>
 						</li>
 					</ul>
-					
 				</div>				
 			</div>
 			<div id="header">
 				<div id="main_logo">
-					INVENTARIO
+					
 				</div>
 				
 				<div id="announcements_board" class="announcements">

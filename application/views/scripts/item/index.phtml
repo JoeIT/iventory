@@ -3,17 +3,16 @@
 
 <div align="right">
 			<a
-			href='<?php
-			
-echo $this->url ( array (
-					'controller' => 'item',
-					'action' => 'add' 
-			), 'default', true )?>'>
-				<img src="<?php echo $this->rootPath ?>images/add.png" title="AGREGAR" height="16px" width="16px" border="0"> AGREGAR
+				href='<?php
+				echo $this->url ( array (
+						'controller' => 'item',
+						'action' => 'add' 
+				), 'default', true )?>'>
+					<img src="<?php echo $this->rootPath ?>images/add.png" title="AGREGAR" border="0"> AGREGAR
 			</a>
 
 			<br/>
-			Total items registrados: <?php echo $this->totalItems;?>
+			<b>Total items registrados: <?php echo $this->totalItems;?> </b>
 			
 </div>
 

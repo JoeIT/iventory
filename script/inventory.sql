@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `item_ibfk_7` FOREIGN KEY (`availability_id`) REFERENCES `item_availability` (`id`),
   CONSTRAINT `item_ibfk_8` FOREIGN KEY (`origin_id`) REFERENCES `item_origin` (`id`),
   CONSTRAINT `item_ibfk_9` FOREIGN KEY (`brand_id`) REFERENCES `item_brand` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=630 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=636 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~713 rows (approximately)
+-- Dumping data for table inventory.item: ~659 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `name`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `condition_id`, `availability_id`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -695,7 +695,13 @@ INSERT INTO `item` (`id`, `code`, `new_code`, `accounting_code`, `type_id`, `nam
 	(626, 'X-0105', '', '', 3, 'Taburete', 11, 6, 6, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON BASE DE MADERA FORRADO.', 'X-0105', '2014-02-27 17:02:43', NULL),
 	(627, '03-129', '', '20.08.03.00129', 3, 'Taburete', 11, 6, 6, 19, 25, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-129', '2014-02-27 17:02:49', NULL),
 	(628, '03-120', '', '20.08.03.00120', 3, 'Mesa de trabajo', 11, 6, 6, 19, 25, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nMESA DE TRABAJO METALICA\r\nCOLOR VERDE\r\nMEDIDAS [206cm x 105cm x 100cm alto].', '03-120', '2014-02-27 17:02:04', NULL),
-	(629, '03-087-2', '', '', 3, 'Taburete con espaldar', 11, 6, 6, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE.', '03-087-2', '2014-02-27 17:02:19', NULL);
+	(629, '03-087-2', '', '', 3, 'Taburete con espaldar', 11, 6, 6, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE.', '03-087-2', '2014-02-27 17:02:19', NULL),
+	(630, '03-067-2', '', '', 3, 'Silla plegable', 11, 6, 9, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 PZA.\r\n\r\nSILLA METALICA PLEGABLE\r\nCOLOR PLOMO.', '03-067-2', '2014-02-28 16:02:54', NULL),
+	(631, '03-102', '', '20.08.03.00102', 3, 'Taburete', 11, 6, 6, 19, 25, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR VERDE\r\nCON ASIENTO CUADRADO DE MADERA.', '03-102', '2014-02-28 16:02:45', NULL),
+	(632, '03-147', '', '20.08.03.00147', 3, 'Silla', 11, 6, 9, 19, 25, 3, 1.000, 0.00, 0.00, 0.00, 0.00, 3, 1, '1 PZA.\r\n\r\nSILLA METALICA\r\nDE COLOR PLOMO\r\nCON ASIENTO Y ESPALDAR DE MADERA.', '03-147', '2014-02-28 16:02:27', NULL),
+	(633, 'X-0106', '', '', 10, 'Ventiladora', 77, 6, 3, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 7, 1, '1 GLB.\r\n\r\nVENTILADORA CON PEDESTAL\r\nMARCA: CROWN\r\nCOLOR: AZUL.', 'X-0106', '2014-02-28 16:02:57', NULL),
+	(634, 'S-164', '', '', 3, 'Mostrador', 11, 3, 10, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 4, 1, '1 PZA.\r\n\r\nMOSTRADOR DE MADERA\r\nCON 2 PARES DE PUERTAS A CADA LADO\r\nCON 3 CAJONES CENTRALES\r\nY MOSTRADOR SUPERIOR CON 3 NIVELES.', 'S-164', '2014-02-28 16:02:43', NULL),
+	(635, 'S-229', '', '', 3, 'Cubiculo de oficina', 11, 12, 4, 19, 25, 1, 1.000, 0.00, 0.00, 0.00, 0.00, 6, 1, '1 GLB.\r\n\r\nCUBICULO DE OFICINA\r\nEN FORMA DE L.', 'S-229', '2014-02-28 16:02:55', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 

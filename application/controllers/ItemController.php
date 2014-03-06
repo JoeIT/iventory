@@ -87,6 +87,7 @@ class ItemController extends Zend_Controller_Action {
 				$item->setOwner			( $this->_itemOwnerDao->getById($formData['owner_select']) );
 				$item->setQuantity		( $formData['quantity'] );
 				$item->setUnitCost		( $formData['unitCost'] );
+				$item->setMinimumCost	( $formData['minimumCost'] );
 				$item->setExpectedCost	( $formData['expectedCost'] );
 				$item->setSalesCost		( $formData['salesCost'] );
 				$item->setCondition		( $this->_itemConditionDao->getById($formData['condition_select']) );
@@ -151,6 +152,7 @@ class ItemController extends Zend_Controller_Action {
 				$item->setOwner			( $this->_itemOwnerDao->getById($formData['owner_select']) );
 				$item->setQuantity		( $formData['quantity'] );
 				$item->setUnitCost		( $formData['unitCost'] );
+				$item->setMinimumCost	( $formData['minimumCost'] );
 				$item->setExpectedCost	( $formData['expectedCost'] );
 				$item->setSalesCost		( $formData['salesCost'] );
 				$item->setCondition		( $this->_itemConditionDao->getById($formData['condition_select']) );

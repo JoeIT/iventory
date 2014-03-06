@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.6.14 - MySQL Community Server (GPL)
+-- Server version:               5.6.11 - MySQL Community Server (GPL)
 -- Server OS:                    Win32
--- HeidiSQL Version:             8.3.0.4701
+-- HeidiSQL Version:             8.3.0.4694
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -34,10 +34,10 @@ CREATE TABLE IF NOT EXISTS `item` (
   `accounting_code` varchar(50) DEFAULT NULL,
   `name` longtext NOT NULL,
   `quantity` decimal(10,3) NOT NULL,
-  `unit_cost` decimal(10,2) NOT NULL,
-  `minimum_cost` decimal(10,2) NOT NULL,
-  `expected_cost` decimal(10,2) NOT NULL,
-  `sales_cost` decimal(10,2) NOT NULL,
+  `unit_cost` decimal(10,2) DEFAULT '0.00',
+  `minimum_cost` decimal(10,2) DEFAULT '0.00',
+  `expected_cost` decimal(10,2) DEFAULT '0.00',
+  `sales_cost` decimal(10,2) DEFAULT '0.00',
   `comment` longtext,
   `photo_dir` varchar(100) NOT NULL,
   `creation_date` datetime DEFAULT NULL,
@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `FK_1F1B251E887793B6` FOREIGN KEY (`condition_id`) REFERENCES `item_condition` (`id`),
   CONSTRAINT `FK_1F1B251EC54C8C93` FOREIGN KEY (`type_id`) REFERENCES `item_type` (`id`),
   CONSTRAINT `FK_1F1B251EE308AC6F` FOREIGN KEY (`material_id`) REFERENCES `item_material` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=636 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=654 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~635 rows (approximately)
+-- Dumping data for table inventory.item: ~653 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `condition_id`, `availability_id`, `code`, `new_code`, `accounting_code`, `name`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -701,7 +701,25 @@ INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `ori
 	(632, 3, 11, 6, 9, 19, 25, 3, 3, 1, '03-147', '', '20.08.03.00147', 'Silla', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA METALICA\r\nDE COLOR PLOMO\r\nCON ASIENTO Y ESPALDAR DE MADERA.', '03-147', '2014-02-28 16:02:27', NULL),
 	(633, 10, 77, 6, 3, 19, 25, 1, 7, 1, 'X-0106', '', '', 'Ventiladora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nVENTILADORA CON PEDESTAL\r\nMARCA: CROWN\r\nCOLOR: AZUL.', 'X-0106', '2014-02-28 16:02:57', NULL),
 	(634, 3, 11, 3, 10, 19, 25, 1, 4, 1, 'S-164', '', '', 'Mostrador', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nMOSTRADOR DE MADERA\r\nCON 2 PARES DE PUERTAS A CADA LADO\r\nCON 3 CAJONES CENTRALES\r\nY MOSTRADOR SUPERIOR CON 3 NIVELES.', 'S-164', '2014-02-28 16:02:43', NULL),
-	(635, 3, 11, 12, 4, 19, 25, 1, 6, 1, 'S-229', '', '', 'Cubiculo de oficina', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nCUBICULO DE OFICINA\r\nEN FORMA DE L.', 'S-229', '2014-02-28 16:02:55', NULL);
+	(635, 3, 11, 12, 4, 19, 25, 1, 6, 1, 'S-229', '', '', 'Cubiculo de oficina', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nCUBICULO DE OFICINA\r\nEN FORMA DE L.', 'S-229', '2014-02-28 16:02:55', NULL),
+	(636, 3, 11, 3, 10, 19, 14, 1, 3, 1, 'S-001', '', '', 'Mesa para computadora', 1.000, 0.00, 0.00, 0.00, 0.00, '', 'S-001', '2014-03-06 15:03:07', '2014-03-06 16:03:31'),
+	(637, 3, 11, 3, 10, 19, 14, 3, 3, 1, '03-176', '', '20.09.03.00176', 'Mesa', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nMESA TRASLUZ DE DIBUJO\r\nDE MADERA\r\nMEDIDAS [149cm x 90cm x 90cm alto]', '03-176', '2014-03-06 16:03:26', '2014-03-06 16:03:41'),
+	(638, 12, 11, 10, 13, 19, 14, 2, 3, 1, 'P-041', '', '', 'Mini estudio fotogrÃ¡fico', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nESTUDIO FOTOGRAFICO\r\n4 TRIPODES\r\n1 CON SOMBRILLA\r\nMODELO: PG3001-ML', 'P-041', '2014-03-06 16:03:07', NULL),
+	(639, 3, 11, 12, 4, 19, 14, 1, 3, 1, 'S-218', '', '', 'Repicero', 1.000, 0.00, 0.00, 0.00, 0.00, '\r\nREPICERO DE MADERA MELAMINADA\r\nCOLOR BLANCO\r\nCON 5 REPISAS.', 'S-218', '2014-03-06 16:03:01', NULL),
+	(640, 3, 11, 3, 10, 19, 14, 3, 3, 1, '03-163', '', '20.09.03.00163', 'Taburete', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE PEQUEÃ‘Â‘O DE MADERA\r\nCON ASIENTO REDONDO', '03-163', '2014-03-06 16:03:42', NULL),
+	(641, 3, 11, 6, 9, 19, 14, 3, 6, 1, '03-069', '', '30.06.03.00069', 'Silla plegable', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA METALICA PLEGABLE\r\nCOLOR PLOMO.', '03-069', '2014-03-06 16:03:29', NULL),
+	(642, 3, 11, 6, 2, 19, 14, 2, 7, 1, 'P-042', '', '', 'Silla giratoria', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA GIRATORIA\r\nCON 5 RODAPIES.', 'P-042', '2014-03-06 16:03:55', NULL),
+	(643, 3, 11, 6, 9, 19, 14, 3, 4, 1, '03-067-3', '', '', 'Silla plegable', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA METALICA PLEGABLE\r\nCOLOR PLOMO.', '03-067-3', '2014-03-06 16:03:48', NULL),
+	(644, 3, 11, 6, 18, 19, 14, 3, 3, 1, '03-017', '', '30.17.03.00017', 'Mesa de trabajo', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nMESA METALICA\r\nCOLOR NARANJA.', '03-017', '2014-03-06 16:03:40', NULL),
+	(645, 3, 11, 3, 10, 19, 14, 1, 4, 1, 'S-128', '', '', 'Silla', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA DE MADERA.', 'S-128', '2014-03-06 16:03:39', NULL),
+	(646, 3, 11, 6, 1, 19, 14, 1, 3, 1, '03-005', '', '10.06.03.00005', 'Estante', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nESTANTE METALICO\r\nCOLOR VERDE\r\nDE 4 DIVISIONES\r\nMARCA IRBA\r\nMEDIDAS [100cm x 35cm x 161cm alto].', '03-005', '2014-03-06 17:03:17', NULL),
+	(647, 3, 11, 6, 15, 19, 14, 3, 3, 1, '03-004', '', '10.06.03.00004', 'Estante', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nESTANTE DE FIERRO ANGULAR\r\nCOLOR CREMA\r\nCON 6 BANDEJAS\r\nMEDIDA[91cm x 41cm x 200cm alto].', '03-004', '2014-03-06 17:03:28', NULL),
+	(648, 3, 11, 3, 10, 19, 14, 3, 3, 1, '03-250', '', '30.12.03.00250', 'Silla', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-250', '2014-03-06 17:03:17', NULL),
+	(649, 3, 11, 6, 2, 19, 14, 3, 3, 1, '03-089', '', '20.09.03.00089', 'Taburete', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE METALICO\r\nCOLOR NEGRO\r\nCON ASIENTO REDONDO DE MADERA.', '03-089', '2014-03-06 17:03:36', NULL),
+	(650, 3, 11, 6, 6, 19, 14, 3, 4, 1, '03-040', '', '20.07.03.00040', 'Taburete', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE METALICO\r\nDE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-040', '2014-03-06 17:03:22', NULL),
+	(651, 3, 11, 6, 6, 19, 14, 3, 3, 1, '03-047-2', '', '', 'Taburete con espaldar', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE METALICO\r\nDE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-047-2', '2014-03-06 17:03:34', NULL),
+	(652, 3, 11, 12, 4, 19, 14, 3, 3, 1, '03-148', '', '20.07.03.00148', 'Taburete con espaldar', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA METALICA\r\nDE COLOR PLOMO\r\nCON ASIENTO Y ESPALDAR DE MADERA.', '03-148', '2014-03-06 17:03:55', NULL),
+	(653, 3, 11, 6, 9, 19, 14, 1, 3, 1, 'S-158', '', '', 'Taburete', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE DE METAL\r\nCOLOR PLOMO.', 'S-158', '2014-03-06 17:03:12', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 

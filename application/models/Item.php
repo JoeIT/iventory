@@ -112,28 +112,28 @@ class App_Model_Item {
 	/**
 	 * @var decimal
 	 *
-	 * @Column(name="unit_cost", type="decimal", scale=2, nullable=false)
+	 * @Column(name="unit_cost", type="decimal", scale=2, nullable=true)
 	 */
 	protected $unitCost;
 	
 	/**
 	 * @var decimal
 	 *
-	 * @Column(name="minimum_cost", type="decimal", scale=2, nullable=false)
+	 * @Column(name="minimum_cost", type="decimal", scale=2, nullable=true)
 	 */
 	protected $minimumCost;
 	
 	/**
 	 * @var decimal
 	 *
-	 * @Column(name="expected_cost", type="decimal", scale=2, nullable=false)
+	 * @Column(name="expected_cost", type="decimal", scale=2, nullable=true)
 	 */
 	protected $expectedCost;
 	
 	/**
 	 * @var decimal
 	 *
-	 * @Column(name="sales_cost", type="decimal", scale=2, nullable=false)
+	 * @Column(name="sales_cost", type="decimal", scale=2, nullable=true)
 	 */
 	protected $salesCost;
 	
@@ -268,7 +268,7 @@ class App_Model_Item {
 	}
 	
 	public function setLocation(App_Model_ItemLocation $location) {
-		return $this->location = $location;
+		$this->location = $location;
 	}
 	
 	public function getOwner() {
@@ -276,7 +276,7 @@ class App_Model_Item {
 	}
 	
 	public function setOwner(App_Model_ItemOwner $owner) {
-		return $this->owner = $owner;
+		$this->owner = $owner;
 	}
 	
 	public function getQuantity() {
@@ -284,7 +284,7 @@ class App_Model_Item {
 	}
 	
 	public function setQuantity($quantity) {
-		return $this->quantity = $quantity;
+		$this->quantity = $quantity;
 	}
 	
 	public function getUnitCost() {
@@ -292,7 +292,7 @@ class App_Model_Item {
 	}
 	
 	public function setUnitCost($unitCost) {
-		return $this->unitCost = $unitCost;
+		$this->unitCost = $unitCost;
 	}
 	
 	public function getMinimumCost() {
@@ -300,7 +300,7 @@ class App_Model_Item {
 	}
 	
 	public function setMinimumCost($minimumCost) {
-		return $this->minimumCost = $minimumCost;
+		$this->minimumCost = $minimumCost;
 	}
 	
 	public function getExpectedCost() {
@@ -308,7 +308,7 @@ class App_Model_Item {
 	}
 	
 	public function setExpectedCost($expectedCost) {
-		return $this->expectedCost = $expectedCost;
+		$this->expectedCost = $expectedCost;
 	}
 	
 	public function getSalesCost() {
@@ -316,7 +316,7 @@ class App_Model_Item {
 	}
 	
 	public function setSalesCost($salesCost) {
-		return $this->salesCost = $salesCost;
+		$this->salesCost = $salesCost;
 	}
 	
 	public function getCondition() {
@@ -324,7 +324,7 @@ class App_Model_Item {
 	}
 	
 	public function setCondition(App_Model_ItemCondition $condition) {
-		return $this->condition = $condition;
+		$this->condition = $condition;
 	}
 	
 	public function getAvailability() {
@@ -332,7 +332,7 @@ class App_Model_Item {
 	}
 	
 	public function setAvailability(App_Model_ItemAvailability $availability) {
-		return $this->availability = $availability;
+		$this->availability = $availability;
 	}
 	
 	public function getComment() {
@@ -340,7 +340,7 @@ class App_Model_Item {
 	}
 	
 	public function setComment($comment) {
-		return $this->comment = $comment;
+		$this->comment = $comment;
 	}
 	
 	public function getPhotoDir() {
@@ -348,7 +348,7 @@ class App_Model_Item {
 	}
 	
 	public function setPhotoDir($photoDir) {
-		return $this->photoDir = $photoDir;
+		$this->photoDir = $photoDir;
 	}
 	
 	public function getCreationDate() {
@@ -356,7 +356,7 @@ class App_Model_Item {
 	}
 	
 	public function setCreationDate($creationDate) {
-		return $this->creationDate = $creationDate;
+		$this->creationDate = $creationDate;
 	}
 	
 	public function getModifiedDate() {
@@ -364,7 +364,7 @@ class App_Model_Item {
 	}
 	
 	public function setModifiedDate($modifiedDate) {
-		return $this->modifiedDate = $modifiedDate;
+		$this->modifiedDate = $modifiedDate;
 	}
 	
 	public function toArray() {

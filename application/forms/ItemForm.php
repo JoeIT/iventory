@@ -61,7 +61,7 @@ class App_Form_ItemForm extends Zend_Form
 		$location = new Zend_Form_Element_Select('location_select');
 		$location->setLabel("Ubicacion:");
 		$location->setRequired(false);
-		$location->setValue('25');
+		$location->setValue('14');
 		
 		$owner = new Zend_Form_Element_Select('owner_select');
 		$owner->setLabel("Propiedad:");
@@ -77,24 +77,28 @@ class App_Form_ItemForm extends Zend_Form
 		$unitCost = new Zend_Form_Element_Text('unitCost');
 		$unitCost->setLabel("Costo unitario:");
 		$unitCost->addValidator(new Zend_Validate_Float());
+		$unitCost->setValue("0.00");
 		$unitCost->setRequired(false);
 		$unitCost->setAttrib('class', 'css-input_number_form');
 		
 		$minimumCost = new Zend_Form_Element_Text('minimumCost');
 		$minimumCost->setLabel("Costo minimo:");
 		$minimumCost->addValidator(new Zend_Validate_Float());
+		$minimumCost->setValue("0.00");
 		$minimumCost->setRequired(false);
 		$minimumCost->setAttrib('class', 'css-input_number_form');
 		
 		$expectedCost = new Zend_Form_Element_Text('expectedCost');
 		$expectedCost->setLabel("Costo esperado:");
 		$expectedCost->addValidator(new Zend_Validate_Float());
+		$expectedCost->setValue("0.00");
 		$expectedCost->setRequired(false);
 		$expectedCost->setAttrib('class', 'css-input_number_form');
 		
 		$salesCost = new Zend_Form_Element_Text('salesCost');
 		$salesCost->setLabel("Costo de venta:");
 		$salesCost->addValidator(new Zend_Validate_Float());
+		$salesCost->setValue("0.00");
 		$salesCost->setRequired(false);
 		$salesCost->setAttrib('class', 'css-input_number_form');
 		

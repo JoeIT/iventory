@@ -25,7 +25,7 @@ class App_Model_ItemMaterial {
 	/**
 	 * @var string
 	 *
-	 * @Column(name="description", type="string", nullable=true)
+	 * @Column(name="description", type="text", nullable=true)
 	 */
 	protected $description;
 	

@@ -16,7 +16,6 @@ class ItemController extends Zend_Controller_Action {
 	
 	private $ROOT_PATH;
 	
-	
 	public function init() {
 		/* Initialize action controller here */
 		$this->_itemDao = new App_Dao_ItemDao ();

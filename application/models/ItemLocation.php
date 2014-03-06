@@ -25,7 +25,7 @@ class App_Model_ItemLocation {
 	/**
 	 * @var string
 	 *
-	 * @Column(name="description", type="string", nullable=false)
+	 * @Column(name="description", type="text", nullable=false)
 	 */
 	protected $description;
 	

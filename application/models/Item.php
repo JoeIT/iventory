@@ -50,7 +50,7 @@ class App_Model_Item {
 	/**
 	 * @var string
 	 *
-	 * @Column(name="name", type="string", nullable=false)
+	 * @Column(name="name", type="text", nullable=false)
 	 */
 	protected $name;
 	
@@ -105,28 +105,35 @@ class App_Model_Item {
 	/**
 	 * @var decimal
 	 *
-	 * @Column(name="quantity", type="float", nullable=false)
+	 * @Column(name="quantity", type="decimal", scale=3, nullable=false)
 	 */
 	protected $quantity;
 	
 	/**
 	 * @var decimal
 	 *
-	 * @Column(name="unit_cost", type="float", nullable=false)
+	 * @Column(name="unit_cost", type="decimal", scale=2, nullable=false)
 	 */
 	protected $unitCost;
 	
 	/**
 	 * @var decimal
 	 *
-	 * @Column(name="expected_cost", type="float", nullable=false)
+	 * @Column(name="minimum_cost", type="decimal", scale=2, nullable=false)
+	 */
+	protected $minimumCost;
+	
+	/**
+	 * @var decimal
+	 *
+	 * @Column(name="expected_cost", type="decimal", scale=2, nullable=false)
 	 */
 	protected $expectedCost;
 	
 	/**
 	 * @var decimal
 	 *
-	 * @Column(name="sales_cost", type="float", nullable=false)
+	 * @Column(name="sales_cost", type="decimal", scale=2, nullable=false)
 	 */
 	protected $salesCost;
 	
@@ -149,7 +156,7 @@ class App_Model_Item {
 	/**
 	 * @var string
 	 *
-	 * @Column(name="comment", type="string", length=20, nullable=true)
+	 * @Column(name="comment", type="text", nullable=true)
 	 */
 	protected $comment;
 	
@@ -286,6 +293,14 @@ class App_Model_Item {
 	
 	public function setUnitCost($unitCost) {
 		return $this->unitCost = $unitCost;
+	}
+	
+	public function getMinimumCost() {
+		return $this->minimumCost;
+	}
+	
+	public function setMinimumCost($minimumCost) {
+		return $this->minimumCost = $minimumCost;
 	}
 	
 	public function getExpectedCost() {

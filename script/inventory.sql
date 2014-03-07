@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `FK_1F1B251E887793B6` FOREIGN KEY (`condition_id`) REFERENCES `item_condition` (`id`),
   CONSTRAINT `FK_1F1B251EC54C8C93` FOREIGN KEY (`type_id`) REFERENCES `item_type` (`id`),
   CONSTRAINT `FK_1F1B251EE308AC6F` FOREIGN KEY (`material_id`) REFERENCES `item_material` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=654 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=655 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~653 rows (approximately)
+-- Dumping data for table inventory.item: ~640 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `condition_id`, `availability_id`, `code`, `new_code`, `accounting_code`, `name`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -719,7 +719,8 @@ INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `ori
 	(650, 3, 11, 6, 6, 19, 14, 3, 4, 1, '03-040', '', '20.07.03.00040', 'Taburete', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE METALICO\r\nDE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-040', '2014-03-06 17:03:22', NULL),
 	(651, 3, 11, 6, 6, 19, 14, 3, 3, 1, '03-047-2', '', '', 'Taburete con espaldar', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE METALICO\r\nDE COLOR VERDE\r\nCON ASIENTO DE MADERA CUADRADO.', '03-047-2', '2014-03-06 17:03:34', NULL),
 	(652, 3, 11, 12, 4, 19, 14, 3, 3, 1, '03-148', '', '20.07.03.00148', 'Taburete con espaldar', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA METALICA\r\nDE COLOR PLOMO\r\nCON ASIENTO Y ESPALDAR DE MADERA.', '03-148', '2014-03-06 17:03:55', NULL),
-	(653, 3, 11, 6, 9, 19, 14, 1, 3, 1, 'S-158', '', '', 'Taburete', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE DE METAL\r\nCOLOR PLOMO.', 'S-158', '2014-03-06 17:03:12', NULL);
+	(653, 3, 11, 6, 9, 19, 14, 1, 3, 1, 'S-158', '', '', 'Taburete', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE DE METAL\r\nCOLOR PLOMO.', 'S-158', '2014-03-06 17:03:12', NULL),
+	(654, 3, 11, 3, 10, 19, 14, 1, 4, 1, 'S-050', '', '', 'Taburete', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE DE METAL\r\nCOLOR VERDE\r\nCON BASE CUADRADA DE MADERA.', 'S-050', '2014-03-07 09:03:39', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -891,7 +892,7 @@ INSERT INTO `item_color` (`id`, `name`) VALUES
 DROP TABLE IF EXISTS `item_condition`;
 CREATE TABLE IF NOT EXISTS `item_condition` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `description` longtext,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
@@ -903,7 +904,7 @@ INSERT INTO `item_condition` (`id`, `name`, `description`) VALUES
 	(1, '- Seleccionar -', NULL),
 	(2, '1 - Nuevo', NULL),
 	(3, '2 - Buen estado', NULL),
-	(4, '3 - Con cierto desga', NULL),
+	(4, '3 - Con cierto desgaste', NULL),
 	(6, '4 - Dañado', NULL),
 	(7, '5 - Inservible', NULL),
 	(8, 'No hay dato', NULL);

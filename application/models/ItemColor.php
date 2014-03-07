@@ -37,4 +37,8 @@ class App_Model_ItemColor {
 	public function setName($name) {
 		$this->name = $name;
 	}
+	
+	public function toArray() {
+		return get_object_vars($this);
+	}
 }

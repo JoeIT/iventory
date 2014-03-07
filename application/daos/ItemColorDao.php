@@ -9,8 +9,13 @@ class App_Dao_ItemColorDao {
 		$this->entityManager = $registry->entityManager;
 	}
 
-	public function save(App_Model_ItemColor $item) {
-		$this->entityManager->persist ( $item );
+	public function save(App_Model_ItemColor $itemColor) {
+		$this->entityManager->persist ( $itemColor );
+		$this->entityManager->flush ();
+	}
+	
+	public function remove(App_Model_ItemColor $itemColor) {
+		$this->entityManager->remove ( $itemColor );
 		$this->entityManager->flush ();
 	}
 

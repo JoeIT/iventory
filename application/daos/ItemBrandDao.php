@@ -9,8 +9,13 @@ class App_Dao_ItemBrandDao {
 		$this->entityManager = $registry->entityManager;
 	}
 
-	public function save(App_Model_ItemBrand $item) {
-		$this->entityManager->persist ( $item );
+	public function save(App_Model_ItemBrand $itemBrand) {
+		$this->entityManager->persist ( $itemBrand );
+		$this->entityManager->flush ();
+	}
+	
+	public function remove(App_Model_ItemBrand $itemBrand) {
+		$this->entityManager->remove ( $itemBrand );
 		$this->entityManager->flush ();
 	}
 

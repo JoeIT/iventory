@@ -18,7 +18,7 @@ class App_Model_ItemCondition {
 	/**
 	 * @var string
 	 *
-	 * @Column(name="name", type="string", length=20, nullable=false)
+	 * @Column(name="name", type="string", length=50, nullable=false)
 	 */
 	protected $name;
 	
@@ -51,5 +51,9 @@ class App_Model_ItemCondition {
 	
 	public function setDescription($description) {
 		$this->description = $description;
+	}
+	
+	public function toArray() {
+		return get_object_vars($this);
 	}
 }

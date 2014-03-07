@@ -1,44 +1,44 @@
 <?php
-class ItemOriginController extends Zend_Controller_Action {
+class ItemBrandController extends Zend_Controller_Action {
 	
-	private $_itemOriginDao;
+	private $_itemBrandDao;
 	
 	public function init()
 	{
-		$this->_itemOriginDao = new App_Dao_ItemOriginDao ();
+		$this->_itemBrandDao = new App_Dao_ItemBrandDao ();
 		$this->view->rootPath = $this->getFrontController()->getBaseUrl() . '/'; // /zf/public/
 	}
 	
 	public function indexAction() {		
-		$this->view->dataList = $this->_itemOriginDao->getAll();		
+		$this->view->dataList = $this->_itemBrandDao->getAll();		
 	}
 	
 	public function viewAction() {
 		$id = $this->_getParam('id', '');
 	
 		if(empty($id))
-			$this->_helper->redirector('itemorigin');
+			$this->_helper->redirector('indexbrand');
 		
-		$itemOrigin = $this->_itemOriginDao->getById($id);
+		$itemBrand = $this->_itemBrandDao->getById($id);
 		
-		if($itemOrigin == null)
-			$this->_helper->redirector('itemorigin');
+		if($itemBrand == null)
+			$this->_helper->redirector('indexbrand');
 	
-		$this->view->item = $itemOrigin;
+		$this->view->item = $itemBrand;
 	}
 	
 	public function addAction() {
-		$form = new App_Form_ItemOriginForm();
+		$form = new App_Form_ItemBrandForm();
 		
 		if ($this->_request->getPost()) {
 			$formData = $this->_request->getPost();
 		
 			if ($form->isValid($formData)) {
 		
-				$itemOrigin = new App_Model_ItemOrigin();
-				$itemOrigin->setName	( $formData['name'] );
+				$itemBrand = new App_Model_ItemBrand();
+				$itemBrand->setName			( $formData['name'] );
 				
-				$this->_itemOriginDao->save($itemOrigin);
+				$this->_itemBrandDao->save($itemBrand);
 				$this->_helper->redirector('index');
 				return;
 			}
@@ -52,21 +52,21 @@ class ItemOriginController extends Zend_Controller_Action {
 		if (empty($id))
 			$this->_helper->redirector('index');
 	
-		$itemOrigin = $this->_itemOriginDao->getById($id);
+		$itemBrand = $this->_itemBrandDao->getById($id);
 	
-		if($itemOrigin == null)
+		if($itemBrand == null)
 			$this->_helper->redirector('index');
 	
-		$form = new App_Form_ItemOriginForm();
+		$form = new App_Form_ItemBrandForm();
 		
 		
 		if ($this->_request->getPost()) {
 			$formData = $this->_request->getPost();
 		
 			if ($form->isValid($formData)) {
-				$itemOrigin->setName	( $formData['name'] );
+				$itemBrand->setName			( $formData['name'] );
 				
-				$this->_itemOriginDao->save($itemOrigin);
+				$this->_itemBrandDao->save($itemBrand);
 				$this->_helper->redirector('index');
 				return;
 			}
@@ -74,11 +74,11 @@ class ItemOriginController extends Zend_Controller_Action {
 				$form->populate($formData);
 		}
 		else {
-			$form = new App_Form_ItemOriginForm();			
+			$form = new App_Form_ItemBrandForm();			
 		}
 		
-		if (!empty($itemOrigin))
-			$form->populate($itemOrigin->toArray());
+		if (!empty($itemBrand))
+			$form->populate($itemBrand->toArray());
 		
 		$this->view->form = $form;
 	}
@@ -88,16 +88,16 @@ class ItemOriginController extends Zend_Controller_Action {
 		if (empty($id))
 			$this->_helper->redirector('index');
 	
-		$itemOrigin = $this->_itemOriginDao->getById($id);
+		$itemBrand = $this->_itemBrandDao->getById($id);
 	
-		if($itemOrigin == null)
+		if($itemBrand == null)
 			$this->_helper->redirector('index');
 	
-		$this->view->itemOrigin = $itemOrigin;
+		$this->view->itemBrand = $itemBrand;
 	
 		if ($this->_request->getPost()) {
 			
-			$this->_itemOriginDao->remove($itemOrigin);
+			$this->_itemBrandDao->remove($itemBrand);
 			$this->_helper->redirector('index');
 			return;
 		}

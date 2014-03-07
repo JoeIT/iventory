@@ -235,7 +235,7 @@ class ItemController extends Zend_Controller_Action {
 			
 			$this->_itemDao->remove($item);
 			$this->_helper->redirector('index');
-			return;			
+			return;
 		}		
 	}
 	

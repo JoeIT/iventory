@@ -13,6 +13,11 @@ class App_Dao_ItemLocationDao {
 		$this->entityManager->persist ( $item );
 		$this->entityManager->flush ();
 	}
+	
+	public function remove(App_Model_ItemLocation $item) {
+		$this->entityManager->remove ( $item );
+		$this->entityManager->flush ();
+	}
 
 	public function getAll() {
 		$query = $this->entityManager->createQuery ( 'SELECT ilocation FROM App_Model_ItemLocation ilocation ORDER BY ilocation.name' );

@@ -6,10 +6,17 @@ class App_Dao_ItemOriginDao {
 		$registry = Zend_Registry::getInstance ();
 		$this->entityManager = $registry->entityManager;
 	}
+	
 	public function save(App_Model_ItemOrigin $itemOrigin) {
 		$this->entityManager->persist ( $itemOrigin );
 		$this->entityManager->flush ();
 	}
+	
+	public function remove(App_Model_ItemOrigin $itemOrigin) {
+		$this->entityManager->remove ( $itemOrigin );
+		$this->entityManager->flush ();
+	}
+	
 	public function getAll() {
 		$query = $this->entityManager->createQuery ( 'SELECT iorigin FROM App_Model_ItemOrigin iorigin ORDER BY iorigin.name' );
 		

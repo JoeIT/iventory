@@ -1,11 +1,11 @@
-<h1>Lista de paises de origen:</h1>
+<h1>Lista colores:</h1>
 
 
 <div align="right">
 			<a
 				href='<?php
 				echo $this->url ( array (
-						'controller' => 'itemorigin',
+						'controller' => 'itemcolor',
 						'action' => 'add' 
 				), 'default', true )?>'>
 					<img src="<?php echo $this->rootPath ?>images/add.png" title="AGREGAR" border="0"> AGREGAR
@@ -19,42 +19,42 @@
 	</tr>
 
 	<?php
-	foreach ( $this->dataList as $itemOrigin ) {
+	foreach ( $this->dataList as $itemColor ) {
 		?>
 	<tr>
-		<td><?php echo $itemOrigin->getName(); ?></td>
+		<td><?php echo $itemColor->getName(); ?></td>
 		<td>
-			<?php if($itemOrigin->getName() != "- Seleccionar -"){ ?>
+			<?php if($itemColor->getName() != "- Seleccionar -"){ ?>
 			<a
 				href='<?php		
 				echo $this->url ( array (
-								'controller' => 'itemorigin',
+								'controller' => 'itemcolor',
 								'action' => 'view',
-								'id' => $itemOrigin->getId () 
+								'id' => $itemColor->getId () 
 						), 'default', true )?>'><img src="<?php echo $this->rootPath ?>images/view.png" title="VER">
 			</a>
 			<?php } ?>
 		</td>
 		<td>
-			<?php if($itemOrigin->getName() != "- Seleccionar -"){ ?>
+			<?php if($itemColor->getName() != "- Seleccionar -"){ ?>
 			<a
 				href='<?php		
 				echo $this->url ( array (
-								'controller' => 'itemorigin',
+								'controller' => 'itemcolor',
 								'action' => 'edit',
-								'id' => $itemOrigin->getId () 
+								'id' => $itemColor->getId () 
 						), 'default', true )?>'><img src="<?php echo $this->rootPath ?>images/edit.png" title="EDITAR">
 			</a>
 			<?php } ?>
 		</td>
 		<td>
-			<?php if($itemOrigin->getName() != "- Seleccionar -"){ ?>
+			<?php if($itemColor->getName() != "- Seleccionar -"){ ?>
 			<a
 				href='<?php				
 				echo $this->url ( array (
-								'controller' => 'itemorigin',
+								'controller' => 'itemcolor',
 								'action' => 'remove',
-								'id' => $itemOrigin->getId () 
+								'id' => $itemColor->getId () 
 						), 'default', true )?>'><img src="<?php echo $this->rootPath ?>images/remove.png" title="BORRAR">
 			</a>
 			<?php } ?>

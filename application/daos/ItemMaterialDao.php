@@ -9,8 +9,13 @@ class App_Dao_ItemMaterialDao {
 		$this->entityManager = $registry->entityManager;
 	}
 
-	public function save(App_Model_ItemMaterial $item) {
-		$this->entityManager->persist ( $item );
+	public function save(App_Model_ItemMaterial $itemMaterial) {
+		$this->entityManager->persist ( $itemMaterial );
+		$this->entityManager->flush ();
+	}
+	
+	public function remove(App_Model_ItemMaterial $itemMaterial) {
+		$this->entityManager->remove ( $itemMaterial );
 		$this->entityManager->flush ();
 	}
 

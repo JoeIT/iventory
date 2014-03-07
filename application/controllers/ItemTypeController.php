@@ -1,44 +1,45 @@
 <?php
-class ItemOriginController extends Zend_Controller_Action {
+class ItemTypeController extends Zend_Controller_Action {
 	
-	private $_itemOriginDao;
+	private $_itemTypeDao;
 	
 	public function init()
 	{
-		$this->_itemOriginDao = new App_Dao_ItemOriginDao ();
+		$this->_itemTypeDao = new App_Dao_ItemTypeDao ();
 		$this->view->rootPath = $this->getFrontController()->getBaseUrl() . '/'; // /zf/public/
 	}
 	
 	public function indexAction() {		
-		$this->view->dataList = $this->_itemOriginDao->getAll();		
+		$this->view->dataList = $this->_itemTypeDao->getAll();		
 	}
 	
 	public function viewAction() {
 		$id = $this->_getParam('id', '');
 	
 		if(empty($id))
-			$this->_helper->redirector('itemorigin');
+			$this->_helper->redirector('indextype');
 		
-		$itemOrigin = $this->_itemOriginDao->getById($id);
+		$itemType = $this->_itemTypeDao->getById($id);
 		
-		if($itemOrigin == null)
-			$this->_helper->redirector('itemorigin');
+		if($itemType == null)
+			$this->_helper->redirector('indextype');
 	
-		$this->view->item = $itemOrigin;
+		$this->view->item = $itemType;
 	}
 	
 	public function addAction() {
-		$form = new App_Form_ItemOriginForm();
+		$form = new App_Form_ItemTypeForm();
 		
 		if ($this->_request->getPost()) {
 			$formData = $this->_request->getPost();
 		
 			if ($form->isValid($formData)) {
 		
-				$itemOrigin = new App_Model_ItemOrigin();
-				$itemOrigin->setName	( $formData['name'] );
+				$itemType = new App_Model_ItemType();
+				$itemType->setName			( $formData['name'] );
+				$itemType->setDescription		( $formData['description'] );
 				
-				$this->_itemOriginDao->save($itemOrigin);
+				$this->_itemTypeDao->save($itemType);
 				$this->_helper->redirector('index');
 				return;
 			}
@@ -52,21 +53,22 @@ class ItemOriginController extends Zend_Controller_Action {
 		if (empty($id))
 			$this->_helper->redirector('index');
 	
-		$itemOrigin = $this->_itemOriginDao->getById($id);
+		$itemType = $this->_itemTypeDao->getById($id);
 	
-		if($itemOrigin == null)
+		if($itemType == null)
 			$this->_helper->redirector('index');
 	
-		$form = new App_Form_ItemOriginForm();
+		$form = new App_Form_ItemTypeForm();
 		
 		
 		if ($this->_request->getPost()) {
 			$formData = $this->_request->getPost();
 		
 			if ($form->isValid($formData)) {
-				$itemOrigin->setName	( $formData['name'] );
+				$itemType->setName			( $formData['name'] );
+				$itemType->setDescription		( $formData['description'] );
 				
-				$this->_itemOriginDao->save($itemOrigin);
+				$this->_itemTypeDao->save($itemType);
 				$this->_helper->redirector('index');
 				return;
 			}
@@ -74,11 +76,11 @@ class ItemOriginController extends Zend_Controller_Action {
 				$form->populate($formData);
 		}
 		else {
-			$form = new App_Form_ItemOriginForm();			
+			$form = new App_Form_ItemTypeForm();			
 		}
 		
-		if (!empty($itemOrigin))
-			$form->populate($itemOrigin->toArray());
+		if (!empty($itemType))
+			$form->populate($itemType->toArray());
 		
 		$this->view->form = $form;
 	}
@@ -88,16 +90,16 @@ class ItemOriginController extends Zend_Controller_Action {
 		if (empty($id))
 			$this->_helper->redirector('index');
 	
-		$itemOrigin = $this->_itemOriginDao->getById($id);
+		$itemType = $this->_itemTypeDao->getById($id);
 	
-		if($itemOrigin == null)
+		if($itemType == null)
 			$this->_helper->redirector('index');
 	
-		$this->view->itemOrigin = $itemOrigin;
+		$this->view->itemType = $itemType;
 	
 		if ($this->_request->getPost()) {
-			
-			$this->_itemOriginDao->remove($itemOrigin);
+				
+			$this->_itemTypeDao->remove($itemType);
 			$this->_helper->redirector('index');
 			return;
 		}

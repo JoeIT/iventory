@@ -53,4 +53,8 @@ class App_Model_ItemLocation {
 	public function setDescription($description) {
 		$this->description = $description;
 	}
+	
+	public function toArray() {
+		return get_object_vars($this);
+	}
 }

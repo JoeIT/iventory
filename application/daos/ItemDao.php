@@ -35,8 +35,8 @@ class App_Dao_ItemDao {
 	}
 	
 	public function getAllLimitOffset($limit, $offset) {
-		$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i ORDER BY i.code, i.newCode, i.accountingCode' )->setFirstResult ( $offset )->setMaxResults ( $limit );
-		//$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i, App_Model_ItemBrand b WHERE b.name = "SONY" ORDER BY i.creationDate DESC' )->setFirstResult ( $offset )->setMaxResults ( $limit );
+		//$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i ORDER BY i.code, i.newCode, i.accountingCode' )->setFirstResult ( $offset )->setMaxResults ( $limit );
+		$query = $this->entityManager->createQuery ( "SELECT i FROM App_Model_Item i WHERE i.brand = 'SONY'" )->setFirstResult ( $offset )->setMaxResults ( $limit );
 
 		return $query->getResult ();
 	}
@@ -44,12 +44,10 @@ class App_Dao_ItemDao {
 	// ----------------------------------------------------------------
 	// Return the number of total items
 	public function countSearch() {
-		
 		$where = $this->_whereOrSearchBuilder;
-		
-		$query = $this->entityManager->createQuery ( 'SELECT COUNT(i) FROM App_Model_Item i $where ' );
-	
+		$query = $this->entityManager->createQuery ( 'SELECT COUNT(i) FROM App_Model_Item i $where ' );	
 		$result = $query->getResult ();
+		
 		return $result [0][1];
 	}
 	

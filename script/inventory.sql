@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `FK_1F1B251EE308AC6F` FOREIGN KEY (`material_id`) REFERENCES `item_material` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=682 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~736 rows (approximately)
+-- Dumping data for table inventory.item: ~711 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `condition_id`, `availability_id`, `code`, `new_code`, `accounting_code`, `name`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -244,7 +244,6 @@ INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `ori
 	(181, 3, 11, 6, 9, 19, 18, 3, 3, 1, '03-164', '', '30.11.03.00164', 'Archivero', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nMUEBLE METALICO PARA OFICINA DE 4 GAVETAS COLOR PLOMO\r\n', '03-164', '2014-02-12 14:02:50', NULL),
 	(182, 3, 11, 6, 3, 2, 18, 3, 3, 1, '03-234', '', '30.11.03.00234', 'Archivero', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nGAVETERO DE 4 CAJONES C/MARIPOSA', '03-234', '2014-02-12 14:02:48', '2014-02-12 14:02:32'),
 	(183, 3, 11, 5, 9, 19, 18, 1, 3, 1, '03-240', '', '10.01.03.00240', 'Silla giratoria', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA GIRATORIA CON 5 RODAPIES.', '03-240', '2014-02-12 14:02:43', '2014-03-10 15:03:50'),
-	(184, 12, 11, 5, 15, 19, 18, 1, 3, 1, 'X-0038', '', '', 'Basurero papelero', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nBASURERO PAPELERO DE PLASTICO CON TAPA CAFE Y CONTENEDOR CREMA.', 'X-0038', '2014-02-12 14:02:35', NULL),
 	(185, 3, 11, 6, 3, 19, 18, 3, 3, 1, '03-274', '', '30.11.03.00274', 'Archivero', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nGAVETERO DE 4 CAJONES C/ MARIPOSA.', '03-274', '2014-02-12 14:02:08', NULL),
 	(186, 10, 1, 5, 4, 1, 18, 3, 4, 1, '03-235', '', '10.04.03.00235', 'Destructora de papel', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nDESTRUCTORA DE PAPEL PAPER MONSTER JUNIOR.', '03-235', '2014-02-12 14:02:20', NULL),
 	(187, 3, 11, 5, 9, 19, 18, 3, 4, 1, '03-174', '', '30.11.03.00174', 'Silla giratoria', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA DE OFICINA GIRATORIO CON 5 RODAPIES.', '03-174', '2014-02-12 14:02:41', NULL),
@@ -360,7 +359,6 @@ INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `ori
 	(301, 3, 11, 6, 9, 19, 20, 3, 4, 1, '03-108', '', '20.07.03.00108', 'Taburete con espaldar', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE METALICO, CON ESPALDAR, COLOR PLOMO CON ASIENTO CUADRADO DE MADERA.', '03-108', '2014-02-17 11:02:26', NULL),
 	(302, 3, 11, 6, 9, 19, 20, 1, 4, 1, 'S-157', '', '', 'Taburete con espaldar', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE CON ESPALDAR, METALICO, COLOR PLOMO CON ASIENTO CUADRADO DE MADERA.', 'S-157', '2014-02-17 12:02:20', NULL),
 	(303, 3, 11, 3, 10, 19, 20, 1, 4, 1, 'S-127', '', '', 'Silla', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA DE MADERA, COLOR CAFE.', 'S-127', '2014-02-17 12:02:38', NULL),
-	(304, 12, 11, 6, 6, 19, 21, 1, 3, 1, 'X-0064', '', '', 'BuzÃ³n de sugerencias', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nBUZON DE SUGERENCIAS COLOR VERDE.', 'X-0064', '2014-02-17 13:02:47', NULL),
 	(305, 10, 61, 5, 2, 19, 21, 3, 3, 1, '03.312', '', '10.02.03.00312', 'Tiqueadora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTICKEADORA DIGITAL, CON CAJA METALIZA DE PROTECCION.', '03.312', '2014-02-17 13:02:38', '2014-03-10 15:03:24'),
 	(306, 12, 11, 6, 15, 19, 21, 3, 3, 1, 'X-0066', '', '', 'Caja de instalaciones elÃ©ctricas', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nCAJA DE INSTALACIONES ELECTRICAS CON INTERRUPTOR DE PASO DE CORRIENTE ELECTRICA.', 'X-0066', '2014-02-17 13:02:55', NULL),
 	(307, 10, 62, 5, 16, 22, 15, 1, 4, 1, 'X-0067', '', '', 'Aspiradora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nASPIRADORA\r\nMARCA: MAGEFESA\r\nMODELO: TAMBO\r\nPOTENCIA: 1150 W', 'X-0067', '2014-02-17 13:02:58', NULL),

@@ -34,10 +34,10 @@ CREATE TABLE IF NOT EXISTS `item` (
   `accounting_code` varchar(50) DEFAULT NULL,
   `name` longtext NOT NULL,
   `quantity` decimal(10,3) NOT NULL,
-  `unit_cost` decimal(10,2) DEFAULT '0.00',
-  `minimum_cost` decimal(10,2) DEFAULT '0.00',
-  `expected_cost` decimal(10,2) DEFAULT '0.00',
-  `sales_cost` decimal(10,2) DEFAULT '0.00',
+  `unit_cost` decimal(10,2) DEFAULT NULL,
+  `minimum_cost` decimal(10,2) DEFAULT NULL,
+  `expected_cost` decimal(10,2) DEFAULT NULL,
+  `sales_cost` decimal(10,2) DEFAULT NULL,
   `comment` longtext,
   `photo_dir` varchar(100) NOT NULL,
   `creation_date` datetime DEFAULT NULL,
@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `FK_1F1B251E887793B6` FOREIGN KEY (`condition_id`) REFERENCES `item_condition` (`id`),
   CONSTRAINT `FK_1F1B251EC54C8C93` FOREIGN KEY (`type_id`) REFERENCES `item_type` (`id`),
   CONSTRAINT `FK_1F1B251EE308AC6F` FOREIGN KEY (`material_id`) REFERENCES `item_material` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=682 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=683 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~711 rows (approximately)
+-- Dumping data for table inventory.item: ~702 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `condition_id`, `availability_id`, `code`, `new_code`, `accounting_code`, `name`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -359,7 +359,7 @@ INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `ori
 	(301, 3, 11, 6, 9, 19, 20, 3, 4, 1, '03-108', '', '20.07.03.00108', 'Taburete con espaldar', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE METALICO, CON ESPALDAR, COLOR PLOMO CON ASIENTO CUADRADO DE MADERA.', '03-108', '2014-02-17 11:02:26', NULL),
 	(302, 3, 11, 6, 9, 19, 20, 1, 4, 1, 'S-157', '', '', 'Taburete con espaldar', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTABURETE CON ESPALDAR, METALICO, COLOR PLOMO CON ASIENTO CUADRADO DE MADERA.', 'S-157', '2014-02-17 12:02:20', NULL),
 	(303, 3, 11, 3, 10, 19, 20, 1, 4, 1, 'S-127', '', '', 'Silla', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA DE MADERA, COLOR CAFE.', 'S-127', '2014-02-17 12:02:38', NULL),
-	(305, 10, 61, 5, 2, 19, 21, 3, 3, 1, '03.312', '', '10.02.03.00312', 'Tiqueadora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nTICKEADORA DIGITAL, CON CAJA METALIZA DE PROTECCION.', '03.312', '2014-02-17 13:02:38', '2014-03-10 15:03:24'),
+	(305, 10, 61, 5, 2, 19, 21, 3, 3, 1, '03.312', '', '10.02.03.00312', 'Tiqueadora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\n\nTICKEADORA DIGITAL, CON CAJA METALIZA DE PROTECCION.', '03.312', '2014-02-17 13:02:38', '2014-03-10 15:03:24'),
 	(306, 12, 11, 6, 15, 19, 21, 3, 3, 1, 'X-0066', '', '', 'Caja de instalaciones elÃ©ctricas', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nCAJA DE INSTALACIONES ELECTRICAS CON INTERRUPTOR DE PASO DE CORRIENTE ELECTRICA.', 'X-0066', '2014-02-17 13:02:55', NULL),
 	(307, 10, 62, 5, 16, 22, 15, 1, 4, 1, 'X-0067', '', '', 'Aspiradora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nASPIRADORA\r\nMARCA: MAGEFESA\r\nMODELO: TAMBO\r\nPOTENCIA: 1150 W', 'X-0067', '2014-02-17 13:02:58', NULL),
 	(308, 12, 11, 6, 8, 19, 15, 1, 3, 1, 'X-0068', '', '', 'Caja de instalaciones elÃ©ctricas', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nCAJA DE INSTALACIONES ELECTRICAS, CON INTERRUPTOR DE CORRIENTE ELECTRICA.', 'X-0068', '2014-02-17 13:02:51', '2014-02-17 13:02:28'),
@@ -735,7 +735,8 @@ INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `ori
 	(678, 5, 103, 6, 13, 4, 7, 3, 3, 1, '04-140', '', '30.06.04.00140', 'Sistema de bombeo de pegamento', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nMAQUINA SISTEMA DE BOMBEO DE PEGAMENTO\r\nMODELO: 666505J-3EB\r\nSERIE: JH0184070.', '04-140', '2014-03-07 16:03:50', NULL),
 	(679, 3, 55, 1, 10, 19, 23, 3, 3, 1, '03-313', '', '25.19.03.00313', 'Mostrador', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nMESON MOSTRADOR\r\nCON CAJONERIA\r\nRECUBIERTO CON PU.', '03-313', '2014-03-10 17:03:37', NULL),
 	(680, 3, 55, 1, 10, 2, 23, 3, 3, 1, '03-314', '', '25.19.03.00314', 'Mostrador', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB\r\n\r\nMESON MOSTRADOR\r\nRECUBIERTO CON PU.', '03-314', '2014-03-10 17:03:23', NULL),
-	(681, 3, 55, 1, 10, 2, 23, 3, 3, 1, '03-315', '', '25.19.03.00315', 'Mostrador', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB\r\n\r\nMESON RECUBIERTO CON PU.', '03-315', '2014-03-10 17:03:45', NULL);
+	(681, 3, 55, 1, 10, 2, 23, 3, 3, 1, '03-315', '', '25.19.03.00315', 'Mostrador', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB\r\n\r\nMESON RECUBIERTO CON PU.', '03-315', '2014-03-10 17:03:45', NULL),
+	(682, 12, 106, 6, 12, 19, 26, 1, 3, 1, 'X-0001', '', '', 'Bomba de agua', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nBOMBA DE AGUA EXTERNA\r\nMODELO: 24SF\r\nMAXIMA PRESION: 8 BAR\r\n\r\nCON MOTOR\r\nMARCA: NOCHI\r\nTIPO: CB 110-55-M\r\nP-N: 1210153500A.', 'X-0001', '2014-03-12 16:03:51', '2014-03-12 17:03:47');
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -743,7 +744,7 @@ INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `ori
 DROP TABLE IF EXISTS `item_availability`;
 CREATE TABLE IF NOT EXISTS `item_availability` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `description` longtext,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
@@ -765,9 +766,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~104 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~105 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -874,7 +875,8 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(102, 'OMAV'),
 	(103, 'PNEUMAX'),
 	(104, 'RHEEM'),
-	(105, 'WEIDER');
+	(105, 'WEIDER'),
+	(106, 'LUCKYPRO');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 
@@ -942,9 +944,9 @@ CREATE TABLE IF NOT EXISTS `item_location` (
   `name` varchar(50) NOT NULL,
   `description` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_location: ~25 rows (approximately)
+-- Dumping data for table inventory.item_location: ~26 rows (approximately)
 DELETE FROM `item_location`;
 /*!40000 ALTER TABLE `item_location` DISABLE KEYS */;
 INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
@@ -972,7 +974,8 @@ INSERT INTO `item_location` (`id`, `name`, `description`) VALUES
 	(22, 'Area serigrafía', ''),
 	(23, 'Area producto terminado', ''),
 	(24, 'Area entre almacén y mecánica', ''),
-	(25, 'Depósito sobre control de calidad', '');
+	(25, 'Depósito sobre control de calidad', ''),
+	(26, 'Exteriores', '');
 /*!40000 ALTER TABLE `item_location` ENABLE KEYS */;
 
 

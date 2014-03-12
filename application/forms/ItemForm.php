@@ -8,7 +8,6 @@ class App_Form_ItemForm extends Zend_Form
 		$this->setMethod('post');		
 		$this->getView()->setEscape('stripslashes');
 		
-		
 		//$this->setElementDecorators(array(new App_CustomDecorator_InputData()) );
 		//$id = new Zend_Form_Element_Hidden('id');
 				
@@ -43,7 +42,6 @@ class App_Form_ItemForm extends Zend_Form
 		$brand = new Zend_Form_Element_Select('brand_select');
 		$brand->setLabel("Marca:");
 		$brand->setRequired(false);
-		$brand->setValue('11');
 		
 		$material = new Zend_Form_Element_Select('material_select');
 		$material->setLabel("Material:");
@@ -56,12 +54,10 @@ class App_Form_ItemForm extends Zend_Form
 		$origin = new Zend_Form_Element_Select('origin_select');
 		$origin->setLabel("Procedencia:");
 		$origin->setRequired(false);
-		$origin->setValue('19');
 		
 		$location = new Zend_Form_Element_Select('location_select');
 		$location->setLabel("Ubicacion:");
 		$location->setRequired(false);
-		$location->setValue('7');
 		
 		$owner = new Zend_Form_Element_Select('owner_select');
 		$owner->setLabel("Propiedad:");
@@ -105,7 +101,6 @@ class App_Form_ItemForm extends Zend_Form
 		$condition = new Zend_Form_Element_Select('condition_select');
 		$condition->setLabel("Estado:");
 		$condition->setRequired(false);
-		$condition->setValue('3');
 		
 		$availability = new Zend_Form_Element_Select('availability_select');
 		$availability->setLabel("Disponibilidad:");

@@ -36,25 +36,26 @@ class App_Dao_ItemDao {
 	
 	public function getAllLimitOffset($limit, $offset) {
 		$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i ORDER BY i.code, i.newCode, i.accountingCode' )->setFirstResult ( $offset )->setMaxResults ( $limit );
-		//$query = $this->entityManager->createQuery ( "SELECT i FROM App_Model_Item i WHERE i.brand = 'SONY'" )->setFirstResult ( $offset )->setMaxResults ( $limit );
-
+		
 		return $query->getResult ();
 	}
 	
 	// ----------------------------------------------------------------
 	// Return the number of total items
-	public function countSearch() {
-		$where = $this->_whereOrSearchBuilder;
+	public function countSearchAll($where) {
+		//$where = $this->_whereOrSearchBuilder;
 		$query = $this->entityManager->createQuery ( 'SELECT COUNT(i) FROM App_Model_Item i $where ' );	
 		$result = $query->getResult ();
 		
 		return $result [0][1];
 	}
 	
-	public function getSearchLimitOffset($limit, $offset) {
-		$where = $this->_whereOrSearchBuilder;
-		
-		$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i $where ORDER BY i.code, i.newCode, i.accountingCode' )->setFirstResult ( $offset )->setMaxResults ( $limit );
+	public function getSearchLimitOffset($where, $limit, $offset) {
+		//$where = $this->_whereOrSearchBuilder;
+		$where = '';
+		$query = $this->entityManager->createQuery ( "SELECT i FROM App_Model_Item i $where " )->setFirstResult ( $offset )->setMaxResults ( $limit );
+		//$query = $this->entityManager->createQuery ( "SELECT i FROM App_Model_Item i WHERE i.type = '3'" )->setFirstResult ( $offset )->setMaxResults ( $limit );
+		//$query = $this->entityManager->createQuery ( 'SELECT i FROM App_Model_Item i $where ORDER BY i.code, i.newCode, i.accountingCode' )->setFirstResult ( $offset )->setMaxResults ( $limit );
 		
 		return $query->getResult ();
 	}
@@ -95,21 +96,4 @@ class App_Dao_ItemDao {
 		else
 			return null;
 	}
-	
-	private function _whereOrSearchBuilder($txtSearch, $attribsArray){
-		$where = '';
-		
-		foreach ($attribsArray as $attribute) {
-			
-			if (empty($where))
-				$where = " WHERE " . $where;
-			else
-				$where .= " OR " . $where;
-			
-			$where .= " i.$attribute LIKE '%" . $txtSearch . "%' ";
-		}
-		
-		return $where;
-	}
-	 
 }

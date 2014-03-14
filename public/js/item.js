@@ -32,7 +32,7 @@ $(document).ready(function() {
 		
 		var selectType = $(this).attr('name');
 		var id = 'refresh_' + selectType;
-		var path = $('#SYSTEM_ROOT_PATH').val() + "images/refresh.png";		
+		var path = $('#SYSTEM_ROOT_PATH').val() + "images/refresh.png";
 		var refreshImage = '<img src="'+ path +'" title="ACTUALIZAR" height="16px" width="16px">';
 		
 		// Avoid create more than one link per select element

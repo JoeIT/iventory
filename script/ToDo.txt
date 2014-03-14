@@ -25,7 +25,7 @@ Comandos más utilizados en Doctrine
 
 	* Crear todas las tablas a partir de las clases modelos:
 		doctrine orm:schema-tool:create
-	
+
 	* Eliminar todas las tablas de la base de datos:
 		doctrine orm:schema-tool:drop --force
 

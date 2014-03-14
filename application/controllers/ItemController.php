@@ -1,6 +1,8 @@
 <?php
 class ItemController extends Zend_Controller_Action {
 	
+	private $_search;
+	
 	private $_itemDao;
 	private $_itemTypeDao;
 	private $_itemBrandDao;
@@ -29,6 +31,10 @@ class ItemController extends Zend_Controller_Action {
 		$this->_itemConditionDao = new App_Dao_ItemConditionDao();
 		$this->_itemAvailabilityDao = new App_Dao_ItemAvailabilityDao();
 		
+		$this->_search = new App_Util_ItemSearch();
+		
+		//echo date('H:i:s');
+		
 		/*
 		$uri = "$_SERVER[REQUEST_URI]";
 		$uriPathArray = explode('/', $uri );
@@ -44,9 +50,11 @@ class ItemController extends Zend_Controller_Action {
 		$totalItems = $this->_itemDao->countAll ();
 		$paginator = new App_Util_Paginator ( $this->getRequest ()->getBaseUrl () . '/item/index', $totalItems, $page, 50 );
 		
+		$this->view->searchPanel = $this->_search->searchPanel();
 		$this->view->totalItems = $totalItems;
-		$this->view->dataList = $this->_itemDao->getAllLimitOffset ( $paginator->getLimit (), $paginator->getOffset () );
-		$this->view->htmlPaginator = $paginator->showHtmlPaginator ();		
+		//$this->view->dataList = $this->_itemDao->getAllLimitOffset ( $paginator->getLimit (), $paginator->getOffset () );
+		$this->view->dataList = $this->_itemDao->getSearchLimitOffset ($this->_search->getWhereQuery(), $paginator->getLimit (), $paginator->getOffset () );
+		$this->view->htmlPaginator = $paginator->showHtmlPaginator ();
 	}
 	
 	public function viewAction() {
@@ -107,7 +115,6 @@ class ItemController extends Zend_Controller_Action {
 				{
 					$this->_itemDao->save($item);
 					$this->_helper->redirector('index');
-					//$this->_helper->redirector('add');
 					return;
 				}
 				else
@@ -118,7 +125,6 @@ class ItemController extends Zend_Controller_Action {
 	}
 	
 	public function editAction() {
-		
 		$id = $this->_getParam('id', '');
 		if (empty($id))
 			$this->_helper->redirector('index');

@@ -1,3 +1,15 @@
+<script>
+
+$(document).ready(function () {
+
+	$('#search').click(function(){
+		alert('searching...');
+	});	
+});
+
+</script>
+
+
 <h1>Lista items:</h1>
 
 
@@ -13,6 +25,10 @@
 
 			<br/>
 			<b>Total items registrados: <?php echo $this->totalItems;?> </b>
+</div>
+
+<div id='content_left'>
+	<?php echo $this->searchPanel; ?>
 </div>
 
 <table border="0" align="center" class="css-table-index">

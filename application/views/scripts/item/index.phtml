@@ -37,13 +37,13 @@ $(document).ready(function () {
 </div>
 
 <div id='content_left'>
-	<table align='center'>
+	<table class='css-table-search' align='center'>
 		<tr>
 			<th colspan='2'>Buscador</th>
 		</tr>
 		<tr>
 			<th>Codigo</th>
-			<td><input type='text' id='code' name='code' class='search_component'/></td>
+			<td><input type='text' id='code' name='code' class='search_component' value='<?php echo $this->code;?>'/></td>
 		</tr>
 		<tr>
 			<th>Tipo</th>
@@ -51,7 +51,7 @@ $(document).ready(function () {
 		</tr>
 		<tr>
 			<th>Nombre</th>
-			<td><input type='text' id='name' name='name' class='search_component'/></td>
+			<td><input type='text' id='name' name='name' class='search_component' value='<?php echo $this->name;?>'/></td>
 		</tr>
 		<tr>
 			<th>Marca</th>

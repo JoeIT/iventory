@@ -129,7 +129,7 @@ img {
 #content #content_left {
 	float: left;
 	width: auto;
-	padding: 10px;
+	padding: 3px;
 	background-color: #171716;
 	border: 1px solid #212120;
 }
@@ -196,4 +196,9 @@ h1, h2, h3 {
 
 .css-input_number_form {
 	width: 50px;
+}
+
+.css-table-search td input, select
+{
+	width: 97%;
 }

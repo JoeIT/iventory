@@ -62,9 +62,9 @@ class App_Dao_ItemDao {
 		$this->_where = '';
 		
 		if( !empty($name) )
-			$this->_where .= " AND i.name LIKE '$name'% ";
+			$this->_where .= " AND i.name LIKE '$name%' ";
 		if( !empty($code) )
-			$this->_where .= " AND i.code LIKE '$code'% ";
+			$this->_where .= " AND i.code LIKE '$code%' ";
 		if( !empty($type) )
 			$this->_where .= " AND i.type = '$type' ";
 		if( !empty($brand) )

@@ -13,12 +13,31 @@ class App_Util_Paginator
 	// Number of number link pages to show, is recommended to set an odd number
 	private $_maxLinkNumbers = 9;
 	
+	private $_totalPages = 0;
+	
 	public function __construct($url, $totalRows, $currentPage, $limit = 10)
 	{
 		$this->_url = $url;
 		$this->_totalRows = $totalRows;
 		$this->_pageNumber = $currentPage;
 		$this->_limit = $limit;
+		
+		if($this->_totalRows <= $limit)
+			$this->_totalPages = 1;
+		else
+			$this->_totalPages = $this->_totalRows/$this->_limit;
+		
+		// If the result is a decimal, it is added one page number
+		if((float)((int)($this->_totalPages)) < (float)($this->_totalPages))
+		{
+			$this->_totalPages = (int)($this->_totalPages) + 1;
+		}
+		
+		if($this->_pageNumber > $this->_totalPages)
+			$this->_pageNumber = $this->_totalPages;
+		else if($this->_pageNumber < 1)
+			$this->_pageNumber = 1;
+		
 		$this->_offset = ((int)$this->_pageNumber - 1) * $this->_limit;
 	}
 	
@@ -54,14 +73,6 @@ class App_Util_Paginator
 		
 	public function showHtmlPaginator()
 	{
-		$totalPages = $this->_totalRows/$this->_limit;
-				
-		// If the result is a decimal, it is added one page number
-		if((float)((int)($totalPages)) < (float)($totalPages))
-		{
-			$totalPages = (int)($totalPages) + 1;
-		}
-		
 		// If we are in first page
 		if($this->_pageNumber == 1)
 			$previous = null;
@@ -69,17 +80,16 @@ class App_Util_Paginator
 			$previous = $this->_pageNumber - 1;
 		
 		// If we are in the last page
-		if((int)$this->_pageNumber == $totalPages ||  $this->_totalRows == 0)
+		if((int)$this->_pageNumber == $this->_totalPages ||  $this->_totalRows == 0)
 			$next = null;
-		else if($totalPages > 1 && $this->_totalRows > 0)
+		else if($this->_totalPages > 1 && $this->_totalRows > 0)
 			$next = $this->_pageNumber + 1;
 			
 		
 		$htmlPaginator = "";
-		
-		
-		if ($totalPages){
-			$htmlPaginator .= "<div class='paginationControl'>[$this->_pageNumber de $totalPages] ";
+				
+		if ($this->_totalPages){
+			$htmlPaginator .= "<div class='paginationControl'>[$this->_pageNumber de $this->_totalPages] ";
 			
 			// First page link
 			if ($this->_pageNumber != 1)
@@ -87,8 +97,7 @@ class App_Util_Paginator
 				$htmlPaginator .= " <a href='".$this->_url."/page/1". $this->_extraUrl ."'>Primero</a> |";
 			else
 				$htmlPaginator .= "<span class='disabled'> Primero </span> |";
-			
-			
+						
 			// Previous page link
 			if (isset($previous))
 				//$htmlPaginator .= "<a href='". $this->url(array('page' => $previous)) . "'>&lt; Previo</a> |";
@@ -101,9 +110,9 @@ class App_Util_Paginator
 			if($this->_showLinkPageNumbers == true)
 			{
 				$initial = 1;
-				$final = $totalPages;
+				$final = $this->_totalPages;
 				
-				if($this->_maxLinkNumbers < $totalPages)
+				if($this->_maxLinkNumbers < $this->_totalPages)
 				{
 					$showHalf = round(($this->_maxLinkNumbers / 2), 0, PHP_ROUND_HALF_DOWN);
 					
@@ -120,10 +129,10 @@ class App_Util_Paginator
 						$initial = 1;
 						$final += $right;
 					}
-					else if($final > $totalPages)
+					else if($final > $this->_totalPages)
 					{
-						$left = $final - $totalPages;
-						$final = $totalPages;
+						$left = $final - $this->_totalPages;
+						$final = $this->_totalPages;
 						$initial -= $left; 
 					}
 				}
@@ -140,7 +149,7 @@ class App_Util_Paginator
 						$htmlPaginator .= "<span class='disabled'> <b>$page</b></span>";
 				}
 				
-				if($final < $totalPages)
+				if($final < $this->_totalPages)
 					$htmlPaginator .= "... ";
 				
 				$htmlPaginator .= " |";
@@ -154,8 +163,8 @@ class App_Util_Paginator
 				$htmlPaginator .= "<span class='disabled'> Siguiente &gt; </span> |";
 			
 			// Last page link
-			if ($this->_pageNumber != $totalPages)
-				$htmlPaginator .= " <a href='".$this->_url."/page/$totalPages". $this->_extraUrl ."'>Ultimo</a> ";
+			if ($this->_pageNumber != $this->_totalPages)
+				$htmlPaginator .= " <a href='".$this->_url."/page/$this->_totalPages". $this->_extraUrl ."'>Ultimo</a> ";
 			else
 				$htmlPaginator .= "<span class='disabled'> Ultimo </span>";
 			

@@ -25,7 +25,7 @@ class App_Util_ItemSearch
 		$panel .= "
 				<table align='center'>
 					<tr>
-						<th colspan='2'>Buscador</th>						
+						<th colspan='2'>Buscador</th>
 					</tr>
 					<tr>
 						<th>Codigo</th>

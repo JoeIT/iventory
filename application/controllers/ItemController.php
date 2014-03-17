@@ -45,16 +45,46 @@ class ItemController extends Zend_Controller_Action {
 	}
 	
 	public function indexAction() {
-		$page = $this->_getParam ( 'page', 1 );
+		$page 				= $this->_getParam ( 'page', 1 );
+		$name 				= $this->_getParam ( 'name', '' );
+		$code 				= $this->_getParam ( 'code', '' );
+		$typeSelected 		= $this->_getParam ( 'type', '' );
+		$brandSelected 		= $this->_getParam ( 'brand', '' );
+		$originSelected		= $this->_getParam ( 'origin', '' );
+		$locationSelected	= $this->_getParam ( 'location', '' );
 		
-		$totalItems = $this->_itemDao->countAll ();
-		$paginator = new App_Util_Paginator ( $this->getRequest ()->getBaseUrl () . '/item/index', $totalItems, $page, 50 );
+		$extraSearchURL = '';
+		if( !empty($name) )
+			$extraSearchURL .= "/name/$name";
+		if( !empty($code) )
+			$extraSearchURL .= "/code/$code";
+		if( !empty($typeSelected) )
+			$extraSearchURL .= "/type/$typeSelected";
+		if( !empty($brandSelected) )
+			$extraSearchURL .= "/brand/$brandSelected";
+		if( !empty($originSelected) )
+			$extraSearchURL .= "/origin/$originSelected";
+		if( !empty($locationSelected) )
+			$extraSearchURL .= "/location/$locationSelected";
+		
+		$this->_itemDao->createSearchWhere($name, $code, $typeSelected, $brandSelected, $originSelected, $locationSelected);
+		$totalItems = $this->_itemDao->countSearchAll();
+		
+		$paginator = new App_Util_Paginator( $this->getRequest()->getBaseUrl() . '/item/index', $totalItems, $page, 50 );
+		$paginator->addExtraUrlData($extraSearchURL);
 		
 		$this->view->searchPanel = $this->_search->searchPanel();
 		$this->view->totalItems = $totalItems;
-		//$this->view->dataList = $this->_itemDao->getAllLimitOffset ( $paginator->getLimit (), $paginator->getOffset () );
-		$this->view->dataList = $this->_itemDao->getSearchLimitOffset ($this->_search->getWhereQuery(), $paginator->getLimit (), $paginator->getOffset () );
-		$this->view->htmlPaginator = $paginator->showHtmlPaginator ();
+		$this->view->dataList = $this->_itemDao->getSearchLimitOffset($paginator->getLimit(), $paginator->getOffset() );
+		$this->view->htmlPaginator = $paginator->showHtmlPaginator();
+		
+		$this->view->name			= $name;
+		$this->view->code			= $code;
+		$this->view->typeSelect		= $this->_buildSelectFromArray( 'type', $this->_itemTypeDao->getAll(), $typeSelected, 'search_component');
+		$this->view->brandSelect	= $this->_buildSelectFromArray( 'brand', $this->_itemBrandDao->getAll(), $brandSelected, 'search_component' );
+		$this->view->originSelect	= $this->_buildSelectFromArray( 'origin', $this->_itemOriginDao->getAll(), $originSelected, 'search_component' );
+		$this->view->locationSelect	= $this->_buildSelectFromArray( 'location', $this->_itemLocationDao->getAll(), $locationSelected, 'search_component' );
+		$this->view->extraSearchURL = $extraSearchURL;
 	}
 	
 	public function viewAction() {
@@ -317,6 +347,29 @@ class ItemController extends Zend_Controller_Action {
 		}
 
 		return $result;
+	}
+	
+	private function _buildSelectFromArray( $htmlId, $fullDataArray, $thisSelected, $htmlClass='')
+	{
+		$class = '';
+		if(!empty($htmlClass))
+			$class = " class='$htmlClass' ";
+		
+		$selectHtml = "<select id='$htmlId' name='$htmlId' $class >";
+		$selectHtml .= "<option value=''>TODOS</option>";
+	
+		foreach($fullDataArray as $type)
+		{
+			$selected = '';
+			if($type->getId() == $thisSelected)
+				$selected = 'selected';
+			
+			$selectHtml .= "<option value='". $type->getId() ."' $selected >". $type->getName() ."</option>";
+		}
+	
+		$selectHtml .= "</select>";
+	
+		return $selectHtml;
 	}
 	
 	public function testAction() {

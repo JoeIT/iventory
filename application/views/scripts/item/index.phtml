@@ -1,18 +1,27 @@
 <script>
-
 $(document).ready(function () {
 
-	$('#search').click(function(){
-		alert('searching...');
+	$('#searchLink').click(function(){
+	});
+	
+	$('.search_component').change(function(){
+		var indexBaseURL = $('#search_link').attr('indexURL') + '/index';
+
+		var url = '';
+		$('.search_component').each(function(){
+			
+			var value = $.trim( $(this).val() );
+
+			if(! value.length == 0 )
+				url += '/' + $(this).attr('id') + '/' + value;
+		});
+
+		$('#search_link').attr('href', indexBaseURL + url);
 	});	
 });
-
 </script>
 
-
 <h1>Lista items:</h1>
-
-
 <div align="right">
 			<a
 				href='<?php
@@ -28,7 +37,48 @@ $(document).ready(function () {
 </div>
 
 <div id='content_left'>
-	<?php echo $this->searchPanel; ?>
+	<table align='center'>
+		<tr>
+			<th colspan='2'>Buscador</th>
+		</tr>
+		<tr>
+			<th>Codigo</th>
+			<td><input type='text' id='code' name='code' class='search_component'/></td>
+		</tr>
+		<tr>
+			<th>Tipo</th>
+			<td><?php echo $this->typeSelect; ?></td>
+		</tr>
+		<tr>
+			<th>Nombre</th>
+			<td><input type='text' id='name' name='name' class='search_component'/></td>
+		</tr>
+		<tr>
+			<th>Marca</th>
+			<td><?php echo $this->brandSelect; ?></td>
+		</tr>
+		<tr>
+			<th>Procedencia</th>
+			<td><?php echo $this->originSelect; ?></td>
+		</tr>
+		<tr>
+			<th>Ubicacion</th>
+			<td><?php echo $this->locationSelect; ?></td>
+		</tr>
+		<tr>
+			<td colspan='2' align='center'>
+			
+			<?php
+			$indexURL = $this->url ( array ('controller' => 'item', 'action' => 'index'), 'default', true );
+			?>
+				<a id='search_link' 
+					href='<?php echo $indexURL . '/index' . $this->extraSearchURL;?>' 
+					indexURL ='<?php echo $indexURL;?>'>
+						<img src="<?php echo $this->rootPath ?>images/search.png" title="BUSCAR" border="0"> BUSCAR
+				</a>
+			</td>			
+		</tr>
+	</table>
 </div>
 
 <table border="0" align="center" class="css-table-index">

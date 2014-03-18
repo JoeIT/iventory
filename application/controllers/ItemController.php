@@ -34,7 +34,6 @@ class ItemController extends Zend_Controller_Action {
 		$this->_search = new App_Util_ItemSearch();
 		
 		//echo date('H:i:s');
-		
 		/*
 		$uri = "$_SERVER[REQUEST_URI]";
 		$uriPathArray = explode('/', $uri );

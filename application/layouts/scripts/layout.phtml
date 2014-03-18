@@ -7,38 +7,37 @@ echo $this->doctype();
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-    		<?php echo $this->headMeta(); ?>
-    		<?php echo $this->headTitle(); ?>
-    		
-    		<?php 
-    			echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/ui-lightness/jquery-ui-1.10.3.custom.min.css');
-    			echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/style.css');
-    			
-    	
-				echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-1.10.2.min.js','text/javascript');
-    			echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-ui-1.10.3.custom.min.js','text/javascript');
-    			
-    			echo "<input type='hidden' id='SYSTEM_ROOT_PATH' value='http://$_SERVER[HTTP_HOST]" . $this->baseUrl() ."/'/>";
-    		?>
-			
-		<script type="text/javascript">
-			
-			$(document).ready(function()
-			{
-				//alert('URL: ' + $('#SYSTEM_ROOT_PATH').val());
-				//alert('URL: ' + location.href);
-			});
+<head>
+	<?php echo $this->headMeta(); ?>
+	<?php echo $this->headTitle(); ?>
 
-			function updateCurrentMenuBar(currentMenu)
-			{
-				$('#menu li a').removeClass('current');
-				$('#menu_' + currentMenu).addClass('current');
-			}
+	<?php 
+    	echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/ui-lightness/jquery-ui-1.10.3.custom.min.css');
+    	echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/style.css');
+
+    	echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-1.10.2.min.js','text/javascript');
+    	echo $this->headScript()->appendFile($this->baseUrl() . '/js/jquery-ui-1.10.3.custom.min.js','text/javascript');
+
+    	echo "<input type='hidden' id='SYSTEM_ROOT_PATH' value='http://$_SERVER[HTTP_HOST]" . $this->baseUrl() ."/'/>";
+	?>
+			
+<script type="text/javascript">
+$(document).ready(function()
+{
+	//alert('URL: ' + $('#SYSTEM_ROOT_PATH').val());
+	//alert('URL: ' + location.href);
+});
+
+function updateCurrentMenuBar(currentMenu)
+{
+	$('#menu li a').removeClass('current');
+	$('#menu_' + currentMenu).addClass('current');
+}
 		
-		</script>
-	</head>
-	<body>
+</script>
+</head>
+
+<body>
 		<div id="container">
 			<div id="before-header">
 				<div id="menu">

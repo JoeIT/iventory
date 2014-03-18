@@ -197,8 +197,7 @@ h1, h2, h3 {
 .css-input_number_form {
 	width: 50px;
 }
-
-.css-table-search td input, select
-{
+/*
+.css-table-search td input, select {
 	width: 97%;
-}
+}*/

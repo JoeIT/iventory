@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `FK_1F1B251E887793B6` FOREIGN KEY (`condition_id`) REFERENCES `item_condition` (`id`),
   CONSTRAINT `FK_1F1B251EC54C8C93` FOREIGN KEY (`type_id`) REFERENCES `item_type` (`id`),
   CONSTRAINT `FK_1F1B251EE308AC6F` FOREIGN KEY (`material_id`) REFERENCES `item_material` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=683 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=692 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~682 rows (approximately)
+-- Dumping data for table inventory.item: ~679 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `condition_id`, `availability_id`, `code`, `new_code`, `accounting_code`, `name`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -736,7 +736,16 @@ INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `ori
 	(679, 3, 55, 1, 10, 19, 23, 3, 3, 1, '03-313', '', '25.19.03.00313', 'Mostrador', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nMESON MOSTRADOR\r\nCON CAJONERIA\r\nRECUBIERTO CON PU.', '03-313', '2014-03-10 17:03:37', NULL),
 	(680, 3, 55, 1, 10, 2, 23, 3, 3, 1, '03-314', '', '25.19.03.00314', 'Mostrador', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB\r\n\r\nMESON MOSTRADOR\r\nRECUBIERTO CON PU.', '03-314', '2014-03-10 17:03:23', NULL),
 	(681, 3, 55, 1, 10, 2, 23, 3, 3, 1, '03-315', '', '25.19.03.00315', 'Mostrador', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB\r\n\r\nMESON RECUBIERTO CON PU.', '03-315', '2014-03-10 17:03:45', NULL),
-	(682, 12, 106, 6, 12, 19, 26, 1, 3, 1, 'X-0001', '', '', 'Bomba de agua', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nBOMBA DE AGUA EXTERNA\r\nMODELO: 24SF\r\nMAXIMA PRESION: 8 BAR\r\n\r\nCON MOTOR\r\nMARCA: NOCHI\r\nTIPO: CB 110-55-M\r\nP-N: 1210153500A.', 'X-0001', '2014-03-12 16:03:51', '2014-03-12 17:03:47');
+	(682, 12, 106, 6, 12, 19, 26, 1, 3, 1, 'X-0001', '', '', 'Bomba de agua', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nBOMBA DE AGUA EXTERNA\r\nMODELO: 24SF\r\nMAXIMA PRESION: 8 BAR\r\n\r\nCON MOTOR\r\nMARCA: NOCHI\r\nTIPO: CB 110-55-M\r\nP-N: 1210153500A.', 'X-0001', '2014-03-12 16:03:51', '2014-03-12 17:03:47'),
+	(683, 12, 1, 6, 12, 1, 21, 3, 4, 1, '04-109', '', '20.06.04.00109', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nEXTINTOR DE FUEGO DE 10 LIBRAS.', '04-109', '2014-03-18 10:03:12', NULL),
+	(684, 12, 1, 6, 12, 1, 21, 3, 1, 1, '04-084', '', '30.11.04.00084', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nEXTINTOR DE INCENDIOS DE 10 LIBRAS.', '04-084', '2014-03-18 10:03:21', NULL),
+	(685, 12, 1, 6, 12, 1, 21, 3, 3, 1, '04-175', '', '30.07.04.00175', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nEXTINTOR DE INCENDIOS\r\nMODELO R917\r\nDE 6 KGS.', '04-175', '2014-03-18 10:03:49', NULL),
+	(686, 12, 107, 6, 12, 1, 21, 3, 3, 1, '04-120', '', '30.11.04.00120', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nEXTINTOR DE INCENDIOS\r\nDE 20 LIBRAS.', '04-120', '2014-03-18 10:03:57', NULL),
+	(687, 12, 1, 6, 12, 1, 21, 3, 3, 1, '04-006', '', '30.15.04.00006', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nEXTINTOR DE INCENDIOS\r\nDE 8 KILOS.', '04-006', '2014-03-18 10:03:50', NULL),
+	(688, 12, 107, 6, 12, 1, 21, 3, 3, 1, '04-131', '', '10.01.04.00131', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nEXTINTOR DE INCENDIOS\r\nDE 8 KILOS.', '04-131', '2014-03-18 10:03:08', '2014-03-18 10:03:53'),
+	(689, 12, 108, 6, 12, 1, 21, 3, 3, 1, '04-121', '', '10.04.04.00121', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nEXTINTOR DE INCENDIOS\r\nDE 10 LIBRAS.', '04-121', '2014-03-18 10:03:07', NULL),
+	(690, 12, 107, 6, 12, 1, 21, 3, 3, 1, '04-018', '', '30.14.04.00018', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nEXTINTOR DE INCENDIOS\r\nDE 8 KILOS.', '04-018', '2014-03-18 10:03:57', NULL),
+	(691, 10, 60, 5, 2, 6, 8, 3, 4, 1, '03-160', '', '10.02.03.00160', 'Calculadora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nCALCULADORA PEQUEÃ‘A\r\nMARCA: CASIO\r\nMODELO: MS-20V.', '03-160', '2014-03-18 10:03:29', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 
@@ -766,9 +775,9 @@ CREATE TABLE IF NOT EXISTS `item_brand` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item_brand: ~105 rows (approximately)
+-- Dumping data for table inventory.item_brand: ~107 rows (approximately)
 DELETE FROM `item_brand`;
 /*!40000 ALTER TABLE `item_brand` DISABLE KEYS */;
 INSERT INTO `item_brand` (`id`, `name`) VALUES
@@ -876,7 +885,9 @@ INSERT INTO `item_brand` (`id`, `name`) VALUES
 	(103, 'PNEUMAX'),
 	(104, 'RHEEM'),
 	(105, 'WEIDER'),
-	(106, 'LUCKYPRO');
+	(106, 'LUCKYPRO'),
+	(107, 'POWDER'),
+	(108, 'VERTICE');
 /*!40000 ALTER TABLE `item_brand` ENABLE KEYS */;
 
 

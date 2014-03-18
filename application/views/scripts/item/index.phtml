@@ -67,9 +67,8 @@ $(document).ready(function () {
 		</tr>
 		<tr>
 			<td colspan='2' align='center'>
-			
 			<?php
-			$indexURL = $this->url ( array ('controller' => 'item', 'action' => 'index'), 'default', true );
+				$indexURL = $this->url ( array ('controller' => 'item', 'action' => 'index'), 'default', true );
 			?>
 				<a id='search_link' 
 					href='<?php echo $indexURL . '/index' . $this->extraSearchURL;?>' 

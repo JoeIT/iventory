@@ -22,16 +22,41 @@ echo $this->doctype();
 	?>
 			
 <script type="text/javascript">
-$(document).ready(function()
-{
+$(document).ready(function() {
 	//alert('URL: ' + $('#SYSTEM_ROOT_PATH').val());
 	//alert('URL: ' + location.href);
+	//alert('URL: ' + window.location.pathname);
+	updateCurrentMenuBar();
+	
+	
+
+	/*
+	$('#content').change(function() {
+		alert('Change...');
+	});*/
+
+	$('#content').bind('change', function(){
+		alert('Html change!!');
+	});
 });
 
-function updateCurrentMenuBar(currentMenu)
+function updateCurrentMenuBar()
 {
+	var arrPath = window.location.pathname.split('/');
+	var controller = '';
+
+	for(var i=0; i < arrPath.length; i++)
+	{
+		if('public' == arrPath[i])
+		{
+			controller = arrPath[i + 1];
+			break;
+		}
+	}
+	
+
 	$('#menu li a').removeClass('current');
-	$('#menu_' + currentMenu).addClass('current');
+	$('#menu_' + controller).addClass('current');
 }
 		
 </script>
@@ -49,22 +74,22 @@ function updateCurrentMenuBar(currentMenu)
 							<a href="<?php echo $this->baseUrl(); ?>/item/index" id="menu_item">Items</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->baseUrl(); ?>/itemtype/index" id="menu_item_type">Tipos</a>
+							<a href="<?php echo $this->baseUrl(); ?>/itemtype/index" id="menu_itemtype">Tipos</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->baseUrl(); ?>/itembrand/index" id="menu_item_brand">Marcas</a>
+							<a href="<?php echo $this->baseUrl(); ?>/itembrand/index" id="menu_itembrand">Marcas</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->baseUrl(); ?>/itemmaterial/index" id="menu_item_material">Materiales</a>
+							<a href="<?php echo $this->baseUrl(); ?>/itemmaterial/index" id="menu_itemmaterial">Materiales</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->baseUrl(); ?>/itemcolor/index" id="menu_item_color">Colores</a>
+							<a href="<?php echo $this->baseUrl(); ?>/itemcolor/index" id="menu_itemcolor">Colores</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->baseUrl(); ?>/itemorigin/index" id="menu_item_origin">Procedencias</a>
+							<a href="<?php echo $this->baseUrl(); ?>/itemorigin/index" id="menu_itemorigin">Procedencias</a>
 						</li>
 						<li>
-							<a href="<?php echo $this->baseUrl(); ?>/itemlocation/index" id="menu_item_location">Ubicaciones</a>
+							<a href="<?php echo $this->baseUrl(); ?>/itemlocation/index" id="menu_itemlocation">Ubicaciones</a>
 						</li>
 					</ul>
 				</div>				

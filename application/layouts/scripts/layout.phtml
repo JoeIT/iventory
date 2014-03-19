@@ -26,18 +26,7 @@ $(document).ready(function() {
 	//alert('URL: ' + $('#SYSTEM_ROOT_PATH').val());
 	//alert('URL: ' + location.href);
 	//alert('URL: ' + window.location.pathname);
-	updateCurrentMenuBar();
-	
-	
-
-	/*
-	$('#content').change(function() {
-		alert('Change...');
-	});*/
-
-	$('#content').bind('change', function(){
-		alert('Html change!!');
-	});
+	updateCurrentMenuBar();	
 });
 
 function updateCurrentMenuBar()
@@ -53,7 +42,6 @@ function updateCurrentMenuBar()
 			break;
 		}
 	}
-	
 
 	$('#menu li a').removeClass('current');
 	$('#menu_' + controller).addClass('current');

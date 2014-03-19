@@ -12,6 +12,8 @@ a:link, a:visited {
 	color: #CC5850;
 	text-decoration: none;
 	font-weight: bold;
+	/*text-shadow: 0.1em 0.05em 0.1em #DFAAA6;*/
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 a:active, a:hover {
@@ -169,6 +171,18 @@ h1, h2, h3 {
 	color: #F7F6C3;
 }
 
+.css-table-index td {
+	padding: 3px;
+}
+
+.css-table-item-index {
+	font-size: x-small;
+}
+
+.css-table-item-index td {
+	padding: 2px;
+}
+
 .css-table-index tr:hover :not(th)  
 {
 	background-color: #CC5850;
@@ -178,7 +192,7 @@ h1, h2, h3 {
 .css-div-images img {
     display: block;
     margin: 20px auto 10px;
-    max-width: 900px;
+    max-width: 800px;
     outline: none;
 }
 
@@ -190,7 +204,6 @@ h1, h2, h3 {
 	background-color: #363333;
 }
 
-/************************************************/
 .css-input_text_form {
 	width: 250px;
 }
@@ -198,7 +211,17 @@ h1, h2, h3 {
 .css-input_number_form {
 	width: 50px;
 }
-/*
-.css-table-search td input, select {
+
+.css-table-search {
+	font-size: x-small;	
+}
+
+.css-table-search td input {
 	width: 97%;
-}*/
+	font-size: x-small;
+}
+
+.css-table-search td select {
+	width: 100%;
+	font-size: x-small;
+}

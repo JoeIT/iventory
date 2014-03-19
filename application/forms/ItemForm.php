@@ -108,7 +108,7 @@ class App_Form_ItemForm extends Zend_Form
 		
 		$comment = new Zend_Form_Element_Textarea('comment');
 		$comment->setLabel("Comentario:");
-		$comment->setAttrib("cols", "45");
+		$comment->setAttrib("cols", "40");
 		$comment->setAttrib("rows", "8");
 		
 		$submit = new Zend_Form_Element_Submit('submit', array('label' => 'GUARDAR'));

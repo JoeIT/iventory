@@ -15,7 +15,7 @@
 	</tr>
 	<tr>
 		<th align="right">Descripci&oacute;n:</th>
-		<td><?php echo $this->itemMaterial->getDescription(); ?></td>
+		<td><p><?php echo str_replace(chr(13), "<br/>", $this->item->getDescription()); ?></p></td>
 	</tr>
 	<tr>
 		<td colspan="2" align="center">

@@ -61,9 +61,9 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `FK_1F1B251E887793B6` FOREIGN KEY (`condition_id`) REFERENCES `item_condition` (`id`),
   CONSTRAINT `FK_1F1B251EC54C8C93` FOREIGN KEY (`type_id`) REFERENCES `item_type` (`id`),
   CONSTRAINT `FK_1F1B251EE308AC6F` FOREIGN KEY (`material_id`) REFERENCES `item_material` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=692 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=693 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~731 rows (approximately)
+-- Dumping data for table inventory.item: ~732 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `condition_id`, `availability_id`, `code`, `new_code`, `accounting_code`, `name`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -744,7 +744,8 @@ INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `ori
 	(688, 12, 107, 6, 12, 1, 21, 3, 3, 1, '04-131', '', '10.01.04.00131', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nEXTINTOR DE INCENDIOS\r\nDE 8 KILOS.', '04-131', '2014-03-18 10:03:08', '2014-03-18 10:03:53'),
 	(689, 12, 108, 6, 12, 1, 21, 3, 3, 1, '04-121', '', '10.04.04.00121', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nEXTINTOR DE INCENDIOS\r\nDE 10 LIBRAS.', '04-121', '2014-03-18 10:03:07', NULL),
 	(690, 12, 107, 6, 12, 1, 21, 3, 3, 1, '04-018', '', '30.14.04.00018', 'Extintor de incendios', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nEXTINTOR DE INCENDIOS\r\nDE 8 KILOS.', '04-018', '2014-03-18 10:03:57', NULL),
-	(691, 10, 60, 5, 2, 6, 8, 3, 4, 1, '03-160', '', '10.02.03.00160', 'Calculadora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nCALCULADORA PEQUEÃ‘A\r\nMARCA: CASIO\r\nMODELO: MS-20V.', '03-160', '2014-03-18 10:03:29', NULL);
+	(691, 10, 60, 5, 2, 6, 8, 3, 4, 1, '03-160', '', '10.02.03.00160', 'Calculadora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nCALCULADORA PEQUEÃ‘A\r\nMARCA: CASIO\r\nMODELO: MS-20V.', '03-160', '2014-03-18 10:03:29', NULL),
+	(692, 5, 1, 6, 8, 1, 11, 3, 6, 1, '03-301', '', '10.02.03.00301', 'Maquina plastificadora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nMAQUINA PLASTIFICADORA\r\nMODELO: HD-320\r\nHUANDA PLASTIC SEALING MACHINE\r\nDE 600 W.', '03-301', '2014-03-20 11:03:57', NULL);
 /*!40000 ALTER TABLE `item` ENABLE KEYS */;
 
 

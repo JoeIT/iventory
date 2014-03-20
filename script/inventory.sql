@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `item` (
   CONSTRAINT `FK_1F1B251EE308AC6F` FOREIGN KEY (`material_id`) REFERENCES `item_material` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=693 DEFAULT CHARSET=utf8;
 
--- Dumping data for table inventory.item: ~732 rows (approximately)
+-- Dumping data for table inventory.item: ~731 rows (approximately)
 DELETE FROM `item`;
 /*!40000 ALTER TABLE `item` DISABLE KEYS */;
 INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `origin_id`, `location_id`, `owner_id`, `condition_id`, `availability_id`, `code`, `new_code`, `accounting_code`, `name`, `quantity`, `unit_cost`, `minimum_cost`, `expected_cost`, `sales_cost`, `comment`, `photo_dir`, `creation_date`, `modified_date`) VALUES
@@ -600,7 +600,6 @@ INSERT INTO `item` (`id`, `type_id`, `brand_id`, `material_id`, `color_id`, `ori
 	(544, 5, 63, 6, 9, 16, 24, 3, 4, 1, '04-102', '', '30.11.04.00102', 'Maquina dobladora manual', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nDOBLADORA MANUAL\r\nMARCA BIBO\r\nSERIE NO 290812\r\n\r\nCON MESA DE MADERA\r\nMEDIDAS [72cm x 50cm x 94cm alto].', '04-102', '2014-02-25 10:02:44', NULL),
 	(545, 5, 87, 6, 9, 11, 24, 3, 3, 1, '04-081', '', '30.11.04.00081', 'Maquina remachadora', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nMAQUINA REMACHADORA MANUAL\r\nMARCA APHOLOS\r\nNÃ‚o. 5892\r\nCOLOR PLOMO.', '04-081', '2014-02-25 10:02:45', NULL),
 	(546, 3, 11, 3, 10, 19, 24, 3, 4, 1, '03-252', '', '30.12.03.00252', 'Silla', 1.000, 0.00, 0.00, 0.00, 0.00, '1 PZA.\r\n\r\nSILLA DE MADERA.', '03-252', '2014-02-25 10:02:03', '2014-02-25 10:02:10'),
-	(547, 12, 11, 3, 12, 2, 24, 1, 3, 1, 'X-0053', '', '', 'Futbolin', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nFUTBOLIN DE MADERA.', 'X-0053', '2014-02-25 10:02:22', '2014-03-17 17:03:00'),
 	(548, 3, 11, 3, 10, 19, 24, 1, 4, 1, 'S-161', '', '', 'Gavetero', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nGAVETERO DE 2 PUERTAS.', 'S-161', '2014-02-25 11:02:43', NULL),
 	(549, 5, 11, 6, 3, 19, 24, 2, 3, 1, 'P-005', '', '', 'Compresor de aire', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nCOMPRESOR DE AIRE.', 'P-005', '2014-02-25 11:02:30', NULL),
 	(550, 5, 88, 6, 12, 3, 24, 3, 3, 1, '04-007', '', '30.15.04.00007', 'Compresor de aire', 1.000, 0.00, 0.00, 0.00, 0.00, '1 GLB.\r\n\r\nCOMPRESOR DE AIRE (TRIFASICO)\r\nMARCA MULLER\r\nNo. 0295\r\nCOLOR ROJO\r\nMODELO HP - 4', '04-007', '2014-02-25 11:02:40', NULL),

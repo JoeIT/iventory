@@ -24,6 +24,21 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		$this->_resourceLoader->addResourceType('form_validators', 'form_validators/', 'CustomZendValidator');
 		$this->_resourceLoader->addResourceType('form_decorators', 'form_decorators/', 'CustomDecorator');
     }
+    
+    protected function _initMessageTranslator()
+    {
+    	$translateValidators = array(
+        				Zend_Validate_NotEmpty::IS_EMPTY => 'No puede estar vacio!',
+    					Zend_Validate_Float::NOT_FLOAT => 'No es un numero!'/*,
+        				Zend_Validate_Regex::NOT_MATCH => 'Invalid value entered',
+        				Zend_Validate_StringLength::TOO_SHORT => 'Value cannot be less than %min% characters',
+        				Zend_Validate_StringLength::TOO_LONG => 'Value cannot be longer than %max% characters',
+        				Zend_Validate_EmailAddress::INVALID => 'Invalid e-mail address'*/
+        			);
+    	
+    	$translator = new Zend_Translate('array', $translateValidators);
+    	Zend_Validate_Abstract::setDefaultTranslator($translator);
+    }
 	
     /**
      * Initialize Doctrine

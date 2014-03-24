@@ -31,8 +31,6 @@ class ItemController extends Zend_Controller_Action {
 		$this->_itemConditionDao = new App_Dao_ItemConditionDao();
 		$this->_itemAvailabilityDao = new App_Dao_ItemAvailabilityDao();
 		
-		$this->_search = new App_Util_ItemSearch();
-		
 		//echo date('H:i:s');
 		/*
 		$uri = "$_SERVER[REQUEST_URI]";
@@ -72,7 +70,6 @@ class ItemController extends Zend_Controller_Action {
 		$paginator = new App_Util_Paginator( $this->getRequest()->getBaseUrl() . '/item/index', $totalItems, $page, 50 );
 		$paginator->addExtraUrlData($extraSearchURL);
 		
-		$this->view->searchPanel = $this->_search->searchPanel();
 		$this->view->totalItems = $totalItems;
 		$this->view->dataList = $this->_itemDao->getSearchLimitOffset($paginator->getLimit(), $paginator->getOffset() );
 		$this->view->htmlPaginator = $paginator->showHtmlPaginator();
@@ -84,6 +81,9 @@ class ItemController extends Zend_Controller_Action {
 		$this->view->originSelect	= $this->_buildSelectFromArray( 'origin', $this->_itemOriginDao->getAll(), $originSelected, 'search_component' );
 		$this->view->locationSelect	= $this->_buildSelectFromArray( 'location', $this->_itemLocationDao->getAll(), $locationSelected, 'search_component' );
 		$this->view->extraSearchURL = $extraSearchURL;
+		
+		
+		$myobject = new PHPExcel();		
 	}
 	
 	public function viewAction() {

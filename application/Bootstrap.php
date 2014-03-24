@@ -10,17 +10,26 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $registry = Zend_Registry::getInstance();
         return $registry;
     }
-	protected function _initSession()
+    
+	protected function _initPhpExcel()
 	{
-		//class_exists('Order', true);
-		//Zend_Session::start();
+		//require_once('PHPExcel/PHPExcel/Shared/ZipStreamWrapper.php');
+		require_once('PHPExcel/PHPExcel/Autoloader.php');
+		
+		
+		/*$classLoader = new \PHPExcel\PHPExcel\PHPExcel_Autoloader();
+		$classLoader->Register();*/
+		
+		/*if ((class_exists($pClassName, FALSE)) || (strpos($pClassName, 'PHPExcel') !== 0)) {
+			// Either already loaded, or not a PHPExcel class request
+			echo "Loaded...";
+		}*/
 	}
 	
     protected function _initResourceLoader()
     {
 		$this->_resourceLoader->addResourceType('dao', 'daos/', 'Dao');
 		$this->_resourceLoader->addResourceType('util', 'utils/', 'Util');
-		$this->_resourceLoader->addResourceType('obj', 'objs/', 'Obj');
 		$this->_resourceLoader->addResourceType('form_validators', 'form_validators/', 'CustomZendValidator');
 		$this->_resourceLoader->addResourceType('form_decorators', 'form_decorators/', 'CustomDecorator');
     }

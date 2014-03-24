@@ -1,0 +1,42 @@
+
+<table class='css-table-search' align='center'>
+	<tr>
+		<th colspan='2'>BUSCADOR</th>
+	</tr>
+	<tr>
+		<th>C&oacute;digo</th>
+		<td><input type='text' id='code' name='code' class='search_component' value='<?php echo $this->code;?>'/></td>
+	</tr>
+	<tr>
+		<th>Tipo</th>
+		<td><?php echo $this->typeSelect; ?></td>
+	</tr>
+	<tr>
+		<th>Nombre</th>
+		<td><input type='text' id='name' name='name' class='search_component' value='<?php echo $this->name;?>'/></td>
+	</tr>
+	<tr>
+		<th>Marca</th>
+		<td><?php echo $this->brandSelect; ?></td>
+	</tr>
+	<tr>
+		<th>Procedencia</th>
+		<td><?php echo $this->originSelect; ?></td>
+	</tr>
+	<tr>
+		<th>Ubicaci&oacute;n</th>
+		<td><?php echo $this->locationSelect; ?></td>
+	</tr>
+	<tr>
+		<td colspan='2' align='center'>
+		<?php
+			$indexURL = $this->url ( array ('controller' => 'item', 'action' => 'index'), 'default', true );
+		?>
+			<a id='search_link' 
+				href='<?php echo $indexURL . '/index' . $this->extraSearchURL;?>' 
+				indexURL ='<?php echo $indexURL;?>'>
+					<img src="<?php echo $this->rootPath ?>images/search.png" title="BUSCAR" border="0"> BUSCAR
+			</a>
+		</td>			
+	</tr>
+</table>

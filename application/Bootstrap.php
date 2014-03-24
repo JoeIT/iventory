@@ -14,7 +14,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	protected function _initPhpExcel()
 	{
 		//require_once('PHPExcel/PHPExcel/Shared/ZipStreamWrapper.php');
-		require_once('PHPExcel/PHPExcel/Autoloader.php');
+		//require_once('PHPExcel/PHPExcel/Autoloader.php');
 		
 		
 		/*$classLoader = new \PHPExcel\PHPExcel\PHPExcel_Autoloader();
@@ -64,7 +64,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
         // create the Doctrine configuration
         $config = new \Doctrine\ORM\Configuration();
-
+        
         // setting the cache ( to ArrayCache. Take a look at
         // the Doctrine manual for different options ! )
         $cache = new \Doctrine\Common\Cache\ArrayCache;
@@ -93,8 +93,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             'dbname'    => $connectionSettings['conn']['dbname'],
             'host'      => $connectionSettings['conn']['host']
         );
+        
         $entityManager = \Doctrine\ORM\EntityManager::create($conn, $config);
-
+        
         // push the entity manager into our registry for later use
         $registry = Zend_Registry::getInstance();
         $registry->entityManager = $entityManager;

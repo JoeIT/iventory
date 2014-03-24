@@ -1,15 +1,14 @@
 <?php
-
 // PHPExcel
-include __DIR__.'/../libs/PHPExcel/PHPExcel.php';
+include '../library/PHPExcel/PHPExcel.php';
 // PHPExcel_Writer_Excel2007
-include __DIR__.'/../libs/PHPExcel/PHPExcel/Writer/Excel2007.php';
+include '../library/PHPExcel/PHPExcel/Writer/Excel2007.php';
 
 class App_Util_XlsxGenerator
 {
 	private $objPHPExcel = null;
 	private $row = 1;
-	private $documentName = 'Documento';
+	private $documentName = 'Administracion de activos fijos';
 	
 	private $rowLimiter = '@';
 	private $colLimiter = '|';
@@ -39,36 +38,40 @@ class App_Util_XlsxGenerator
 					)
 				);
 		
-	}
-	
-	public function setDocumentProperties($documentName, $title)
-	{
-		$this->documentName = $documentName;
-		
 		// Setting properties
-		$this->objPHPExcel->getProperties()->setCreator("Sistema de administracion");
-		$this->objPHPExcel->getProperties()->setTitle($title);
+		$this->objPHPExcel->getProperties()->setCreator($this->documentName);
+		//$this->objPHPExcel->getProperties()->setTitle($this->documentName);
 		
 		// Renaming sheet
-		$this->objPHPExcel->getActiveSheet()->setTitle($title);
-	}
+		$this->objPHPExcel->getActiveSheet()->setTitle($this->documentName);
 	
-	public function mainHeaderTable($headerTable, $headerColspan)
-	{
-		$currentRow = $this->row;
-		$cols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		$this->objPHPExcel->getActiveSheet()->mergeCells("A1:S1");
+		$this->objPHPExcel->getActiveSheet()->getRowDimension('1')->setRowHeight(75);
+		$this->addRow(array($this->documentName), true);
 		
-		$headerTable = str_replace("<br>", "\n", $headerTable);
 		
-		$this->objPHPExcel->getActiveSheet()->mergeCells("A$currentRow:". $cols[$headerColspan - 1]. "$currentRow");
-		$this->objPHPExcel->getActiveSheet()->getRowDimension(''.$currentRow)->setRowHeight(75);
-		$this->addRow(array($headerTable), true, false);
-	}
-	
-	public function parseColumnHeadersTable($headersTable)
-	{
+		$headersTable = array('Codigo', 
+							'Nuevo codigo',
+							'codigo contable',
+							'Tipo',
+							'Nombre',
+							'Marca',
+							'Material',
+							'Color',
+							'Procedencia',
+							'Ubicacion',
+							'Propietario',
+							'Cantidad',
+							'Costo unitario',
+							'Costo minimo',
+							'Costo esperado',
+							'Costo de venta',
+							'Estado',
+							'Disponibilidad',
+							'Observaciones');
+		
 		// Adding data row
-		$this->addRow( explode($this->colLimiter, $headersTable), true, false );
+		$this->addRow( $headersTable, true );
 	}
 	
 	public function parseTable($table)
@@ -78,28 +81,17 @@ class App_Util_XlsxGenerator
 		foreach($matrixData as $row)
 		{
 			if( !empty($row) )
-				$this->addRow( explode($this->colLimiter, $row), false, false );
+				$this->addRow( explode($this->colLimiter, $row), false );
 		}
 	}
 	
-	public function parseFooterTable($footerTable)
-	{
-		$this->addRow( explode($this->colLimiter, $footerTable), false, true );
-	}
-	
-	public function addRow($arrayData, $isHeader, $idFooter)
+	public function addRow($arrayData, $isHeader)
 	{
 		$i = 0;
 		
 		foreach($arrayData as $value)
 		{
 			$this->objPHPExcel->getActiveSheet()->SetCellValueByColumnAndRow(''.$i, ''.$this->row, $value);
-			
-			if( !$idFooter )
-			{
-				// Border color	
-				$this->objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($i, $this->row)->applyFromArray($this->borderStyleArray);
-			}
 			
 			if( $isHeader )
 			{
@@ -119,15 +111,6 @@ class App_Util_XlsxGenerator
 				// Setting center align
 				$this->objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($i, $this->row)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 			}
-			else if( $idFooter )
-			{
-				if( !empty($value) )
-				{
-					$this->objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($i, $this->row)->applyFromArray($this->borderStyleArray);
-					// Setting the backgroud color
-					$this->objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($i, $this->row)->getFill()->setFillType(PHPExcel_Style_Fill::FILL_SOLID)->getStartColor()->setARGB('FFCDFFCC');
-				}
-			}
 			
 			$i ++;
 		}
@@ -137,55 +120,25 @@ class App_Util_XlsxGenerator
 	
 	public function saveDocument()
 	{
-		// Save Excel 2007 file
-		//$this->objWriter = new PHPExcel_Writer_Excel2007($this->objPHPExcel);
-		//$this->objWriter->save($this->documentName . '.xlsx');
-		
-		//header('Content-Disposition: attachment; filename="'. $this->documentName .'.xlsx"');
-		
-		
-		//$this->objPHPExcel->getActiveSheet()->getStyle('A1:B5')->getBorders()->getAllBorders()->setColor(new PHPExcel_Style_Color(PHPExcel_Style_Color::COLOR_RED));
-		
-		
-		
-		
-		
 		$this->objPHPExcel->getActiveSheet()->setShowRowColHeaders(true);
 		$this->objPHPExcel->getActiveSheet()->getHeaderFooter()->setFirstHeader(true);
-		//$this->objPHPExcel->getActiveSheet()->getHeaderFooter()->setOddHeader('exito');
-		//$this->objPHPExcel->getActiveSheet()->setPrintGridlines(TRUE);
-		
 		
 		// Save Excel 2007 file and redirect output to client browser
 		header('Content-Type: application/vnd.ms-excel');
-		//header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 		header('Content-Disposition: attachment;filename="'. $this->documentName .'.xlsx"');
-		header('Cache-Control: max-age=0');
+		//header('Cache-Control: max-age=0');
 		
 		$this->objWriter = PHPExcel_IOFactory::createWriter($this->objPHPExcel, 'Excel2007');
 		$this->objWriter->save('php://output');
-		
-		
 	}
 
 
 }
 
-$name = $_GET['name'];
-$header = $_GET['header'];
-$headerColspan = $_GET['headerColspan'];
-$colHeaders = $_GET['colHeaders'];
-$table = $_GET['table'];
-$footer = $_GET['footer'];
+//$table = $_GET['table'];
 
-$eg = new App_Util_XlsxGenerator();
-$eg->setDocumentProperties($name, $name);
-
-$eg->mainHeaderTable($header, $headerColspan);
-$eg->parseColumnHeadersTable($colHeaders);
-$eg->parseTable($table);
-$eg->parseFooterTable($footer);
-
-$eg->saveDocument()
+//$eg = new App_Util_XlsxGenerator();
+//$eg->parseTable($table);
+//$eg->saveDocument()
 
 ?>

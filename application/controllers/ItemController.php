@@ -83,7 +83,7 @@ class ItemController extends Zend_Controller_Action {
 		$this->view->extraSearchURL = $extraSearchURL;
 		
 		
-		$myobject = new PHPExcel();		
+		//$xlsxGenerator = new App_Util_XlsxGenerator();		
 	}
 	
 	public function viewAction() {
@@ -274,6 +274,51 @@ class ItemController extends Zend_Controller_Action {
 		}		
 	}
 	
+	public function toxlsxAction() {
+		$this->_helper->layout->disableLayout();
+		
+		$name 				= $this->_getParam ( 'name', '' );
+		$code 				= $this->_getParam ( 'code', '' );
+		$typeSelected 		= $this->_getParam ( 'type', '' );
+		$brandSelected 		= $this->_getParam ( 'brand', '' );
+		$originSelected		= $this->_getParam ( 'origin', '' );
+		$locationSelected	= $this->_getParam ( 'location', '' );
+		
+		$this->_itemDao->createSearchWhere($name, $code, $typeSelected, $brandSelected, $originSelected, $locationSelected);
+		
+		$excel = new App_Util_XlsxGenerator();
+		$items = $this->_itemDao->getSearchLimitOffset(99999, 0);
+		
+		foreach($items as $item)
+		{
+			$dataArray = array(
+					$item->getCode(), 
+					$item->getNewCode(),
+					$item->getAccountingCode(),
+					$item->getType()->getName(),
+					$item->getName(),
+					$item->getBrand()->getName(),
+					$item->getMaterial()->getName(),
+					$item->getColor()->getName(),
+					$item->getOrigin()->getName(),
+					$item->getLocation()->getName(),
+					$item->getOwner()->getName(),
+					$item->getQuantity(),
+					$item->getUnitCost(),
+					$item->getMinimumCost(),
+					$item->getExpectedCost(),
+					$item->getSalesCost(),
+					$item->getCondition()->getName(),
+					$item->getAvailability()->getName(),
+					$item->getComment()
+			);
+			
+			$excel->addRow($dataArray, false);
+		}
+		
+		$excel->saveDocument();
+	}
+	
 	public function ajaxrefreshselectelementAction() {
 		$this->_helper->layout->disableLayout();
 		
@@ -372,7 +417,86 @@ class ItemController extends Zend_Controller_Action {
 	}
 	
 	public function testAction() {
-		echo "Running....";
+		
+		
+		/*
+		// PHPExcel
+		include '../library/PHPExcel/PHPExcel.php';
+		// PHPExcel_Writer_Excel2007
+		include '../library/PHPExcel/PHPExcel/Writer/Excel2007.php';
+		
+		
+		// Create new PHPExcel object
+		$this->objPHPExcel = new PHPExcel();
+		
+		$this->objPHPExcel->setActiveSheetIndex(0);
+		
+		$this->borderStyleArray = array(
+				'borders' => array(
+						'outline' => array(
+								'style' => PHPExcel_Style_Border::BORDER_THIN,
+								'color' => array('argb' => '00000000'),
+						),
+				),
+		);
+		
+		$this->headerStyleArray = array(
+				'font' => array(
+						'bold' => true
+				)
+		);
+		
+		$documentName = 'Administracion de activos fijos';
+		
+		// Setting properties
+		$this->objPHPExcel->getProperties()->setCreator($documentName);
+		$this->objPHPExcel->getProperties()->setTitle($documentName);
+		
+		// Renaming sheet
+		$this->objPHPExcel->getActiveSheet()->setTitle($documentName);
+		
+		$this->objPHPExcel->getActiveSheet()->mergeCells("A1:R1");
+		$this->objPHPExcel->getActiveSheet()->getRowDimension('1')->setRowHeight(75);
+		$this->addRow(array($documentName), true, false);
+		
+		
+		$headersTable = array('Codigo',
+				'Nuevo codigo',
+				'codigo contable',
+				'Tipo',
+				'Nombre',
+				'Marca',
+				'Material',
+				'Color',
+				'Procedencia',
+				'Ubicacion',
+				'Propietario',
+				'Cantidad',
+				'Costo unitario',
+				'Costo esperado',
+				'Costo de venta',
+				'Estado',
+				'Disponibilidad',
+				'Observaciones');
+						
+				// Adding data row
+		$this->addRow( $headersTable, true, false );
+		
+		
+		$this->objPHPExcel->getActiveSheet()->setShowRowColHeaders(true);
+		$this->objPHPExcel->getActiveSheet()->getHeaderFooter()->setFirstHeader(true);
+		
+		// Save Excel 2007 file and redirect output to client browser
+		header('Content-Type: application/vnd.ms-excel');
+		//header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment;filename="'. $documentName .'.xlsx"');
+		header('Cache-Control: max-age=0');
+		
+		$this->objWriter = PHPExcel_IOFactory::createWriter($this->objPHPExcel, 'Excel2007');
+		$this->objWriter->save('php://output');*/
+		
+		
+		
 		
 		/*$uri = "$_SERVER[REQUEST_URI]";
 			$arr = explode('/', $uri );
@@ -442,5 +566,5 @@ class ItemController extends Zend_Controller_Action {
 		}
 		echo '</table>' ;
 		*/
-	}
+	}	
 }

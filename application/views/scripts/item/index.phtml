@@ -5,7 +5,8 @@ $(document).ready(function () {
 	});
 	
 	$('.search_component').change(function(){
-		var indexBaseURL = $('#search_link').attr('indexURL') + '/index';
+		var searchIndexBaseURL = $('#search_link').attr('indexURL') + '/index';
+		var exportBaseURL = $('#export_link').attr('indexURL');
 
 		var url = '';
 		$('.search_component').each(function(){
@@ -16,7 +17,8 @@ $(document).ready(function () {
 				url += '/' + $(this).attr('id') + '/' + value;
 		});
 
-		$('#search_link').attr('href', indexBaseURL + url);
+		$('#search_link').attr('href', searchIndexBaseURL + url);
+		$('#export_link').attr('href', exportBaseURL + url);
 	});	
 });
 </script>
@@ -79,7 +81,10 @@ $(document).ready(function () {
 		</tr>
 		<tr>
 			<td colspan='2' align='center'>
-				<a href='' >Press</a>
+				<a id='export_link'  
+				href='<?php echo $this->url ( array ('controller' => 'item', 'action' => 'toxlsx'), 'default', true ) . $this->extraSearchURL; ?>' 
+				indexURL = '<?php echo $this->url ( array ('controller' => 'item', 'action' => 'toxlsx'), 'default', true ); ?>'
+				>EXPORTAR A EXCEL</a>
 			</td>
 		</tr>
 	</table>

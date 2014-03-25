@@ -1,9 +1,6 @@
 <script>
 $(document).ready(function () {
 
-	$('#searchLink').click(function(){
-	});
-	
 	$('.search_component').change(function(){
 		var searchIndexBaseURL = $('#search_link').attr('indexURL') + '/index';
 		var exportBaseURL = $('#export_link').attr('indexURL');
@@ -19,7 +16,7 @@ $(document).ready(function () {
 
 		$('#search_link').attr('href', searchIndexBaseURL + url);
 		$('#export_link').attr('href', exportBaseURL + url);
-	});	
+	});
 });
 </script>
 

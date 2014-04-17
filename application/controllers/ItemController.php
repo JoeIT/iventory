@@ -211,7 +211,7 @@ class ItemController extends Zend_Controller_Action {
 					{
 						$item->setPhotoDir( $newPhotoUrl );
 						$this->_itemDao->save($item);
-						$this->_helper->redirector('index');
+						$this->_helper->redirector->gotoUrl("item/view/id/$id");
 						return;
 					}
 					else
@@ -219,7 +219,7 @@ class ItemController extends Zend_Controller_Action {
 				}
 				else {
 					$this->_itemDao->save($item);
-					$this->_helper->redirector('index');
+					$this->_helper->redirector->gotoUrl("item/view/id/$id");
 					return;
 				}
 			}
@@ -368,6 +368,44 @@ class ItemController extends Zend_Controller_Action {
 		$this->view->selectId = $selectElement;
 		$this->view->optionSelected = $optionSelected;
 		$this->view->options = $optionsArray;		
+	}
+	
+	public function ajaxsavecostvalueAction() {
+		$this->_helper->layout->disableLayout();
+		
+		$id = $this->_getParam('id', '');
+		$kind = $this->_getParam('kind', '');
+		$value = $this->_getParam('value', '');
+		
+		$item = $this->_itemDao->getById($id);
+		
+		$floatValidator = new Zend_Validate_Float();
+		
+		if($floatValidator->isValid($value)) {
+		
+			switch($kind) {
+				case 'unit_cost':
+					$item->setUnitCost($value);
+					break;
+				case 'minimum_cost':
+					$item->setMinimumCost($value);
+					break;
+				case 'expected_cost':
+					$item->setExpectedCost($value);
+					break;
+				case 'sales_cost':
+					$item->setSalesCost($value);
+					break;
+				default:
+					break;
+			}
+			
+			$this->_itemDao->save($item);
+			
+			echo "Saved";
+		}
+		else
+			echo "Fail";
 	}
 	
 	private function _loadFormSelects(&$form) {

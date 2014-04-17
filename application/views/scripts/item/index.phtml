@@ -17,6 +17,35 @@ $(document).ready(function () {
 		$('#search_link').attr('href', searchIndexBaseURL + url);
 		$('#export_link').attr('href', exportBaseURL + url);
 	});
+
+	$(".cost_value").change(function(){
+		var localRootPath = $('#SYSTEM_ROOT_PATH').val();
+		var thisComponent = $(this);
+		var newValue = $(this).val();
+
+		$.ajax({
+            url: localRootPath + "item/ajaxsavecostvalue",
+            type: 'POST',
+			data: { id: $(this).attr('id_item'),
+					kind: $(this).attr('kind'),
+					value: newValue
+					},
+            success: function(response)
+			{
+            	if(response == 'Fail') {
+            		thisComponent.val( thisComponent.attr('amount') );
+            	}
+            	else if(response == 'Saved')
+            		thisComponent.attr('amount', newValue);
+            	
+            },
+            error: function(request, textStatus, errorThrown)
+			{
+                var message = (request.status == 403) ? request.responseText : message;
+                alert("Error retrieving save data - " + message);
+            }
+        });
+	});
 });
 </script>
 
@@ -96,6 +125,10 @@ $(document).ready(function () {
 		<th>Marca</th>
 		<th>Procedencia</th>
 		<th>Ubicaci&oacute;n</th>
+		<th>Costo unit.</th>
+		<th>Costo m&iacute;nimo</th>
+		<th>Costo esperado</th>
+		<th>Costo de venta</th>
 		<th colspan="3"></th>
 	</tr>
 
@@ -110,6 +143,19 @@ $(document).ready(function () {
 		<td><?php echo $item->getBrand()->getName(); ?></td>
 		<td><?php echo $item->getOrigin()->getName(); ?></td>
 		<td><?php echo $item->getLocation()->getName(); ?></td>
+		<td align='right'>
+			<input type='text' class='cost_value css-input_number_form' kind='unit_cost' id_item='<?php echo $item->getId(); ?>' amount='<?php echo $item->getUnitCost(); ?>' value='<?php echo $item->getUnitCost(); ?>' />
+		</td>
+		<td align='right'>
+			<input type='text' class='cost_value css-input_number_form' kind='minimum_cost' id_item='<?php echo $item->getId(); ?>' amount='<?php echo $item->getMinimumCost(); ?>' value='<?php echo $item->getMinimumCost(); ?>' />
+		</td>
+		<td align='right'>
+			<input type='text' class='cost_value css-input_number_form' kind='expected_cost' id_item='<?php echo $item->getId(); ?>' amount='<?php echo $item->getExpectedCost(); ?>' value='<?php echo $item->getExpectedCost(); ?>' />
+		</td>
+		<td align='right'>
+			<input type='text' class='cost_value css-input_number_form' kind='sales_cost' id_item='<?php echo $item->getId(); ?>' amount='<?php echo $item->getSalesCost(); ?>' value='<?php echo $item->getSalesCost(); ?>' />
+		</td>
+		
 		<td>
 			<a
 				href='<?php		
